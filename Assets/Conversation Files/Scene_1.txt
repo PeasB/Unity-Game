@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Conversation>
+	
+	<ID>1</ID>
+	<initalDialogue> "Can you help me?" </initalDialogue>
+	<Level1>
+		<Choice1>
+		
+			<Text>"No why should I help you?"</Text>
+			
+		</Choice1>
+		<Choice2>
+		
+			<Text>"Sure how can I help?"</Text>
+				
+		</Choice2>
+	
+	
+	
+	</Level1>
+
+
+
+
+</Conversations>
