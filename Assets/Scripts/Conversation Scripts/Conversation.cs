@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class Conversation : MonoBehaviour {
 
-	public Button Choice1;
-	public Button Choice2;
-    public Text Dialogue;
+	public Button Choice1UI;
+	public Button Choice2UI;
+    public Text DialogueUI;
     int CurrentConvoID;
 
 	public void StartConversation(int ConvoID)
@@ -16,7 +16,7 @@ public class Conversation : MonoBehaviour {
         CurrentConvoID = ConvoID;
         //Pull infomation for database
 
-        Dialogue.enabled = true;
+        DialogueUI.enabled = true;
 
         VaildateChoices(0);
 
