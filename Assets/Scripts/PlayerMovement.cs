@@ -4,13 +4,14 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 
-    public static void PlayerMove (Rigidbody2D Body, int Speed, Animator Anim)
+    public static void PlayerMove (Rigidbody2D Body, int Speed, Animator Anim, float XMove,float YMove)
     {
-        float XMove = Input.GetAxis("Horizontal");
-        float YMove = Input.GetAxis("Vertical");
+		//Var Movements
 
+		//Execute Movement of Person
         Body.velocity = new Vector2(XMove* Speed, YMove* Speed);
 
+		//Animation of Movement
         if (XMove != 0 || YMove != 0)
         {
             if (XMove < 0)

@@ -4,7 +4,6 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
     Rigidbody2D Body;
-    Transform Position;
     Animator Anim;
     public int WalkSpeed;
 
@@ -13,7 +12,6 @@ public class Player : MonoBehaviour {
 	void Start () {
 
         Body = GetComponent<Rigidbody2D>();
-        Position = GetComponent<Transform>();
         Anim = GetComponent<Animator>();
                                                          
 
@@ -22,7 +20,13 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        PlayerMovement.PlayerMove(Body,WalkSpeed,Anim);
+		float XMove = Input.GetAxis("Horizontal");
+		float YMove = Input.GetAxis("Vertical");
+
+
+        PlayerMovement.PlayerMove(Body,WalkSpeed,Anim,XMove, YMove);
+
+
 
 
 	}
