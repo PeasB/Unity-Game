@@ -5,6 +5,7 @@ public class AreaEvent : MonoBehaviour {
 
     public Conversation DialogueManger;
     public int ConversationID;
+	public int SceneNum;
 
 
 
@@ -13,7 +14,7 @@ public class AreaEvent : MonoBehaviour {
         if(Other.tag == "Player")
         {
             //Start Specfied Conversation (ID Number references ConversationDatabase).
-            DialogueManger.StartConversation(ConversationID);
+            DialogueManger.StartConversation(SceneNum,ConversationID);
         }
     }
 

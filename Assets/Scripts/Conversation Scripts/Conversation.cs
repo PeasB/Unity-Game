@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Xml.Linq;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -10,11 +11,25 @@ public class Conversation : MonoBehaviour {
     public Text DialogueUI;
     int CurrentConvoID;
 
-	public void StartConversation(int ConvoID)
+	public void StartConversation(int SceneID, int ConvoID)
 	{
         //Start Conversation
         CurrentConvoID = ConvoID;
+	
         //Pull infomation for database
+		XDocument doc = XDocument.Load ("Assets/Conversation Files/Scene" + SceneID + ".xml");
+		var ID = doc.Descendants().Elements ("Conversation");
+
+		foreach (var IDNum in ID) {
+
+			if((int.TryParse(IDNum.Descendants("ID"))) == 1)
+			{
+				var Convo = IDNum;
+				print(Convo.Value);
+			}
+
+		}
+
 
        // DialogueUI.enabled = true;
 
