@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AreaEvent : MonoBehaviour {
 
-    public Conversation DialogueMangerConversation;
+    public Conversation DialogueManger;
     public int ConversationID;
 
 
@@ -13,7 +13,7 @@ public class AreaEvent : MonoBehaviour {
         if(Other.tag == "Player")
         {
             //Start Specfied Conversation (ID Number references ConversationDatabase).
-            DialogueMangerConversation.StartConversation(ConversationID);
+            DialogueManger.StartConversation(ConversationID);
         }
     }
 

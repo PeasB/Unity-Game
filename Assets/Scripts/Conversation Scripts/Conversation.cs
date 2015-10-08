@@ -16,7 +16,7 @@ public class Conversation : MonoBehaviour {
         CurrentConvoID = ConvoID;
         //Pull infomation for database
 
-        DialogueUI.enabled = true;
+       // DialogueUI.enabled = true;
 
         VaildateChoices(0);
 
