@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour {
 		//Var Movements
 
 		//Execute Movement of Person
-        Body.velocity = new Vector2(XMove* Speed, YMove* Speed);
+        Body.velocity = new Vector2(XMove* Speed, YMove*Speed);
 
-		//Animation of Movement
+        //Animation of Movement
         if (XMove != 0 || YMove != 0)
         {
             if (XMove < 0)
