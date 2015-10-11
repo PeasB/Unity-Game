@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    Rigidbody2D Body;
+    public static Rigidbody2D Body; //Made this public static so that AI_Character can access it (Needs the x and y position of the player)
     Animator Anim;
     public int WalkSpeed;
 
