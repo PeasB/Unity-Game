@@ -3,9 +3,11 @@ using System.Collections;
 
 public class AreaEvent : MonoBehaviour {
 
-    public Conversation DialogueManger;
     public int ConversationID;
 	public int SceneNum;
+    public Canvas EventCanvas;
+    private ConversationManager ConversationInstance;
+    private bool Active = false;
 
 
 
@@ -13,10 +15,32 @@ public class AreaEvent : MonoBehaviour {
     {
         if(Other.tag == "Player")
         {
-            //Start Specfied Conversation (ID Number references ConversationDatabase).
-            DialogueManger.StartConversation(SceneNum,ConversationID);
+
+            ConversationInstance = new ConversationManager(EventCanvas);
+            Active = true;
+
+            //Start specified Conversation (ID Number references Conversation file).
+            ConversationInstance.StartConversation(SceneNum,ConversationID);
+
         }
     }
 
+
+    void Update()
+    {
+        if(Active) //Makes sure ConversationInstance has been initalized.
+        {
+            //if pressed show next Dialogue.
+            if(Input.GetButtonDown("Button 0"))
+            {
+              ConversationInstance.ProcessDialogue();
+            }
+
+            
+        }
+
+
+
+    }
 
 }

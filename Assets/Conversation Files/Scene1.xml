@@ -7,9 +7,10 @@
 	  <ID>1</ID>
 	  
 	  <initalDialogue>
-	    <Kate>You son of a...</Kate>
-	    <April>Ok! Enough you two! I feel like a parent</April>
-	    <Oliver>Oh who's the father, Matt?</Oliver>    
+      <DialogueCount>3</DialogueCount>
+	    <Dialogue>Kate: You son of a...</Dialogue>
+	    <Dialogue>April: Ok! Enough you two! I feel like a parent</Dialogue>
+	    <Dialogue>Oh who's the father, Matt?</Dialogue>    
 	  </initalDialogue>
 	  
 	  <Level1>
@@ -47,57 +48,55 @@
 	  </Level1>
 
 
+	 </Conversation>
+   <Conversation>
 
+    <ID>1</ID>
 
-	  </Conversation>
-	  
-	  <Conversation>
+    <initalDialogue>
+      <DialogueCount>3</DialogueCount>
+      <Dialogue>Kate: You son of a...</Dialogue>
+      <Dialogue>April: Ok! Enough you two! I feel like a parent</Dialogue>
+      <Dialogue>Oh who's the father, Matt?</Dialogue>
+    </initalDialogue>
 
-	  <ID>2</ID>
-	  
-	  <initalDialogue>
-	    <Kate>You son of a...</Kate>
-	    <April>Ok! Enough you two! I feel like a parent</April>
-	    <Oliver>Oh who's the father, Matt?</Oliver>    
-	  </initalDialogue>
-	  
-	  <Level1>
-	    <Choice1>
+    <Level1>
+      <Choice1>
 
-	      <Text>"Protective - Come on guys cutt it out!"</Text>
-	      <Conquences>
-	        <AprilRelationship>15</AprilRelationship>
-	        <OliverRelationship>-15</OliverRelationship>
-	      </Conquences>
-	      <AdditionalDialogue>
-	        <Matt>"Come on guys cut it out! You know there is nothing between us."</Matt>
-	        <April>"Thank you Matt."</April>
-	        <Oliver>"Man it was just a joke."</Oliver>
-	      </AdditionalDialogue>
-	      
-	    </Choice1>
-	    <Choice2>
+        <Text>"Protective - Come on guys cutt it out!"</Text>
+        <Conquences>
+          <AprilRelationship>15</AprilRelationship>
+          <OliverRelationship>-15</OliverRelationship>
+        </Conquences>
+        <AdditionalDialogue>
+          <Matt>"Come on guys cut it out! You know there is nothing between us."</Matt>
+          <April>"Thank you Matt."</April>
+          <Oliver>"Man it was just a joke."</Oliver>
+        </AdditionalDialogue>
 
-	      <Text>"Encourage - You know it!"</Text>
-	      <Conquences>
-	        <AprilRelationship>-15</AprilRelationship>
-	        <OliverRelationship>15</OliverRelationship>
-	        <RoryRelationship>15</RoryRelationship>
-	      </Conquences>
-	      <AdditionalDialogue>
-	        <April>"Your a jerk Matt."</April>
-	        <Matt>"It was just a joke April. Chill...."</Matt>
-	      </AdditionalDialogue>
-	      
-	    </Choice2>
+      </Choice1>
+      <Choice2>
+
+        <Text>"Encourage - You know it!"</Text>
+        <Conquences>
+          <AprilRelationship>-15</AprilRelationship>
+          <OliverRelationship>15</OliverRelationship>
+          <RoryRelationship>15</RoryRelationship>
+        </Conquences>
+        <AdditionalDialogue>
+          <April>"Your a jerk Matt."</April>
+          <Matt>"It was just a joke April. Chill...."</Matt>
+        </AdditionalDialogue>
+
+      </Choice2>
 
 
 
-	  </Level1>
+    </Level1>
 
 
 
 
-	  </Conversation>
+  </Conversation>
   
-  </Conversations>
+</Conversations>

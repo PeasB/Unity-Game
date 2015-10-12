@@ -1,43 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Xml.Linq;
+using System.Xml;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Conversation : MonoBehaviour {
+public class ConversationManager {
 
-	public Button Choice1UI;
-	public Button Choice2UI;
-    public Text DialogueUI;
-    int CurrentConvoID;
+	private Button Choice1UI;
+	private Button Choice2UI;
+    private Text DialogueUI;
+    private int ConvoID;
+    private int DialogueLevel;
+    private XmlNode Conversation;
 
-	public void StartConversation(int SceneID, int ConvoID)
-	{
-        //Start Conversation
-        CurrentConvoID = ConvoID;
-	
-        //Pull infomation for database
-		XDocument doc = XDocument.Load ("Assets/Conversation Files/Scene" + SceneID + ".xml");
-		var ID = doc.Descendants().Elements ("Conversation");
-		/*
-		foreach (var IDNum in ID) {
 
-			if((int.Parse(IDNum.Descendants("ID"))) == 1)
-			{
-				var Convo = IDNum;
-				print(Convo.Value);
-			}
+    public ConversationManager(Canvas CanvasUI)
+    {
+        Choice1UI = CanvasUI.transform.FindChild("ChoiceUI 1").gameObject.GetComponent<Button>();
+        Choice2UI = CanvasUI.transform.FindChild("ChoiceUI 2").gameObject.GetComponent<Button>();
+        DialogueUI = CanvasUI.transform.FindChild("DialogueUI").gameObject.GetComponent<Text>();
+    }
 
-		}
-	*/
 
-       // DialogueUI.enabled = true;
+    public void StartConversation(int SceneID, int ConvoID) //Start Conversation
+    {
 
-        VaildateChoices(0);
+        this.ConvoID = ConvoID; //Load ID property
 
-	}
+        //Load Scene Conversation XML
+        XmlDocument Doc = new XmlDocument();
+        Doc.Load("Assets\\Conversation Files\\Scene" + SceneID + ".xml");
 
-	void VaildateChoices(int ConversationLevel)
+        //Find Correct Conversation in Scene.
+        foreach(XmlNode Node in Doc.SelectNodes("Conversations/Conversation"))
+        {
+
+            if(Node.SelectSingleNode("ID").InnerText == this.ConvoID.ToString())
+            {
+                this.Conversation = Node;
+                break;
+            }
+           
+        }
+
+        //show First line of Dialogue.
+        ProcessDialogue();
+
+        //Show the Canvas.
+        DialogueUI.GetComponentInParent<Canvas>().enabled = true;
+
+    }
+
+	private void VaildateChoices(int ConversationLevel)
 	{
 		//Vaildate Choices
 		//Remove un-needed choices
@@ -48,6 +62,22 @@ public class Conversation : MonoBehaviour {
 	}
 
 
-    //End of Convo. Files that has content tells next Convo number to set.
+    public void ProcessDialogue()
+    {
+        //Increaces DialogueLevel for next piece of Dialogue.
+        DialogueLevel++;
+        
+        //Still more Dialogue.
+        if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode("initalDialogue/DialogueCount").InnerText))
+        {
+            //prints Dialogue.
+            DialogueUI.text = Conversation.SelectSingleNode("initalDialogue").ChildNodes[DialogueLevel].InnerText;
+        }
+    
+
+
+
+    }
+
 
 }
