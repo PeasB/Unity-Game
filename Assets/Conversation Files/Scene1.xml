@@ -6,16 +6,24 @@
 
 	  <ID>1</ID>
 	  
-	  <initalDialogue>
+	  <initialDialogue>
       <DialogueCount>3</DialogueCount>
 	    <Dialogue>Kate: You son of a...</Dialogue>
 	    <Dialogue>April: Ok! Enough you two! I feel like a parent</Dialogue>
-	    <Dialogue>Oh who's the father, Matt?</Dialogue>    
-	  </initalDialogue>
+	    <Dialogue>Ethan: Oh who's the father, Matt?</Dialogue>    
+	  </initialDialogue>
 	  
 	  <Level1>
 	    <Choice1>
-
+        
+        <Conditions>
+          <Relationship>
+            <April>100</April> 
+          </Relationship>
+          <InScene>
+            <April>true</April>
+          </InScene>
+        </Conditions>
 	      <Text>"Protective - Come on guys cutt it out!"</Text>
 	      <Conquences>
 	        <AprilRelationship>15</AprilRelationship>
@@ -30,6 +38,14 @@
 	    </Choice1>
 	    <Choice2>
 
+        <Conditions>
+          <Relationship>
+            <April>100</April>
+          </Relationship>
+          <InScene>
+            <April>true</April>
+          </InScene>
+        </Conditions>
 	      <Text>"Encourage - You know it!"</Text>
 	      <Conquences>
 	        <AprilRelationship>-15</AprilRelationship>
@@ -53,12 +69,12 @@
 
     <ID>1</ID>
 
-    <initalDialogue>
+    <initialDialogue>
       <DialogueCount>3</DialogueCount>
       <Dialogue>Kate: You son of a...</Dialogue>
       <Dialogue>April: Ok! Enough you two! I feel like a parent</Dialogue>
       <Dialogue>Oh who's the father, Matt?</Dialogue>
-    </initalDialogue>
+    </initialDialogue>
 
     <Level1>
       <Choice1>
