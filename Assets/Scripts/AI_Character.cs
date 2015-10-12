@@ -6,19 +6,32 @@ public class AI_Character : MonoBehaviour {
 	Rigidbody2D Body;
 	Animator Anim;
 	public int WalkSpeed;
+    CircleCollider2D CircleCollition;
+
+    AI_Action Action = AI_Action.FollowPlayer;
+
+    //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
+    //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
 
 
+    public enum AI_Action
+    {
+        Stationary, //AI is completely rest
+        StationaryWithDir, //AI is at rest, but changes directions occationaly (at random interval)
+        FollowPlayer, //AI follows player
+        Event //An event occures with the AI (example: AI preforming a task during cut scene)
+    }
 
 	// Use this for initialization
 	void Start () {
 
 		Body = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
+        CircleCollition = GetComponent<CircleCollider2D>();
         
-
 	}
 	
-    private int FindPath() //Just testing stuff out
+    private int FindPath() //Distance from Player to AI
     {        
         //Find Distance from AI to Player using distance formula
         //Body.position.x & Body.position.y is the x and y position of the AI
@@ -71,26 +84,64 @@ public class AI_Character : MonoBehaviour {
         //Var for x and y
         float XMove = 0;
         float YMove = 0;
-
-        if (FindPath() > 30) //If AI far away from Player, go to the player
+                
+        CircleCollition.enabled = true;
+        
+        if (Action == AI_Action.Stationary) //Stay at complete rest
         {
-            if (Body.position.x != (int)Player.Body.position.x)
+            #region Completely Stationary
+
+            Body.isKinematic = true;
+
+            #endregion
+        }
+        else if (Action == AI_Action.StationaryWithDir) //Stay at rest, but occationaly change directions
+        {
+            #region Stationary With Direction
+
+            Body.isKinematic = true;
+
+            #endregion
+        }
+        else if (Action == AI_Action.FollowPlayer) //Follow player
+        {
+            #region Follow Player
+
+            Body.isKinematic = false;
+
+            if (FindPath() > 25) //If AI far away from Player, go to the player
             {
-                XMove = Find_X_Distance();
+                if (Body.position.x != (int)Player.Body.position.x)
+                {
+                    XMove = Find_X_Distance();
+                }
+
+                if (Body.position.y != (int)Player.Body.position.y)
+                {
+                    YMove = Find_Y_Distance();
+                }
+                
+            }
+            else if (FindPath() < 18) //If Player and AI collide
+            {
+                //Let Player go through AI, temporarily disable circle collider
+                //(gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
+                CircleCollition.enabled = false;
             }
 
-            if (Body.position.y != (int)Player.Body.position.y)
-            {
-                YMove = Find_Y_Distance();
-            }
-
-            PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);            
+            #endregion
         }
-        else //Stop Moving
+        else if (Action == AI_Action.Event) //Do an event
         {
-            PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);
+            #region Preform Event
+
+            Body.isKinematic = false;
+
+            #endregion
         }
 
+        //Execute Movement
+        PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);
 
-	}
+    }
 }
