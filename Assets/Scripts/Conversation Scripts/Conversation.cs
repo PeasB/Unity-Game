@@ -6,22 +6,23 @@ using UnityEngine.EventSystems;
 
 public class ConversationManager {
 
-	private Button Choice1UI;
-	private Button Choice2UI;
+	private GameObject Choice1UI;
+	private GameObject Choice2UI;
     private Text DialogueUI;
-    private int ConvoID;
+    private int ID;
     private int DialogueLevel;
     private int ConversationLevel;
     private XmlNode Conversation;
-
+	public bool IsActive = false;
 
     public ConversationManager(Canvas CanvasUI)
     {
-        Choice1UI = CanvasUI.transform.FindChild("ChoiceUI 1").gameObject.GetComponent<Button>();
-        Choice2UI = CanvasUI.transform.FindChild("ChoiceUI 2").gameObject.GetComponent<Button>();
+        Choice1UI = CanvasUI.transform.FindChild("ChoiceUI 1").gameObject;
+        Choice2UI = CanvasUI.transform.FindChild("ChoiceUI 2").gameObject;
         DialogueUI = CanvasUI.transform.FindChild("DialogueUI").gameObject.GetComponent<Text>();
-        Choice2UI.enabled = false;
-        DialogueUI.enabled = false;
+		DialogueUI.enabled = false;
+		Choice1UI.SetActive(false);
+		Choice2UI.SetActive(false);
     }
 
 
@@ -32,7 +33,7 @@ public class ConversationManager {
 
         //Load Scene Conversation XML
         XmlDocument Doc = new XmlDocument();
-        Doc.Load("Assets\\Conversation Files\\Scene" + SceneID + ".xml");
+        Doc.Load("Assets/Conversation Files/Scene" + SceneID + ".xml");
 
         //Find Correct Conversation in Scene.
         foreach(XmlNode Node in Doc.SelectNodes("Conversations/Conversation"))
@@ -49,28 +50,21 @@ public class ConversationManager {
         //show First line of Dialogue.
         ProcessDialogue();
 
-        //Show the Dialogue.
-        DialogueUI.enabled = true;
-
     }
 
-	private void VaildateChoices(int ConversationLevel)
+	//Checks if Conditions in Path Location are vaild and returns true for vaild and false for not vaild.
+	private bool VaildateCondition(string ConditionNodePath)
 	{
 
         //Load Save and Create Variables
         XmlDocument Save = new XmlDocument();
-        Save.Load("Assets\\Scripts\\SaveGame.xml");
-        bool ChoiceVaild = true;
-        bool ChoiceOneVaild = true;
-        bool ChoiceTwoVaild = true;
+        Save.Load("Assets/Scripts/SaveGame.xml");
+		bool ConditionsVaild = true;	
 
-      
-        for (int i = 1; i <= 2; i++)
-        {
             #region Conditions
             //Condition Is Condition List ex: All Relationship Conditions are under Condition
             //Example List: For Relationship Condition <Kate>100</Kate> <Matt>50</Matt>
-            foreach (XmlNode Condition in Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + i + "/Conditions").ChildNodes)
+            foreach (XmlNode Condition in Conversation.SelectSingleNode(ConditionNodePath + "/Conditions").ChildNodes)
             {
                 //No Conditions
                 if (Condition.Name == "None")
@@ -82,90 +76,78 @@ public class ConversationManager {
                     case "Relationship": //Relationship Requirment
 
                         string CurrentPlayer = GameObject.FindWithTag("Player").name;
-                       CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing Player in Game object name. ex: Player Josh -> Josh
+                        CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
 
                         foreach (XmlNode Person in Condition.ChildNodes)
                         {
                             //if Condition does not meet min Relationship
-                            if (!(int.Parse(Save.SelectSingleNode("Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) >= int.Parse(Person.InnerText)))
+                            if (!(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) >= int.Parse(Person.InnerText)))
                             {
-                                ChoiceVaild = false;
+                                ConditionsVaild = false;
                             }
                         }
 
                         break;
 
-                    case "InScene": //Character in Scene Requirment
+                    case "InScene": //Character in Scene Requirment check at In Scene Requirments.
 
                         foreach (XmlNode Person in Condition.ChildNodes)
                         {
                             //If Character does not exist in Scene.
                             if (!((GameObject.Find("AI " + Person.Name) != null) == bool.Parse(Person.InnerText)))
                             {
-                                ChoiceVaild = false;
+                                ConditionsVaild = false;
                                 break;
                             }
-
-
                         }
 
                         break;
-
                 }
                 #endregion
 
-                if (!ChoiceVaild)
-                {
-                    if (i == 1)
-                        ChoiceOneVaild = false;
-                    else if (i == 2)
-                        ChoiceTwoVaild = false;
-
-                    ChoiceVaild = true; //rest ChoiceVaild for second Choice
-                    break;
-                }
             }
 
         }
-
-        if(ChoiceOneVaild || ChoiceTwoVaild)
-        {
-            //Display Choices if either are true
-            DisplayChoices(ChoiceOneVaild, ChoiceTwoVaild);
-        }
-        else
-        {
-            //if none are true process next dialogue.Maybe? Idk?
-        }
-
+	
     }
 
 
     public void ProcessDialogue()
     {
+		//Show the Dialogue.
+		DialogueUI.enabled = true;
+
         //Increaces DialogueLevel for next piece of Dialogue.
         DialogueLevel++;
-        
+
         //Still more Dialogue.
         if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode("initialDialogue/DialogueCount").InnerText))
         {
             //prints Dialogue.
             DialogueUI.text = Conversation.SelectSingleNode("initialDialogue").ChildNodes[DialogueLevel].InnerText;
         }
-        else if (DialogueLevel > int.Parse(Conversation.SelectSingleNode("initialDialogue/DialogueCount").InnerText))
+		//Last Dialogue has been shown and Choices will now be shown.
+        else if (DialogueLevel == int.Parse(Conversation.SelectSingleNode("initialDialogue/DialogueCount").InnerText) + 1)
         {
             ConversationLevel++;
-            VaildateChoices(ConversationLevel);
+            DisplayChoices();
         }
 
     }
 
-    public void DisplayChoices(bool ChoiceVaild1,bool ChoiceVaild2)
+    public void DisplayChoices()
     {
+		bool Choice1Vaild = VaildateCondtions();
+		
         if(ChoiceVaild1 || ChoiceVaild2)
         {
-            Choice1UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Text").InnerText;
-            Choice2UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice2/Text").InnerText;
+		   
+		   Choice1UI.SetActive(true);
+		   Choice2UI.SetActive(true);
+           Choice1UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Text").InnerText;
+           Choice2UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice2/Text").InnerText;
+		   
+
         } 
         
         
