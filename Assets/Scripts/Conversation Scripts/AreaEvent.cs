@@ -9,6 +9,10 @@ public class AreaEvent : MonoBehaviour {
     private ConversationManager ConversationInstance;
     private bool Active = false;
 
+    void Start()
+    {
+        ConversationInstance = new ConversationManager(EventCanvas);
+    }
 
 
     void OnTriggerEnter2D(Collider2D Other)
@@ -16,7 +20,6 @@ public class AreaEvent : MonoBehaviour {
         if(Other.tag == "Player")
         {
 
-            ConversationInstance = new ConversationManager(EventCanvas);
             Active = true;
 
             //Start specified Conversation (ID Number references Conversation file).

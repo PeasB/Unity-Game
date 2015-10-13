@@ -24,15 +24,15 @@
             <April>true</April>
           </InScene>
         </Conditions>
-	      <Text>"Protective - Come on guys cutt it out!"</Text>
+	      <Text>Protective - Come on guys cut it out!</Text>
 	      <Conquences>
 	        <AprilRelationship>15</AprilRelationship>
 	        <OliverRelationship>-15</OliverRelationship>
 	      </Conquences>
 	      <AdditionalDialogue>
-	        <Matt>"Come on guys cut it out! You know there is nothing between us."</Matt>
-	        <April>"Thank you Matt."</April>
-	        <Oliver>"Man it was just a joke."</Oliver>
+	        <Matt>Come on guys cut it out! You know there is nothing between us.</Matt>
+	        <April>Thank you Matt.</April>
+	        <Oliver>Man it was just a joke.</Oliver>
 	      </AdditionalDialogue>
 	      
 	    </Choice1>
@@ -46,15 +46,15 @@
             <April>true</April>
           </InScene>
         </Conditions>
-	      <Text>"Encourage - You know it!"</Text>
+	      <Text>Encourage - You know it!</Text>
 	      <Conquences>
 	        <AprilRelationship>-15</AprilRelationship>
 	        <OliverRelationship>15</OliverRelationship>
 	        <RoryRelationship>15</RoryRelationship>
 	      </Conquences>
 	      <AdditionalDialogue>
-	        <April>"Your a jerk Matt."</April>
-	        <Matt>"It was just a joke April. Chill...."</Matt>
+	        <April>Your a jerk Matt.</April>
+	        <Matt>It was just a joke April. Chill....</Matt>
 	      </AdditionalDialogue>
 	      
 	    </Choice2>

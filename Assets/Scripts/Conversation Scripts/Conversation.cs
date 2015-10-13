@@ -20,6 +20,8 @@ public class ConversationManager {
         Choice1UI = CanvasUI.transform.FindChild("ChoiceUI 1").gameObject.GetComponent<Button>();
         Choice2UI = CanvasUI.transform.FindChild("ChoiceUI 2").gameObject.GetComponent<Button>();
         DialogueUI = CanvasUI.transform.FindChild("DialogueUI").gameObject.GetComponent<Text>();
+        Choice2UI.enabled = false;
+        DialogueUI.enabled = false;
     }
 
 
@@ -47,8 +49,8 @@ public class ConversationManager {
         //show First line of Dialogue.
         ProcessDialogue();
 
-        //Show the Canvas.
-        DialogueUI.GetComponentInParent<Canvas>().enabled = true;
+        //Show the Dialogue.
+        DialogueUI.enabled = true;
 
     }
 
@@ -60,11 +62,12 @@ public class ConversationManager {
         Save.Load("Assets\\Scripts\\SaveGame.xml");
         bool ChoiceVaild = true;
         bool ChoiceOneVaild = true;
-        bool ChoiceTwoVaild = false;
+        bool ChoiceTwoVaild = true;
 
       
         for (int i = 1; i <= 2; i++)
         {
+            #region Conditions
             //Condition Is Condition List ex: All Relationship Conditions are under Condition
             //Example List: For Relationship Condition <Kate>100</Kate> <Matt>50</Matt>
             foreach (XmlNode Condition in Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + i + "/Conditions").ChildNodes)
@@ -72,7 +75,7 @@ public class ConversationManager {
                 //No Conditions
                 if (Condition.Name == "None")
                     break;
-                #region Condition Checks
+                
                 //Different Condition Checks
                 switch (Condition.Name)
                 {
@@ -97,7 +100,7 @@ public class ConversationManager {
                         foreach (XmlNode Person in Condition.ChildNodes)
                         {
                             //If Character does not exist in Scene.
-                            if (!((GameObject.Find("Ai " + Person.Name) != null) == bool.Parse(Person.InnerText)))
+                            if (!((GameObject.Find("AI " + Person.Name) != null) == bool.Parse(Person.InnerText)))
                             {
                                 ChoiceVaild = false;
                                 break;
@@ -118,31 +121,22 @@ public class ConversationManager {
                     else if (i == 2)
                         ChoiceTwoVaild = false;
 
+                    ChoiceVaild = true; //rest ChoiceVaild for second Choice
                     break;
                 }
             }
 
         }
 
-        #region Choice Display Logic
-        if (ChoiceOneVaild && ChoiceTwoVaild)
+        if(ChoiceOneVaild || ChoiceTwoVaild)
         {
-            //Diplay both choices
-        }
-        else if(ChoiceOneVaild && !ChoiceTwoVaild)
-        {
-            //auto choose Choice 1
-        }
-        else if (ChoiceTwoVaild && !ChoiceOneVaild)
-        {
-            //auto choose Choice 2
+            //Display Choices if either are true
+            DisplayChoices(ChoiceOneVaild, ChoiceTwoVaild);
         }
         else
         {
-            //Move on with out choice
+            //if none are true process next dialogue.Maybe? Idk?
         }
-
-        #endregion
 
     }
 
@@ -164,9 +158,18 @@ public class ConversationManager {
             VaildateChoices(ConversationLevel);
         }
 
-
-
     }
 
-
+    public void DisplayChoices(bool ChoiceVaild1,bool ChoiceVaild2)
+    {
+        if(ChoiceVaild1 || ChoiceVaild2)
+        {
+            Choice1UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Text").InnerText;
+            Choice2UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice2/Text").InnerText;
+        } 
+        
+        
+        
+         
+    }
 }
