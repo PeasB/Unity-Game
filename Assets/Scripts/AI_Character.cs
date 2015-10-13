@@ -8,7 +8,7 @@ public class AI_Character : MonoBehaviour {
 	public int WalkSpeed;
     CircleCollider2D CircleCollition;
 
-    AI_Action Action = AI_Action.FollowPlayer;
+    public AI_Action Action = AI_Action.StationaryWithDir;
 
     //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
     //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
@@ -81,7 +81,7 @@ public class AI_Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //Var for x and y
+        //Var for AI x and y
         float XMove = 0;
         float YMove = 0;
                 
@@ -100,6 +100,33 @@ public class AI_Character : MonoBehaviour {
             #region Stationary With Direction
 
             Body.isKinematic = true;
+
+            if (Random.Range(0, 150) == 69) //Choose random number from 1 - 100. If the number is 69, change directions
+            {
+                int DirectionRange = Random.Range(0, 4); //Randomly choose a direction: 0 is down, 1 is right, 2 is up, 3 is left
+                
+                if (DirectionRange == 0) //Look up AI!
+                {
+                    Anim.SetInteger("Direction", 0);
+                }
+                else if (DirectionRange == 1) //Look right AI!
+                {
+                    Anim.SetInteger("Direction", 1);
+                }
+                else if (DirectionRange == 2) //Look down AI!
+                {
+                    Anim.SetInteger("Direction", 2);
+                }
+                else if (DirectionRange == 3) //Look left AI!
+                {
+                    Anim.SetInteger("Direction", 3);
+                }
+
+                //Execute Direction
+                PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);
+
+            }
+            
 
             #endregion
         }

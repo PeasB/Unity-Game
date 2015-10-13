@@ -13,22 +13,22 @@ public class PlayerMovement : MonoBehaviour {
         //Animation of Movement
         if (XMove != 0 || YMove != 0)
         {
-            if (XMove < 0)
+            if (XMove < 0) //Left
             {
                 Anim.SetInteger("Direction", 3);
                 Anim.SetBool("Moving", true);
             }
-            else if (XMove > 0)
+            else if (XMove > 0) //Right
             {
                 Anim.SetInteger("Direction", 1);
                 Anim.SetBool("Moving", true);
             }
-            else if (YMove > 0)
+            else if (YMove > 0) //Up
             {
                 Anim.SetInteger("Direction", 2);
                 Anim.SetBool("Moving", true);
             }
-            else if (YMove < 0)
+            else if (YMove < 0) //Down
             {
                 Anim.SetInteger("Direction", 0);
                 Anim.SetBool("Moving", true);
