@@ -7,8 +7,11 @@ public class AI_Character : MonoBehaviour {
 	Animator Anim;
 	public int WalkSpeed;
     CircleCollider2D CircleCollition;
-
-    public AI_Action Action = AI_Action.StationaryWithDir;
+    public AI_Action Action;
+    public int EventType = 0;
+    int PreviousEventType = 0; //Checks if the EventType has made a change, if so, create new Original X and Y points
+    int Original_X = 0;
+    int Original_Y = 0;
 
     //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
     //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
@@ -81,12 +84,9 @@ public class AI_Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //Var for AI x and y
-        float XMove = 0;
-        float YMove = 0;
-                
+        //var
         CircleCollition.enabled = true;
-        
+
         if (Action == AI_Action.Stationary) //Stay at complete rest
         {
             #region Completely Stationary
@@ -120,11 +120,7 @@ public class AI_Character : MonoBehaviour {
                 else if (DirectionRange == 3) //Look left AI!
                 {
                     Anim.SetInteger("Direction", 3);
-                }
-
-                //Execute Direction
-                PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);
-
+                }                
             }
             
 
@@ -134,6 +130,10 @@ public class AI_Character : MonoBehaviour {
         {
             #region Follow Player
 
+            //Var for AI x and y
+            float XMove = 0;
+            float YMove = 0;
+            
             Body.isKinematic = false;
 
             if (FindPath() > 25) //If AI far away from Player, go to the player
@@ -156,6 +156,9 @@ public class AI_Character : MonoBehaviour {
                 CircleCollition.enabled = false;
             }
 
+            //Execute Movement
+            PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);
+
             #endregion
         }
         else if (Action == AI_Action.Event) //Do an event
@@ -164,11 +167,25 @@ public class AI_Character : MonoBehaviour {
 
             Body.isKinematic = false;
 
+            if (EventType == PreviousEventType) //Continue on with event
+            {
+
+                AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y);
+
+            }
+            else //Start a new event
+            {
+                Original_X = (int)Body.position.x;
+                Original_Y = (int)Body.position.y;
+
+                PreviousEventType = EventType;
+
+                AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y);
+            }
+
             #endregion
         }
 
-        //Execute Movement
-        PlayerMovement.PlayerMove(Body, WalkSpeed, Anim, XMove, YMove);
-
+   
     }
 }
