@@ -12,6 +12,7 @@ public class AI_Character : MonoBehaviour {
     int PreviousEventType = 0; //Checks if the EventType has made a change, if so, create new Original X and Y points
     int Original_X = 0;
     int Original_Y = 0;
+    int EventStepCase = 0; //The step case for an event. 
 
     //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
     //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
@@ -165,22 +166,21 @@ public class AI_Character : MonoBehaviour {
         {
             #region Preform Event
 
-            Body.isKinematic = false;
+            Body.isKinematic = true;
 
             if (EventType == PreviousEventType) //Continue on with event
             {
-
-                AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y);
-
+                EventStepCase = AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase); //Execute Event while retrieving the CaseStep
             }
             else //Start a new event
             {
                 Original_X = (int)Body.position.x;
                 Original_Y = (int)Body.position.y;
+                EventStepCase = 0;
 
                 PreviousEventType = EventType;
 
-                AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y);
+                AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase);
             }
 
             #endregion

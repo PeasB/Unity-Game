@@ -2,9 +2,9 @@
 
 public class AI_Events : MonoBehaviour {
 
+    
 
-
-    public static void PreformEvent (Rigidbody2D Body, int Speed, Animator Anim, int EventNumber, int X_Original, int Y_Original)
+    public static int PreformEvent (Rigidbody2D Body, int Speed, Animator Anim, int EventNumber, int X_Original, int Y_Original, int CaseStep)
     {
         //Var for AI x and y
         float XMove = 0;
@@ -15,26 +15,75 @@ public class AI_Events : MonoBehaviour {
         {
             
         }
-        else if (EventNumber == 1) //Walking up and down (down, up)
+        else if (EventNumber == 1) //Walking up and down (down, up). Has 2 cases
         {
-            //Add cases
-
-            //if (Body.position.y > Y_Original) //Down
-            //{
-            //    YMove = -1;
-            //}
-            //else if (Body.position.y < Y_Original - 60) // Up
-            //{
-            //    YMove = 1;
-            //}            
+            #region Event 1: Up and Down
+            if (CaseStep == 0) //Case going down
+            {
+                if (Body.position.y > Y_Original - 60) //Down
+                {
+                    YMove = -1;
+                }
+                else
+                    CaseStep = 1; //Switch Cases
+            }
+            else if (CaseStep == 1) //Case going up
+            {
+                if (Body.position.y < Y_Original) // Up
+                {
+                    YMove = 1;
+                }
+                else
+                    CaseStep = 0; //Switch Cases
+            }
+            #endregion
         }
-        else if (EventNumber == 2) //Walking in a L shape (left, up, down, right)
+        else if (EventNumber == 2) //Walking in a L shape (left, up, down, right). Has 4 cases
         {
+            #region Event 2: L-Shape
 
+            if (CaseStep == 0) //Case going down
+            {
+                if (Body.position.y > Y_Original - 60) //Down
+                {
+                    YMove = -1;
+                }
+                else
+                    CaseStep = 1; //Swicth Cases
+            }
+            else if (CaseStep == 1) //Case going left
+            {
+                if (Body.position.x < X_Original + 30) //Left
+                {
+                    XMove = 1;
+                }
+                else
+                    CaseStep = 2; //Swicth Cases
+            }
+            else if (CaseStep == 2) //Case going right
+            {
+                if (Body.position.x > X_Original) //Left
+                {
+                    XMove = -1;
+                }
+                else
+                    CaseStep = 3; //Swicth Cases
+            }
+            else if (CaseStep == 3) //Case going up
+            {
+                if (Body.position.y < Y_Original) // Up
+                {
+                    YMove = 1;
+                }
+                else
+                    CaseStep = 0; //Switch Cases
+            }
+
+            #endregion
         }
         else if (EventNumber == 3) //Walking in a square (right, down, left, up)
         {
-
+            
         }
         else if (EventNumber == 4)
         {
@@ -53,6 +102,8 @@ public class AI_Events : MonoBehaviour {
 
         //Execute Movement
         PlayerMovement.PlayerMove(Body, Speed, Anim, XMove, YMove);
+
+        return CaseStep;
 
     }
 
