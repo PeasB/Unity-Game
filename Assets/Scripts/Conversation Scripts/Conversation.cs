@@ -9,11 +9,16 @@ public class ConversationManager {
 	private GameObject Choice1UI;
 	private GameObject Choice2UI;
     private Text DialogueUI;
-    private int ID;
-    private int DialogueLevel;
+    private int DialogueLevel; //Only used In Dialogue Process.
     private int ConversationLevel;
     private XmlNode Conversation;
-	public bool IsActive = false;
+
+
+    //Publics (used to mainly to tell states.
+    public bool IsActive = false;
+    public bool ChoicesIsActive = false;
+    public int ID;
+    public string DialogueLocation;
 
     public ConversationManager(Canvas CanvasUI)
     {
@@ -26,42 +31,42 @@ public class ConversationManager {
     }
 
 
-    public void StartConversation(int SceneID, int ConvoID) //Start Conversation
+    public void StartConversation(int SceneID, int ConvoID) //Start Conversation (Setup Method)
     {
 
-        this.ConvoID = ConvoID; //Load ID property
+        ID = ConvoID; //Load ID property
+        IsActive = true;
 
         //Load Scene Conversation XML
         XmlDocument Doc = new XmlDocument();
         Doc.Load("Assets/Conversation Files/Scene" + SceneID + ".xml");
 
-        //Find Correct Conversation in Scene.
+        //Find Correct Conversation in Scene XML file.
         foreach(XmlNode Node in Doc.SelectNodes("Conversations/Conversation"))
         {
-
-            if(Node.SelectSingleNode("ID").InnerText == this.ConvoID.ToString())
+            if(Node.SelectSingleNode("ID").InnerText == ID.ToString())
             {
-                this.Conversation = Node;
+                Conversation = Node;
                 break;
-            }
-           
+            }    
         }
 
         //show First line of Dialogue.
+        DialogueLocation = "initialDialogue"; //Locaion
         ProcessDialogue();
 
     }
 
-	//Checks if Conditions in Path Location are vaild and returns true for vaild and false for not vaild.
-	private bool VaildateCondition(string ConditionNodePath)
+	//Checks if Conditions in Path Location are valid and returns true for valid and false for not valid.
+	private bool ValidateConditions(string ConditionNodePath)
 	{
 
         //Load Save and Create Variables
         XmlDocument Save = new XmlDocument();
         Save.Load("Assets/Scripts/SaveGame.xml");
-		bool ConditionsVaild = true;	
+		bool ConditionsValid = true;	
 
-            #region Conditions
+            #region  All Conditions
             //Condition Is Condition List ex: All Relationship Conditions are under Condition
             //Example List: For Relationship Condition <Kate>100</Kate> <Matt>50</Matt>
             foreach (XmlNode Condition in Conversation.SelectSingleNode(ConditionNodePath + "/Conditions").ChildNodes)
@@ -73,7 +78,8 @@ public class ConversationManager {
                 //Different Condition Checks
                 switch (Condition.Name)
                 {
-                    case "Relationship": //Relationship Requirment
+                #region Relationship Conditions
+                case "Relationship": //Relationship Requirment
 
                         string CurrentPlayer = GameObject.FindWithTag("Player").name;
                         CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
@@ -83,32 +89,33 @@ public class ConversationManager {
                             //if Condition does not meet min Relationship
                             if (!(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) >= int.Parse(Person.InnerText)))
                             {
-                                ConditionsVaild = false;
+                                ConditionsValid = false;
                             }
                         }
 
                         break;
-
-                    case "InScene": //Character in Scene Requirment check at In Scene Requirments.
+                #endregion
+                #region In Scene Conditions
+                case "InScene": //Character in Scene Requirment check at In Scene Requirments.
 
                         foreach (XmlNode Person in Condition.ChildNodes)
                         {
                             //If Character does not exist in Scene.
                             if (!((GameObject.Find("AI " + Person.Name) != null) == bool.Parse(Person.InnerText)))
                             {
-                                ConditionsVaild = false;
+                                ConditionsValid = false;
                                 break;
                             }
                         }
 
                         break;
-                }
                 #endregion
-
             }
-
         }
-	
+
+        #endregion
+
+        return ConditionsValid;
     }
 
 
@@ -121,37 +128,84 @@ public class ConversationManager {
         DialogueLevel++;
 
         //Still more Dialogue.
-        if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode("initialDialogue/DialogueCount").InnerText))
+        if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
         {
             //prints Dialogue.
-            DialogueUI.text = Conversation.SelectSingleNode("initialDialogue").ChildNodes[DialogueLevel].InnerText;
+            DialogueUI.text = Conversation.SelectSingleNode(DialogueLocation).ChildNodes[DialogueLevel].InnerText;
         }
 		//Last Dialogue has been shown and Choices will now be shown.
-        else if (DialogueLevel == int.Parse(Conversation.SelectSingleNode("initialDialogue/DialogueCount").InnerText) + 1)
+        else if (DialogueLevel == int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText) + 1)
         {
-            ConversationLevel++;
-            DisplayChoices();
+            if(!ShouldEndConversation())
+                DisplayChoices(ConversationLevel);
         }
 
     }
 
-    public void DisplayChoices()
+    public void DisplayChoices(int ConversationLevel)
     {
-		bool Choice1Vaild = VaildateCondtions();
-		
-        if(ChoiceVaild1 || ChoiceVaild2)
+        
+        bool Choice1Valid = ValidateConditions("Level" + ConversationLevel + "/Choice1");
+        bool Choice2Valid = ValidateConditions("Level" + ConversationLevel + "/Choice2");
+
+        if (Choice1Valid || Choice2Valid)
         {
-		   
-		   Choice1UI.SetActive(true);
+           ChoicesIsActive = true;
+           Choice1UI.SetActive(true);
 		   Choice2UI.SetActive(true);
            Choice1UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Text").InnerText;
            Choice2UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice2/Text").InnerText;
 		   
 
         } 
-        
-        
-        
-         
+ 
+    }
+
+
+    public void ChooseChoice(int ChoiceNumber = 2)
+    {
+        //Choice Number can be one or two.
+        //Conquences Happen here.
+
+        XmlDocument Save = new XmlDocument();
+        Save.Load("Assets/Scripts/SaveGame.xml");
+
+        //Path Conquences
+        foreach (XmlNode Situation in Save.SelectSingleNode("SaveData/StoryPaths"))
+        {
+            if (int.Parse(Situation.SelectSingleNode("ID").InnerText) == ID)
+            {
+                Situation.SelectSingleNode("Outcome").InnerText = ChoiceNumber.ToString();
+            }
+        }
+
+        //hide buttons after choice
+        Choice1UI.SetActive(false);
+        Choice2UI.SetActive(false);
+        ChoicesIsActive = false;
+
+        //Process new Dialogue
+        DialogueLevel = 0;
+        DialogueLocation = "Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/AdditionalDialogue";
+        ProcessDialogue();
+
+
+
+    }
+
+
+    private bool ShouldEndConversation()
+    {
+        ConversationLevel++;
+
+        foreach (XmlNode ChildNode in Conversation.ChildNodes)
+        {
+            if(ChildNode.Name == "Level" + ConversationLevel)
+            {
+                return false;
+            }
+        }
+        DialogueUI.enabled = false;
+        return true;
     }
 }

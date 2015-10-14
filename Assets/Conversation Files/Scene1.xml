@@ -26,13 +26,19 @@
         </Conditions>
 	      <Text>Protective - Come on guys cut it out!</Text>
 	      <Conquences>
-	        <AprilRelationship>15</AprilRelationship>
-	        <OliverRelationship>-15</OliverRelationship>
+          <Relationship>
+            <April>15</April>
+            <Oliver>-15</Oliver>
+          </Relationship>
+          <StoryPath>
+            <ScenePath></ScenePath>
+          </StoryPath>
 	      </Conquences>
 	      <AdditionalDialogue>
-	        <Matt>Come on guys cut it out! You know there is nothing between us.</Matt>
-	        <April>Thank you Matt.</April>
-	        <Oliver>Man it was just a joke.</Oliver>
+          <DialogueCount>3</DialogueCount>
+	        <Dialogue>Matt: Come on guys cut it out! You know there is nothing between us.</Dialogue>
+	        <Dialogue>April: Thank you Matt.</Dialogue>
+	        <Dialogue>Ethan: Man it was just a joke.</Dialogue>
 	      </AdditionalDialogue>
 	      
 	    </Choice1>
@@ -53,9 +59,10 @@
 	        <RoryRelationship>15</RoryRelationship>
 	      </Conquences>
 	      <AdditionalDialogue>
-	        <April>Your a jerk Matt.</April>
-	        <Matt>It was just a joke April. Chill....</Matt>
-	      </AdditionalDialogue>
+          <DialogueCount>2</DialogueCount>
+          <Dialogue>April: Your a jerk Matt.</Dialogue>
+          <Dialogue>Matt: It was just a joke April. Chill....</Dialogue>
+        </AdditionalDialogue>
 	      
 	    </Choice2>
 

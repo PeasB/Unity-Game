@@ -44,8 +44,33 @@
       <Kate>100</Kate>
       <April>100</April>
     </Ethan>
+    
   </Relationships>
 
+  <StoryPaths>
+    
+    <Situation>
+      <ID>1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>4</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+
+  </StoryPaths>
+  
+  
+  
+  
   <Inventory>
     <Item></Item>
     <Item></Item>

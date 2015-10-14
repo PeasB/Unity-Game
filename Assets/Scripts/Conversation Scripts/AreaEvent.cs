@@ -20,6 +20,7 @@ public class AreaEvent : MonoBehaviour {
         {
             //Start specified Conversation (ID Number references Conversation file).
             ConversationInstance.StartConversation(SceneNum,ConversationID);
+            ConversationInstance.DialogueLocation = "initialDialogue"; //Setting Dialogue Location
         }
     }
 
@@ -31,9 +32,16 @@ public class AreaEvent : MonoBehaviour {
             //if pressed show next Dialogue.
             if(Input.GetButtonDown("Button 0"))
             {
-              ConversationInstance.ProcessDialogue();
+                ConversationInstance.ProcessDialogue();
             }
-
+            else if(Input.GetButtonDown("Button 2") && ConversationInstance.ChoicesIsActive) //X Button
+            {
+                ConversationInstance.ChooseChoice(1);
+            }
+            else if(Input.GetButtonDown("Button 1") && ConversationInstance.ChoicesIsActive)  //B Button
+            {
+                ConversationInstance.ChooseChoice(2);
+            }
             
         }
 
