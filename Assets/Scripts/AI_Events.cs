@@ -51,16 +51,16 @@ public class AI_Events : MonoBehaviour {
                 else
                     CaseStep = 1; //Swicth Cases
             }
-            else if (CaseStep == 1) //Case going left
+            else if (CaseStep == 1) //Case going right
             {
-                if (Body.position.x < X_Original + 30) //Left
+                if (Body.position.x < X_Original + 30) //Right
                 {
                     XMove = 1;
                 }
                 else
                     CaseStep = 2; //Swicth Cases
             }
-            else if (CaseStep == 2) //Case going right
+            else if (CaseStep == 2) //Case going left
             {
                 if (Body.position.x > X_Original) //Left
                 {
@@ -81,9 +81,48 @@ public class AI_Events : MonoBehaviour {
 
             #endregion
         }
-        else if (EventNumber == 3) //Walking in a square (right, down, left, up)
+        else if (EventNumber == 3) //Walking in a square Clock wise (right, down, left, up). Has 4 cases
         {
+            #region Event 3: Square
+
+            if (CaseStep == 0) //Case going right
+            {
+                if (Body.position.x < X_Original + 30) //Right
+                {
+                    XMove = 1;
+                }
+                else
+                    CaseStep = 1;
+            }
+            else if (CaseStep == 1) //Case going down
+            {
+                if (Body.position.y > Y_Original - 30) //Down
+                {
+                    YMove = -1;
+                }
+                else
+                    CaseStep = 2;
+            }
+            else if (CaseStep == 2) //Case going left
+            {
+                if (Body.position.x > X_Original) //Left
+                {
+                    XMove = -1;
+                }
+                else
+                    CaseStep = 3;
+            }
+            else if (CaseStep == 3) //Case going up
+            {
+                if (Body.position.y < Y_Original) // Up
+                {
+                    YMove = 1;
+                }
+                else
+                    CaseStep = 0;
+            }
             
+            #endregion
         }
         else if (EventNumber == 4)
         {
