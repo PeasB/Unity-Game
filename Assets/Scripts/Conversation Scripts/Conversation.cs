@@ -19,6 +19,7 @@ public class ConversationManager {
     public bool ChoicesIsActive = false;
     public int ID;
     public string DialogueLocation;
+	public bool HasRun;
 
     public ConversationManager(Canvas CanvasUI)
     {
@@ -36,6 +37,8 @@ public class ConversationManager {
 
         ID = ConvoID; //Load ID property
         IsActive = true;
+		ConversationLevel = 1;
+		DialogueLevel = 0;
 
         //Load Scene Conversation XML
         XmlDocument Doc = new XmlDocument();
@@ -52,7 +55,7 @@ public class ConversationManager {
         }
 
         //show First line of Dialogue.
-        DialogueLocation = "initialDialogue"; //Locaion
+        DialogueLocation = "Level1/initialDialogue"; //Locaion
         ProcessDialogue();
 
     }
@@ -121,25 +124,34 @@ public class ConversationManager {
 
     public void ProcessDialogue()
     {
-		//Show the Dialogue.
-		DialogueUI.enabled = true;
+		if(!ChoicesIsActive)
+		{
+		
+	        //Increaces DialogueLevel for next piece of Dialogue.
+	        DialogueLevel++;
 
-        //Increaces DialogueLevel for next piece of Dialogue.
-        DialogueLevel++;
+	        //Still more Dialogue.
+	        if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
+	        {
+				//Show the Dialogue.
+				DialogueUI.enabled = true;
 
-        //Still more Dialogue.
-        if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
-        {
-            //prints Dialogue.
-            DialogueUI.text = Conversation.SelectSingleNode(DialogueLocation).ChildNodes[DialogueLevel].InnerText;
-        }
-		//Last Dialogue has been shown and Choices will now be shown.
-        else if (DialogueLevel == int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText) + 1)
-        {
-            if(!ShouldEndConversation())
-                DisplayChoices(ConversationLevel);
-        }
+	            //prints Dialogue.
+	            DialogueUI.text = Conversation.SelectSingleNode(DialogueLocation).ChildNodes[DialogueLevel].InnerText;
 
+	        }
+			//Last Dialogue has been shown and Choices will now be shown.
+	        else if (DialogueLevel >= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
+	        {
+				if(DialogueLevel >= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
+				{
+					if(DialogueLocation == "Level" + ConversationLevel + "/initialDialogue")
+						DisplayChoices(ConversationLevel);       
+					else
+						ShouldEndConversation();
+				}
+	        }
+		}
     }
 
     public void DisplayChoices(int ConversationLevel)
@@ -184,7 +196,7 @@ public class ConversationManager {
         Choice2UI.SetActive(false);
         ChoicesIsActive = false;
 
-        //Process new Dialogue
+        //Process Dialogue Afterwards
         DialogueLevel = 0;
         DialogueLocation = "Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/AdditionalDialogue";
         ProcessDialogue();
@@ -200,11 +212,16 @@ public class ConversationManager {
 
         foreach (XmlNode ChildNode in Conversation.ChildNodes)
         {
-            if(ChildNode.Name == "Level" + ConversationLevel)
+            if(ChildNode.Name == "Level" + ConversationLevel) //If another Level exists then start the next level.
             {
+				DialogueLocation = "Level" + ConversationLevel + "/initialDialogue";
+				DialogueLevel = 0;
                 return false;
             }
         }
+
+		HasRun = true;
+		IsActive = false;
         DialogueUI.enabled = false;
         return true;
     }

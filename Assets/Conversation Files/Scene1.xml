@@ -5,15 +5,16 @@
 	<Conversation>
 
 	  <ID>1</ID>
+	  	  
+	  <Level1>
 	  
 	  <initialDialogue>
-      <DialogueCount>3</DialogueCount>
+        <DialogueCount>3</DialogueCount>
 	    <Dialogue>Kate: You son of a...</Dialogue>
 	    <Dialogue>April: Ok! Enough you two! I feel like a parent</Dialogue>
 	    <Dialogue>Ethan: Oh who's the father, Matt?</Dialogue>    
 	  </initialDialogue>
 	  
-	  <Level1>
 	    <Choice1>
         
         <Conditions>
@@ -69,57 +70,67 @@
 
 
 	  </Level1>
+	  <Level2>
+	  
+		  <initialDialogue>
+	        <DialogueCount>3</DialogueCount>
+		    <Dialogue>Myles: This Conversation System is so cool!</Dialogue>
+		    <Dialogue>Adam: I know right!</Dialogue>
+		    <Dialogue>Ryan: Ya very cool now lets play some melee!</Dialogue>    
+		  </initialDialogue>
+		  
+		    <Choice1>
+	        
+	        <Conditions>
+	          <Relationship>
+	            <April>100</April> 
+	          </Relationship>
+	          <InScene>
+	            <April>true</April>
+	          </InScene>
+	        </Conditions>
+		      <Text>Agree - Alright Im going to beat you!</Text>
+		      <Conquences>
+	          <Relationship>
+	            <April>15</April>
+	            <Oliver>-15</Oliver>
+	          </Relationship>
+	          <StoryPath>
+	            <ScenePath></ScenePath>
+	          </StoryPath>
+		      </Conquences>
+		      <AdditionalDialogue>
+	          	<DialogueCount>1</DialogueCount>
+		        <Dialogue>Adam: Ya right Im going to lose!</Dialogue>
+		      </AdditionalDialogue>
+		      
+		    </Choice1>
+		    <Choice2>
+
+	        <Conditions>
+	          <Relationship>
+	            <April>100</April>
+	          </Relationship>
+	          <InScene>
+	            <April>true</April>
+	          </InScene>
+	        </Conditions>
+		      <Text>Disagree - Your going to destory me!</Text>
+		      <Conquences>
+		        <AprilRelationship>-15</AprilRelationship>
+		        <OliverRelationship>15</OliverRelationship>
+		        <RoryRelationship>15</RoryRelationship>
+		      </Conquences>
+		      <AdditionalDialogue>
+	          	<DialogueCount>2</DialogueCount>
+	         	<Dialogue>Adam: You're going to destory me.... Myles you play.</Dialogue>
+	        	<Dialogue>Myles: Alright!</Dialogue>
+	        </AdditionalDialogue>
+		      
+		    </Choice2>
+	  </Level2>
 
 
 	 </Conversation>
-   <Conversation>
-
-    <ID>1</ID>
-
-    <initialDialogue>
-      <DialogueCount>3</DialogueCount>
-      <Dialogue>Kate: You son of a...</Dialogue>
-      <Dialogue>April: Ok! Enough you two! I feel like a parent</Dialogue>
-      <Dialogue>Oh who's the father, Matt?</Dialogue>
-    </initialDialogue>
-
-    <Level1>
-      <Choice1>
-
-        <Text>"Protective - Come on guys cutt it out!"</Text>
-        <Conquences>
-          <AprilRelationship>15</AprilRelationship>
-          <OliverRelationship>-15</OliverRelationship>
-        </Conquences>
-        <AdditionalDialogue>
-          <Matt>"Come on guys cut it out! You know there is nothing between us."</Matt>
-          <April>"Thank you Matt."</April>
-          <Oliver>"Man it was just a joke."</Oliver>
-        </AdditionalDialogue>
-
-      </Choice1>
-      <Choice2>
-
-        <Text>"Encourage - You know it!"</Text>
-        <Conquences>
-          <AprilRelationship>-15</AprilRelationship>
-          <OliverRelationship>15</OliverRelationship>
-          <RoryRelationship>15</RoryRelationship>
-        </Conquences>
-        <AdditionalDialogue>
-          <April>"Your a jerk Matt."</April>
-          <Matt>"It was just a joke April. Chill...."</Matt>
-        </AdditionalDialogue>
-
-      </Choice2>
-
-
-
-    </Level1>
-
-
-
-
-  </Conversation>
   
 </Conversations>

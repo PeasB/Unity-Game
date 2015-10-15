@@ -6,6 +6,7 @@ public class AreaEvent : MonoBehaviour {
     public int ConversationID;
 	public int SceneNum;
     public Canvas EventCanvas;
+	public bool CanReactivate;
     private ConversationManager ConversationInstance;
     
     void Start()
@@ -14,13 +15,16 @@ public class AreaEvent : MonoBehaviour {
     }
 
 
-    void OnTriggerEnter2D(Collider2D Other)
+	void OnTriggerEnter2D(Collider2D Other)
     {
-        if(Other.tag == "Player")
+		if(Other.tag == "Player")
         {
-            //Start specified Conversation (ID Number references Conversation file).
-            ConversationInstance.StartConversation(SceneNum,ConversationID);
-            ConversationInstance.DialogueLocation = "initialDialogue"; //Setting Dialogue Location
+			//If the Conversation Hasnt run and Can be reactivated then Run the Conversation.
+			if((ConversationInstance.HasRun && CanReactivate) || !ConversationInstance.HasRun)
+			{
+            		//Start specified Conversation (ID Number references Conversation file).
+            		ConversationInstance.StartConversation(SceneNum,ConversationID);
+			}
         }
     }
 
