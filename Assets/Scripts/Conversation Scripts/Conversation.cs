@@ -139,17 +139,15 @@ public class ConversationManager {
 	            //prints Dialogue.
 	            DialogueUI.text = Conversation.SelectSingleNode(DialogueLocation).ChildNodes[DialogueLevel].InnerText;
 
-	        }
-			//Last Dialogue has been shown and Choices will now be shown.
-	        else if (DialogueLevel >= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
-	        {
-				if(DialogueLevel >= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
+
+				if(DialogueLevel == int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
 				{
 					if(DialogueLocation == "Level" + ConversationLevel + "/initialDialogue")
-						DisplayChoices(ConversationLevel);       
+						DisplayChoices(ConversationLevel);
 					else
 						ShouldEndConversation();
 				}
+
 	        }
 		}
     }
