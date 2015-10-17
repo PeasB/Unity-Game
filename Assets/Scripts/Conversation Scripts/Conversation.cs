@@ -61,58 +61,60 @@ public class ConversationManager {
     }
 
 	//Checks if Conditions in Path Location are valid and returns true for valid and false for not valid.
-	private bool ValidateConditions(string ConditionNodePath)
+	private bool ValidateConditions(XmlNode ConditionNode)
 	{
 
         //Load Save and Create Variables
         XmlDocument Save = new XmlDocument();
         Save.Load("Assets/Scripts/SaveGame.xml");
-		bool ConditionsValid = true;	
+		bool ConditionsValid = true;
 
-            #region  All Conditions
-            //Condition Is Condition List ex: All Relationship Conditions are under Condition
-            //Example List: For Relationship Condition <Kate>100</Kate> <Matt>50</Matt>
-            foreach (XmlNode Condition in Conversation.SelectSingleNode(ConditionNodePath + "/Conditions").ChildNodes)
+        #region  All Conditions
+
+
+        if (ConditionNode.InnerText == "None")
+            return true;
+
+        //Condition Is Condition List ex: All Relationship Conditions are under Condition
+        //Example List: For Relationship Condition <Kate>100</Kate> <Matt>50</Matt>
+        foreach (XmlNode Condition in ConditionNode.ChildNodes)
+        {
+
+            //Different Condition Checks
+            switch (Condition.Name)
             {
-                //No Conditions
-                if (Condition.Name == "None")
-                    break;
-                
-                //Different Condition Checks
-                switch (Condition.Name)
-                {
                 #region Relationship Conditions
                 case "Relationship": //Relationship Requirment
 
-                        string CurrentPlayer = GameObject.FindWithTag("Player").name;
-                        CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
+                    string CurrentPlayer = GameObject.FindWithTag("Player").name;
+                    CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
 
-                        foreach (XmlNode Person in Condition.ChildNodes)
+                    foreach (XmlNode Person in Condition.ChildNodes)
+                    {
+                        //if Condition does not meet min Relationship
+                        if (!(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) >= int.Parse(Person.InnerText)))
                         {
-                            //if Condition does not meet min Relationship
-                            if (!(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) >= int.Parse(Person.InnerText)))
-                            {
-                                ConditionsValid = false;
-                            }
+                            ConditionsValid = false;
                         }
+                    }
 
-                        break;
+                    break;
                 #endregion
                 #region In Scene Conditions
                 case "InScene": //Character in Scene Requirment check at In Scene Requirments.
 
-                        foreach (XmlNode Person in Condition.ChildNodes)
+                    foreach (XmlNode Person in Condition.ChildNodes)
+                    {
+                        //If Character does not exist in Scene.
+                        if (!((GameObject.Find("AI " + Person.Name) != null) == bool.Parse(Person.InnerText)))
                         {
-                            //If Character does not exist in Scene.
-                            if (!((GameObject.Find("AI " + Person.Name) != null) == bool.Parse(Person.InnerText)))
-                            {
-                                ConditionsValid = false;
-                                break;
-                            }
+                            ConditionsValid = false;
+                            break;
                         }
+                    }
 
-                        break;
-                #endregion
+                    break;
+                    #endregion
             }
         }
 
@@ -126,37 +128,46 @@ public class ConversationManager {
     {
 		if(!ChoicesIsActive)
 		{
-		
-	        //Increaces DialogueLevel for next piece of Dialogue.
-	        DialogueLevel++;
+            //If player is already on the last dialogue line and maybe should exit
+            if (DialogueLevel == int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
+                    ShouldEndConversation(); //Checks to see if there is another level of Dialogue.
 
-	        //Still more Dialogue.
-	        if(DialogueLevel <= int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
-	        {
-				//Show the Dialogue.
-				DialogueUI.enabled = true;
+            int i = 0;
+            while (0 < 100) //Safe measure to not loop forever. should not happen as not all dialogue
+            {
+                DialogueLevel++;
+                XmlNode DialogueNode = Conversation.SelectSingleNode(DialogueLocation).ChildNodes[DialogueLevel];
 
-	            //prints Dialogue.
-	            DialogueUI.text = Conversation.SelectSingleNode(DialogueLocation).ChildNodes[DialogueLevel].InnerText;
+                if (ValidateConditions(DialogueNode.SelectSingleNode("Conditions")))
+                {
+                    //Show the Dialogue.
+                    DialogueUI.enabled = true;
+                    //prints Dialogue.
+                    DialogueUI.text = DialogueNode.SelectSingleNode("Text").InnerText;
+                    break;
+                }
+
+                i++;
+
+            }
 
 
-				if(DialogueLevel == int.Parse(Conversation.SelectSingleNode(DialogueLocation + "/DialogueCount").InnerText))
-				{
-					if(DialogueLocation == "Level" + ConversationLevel + "/initialDialogue")
-						DisplayChoices(ConversationLevel);
-					else
-						ShouldEndConversation();
-				}
 
-	        }
-		}
+
+
+
+
+
+
+
+        }
     }
 
     public void DisplayChoices(int ConversationLevel)
     {
         
-        bool Choice1Valid = ValidateConditions("Level" + ConversationLevel + "/Choice1");
-        bool Choice2Valid = ValidateConditions("Level" + ConversationLevel + "/Choice2");
+        bool Choice1Valid = ValidateConditions(Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Conditions"));
+        bool Choice2Valid = ValidateConditions(Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Conditions"));
 
         if (Choice1Valid || Choice2Valid)
         {
