@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  
+  <ItemsList>
+    
+    <Item>
+      <ID>0</ID>
+      <Name>Wood</Name>
+      <Description></Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+    </Item>
+    
+    <Item>
+      <ID>1</ID>
+      <Name>Stick</Name>
+      <Description></Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+    </Item>
+
+    <Item>
+      <ID></ID>
+      <Name></Name>
+      <Description></Description>
+      <Craftable></Craftable>
+      <Stackable></Stackable>
+    </Item>
+
+  </ItemsList>
+
+      
+  
+  <Crafting>
+    
+    <Craft>
+      <ID></ID>
+      <ID></ID>
+      <NewID></NewID>
+    </Craft>
+    
+    <Craft>
+      <ID></ID>
+      <ID></ID>
+      <NewID></NewID>
+    </Craft>
+
+    
+    <Craft>
+      <ID></ID>
+      <ID></ID>
+      <ID></ID>
+      <NewID></NewID>
+    </Craft>
+    
+  </Crafting>
+
+</Items>
