@@ -10,8 +10,8 @@ public class AI_Events : MonoBehaviour {
         float XMove = 0;
         float YMove = 0;
         
-
-        if (EventNumber == 0) //Do nothing, lets the player push around the AI like a ragdoll
+        //Think about making this an Enumerator
+        if (EventNumber == 0) //Do nothing and stay still
         {
             
         }
@@ -83,7 +83,7 @@ public class AI_Events : MonoBehaviour {
         }
         else if (EventNumber == 3) //Walking in a square Clock wise (right, down, left, up). Has 4 cases
         {
-            #region Event 3: Square
+            #region Event 3: Square CW
 
             if (CaseStep == 0) //Case going right
             {
@@ -126,13 +126,72 @@ public class AI_Events : MonoBehaviour {
         }
         else if (EventNumber == 4)
         {
+            #region Event 4: Sqaure CCW
 
+            if (CaseStep == 0) //Case going Down
+            {
+                if (Body.position.y > Y_Original - 30) //Down
+                {
+                    YMove = -1;
+                }
+                else
+                    CaseStep = 1;
+            }
+            else if (CaseStep == 1) //Case going right
+            {                
+                if (Body.position.x < X_Original + 30) //Right
+                {
+                    XMove = 1;
+                }
+                else
+                    CaseStep = 2;
+            }
+            else if (CaseStep == 2) //Case going up
+            {
+                if (Body.position.y < Y_Original) // Up
+                {
+                    YMove = 1;
+                }
+                else
+                    CaseStep = 3;
+            }
+            else if (CaseStep == 3) //Case going left
+            {               
+                if (Body.position.x > X_Original) //Left
+                {
+                    XMove = -1;
+                }
+                else
+                    CaseStep = 0;
+            }
+
+            #endregion
         }
         else if (EventNumber == 5)
         {
+            #region Event 5: 
 
+            
+
+            #endregion
         }
         else if (EventNumber == 6)
+        {
+
+        }
+        else if (EventNumber == 7)
+        {
+
+        }
+        else if (EventNumber == 8)
+        {
+
+        }
+        else if (EventNumber == 9)
+        {
+
+        }
+        else if (EventNumber == 10)
         {
 
         }

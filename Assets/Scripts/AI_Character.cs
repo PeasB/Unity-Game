@@ -81,9 +81,32 @@ public class AI_Character : MonoBehaviour {
         return Y_Direction;
     }
 
+    
+    //void OnCollisionEnter2D(Collision2D collisionInfo)
+    //{
+    //    print("Collision Detected");
 
-	// Update is called once per frame
-	void Update () {
+    //    if (collisionInfo.gameObject.tag == "")
+    //    {            
+    //    }
+    //}
+
+    void OnCollisionStay2D(Collision2D collisionInfo)
+    {       
+        if (collisionInfo.gameObject.tag == "") //This is just to make the method happy 
+        {
+        }
+
+        //The AI is stuck!!! :(
+        //Find it's own path to come back
+
+        
+
+    }
+
+
+        // Update is called once per frame
+        void Update () {
 
         //var
         CircleCollition.enabled = true;
@@ -186,6 +209,6 @@ public class AI_Character : MonoBehaviour {
             #endregion
         }
 
-   
+           
     }
 }
