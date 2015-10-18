@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Writen By Adam Uncao
+//This Class was originally writen for the 2015-2016 game competition.
+//This class can be assigned to a Unity object.
+//The object does not have a sprite renderer and has a collision box to detect when a player has entered the Conversation.
+
 public class AreaEvent : MonoBehaviour {
 
     public int ConversationID;
 	public int SceneNum;
-    public Canvas EventCanvas;
+    public Canvas ChoiceCanvas;
 	public bool CanReactivate;
     private ConversationManager ConversationInstance;
     
     void Start()
     {
-        ConversationInstance = new ConversationManager(EventCanvas);
+        ConversationInstance = new ConversationManager(ChoiceCanvas);
     }
 
 
@@ -49,7 +54,22 @@ public class AreaEvent : MonoBehaviour {
             
         }
 
+        //If the timer is active and Choices are active
+        if (ConversationInstance.ChoicesIsActive && ConversationInstance.TimerIsActive)
+        {
+            //If there is still time.
+            if (ConversationInstance.TimeToChoose > 0)
+            {
+                //Subtract the time since the last frame (seconds)
+                ConversationInstance.TimeToChoose -= Time.deltaTime;
+                ConversationInstance.DrainTimer(Time.deltaTime);  //Drains the Timer on the Canvas (visual).
+            }
+            else //No time remaining choose for the player.
+            {
+                ConversationInstance.ChooseChoice();
+            }
 
+        }
 
     }
 

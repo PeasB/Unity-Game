@@ -5,63 +5,28 @@
 	<Conversation>
 
 	  <ID>1</ID>
-	  	  
-	  <Level1>
-	  
-	  <initialDialogue>
+
+    <Level1>
+
+      <initialDialogue>
         <DialogueCount>3</DialogueCount>
-	    <Dialogue>
-        <Conditions>None</Conditions> 
-        <Text>Kate: You son of a...</Text>
-      </Dialogue>
-	    <Dialogue>
-        <Conditions>None</Conditions>
-        <Text>April: Ok! Enough you two! I feel like a parent</Text>
-      </Dialogue>
-      <Dialogue>
-        <Conditions>None</Conditions>
-        <Text>Ethan: Oh who's the father, Matt?</Text>
-      </Dialogue>  
-	  </initialDialogue>
-	  
-	    <Choice1>
-        
-        <Conditions>
-          <Relationship>
-            <April>100</April> 
-          </Relationship>
-          <InScene>
-            <April>true</April>
-          </InScene>
-        </Conditions>
-	      <Text>Protective - Come on guys cut it out!</Text>
-	      <Conquences>
-          <Relationship>
-            <April>15</April>
-            <Oliver>-15</Oliver>
-          </Relationship>
-          <StoryPath>
-            <ScenePath></ScenePath>
-          </StoryPath>
-	      </Conquences>
-	      <AdditionalDialogue>
-          <DialogueCount>3</DialogueCount>
-            <Dialogue>
-              <Conditions>None</Conditions>
-              <Text>Matt: Come on guys cut it out! You know there is nothing between us.</Text>
-            </Dialogue>
-            <Dialogue>
-              <Conditions>None</Conditions>
-              <Text>April: Thanks Matt.</Text>
-            </Dialogue>
-            <Dialogue>
-              <Conditions>None</Conditions>
-              <Text>Ethan: Man it was just a joke.</Text>
-            </Dialogue>
-	      </AdditionalDialogue>
-	      
-	    </Choice1>
-	    <Choice2>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Kate: You son of a...</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>April: Ok! Enough you two! I feel like a parent</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Ethan: Oh who's the father, Matt?</Text>
+        </Dialogue>
+      </initialDialogue>
+
+      <TimeToChoose>None</TimeToChoose>
+
+      <Choice1>
 
         <Conditions>
           <Relationship>
@@ -71,13 +36,50 @@
             <April>true</April>
           </InScene>
         </Conditions>
-	      <Text>Encourage - You know it!</Text>
-	      <Conquences>
-	        <AprilRelationship>-15</AprilRelationship>
-	        <OliverRelationship>15</OliverRelationship>
-	        <RoryRelationship>15</RoryRelationship>
-	      </Conquences>
-	      <AdditionalDialogue>
+        <Text>Protective - Come on guys cut it out!</Text>
+        <Conquences>
+          <Relationship>
+            <April>15</April>
+            <Oliver>-15</Oliver>
+          </Relationship>
+          <StoryPath>
+            <ScenePath></ScenePath>
+          </StoryPath>
+        </Conquences>
+        <AdditionalDialogue>
+          <DialogueCount>3</DialogueCount>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Matt: Come on guys cut it out! You know there is nothing between us.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>April: Thanks Matt.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Ethan: Man it was just a joke.</Text>
+          </Dialogue>
+        </AdditionalDialogue>
+
+      </Choice1>
+      <Choice2>
+
+        <Conditions>
+          <Relationship>
+            <April>100</April>
+          </Relationship>
+          <InScene>
+            <April>true</April>
+          </InScene>
+        </Conditions>
+        <Text>Encourage - You know it!</Text>
+        <Conquences>
+          <AprilRelationship>-15</AprilRelationship>
+          <OliverRelationship>15</OliverRelationship>
+          <RoryRelationship>15</RoryRelationship>
+        </Conquences>
+        <AdditionalDialogue>
           <DialogueCount>2</DialogueCount>
           <Dialogue>
             <Conditions>None</Conditions>
@@ -88,90 +90,92 @@
             <Text>Matt: It was just a joke April. Chill...</Text>
           </Dialogue>
         </AdditionalDialogue>
-	      
-	    </Choice2>
+
+      </Choice2>
 
 
 
-	  </Level1>
-	  <Level2>
-	  
-		  <initialDialogue>
-	        <DialogueCount>3</DialogueCount>
+    </Level1>
+    <Level2>
+
+      <initialDialogue>
+        <DialogueCount>3</DialogueCount>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Myles: This Conversation System is so cool!</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Adam: I know right!</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text> Ryan: Ya very cool now lets play some melee!</Text>
+        </Dialogue>
+      </initialDialogue>
+
+      <TimeToChoose>1</TimeToChoose>
+
+      <Choice1>
+
+        <Conditions>
+          <Relationship>
+            <April>100</April>
+          </Relationship>
+          <InScene>
+            <April>true</April>
+          </InScene>
+        </Conditions>
+        <Text>Agree - Alright Im going to beat you!</Text>
+        <Conquences>
+          <Relationship>
+            <April>15</April>
+            <Oliver>-15</Oliver>
+          </Relationship>
+          <StoryPath>
+            <ScenePath></ScenePath>
+          </StoryPath>
+        </Conquences>
+        <AdditionalDialogue>
+          <DialogueCount>1</DialogueCount>
           <Dialogue>
             <Conditions>None</Conditions>
-            <Text>Myles: This Conversation System is so cool!</Text>
+            <Text>Adam: Ya right Im going to lose!</Text>
+          </Dialogue>
+          <Dialogue></Dialogue>
+        </AdditionalDialogue>
+
+      </Choice1>
+      <Choice2>
+
+        <Conditions>
+          <Relationship>
+            <April>100</April>
+          </Relationship>
+          <InScene>
+            <April>true</April>
+          </InScene>
+        </Conditions>
+        <Text>Disagree - Your going to destory me!</Text>
+        <Conquences>
+          <AprilRelationship>-15</AprilRelationship>
+          <OliverRelationship>15</OliverRelationship>
+          <RoryRelationship>15</RoryRelationship>
+        </Conquences>
+        <AdditionalDialogue>
+          <DialogueCount>2</DialogueCount>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Adam: You're going to destory me.... Myles you play.</Text>
           </Dialogue>
           <Dialogue>
             <Conditions>None</Conditions>
-            <Text>Adam: I know right!</Text>
+            <Text>Myles: Alright!</Text>
           </Dialogue>
-          <Dialogue>
-            <Conditions>None</Conditions>
-            <Text> Ryan: Ya very cool now lets play some melee!</Text>
-          </Dialogue> 
-		  </initialDialogue>
-		  
-		    <Choice1>
-	        
-	        <Conditions>
-	          <Relationship>
-	            <April>100</April> 
-	          </Relationship>
-	          <InScene>
-	            <April>true</April>
-	          </InScene>
-	        </Conditions>
-		      <Text>Agree - Alright Im going to beat you!</Text>
-		      <Conquences>
-	          <Relationship>
-	            <April>15</April>
-	            <Oliver>-15</Oliver>
-	          </Relationship>
-	          <StoryPath>
-	            <ScenePath></ScenePath>
-	          </StoryPath>
-		      </Conquences>
-		      <AdditionalDialogue>
-	          	<DialogueCount>1</DialogueCount>
-            <Dialogue>
-              <Conditions>None</Conditions>
-              <Text>Adam: Ya right Im going to lose!</Text>
-            </Dialogue>
-		        <Dialogue></Dialogue>
-		      </AdditionalDialogue>
-		      
-		    </Choice1>
-		    <Choice2>
+        </AdditionalDialogue>
 
-	        <Conditions>
-	          <Relationship>
-	            <April>100</April>
-	          </Relationship>
-	          <InScene>
-	            <April>true</April>
-	          </InScene>
-	        </Conditions>
-		      <Text>Disagree - Your going to destory me!</Text>
-		      <Conquences>
-		        <AprilRelationship>-15</AprilRelationship>
-		        <OliverRelationship>15</OliverRelationship>
-		        <RoryRelationship>15</RoryRelationship>
-		      </Conquences>
-		      <AdditionalDialogue>
-	          <DialogueCount>2</DialogueCount>
-            <Dialogue>
-              <Conditions>None</Conditions>
-              <Text>Adam: You're going to destory me.... Myles you play.</Text>
-            </Dialogue>
-            <Dialogue>
-              <Conditions>None</Conditions>
-              <Text>Myles: Alright!</Text>
-            </Dialogue>
-	        </AdditionalDialogue>
-		      
-		    </Choice2>
-	  </Level2>
+      </Choice2>
+    </Level2>
 
 
 	 </Conversation>
