@@ -72,12 +72,12 @@
   
   
   <Inventory>
-    <Item></Item>
-    <Item></Item>
-    <Item></Item>
-    <Item></Item>
-    <Item></Item>
-    <Item></Item>
+    <ItemID></ItemID>
+    <ItemID></ItemID>
+    <ItemID></ItemID>
+    <ItemID></ItemID>
+    <ItemID></ItemID>
+    <ItemID></ItemID>
   </Inventory>
   
 </SaveData>
