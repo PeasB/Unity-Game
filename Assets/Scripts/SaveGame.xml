@@ -50,7 +50,11 @@
   <StoryPaths>
     
     <Situation>
-      <ID>1</ID>
+      <ID>1.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+        <Situation>
+      <ID>1.2</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>

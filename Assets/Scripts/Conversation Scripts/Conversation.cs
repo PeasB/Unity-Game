@@ -211,7 +211,7 @@ public class ConversationManager {
 
             if (Conversation.SelectSingleNode("Level" + ConversationLevel + "/TimeToChoose").InnerText != "None")
             {
-                TimeToChoose = int.Parse(Conversation.SelectSingleNode("Level" + ConversationLevel + "/TimeToChoose").InnerText); //Amount of Time Player has to choose thier choice.
+                TimeToChoose = float.Parse(Conversation.SelectSingleNode("Level" + ConversationLevel + "/TimeToChoose").InnerText); //Amount of Time Player has to choose thier choice.
                 TimerUI.SetActive(true);
                 TimerUI.GetComponent<Slider>().maxValue = TimeToChoose;
                 TimerUI.GetComponent<Slider>().value = TimeToChoose;
@@ -247,7 +247,7 @@ public class ConversationManager {
         //Path Conquences
         foreach (XmlNode Situation in Save.SelectSingleNode("SaveData/StoryPaths"))
         {
-            if (int.Parse(Situation.SelectSingleNode("ID").InnerText) == ID)
+            if (Situation.SelectSingleNode("ID").InnerText == (ID + "." + ConversationLevel).ToString())
             {
                 Situation.SelectSingleNode("Outcome").InnerText = ChoiceNumber.ToString();
             }

@@ -24,7 +24,7 @@
         </Dialogue>
       </initialDialogue>
 
-      <TimeToChoose>None</TimeToChoose>
+      <TimeToChoose>10</TimeToChoose>
 
       <Choice1>
 
@@ -114,7 +114,7 @@
         </Dialogue>
       </initialDialogue>
 
-      <TimeToChoose>1</TimeToChoose>
+      <TimeToChoose>4.5</TimeToChoose>
 
       <Choice1>
 
