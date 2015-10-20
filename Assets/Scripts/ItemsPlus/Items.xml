@@ -9,6 +9,7 @@
       <Description>Comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
+      <PicPath></PicPath>
     </Item>
     
     <Item>
@@ -17,6 +18,7 @@
       <Description>Also comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
+      <PicPath></PicPath>
     </Item>
 
     <Item>
@@ -25,6 +27,7 @@
       <Description>The book of life</Description>
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
+      <PicPath></PicPath>
     </Item>
 
     <Item>
@@ -33,6 +36,7 @@
       <Description>A full unopened water bottle</Description>
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
+      <PicPath></PicPath>
     </Item>
 
     

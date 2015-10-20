@@ -15,7 +15,7 @@ public class InventoryScript : MonoBehaviour {
 
         //Read in Items.xml
         XmlDocument ItemsDoc = new XmlDocument();
-        ItemsDoc.Load("Assets/Scripts/Items.xml");
+        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
 
         //Fetch current items ID in SaveGame.xml (SaveGameDoc) and store in a list. (Which is a dynamic array)
         List<int> InventoryItemsID = new List<int>();
@@ -25,7 +25,7 @@ public class InventoryScript : MonoBehaviour {
         }
         
         //Loop each item in array and compare with Items.xml (ItemsDoc) to get full info of Item. Then store in 2D Array
-        string[,] InventoryBox = new string[32, 4]; //X value is 32, because the max amount of items you can carry is 32.  Y value is 4 (ID, Name, Description, Stacks).
+        string[,] InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 32.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
         int InventoryCount = 0;
 
         for (int i = 0; i < InventoryItemsID.Count; i++)
@@ -33,14 +33,16 @@ public class InventoryScript : MonoBehaviour {
             int ItemID = InventoryItemsID[i];
             string ItemName = "?"; //Will soon be filled
             string ItemDescription = "?"; //Will soon be filled
+            string PicturePath = "?"; //Will soon be filled
             bool Stackable = false; //Could change to true
-
+            
             foreach (XmlNode node in ItemsDoc.SelectNodes("Items/ItemsList/Item")) //Get info of ItemID
             {
                 if (ItemID == int.Parse(node.SelectSingleNode("ID").InnerText)) //If it matches the item ID
                 {
                     ItemName = node.SelectSingleNode("Name").InnerText;
                     ItemDescription = node.SelectSingleNode("Description").InnerText;
+                    PicturePath = node.SelectSingleNode("PicPath").InnerText;
                     if (int.Parse(node.SelectSingleNode("Stackable").InnerText) == 1)
                     {
                         Stackable = true;
@@ -54,6 +56,7 @@ public class InventoryScript : MonoBehaviour {
                 InventoryBox[InventoryCount, 1] = ItemName;
                 InventoryBox[InventoryCount, 2] = ItemDescription;
                 InventoryBox[InventoryCount, 3] = "1"; //Since it is unstackable, keep the stack at 1, which is the single item itself.
+                InventoryBox[InventoryCount, 4] = PicturePath;
 
                 InventoryCount++; //Go on to the next item slot
             }
@@ -79,6 +82,7 @@ public class InventoryScript : MonoBehaviour {
                     InventoryBox[InventoryCount, 1] = ItemName;
                     InventoryBox[InventoryCount, 2] = ItemDescription;
                     InventoryBox[InventoryCount, 3] = "1"; //Since it is the first stackable item
+                    InventoryBox[InventoryCount, 4] = PicturePath;
 
                     InventoryCount++; //Go on to the next item slot
                 }

@@ -20,10 +20,17 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		float XMove = Input.GetAxis("Horizontal");
+        //If i is pressed down on keyboard or Y in controller, open inventory
+        if (Input.GetButtonDown("Button 3") == true)
+        {
+            InventoryScript.DisplayInventory();
+        }
+
+
+        //Movement
+        float XMove = Input.GetAxis("Horizontal");
 		float YMove = Input.GetAxis("Vertical");
-
-
+        
         PlayerMovement.PlayerMove(Body,WalkSpeed,Anim,XMove, YMove);
 
 
