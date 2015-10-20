@@ -6,7 +6,7 @@
     <Item>
       <ID>0</ID>
       <Name>Wood</Name>
-      <Description></Description>
+      <Description>Comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
     </Item>
@@ -14,19 +14,28 @@
     <Item>
       <ID>1</ID>
       <Name>Stick</Name>
-      <Description></Description>
+      <Description>Also comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
     </Item>
 
     <Item>
-      <ID></ID>
-      <Name></Name>
-      <Description></Description>
-      <Craftable></Craftable>
-      <Stackable></Stackable>
+      <ID>2</ID>
+      <Name>Book</Name>
+      <Description>The book of life</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
     </Item>
 
+    <Item>
+      <ID>3</ID>
+      <Name>Water Bottle</Name>
+      <Description>A full unopened water bottle</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+    </Item>
+
+    
   </ItemsList>
 
       
