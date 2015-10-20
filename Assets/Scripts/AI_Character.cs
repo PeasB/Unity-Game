@@ -144,7 +144,8 @@ public class AI_Character : MonoBehaviour {
                 else if (DirectionRange == 3) //Look left AI!
                 {
                     Anim.SetInteger("Direction", 3);
-                }                
+                }
+                //InventoryScript.DisplayInventory();  // <---Testing Purposes, to activate the inventory. Find better way like press of a button
             }
             
 

@@ -50,7 +50,11 @@
   <StoryPaths>
     
     <Situation>
-      <ID>1</ID>
+      <ID>1.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+        <Situation>
+      <ID>1.2</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
@@ -72,12 +76,19 @@
   
   
   <Inventory>
-    <ItemID></ItemID>
-    <ItemID></ItemID>
-    <ItemID></ItemID>
-    <ItemID></ItemID>
-    <ItemID></ItemID>
-    <ItemID></ItemID>
+    <ItemID>1</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>1</ItemID>
+    <ItemID>1</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>1</ItemID>
+    <ItemID>3</ItemID>
   </Inventory>
   
 </SaveData>
