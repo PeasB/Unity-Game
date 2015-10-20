@@ -47,7 +47,7 @@ public class InventoryScript : MonoBehaviour {
                     }
                 }
             }
-
+            
             if (i == 0 || Stackable == false) //First item. Does not need to check if it can stack on other items since it is the first item. OR if item has initial property that disables stacking.
             {
                 InventoryBox[InventoryCount, 0] = ItemID.ToString();
@@ -59,9 +59,10 @@ public class InventoryScript : MonoBehaviour {
             }
             else //Check if it can stack on other items
             {
+                
                 bool FirstStackableItem = true; //If this stays true, a item that can be stackable will be created for the very first time. This can be changed to false, if the item already exists and stacks on the matching item
-
-                for (int k = 0; k < InventoryBox.GetLength(0); i++) //Loop through 32 items to see if it can stack on to any items
+                
+                for (int k = 0; k < InventoryBox.GetLength(0); k++) //Loop through 32 items to see if it can stack on to any items
                 {         
                     if (InventoryBox[k, 0] == ItemID.ToString() && Stackable == true) //There is a stackable item that already exists that matches your item. Stack ontop of the item
                     {
@@ -71,22 +72,30 @@ public class InventoryScript : MonoBehaviour {
                         break;
                     }
                 }
+                
                 if (FirstStackableItem == true) //First time adding a stackable item (Stack will be 1, since it is the first item)
                 {
                     InventoryBox[InventoryCount, 0] = ItemID.ToString();
                     InventoryBox[InventoryCount, 1] = ItemName;
                     InventoryBox[InventoryCount, 2] = ItemDescription;
                     InventoryBox[InventoryCount, 3] = "1"; //Since it is the first stackable item
-                }
-            }
-        }
 
+                    InventoryCount++; //Go on to the next item slot
+                }
+                
+            }
+            
+        }
         
+                
         //Display this info into the UI (Display the items in the players inventory)
         //Print it out until Andrew finishes inventory UI
+        for (int i = 0; i < InventoryBox.GetLength(0); i++)
+        {
+            print(InventoryBox[i, 1] + " " + InventoryBox[i, 3]);
+        }
         
-
-
+    
 
     }
 
