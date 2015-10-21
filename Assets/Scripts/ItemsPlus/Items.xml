@@ -39,6 +39,24 @@
       <PicPath></PicPath>
     </Item>
 
+    <Item>
+      <ID>4</ID>
+      <Name>Lighter</Name>
+      <Description>A device that creates a flame</Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath></PicPath>
+    </Item>
+    
+    <Item>
+      <ID>5</ID>
+      <Name>Torch</Name>
+      <Description>A light source that can be carried around</Description>
+      <Craftable>0</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath></PicPath>
+    </Item>
+
     
   </ItemsList>
 
@@ -47,9 +65,9 @@
   <Crafting>
     
     <Craft>
-      <ID></ID>
-      <ID></ID>
-      <NewID></NewID>
+      <ID>1</ID>
+      <ID>4</ID>
+      <NewID>5</NewID>
     </Craft>
     
     <Craft>

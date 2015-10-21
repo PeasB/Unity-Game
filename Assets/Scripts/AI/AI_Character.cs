@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 
 public class AI_Character : MonoBehaviour {
 

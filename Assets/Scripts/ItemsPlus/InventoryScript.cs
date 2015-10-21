@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 using System.Collections.Generic;
 using System.Xml;
 
@@ -7,7 +8,7 @@ public class InventoryScript : MonoBehaviour {
     
 
 
-    public static void DisplayInventory()
+    public static void DisplayInventory() //<--Make so it either displays in Items menu or crafting menu
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
@@ -25,7 +26,7 @@ public class InventoryScript : MonoBehaviour {
         }
         
         //Loop each item in array and compare with Items.xml (ItemsDoc) to get full info of Item. Then store in 2D Array
-        string[,] InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 32.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
+        string[,] InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 36.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
         int InventoryCount = 0;
 
         for (int i = 0; i < InventoryItemsID.Count; i++)
@@ -103,8 +104,30 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
-    public static void Crafting()
+    public static void DisplayCrafting() //Show what can be crafted, and if player doesn't have the required items to craft an item, darken the image of the item
     {
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        //Read in Items.xml
+        XmlDocument ItemsDoc = new XmlDocument();
+        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+
+        //Fetch current items ID in SaveGame.xml (SaveGameDoc) and store in a list. (Which is a dynamic array)
+        List<int> InventoryItemsID = new List<int>();
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
+        {
+            InventoryItemsID.Add(int.Parse(node.InnerText));
+        }
+
+
+        //Loop through how many craftable items and make this the x value for the 2D array
+
+
+
+        //2D array for items to craft (Find X base on how much craftable items there are. Y value is 8 (ID, Name, Description, ID1, ID2, ID3, ID4, ID5)
+
 
     }
 
