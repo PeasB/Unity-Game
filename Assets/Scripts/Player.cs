@@ -7,37 +7,56 @@ public class Player : MonoBehaviour {
     Animator Anim;
     public int WalkSpeed;
 
+    //crafting menu
+    public GameObject Canvas;
+    //public GameObject Camera;
+    bool Paused = false;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 
         Body = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
-                                                         
+        Canvas.gameObject.SetActive(false);
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+
+    // Update is called once per frame
+    void Update () {
 
         //If i is pressed down on keyboard or Y in controller, open inventory
         if (Input.GetButtonDown("Button 3") == true)
         {
-            InventoryScript.DisplayInventory();
+                //pause / unpause
+                if (Paused == true)
+                {
+                    Time.timeScale = 1.0f;
+                    Canvas.gameObject.SetActive(false);
+                    Paused = false;
+                }
+                else
+                {
+                    Time.timeScale = 0.0f;
+                    Canvas.gameObject.SetActive(true);
+                    Paused = true;
+
+                }
+                
+                //
+                InventoryScript.DisplayInventory();
         }
         else if (Input.GetButtonDown("Button 2") == true) //If o is pressed down on keyboard or X in controller, open inventory
         {
             InventoryScript.DisplayCrafting();
         }
 
-
         //Movement
         float XMove = Input.GetAxis("Horizontal");
 		float YMove = Input.GetAxis("Vertical");
         
         PlayerMovement.PlayerMove(Body,WalkSpeed,Anim,XMove, YMove);
-
-
 
 
 	}
