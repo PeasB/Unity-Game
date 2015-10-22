@@ -123,10 +123,62 @@ public class InventoryScript : MonoBehaviour {
 
 
         //Loop through how many craftable items and make this the x value for the 2D array
+        int CraftableItemsCount = 0;
+        foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
+        {
+            CraftableItemsCount++;
+        }
+
+        //2D array for items to craft (Find X base on how much craftable items there are. Y value is 8 (ID_Main, Name, Description, ID1, ID2, ID3, ID4, ID5)
+        string[,] CraftingTable = new string[CraftableItemsCount, 8];
+        int i = 0; //Counter
+        
+
+        foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
+        {
+            //Check how many ingredients there are
+            int IngredientID = 1;
+
+            //Var
+            int Main_ID = int.Parse(node.SelectSingleNode("NewID").InnerText); //Main ID
+            //make int, -1 for default, can change to another number. -1 means don't use
+            int Ingredient_ID1 = -1;
+            int Ingredient_ID2 = -1;
+            int Ingredient_ID3 = -1;
+            int Ingredient_ID4 = -1;
+            int Ingredient_ID5 = -1;
+
+            foreach (XmlNode subnode in ItemsDoc.SelectNodes("Items/Crafting/Craft/ID"))
+            {
+                if (IngredientID == 1)
+                {
+                    Ingredient_ID1 = int.Parse(node.SelectSingleNode("ID").InnerText); //First Ingredient ID
+                }
+                else if (IngredientID == 2)
+                {
+                    Ingredient_ID2 = int.Parse(node.SelectSingleNode("ID").InnerText); //Second Ingredient ID
+                }
+                else if (IngredientID == 3)
+                {
+                    Ingredient_ID3 = int.Parse(node.SelectSingleNode("ID").InnerText); //Third Ingredient ID
+                }
+                else if (IngredientID == 4)
+                {
+                    Ingredient_ID4 = int.Parse(node.SelectSingleNode("ID").InnerText); //Fourth Ingredient ID
+                }
+                else if (IngredientID == 5)
+                {
+                    Ingredient_ID5 = int.Parse(node.SelectSingleNode("ID").InnerText); //Fifth Ingredient ID
+                }
+
+                IngredientID++;
+            }
+            
+                        
 
 
-
-        //2D array for items to craft (Find X base on how much craftable items there are. Y value is 8 (ID, Name, Description, ID1, ID2, ID3, ID4, ID5)
+            i++;
+        }
 
 
     }

@@ -25,6 +25,10 @@ public class Player : MonoBehaviour {
         {
             InventoryScript.DisplayInventory();
         }
+        else if (Input.GetButtonDown("Button 2") == true) //If o is pressed down on keyboard or X in controller, open inventory
+        {
+            InventoryScript.DisplayCrafting();
+        }
 
 
         //Movement
