@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 
         Body = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
-        Canvas.gameObject.SetActive(false);
+        //Canvas.gameObject.SetActive(false); <--------------**********Causes conflict if the canvas is not in the scene****************
 
     }
 
@@ -29,20 +29,20 @@ public class Player : MonoBehaviour {
         //If i is pressed down on keyboard or Y in controller, open inventory
         if (Input.GetButtonDown("Button 3") == true)
         {
-                //pause / unpause
-                if (Paused == true)
-                {
-                    Time.timeScale = 1.0f;
-                    Canvas.gameObject.SetActive(false);
-                    Paused = false;
-                }
-                else
-                {
-                    Time.timeScale = 0.0f;
-                    Canvas.gameObject.SetActive(true);
-                    Paused = true;
+                ////pause / unpause   <--------********Causes conflict if the canvas is not in the scene**********
+                //if (Paused == true)
+                //{
+                //    Time.timeScale = 1.0f;
+                //    Canvas.gameObject.SetActive(false);
+                //    Paused = false;
+                //}
+                //else
+                //{
+                //    Time.timeScale = 0.0f;
+                //    Canvas.gameObject.SetActive(true);
+                //    Paused = true;
 
-                }
+                //}
                 
                 //
                 InventoryScript.DisplayInventory();

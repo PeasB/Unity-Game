@@ -57,6 +57,24 @@
       <PicPath></PicPath>
     </Item>
 
+    <Item>
+      <ID>6</ID>
+      <Name>Sign</Name>
+      <Description>A sign that can be placed down, and can have text on it</Description>
+      <Craftable>1</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath></PicPath>
+    </Item>
+
+    <Item>
+      <ID>7</ID>
+      <Name>Wooden Bucket</Name>
+      <Description>A bucket made of wood</Description>
+      <Craftable>1</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath></PicPath>
+    </Item>
+
     
   </ItemsList>
 
@@ -71,17 +89,19 @@
     </Craft>
     
     <Craft>
-      <ID></ID>
-      <ID></ID>
-      <NewID></NewID>
+      <ID>1</ID>
+      <ID>0</ID>
+      <ID>0</ID>
+      <ID>0</ID>
+      <NewID>6</NewID>
     </Craft>
 
     
     <Craft>
-      <ID></ID>
-      <ID></ID>
-      <ID></ID>
-      <NewID></NewID>
+      <ID>0</ID>
+      <ID>0</ID>
+      <ID>0</ID>
+      <NewID>7</NewID>
     </Craft>
     
   </Crafting>
