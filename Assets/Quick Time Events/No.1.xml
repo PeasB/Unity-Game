@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<QTE>
+	
+	<MinConquenceAmount>20</MinConquenceAmount>
+	
+	<Level1>
+		<Button>2</Button>
+		<PressAmount>4</PressAmount>
+		<ConquenceWorth>-10</ConquenceWorth>
+		<TimeAllowed>10</TimeAllowed>
+	</Level1>
+	<Level2>
+		<Button>2</Button>
+		<PressAmount>4</PressAmount>
+		<ConquenceWorth>-10</ConquenceWorth>
+		<TimeAllowed>10</TimeAllowed>
+	</Level2>
+
+
+</QTE>
+

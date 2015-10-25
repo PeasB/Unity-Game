@@ -54,6 +54,7 @@ public class ConversationManager {
         IsActive = true;
 		ConversationLevel = 1;
 		DialogueLevel = 1;
+		HasRun = true;
 
         //Load Scene Conversation XML
         XmlDocument Doc = new XmlDocument();
@@ -238,11 +239,31 @@ public class ConversationManager {
     //ran when the player chooses a choice. Saves the players choice, and moves on.
     public void ChooseChoice(int ChoiceNumber = 2)
     {
-        //Choice Number can be one or two.
-        //Conquences Happen here.
+		XmlDocument Save = new XmlDocument();
+		Save.Load("Assets/Scripts/SaveGame.xml");
 
-        XmlDocument Save = new XmlDocument();
-        Save.Load("Assets/Scripts/SaveGame.xml");
+		//Other Conquences.
+		foreach (XmlNode Conquence in Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/Conquences")) 
+		{
+			#region Relationship Conquence
+			if (Conquence.Name == "Relationship")
+			{
+				foreach(XmlNode Person in Conquence)
+				{
+					string CurrentPlayer = GameObject.FindWithTag("Player").name;
+					CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
+					
+					Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = 
+						(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) + 
+						 int.Parse(Person.InnerText)).ToString();
+
+
+				}
+			}
+			#endregion
+		
+		
+		}
 
         //Path Conquences
         foreach (XmlNode Situation in Save.SelectSingleNode("SaveData/StoryPaths"))
@@ -288,7 +309,6 @@ public class ConversationManager {
             }
         }
 
-		HasRun = true;
 		IsActive = false;
         DialogueUI.enabled = false;
         return true;

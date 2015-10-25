@@ -40,11 +40,8 @@
         <Conquences>
           <Relationship>
             <April>15</April>
-            <Oliver>-15</Oliver>
+            <Ethan>-15</Ethan>
           </Relationship>
-          <StoryPath>
-            <ScenePath></ScenePath>
-          </StoryPath>
         </Conquences>
         <AdditionalDialogue>
           <DialogueCount>3</DialogueCount>
@@ -75,9 +72,10 @@
         </Conditions>
         <Text>Encourage - You know it!</Text>
         <Conquences>
-          <AprilRelationship>-15</AprilRelationship>
-          <OliverRelationship>15</OliverRelationship>
-          <RoryRelationship>15</RoryRelationship>
+			<Relationship>
+            	<April>15</April>
+            	<Ethan>-15</Ethan>
+          	</Relationship>
         </Conquences>
         <AdditionalDialogue>
           <DialogueCount>2</DialogueCount>
@@ -130,11 +128,8 @@
         <Conquences>
           <Relationship>
             <April>15</April>
-            <Oliver>-15</Oliver>
+            <Ethan>-15</Ethan>
           </Relationship>
-          <StoryPath>
-            <ScenePath></ScenePath>
-          </StoryPath>
         </Conquences>
         <AdditionalDialogue>
           <DialogueCount>1</DialogueCount>
@@ -158,9 +153,10 @@
         </Conditions>
         <Text>Disagree - Your going to destory me!</Text>
         <Conquences>
-          <AprilRelationship>-15</AprilRelationship>
-          <OliverRelationship>15</OliverRelationship>
-          <RoryRelationship>15</RoryRelationship>
+			<Relationship>
+            	<April>15</April>
+            	<Ethan>-15</Ethan>
+          	</Relationship>
         </Conquences>
         <AdditionalDialogue>
           <DialogueCount>2</DialogueCount>

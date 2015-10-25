@@ -12,7 +12,10 @@ public class AreaEvent : MonoBehaviour {
 	public int SceneNum;
     public Canvas ChoiceCanvas;
 	public bool CanReactivate;
+	public bool ButtonActivated;
     private ConversationManager ConversationInstance;
+	private bool JustActivated = false;
+
     
     void Start()
     {
@@ -22,7 +25,7 @@ public class AreaEvent : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D Other)
     {
-		if(Other.tag == "Player")
+		if(Other.tag == "Player" && !ButtonActivated)
         {
 			//If the Conversation Hasnt run and Can be reactivated then Run the Conversation.
 			if((ConversationInstance.HasRun && CanReactivate) || !ConversationInstance.HasRun)
@@ -33,13 +36,33 @@ public class AreaEvent : MonoBehaviour {
         }
     }
 
+	void OnTriggerStay2D(Collider2D Other)
+	{
+		if (Other.tag == "Player" && Input.GetButtonDown ("Button 0") && !ConversationInstance.IsActive) 
+		{
+			//If the Conversation Hasnt run and Can be reactivated then Run the Conversation.
+			if((ConversationInstance.HasRun && CanReactivate) || !ConversationInstance.HasRun)
+			{
+				//Start specified Conversation (ID Number references Conversation file).
+				ConversationInstance.StartConversation(SceneNum,ConversationID);
+				JustActivated = true;
+			}
+		
+		
+		}
+
+
+	}
+
 
     void Update()
     {
+
         if(ConversationInstance.IsActive) //Makes sure ConversationInstance has been initalized.
         {
-            //if pressed show next Dialogue.
-            if(Input.GetButtonDown("Button 0"))
+            //if pressed show next Dialogue. JustActivated prevents Dialogue from being processed when clicked to talk.
+			//Process Dialogue is run in Start Conversation and running it again will cause the second dialogue to overwrite the first Dialogue.
+            if(Input.GetButtonDown("Button 0") && !JustActivated)
             {
                 ConversationInstance.ProcessDialogue();
             }
@@ -70,6 +93,8 @@ public class AreaEvent : MonoBehaviour {
             }
 
         }
+
+		JustActivated = false;
 
     }
 
