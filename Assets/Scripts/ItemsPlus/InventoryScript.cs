@@ -91,9 +91,10 @@ public class InventoryScript : MonoBehaviour {
             }
             
         }
-        
-                
-        //Display this info into the UI (Display the items in the players inventory)
+
+
+        //------------------------Display into UI---------------------------
+        //Display array info into the UI (Display the items in the players inventory)
         //Print it out until Andrew finishes inventory UI
         for (int i = 0; i < InventoryBox.GetLength(0); i++)
         {
@@ -132,22 +133,39 @@ public class InventoryScript : MonoBehaviour {
             CraftableItemsCount++;
         }
 
-        //2D array for items to craft (Find X base on how much craftable items there are. Y value is 9 (ID_Main, Name, Description, PicPath, ID1, ID2, ID3, ID4, ID5)
-        string[,] CraftingTable = new string[CraftableItemsCount, 9];
+        //2D array for items to craft (Find X base on how much craftable items there are. Y value is 9 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
+        string[,] CraftingTable = new string[CraftableItemsCount, 5];
 
         int iCounter = 0;
 
         foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
         {
-            //Check how many ingredients there are
-            int IngredientID = 1;
-
+            
             //Var
             int Main_ID = int.Parse(node.SelectSingleNode("NewID").InnerText); //Main ID
             string Main_Name = "?"; //Will soon be filled
             string Main_Description = "?"; //Will soon be filled
             string Main_PicturePath = "?"; //Will soon be filled
-            bool CanCraft = false; //Can change to true if the player has the required items to craft
+            bool CanCraft = true; //Can change to false if the player does not have the required items to craft
+
+            //------------------------Gathering Data------------------------------------
+
+            //Up to this point, the New_ID is found and stored    
+
+            //Now find the Item info based on the Main_ID and store it
+            foreach (XmlNode x_Node in ItemsDoc.SelectNodes("Items/ItemsList/Item")) //Get info of ItemID
+            {
+                if (Main_ID == int.Parse(x_Node.SelectSingleNode("ID").InnerText)) //If it matches the item ID
+                {
+                    //Store info into array
+                    Main_Name = x_Node.SelectSingleNode("Name").InnerText; //Store Name
+                    Main_Description = x_Node.SelectSingleNode("Description").InnerText; //Store Description
+                    Main_PicturePath = x_Node.SelectSingleNode("PicPath").InnerText; //Store Picture Path
+                }
+            }
+
+            //-------------------------Ingredients-------------------------------------
+
 
             //make int, -1 for default, can change to another number. -1 means don't use
             //these var are used to see if you have the required items to craft new item.
@@ -156,10 +174,15 @@ public class InventoryScript : MonoBehaviour {
             int Ingredient_ID3 = -1;
             int Ingredient_ID4 = -1;
             int Ingredient_ID5 = -1;
-            
+
+            //Check how many ingredients there are
+            int IngredientID = 1;
+
             //Get Ingredient ID's
-            foreach (XmlNode subnode in ItemsDoc.SelectNodes("Items/Crafting/Craft/ID"))
+            foreach (XmlNode subnode in node.ChildNodes) //<------node.id //OLD: ItemsDoc.SelectNodes("Items/Crafting/Craft/ID)"  WORK ON tHIS!!!
             {
+
+                //print(subnode.);
                 if (IngredientID == 1)
                 {
                     Ingredient_ID1 = int.Parse(subnode.InnerText); //First Ingredient ID
@@ -184,22 +207,48 @@ public class InventoryScript : MonoBehaviour {
                 IngredientID++;
             }
 
-            //Up to this point, the New_ID is found and stored, and so has all the Ingredient ID's    
-                   
-            //Now find the Item info based on the Main_ID and store it
-            foreach (XmlNode x_Node in ItemsDoc.SelectNodes("Items/ItemsList/Item")) //Get info of ItemID
-            {
-                if (Main_ID == int.Parse(x_Node.SelectSingleNode("ID").InnerText)) //If it matches the item ID
-                {
-                    //Store info into array
-                    Main_Name = x_Node.SelectSingleNode("Name").InnerText; //Store Name
-                    Main_Description = x_Node.SelectSingleNode("Description").InnerText; //Store Description
-                    Main_PicturePath = x_Node.SelectSingleNode("PicPath").InnerText; //Store Picture Path
-                }
-            }
-
             //Find if you have the required ingredients to craft (Compare each ingredient with your inventory). Overall, this will set CanCraft to either true or false
 
+            //Loop through your current items
+
+            bool IngredientOne_Exists = false;
+            bool IngredientTwo_Exists = false;
+            bool IngredientThree_Exists = false;
+            bool IngredientFour_Exists = false;
+            bool IngredientFive_Exists = false;
+
+            foreach (XmlNode nodeItem in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
+            {
+                if (Ingredient_ID1 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID1)
+                    IngredientOne_Exists = true;
+
+                else if (Ingredient_ID2 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID2)
+                    IngredientTwo_Exists = true;
+
+                else if (Ingredient_ID3 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID3)
+                    IngredientThree_Exists = true;
+
+                else if (Ingredient_ID4 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID4)
+                    IngredientFour_Exists = true;
+
+                else if (Ingredient_ID5 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID5)
+                    IngredientFive_Exists = true;
+            }
+
+            //Delete this print after
+            print(IngredientOne_Exists.ToString() + " " + Ingredient_ID1);
+            print(IngredientTwo_Exists.ToString() + " " + Ingredient_ID2);
+            print(IngredientThree_Exists.ToString() + " " + Ingredient_ID3);
+            print(IngredientFour_Exists.ToString() + " " + Ingredient_ID4);
+            print(IngredientFive_Exists.ToString() + " " + Ingredient_ID5);
+            print("--------------");
+            
+
+            //Checks if you don't have the required items to craft
+            if (Ingredient_ID1 != -1 && IngredientOne_Exists == false || Ingredient_ID2 != -1 && IngredientTwo_Exists == false || Ingredient_ID3 != -1 && IngredientThree_Exists == false || Ingredient_ID4 != -1 && IngredientFour_Exists == false || Ingredient_ID5 != -1 && IngredientFive_Exists == false)
+            {
+                CanCraft = false;
+            }
 
 
 
@@ -207,22 +256,46 @@ public class InventoryScript : MonoBehaviour {
 
 
 
+
+
+
+            //------------------------Input Data into Array---------------------------------------
 
 
             //Input var into array
             CraftingTable[iCounter, 1] = Main_Name;
             CraftingTable[iCounter, 2] = Main_Description;
             CraftingTable[iCounter, 3] = Main_PicturePath;
-            CraftingTable[iCounter, 4] = Ingredient_ID1.ToString();
-            if (Ingredient_ID2 != -1) CraftingTable[iCounter, 5] = Ingredient_ID2.ToString();
-            if (Ingredient_ID3 != -1) CraftingTable[iCounter, 6] = Ingredient_ID3.ToString();
-            if (Ingredient_ID4 != -1) CraftingTable[iCounter, 7] = Ingredient_ID4.ToString();
-            if (Ingredient_ID5 != -1) CraftingTable[iCounter, 8] = Ingredient_ID5.ToString();
+            if (CanCraft == true)
+                CraftingTable[iCounter, 4] = "1";
+            else
+                CraftingTable[iCounter, 4] = "0";
 
 
-            //Increment Counter
+            //-----------------------------------------------------------------------
+
+            
+
+            //Increment Counter---------------------------
             iCounter++;
         }
+
+        //========================Display into UI==============================
+
+        //Loop finnished and array is complete. Now input data from the array into the UI
+
+        //Print until UI is finished
+        for (int i = 0; i < CraftingTable.GetLength(0); i++)
+        {
+            print("Name: " + CraftingTable[i, 1] + "              " + "Can Craft: " + CraftingTable[i, 4]);
+        }
+
+
+
+
+
+
+
 
 
     }
