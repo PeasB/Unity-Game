@@ -5,13 +5,13 @@
 	<MinConquenceAmount>20</MinConquenceAmount>
 	
 	<Level1>
-		<Button>2</Button>
+		<Button>Button 2</Button>
 		<PressAmount>4</PressAmount>
 		<ConquenceWorth>-10</ConquenceWorth>
 		<TimeAllowed>10</TimeAllowed>
 	</Level1>
 	<Level2>
-		<Button>2</Button>
+		<Button>Button 3</Button>
 		<PressAmount>4</PressAmount>
 		<ConquenceWorth>-10</ConquenceWorth>
 		<TimeAllowed>10</TimeAllowed>

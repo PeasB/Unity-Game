@@ -8,9 +8,13 @@ public class QTE : MonoBehaviour {
 	public bool IsTriggeredByMovement; 
 	public GameObject Prompt;
 	public GameObject MainCamera;
+
 	private XmlDocument QTEInstructions = new XmlDocument();
-	private GameObject PromptOnScreen;
+	private GameObject PromptCanvasOnScreen;
 	private int QTELevel = 1;
+    private bool IsActive = false;
+    private string PendingButton;
+    private float CurrentTimeRemaining;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,15 +22,14 @@ public class QTE : MonoBehaviour {
 		QTEInstructions.Load("Assets/Quick Time Events/No." + QTEFileNumber + ".xml");		                 
 	}
 
-	void IsTriggerEnter2D(Collider2D Other)
+	void OnTriggerEnter2D(Collider2D Other)
 	{
 
-		if (IsTriggeredByMovement) 
+		if (IsTriggeredByMovement && Other.tag == "Player") 
 		{
 			//Instantiating a prompt object
-			PromptOnScreen = GameObject.Instantiate(Prompt,new Vector3(MainCamera.GetComponent<Transform>().position.x,MainCamera.GetComponent<Transform>().position.y + 300,0), new Quaternion()) as GameObject;
-
-			StartQTE();
+			PromptCanvasOnScreen = Instantiate(Prompt, new Vector3(MainCamera.GetComponent<Transform>().position.x, MainCamera.GetComponent<Transform>().position.y, 0), new Quaternion()) as GameObject;
+            StartQTE();
 		
 		
 		}
@@ -36,15 +39,54 @@ public class QTE : MonoBehaviour {
 
 	private void StartQTE()
 	{
+        IsActive = true;
 
-		DisplayQTE();
+        ProcessNewQTE();
 	}
 
+    //Displays QTE
 	private void DisplayQTE ()
 	{
-		int Button = int.Parse(QTEInstructions.SelectSingleNode ("QTE/Level" + QTELevel + "/Button").InnerText);
-			PromptOnScreen.GetComponent<Animator>().SetInteger("ButtonValue",Button);
+        PromptCanvasOnScreen.transform.FindChild("Button").GetComponent<Animator>().SetInteger("ButtonValue",int.Parse(PendingButton.Remove(0,7)));
+    }
+    
+    void ProcessNewQTE()
+    {
+        PendingButton = QTEInstructions.SelectSingleNode("QTE/Level" + QTELevel + "/Button").InnerText;
+        CurrentTimeRemaining = float.Parse(QTEInstructions.SelectSingleNode("QTE/Level" + QTELevel + "/TimeAllowed").InnerText);
+    }
 
-	}
-	
+    void Update()
+    {
+
+        if (IsActive)
+        {
+            if (PendingButton != string.Empty && Input.GetButtonDown(PendingButton) && CurrentTimeRemaining > 0)
+            {
+                ProcessSucessQTE();
+            }
+
+             if (CurrentTimeRemaining <= 0 )
+            {
+                ProcessFailedQTE();
+            }
+
+            CurrentTimeRemaining -= Time.deltaTime;
+        }
+
+    }
+
+
+    void ProcessSucessQTE()
+    {
+
+
+    }
+
+    void ProcessFailedQTE()
+    {
+
+
+    }
+
 }
