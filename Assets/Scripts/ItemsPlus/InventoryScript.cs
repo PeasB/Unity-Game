@@ -181,30 +181,32 @@ public class InventoryScript : MonoBehaviour {
             //Get Ingredient ID's
             foreach (XmlNode subnode in node.ChildNodes) //<------node.id //OLD: ItemsDoc.SelectNodes("Items/Crafting/Craft/ID)"  WORK ON tHIS!!!
             {
+                if (subnode.Name != "NewID") //Check if its not the last child
+                {    
 
-                //print(subnode.);
-                if (IngredientID == 1)
-                {
-                    Ingredient_ID1 = int.Parse(subnode.InnerText); //First Ingredient ID
-                }
-                else if (IngredientID == 2)
-                {
-                    Ingredient_ID2 = int.Parse(subnode.InnerText); //Second Ingredient ID
-                }
-                else if (IngredientID == 3)
-                {
-                    Ingredient_ID3 = int.Parse(subnode.InnerText); //Third Ingredient ID
-                }
-                else if (IngredientID == 4)
-                {
-                    Ingredient_ID4 = int.Parse(subnode.InnerText); //Fourth Ingredient ID
-                }
-                else if (IngredientID == 5)
-                {
-                    Ingredient_ID5 = int.Parse(subnode.InnerText); //Fifth Ingredient ID
-                }
+                    if (IngredientID == 1)
+                    {
+                        Ingredient_ID1 = int.Parse(subnode.InnerText); //First Ingredient ID
+                    }
+                    else if (IngredientID == 2)
+                    {
+                        Ingredient_ID2 = int.Parse(subnode.InnerText); //Second Ingredient ID
+                    }
+                    else if (IngredientID == 3)
+                    {
+                        Ingredient_ID3 = int.Parse(subnode.InnerText); //Third Ingredient ID
+                    }
+                    else if (IngredientID == 4)
+                    {
+                        Ingredient_ID4 = int.Parse(subnode.InnerText); //Fourth Ingredient ID
+                    }
+                    else if (IngredientID == 5)
+                    {
+                        Ingredient_ID5 = int.Parse(subnode.InnerText); //Fifth Ingredient ID
+                    }
 
-                IngredientID++;
+                    IngredientID++;                    
+                }
             }
 
             //Find if you have the required ingredients to craft (Compare each ingredient with your inventory). Overall, this will set CanCraft to either true or false
@@ -219,29 +221,22 @@ public class InventoryScript : MonoBehaviour {
 
             foreach (XmlNode nodeItem in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
             {
-                if (Ingredient_ID1 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID1)
+                if (Ingredient_ID1 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID1 && IngredientOne_Exists == false)
                     IngredientOne_Exists = true;
 
-                else if (Ingredient_ID2 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID2)
+                else if (Ingredient_ID2 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID2 && IngredientTwo_Exists == false)
                     IngredientTwo_Exists = true;
 
-                else if (Ingredient_ID3 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID3)
+                else if (Ingredient_ID3 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID3 && IngredientThree_Exists == false)
                     IngredientThree_Exists = true;
 
-                else if (Ingredient_ID4 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID4)
+                else if (Ingredient_ID4 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID4 && IngredientFour_Exists == false)
                     IngredientFour_Exists = true;
 
-                else if (Ingredient_ID5 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID5)
+                else if (Ingredient_ID5 != -1 && int.Parse(nodeItem.InnerText) == Ingredient_ID5 && IngredientFive_Exists == false)
                     IngredientFive_Exists = true;
             }
-
-            //Delete this print after
-            print(IngredientOne_Exists.ToString() + " " + Ingredient_ID1);
-            print(IngredientTwo_Exists.ToString() + " " + Ingredient_ID2);
-            print(IngredientThree_Exists.ToString() + " " + Ingredient_ID3);
-            print(IngredientFour_Exists.ToString() + " " + Ingredient_ID4);
-            print(IngredientFive_Exists.ToString() + " " + Ingredient_ID5);
-            print("--------------");
+            
             
 
             //Checks if you don't have the required items to craft
@@ -249,14 +244,7 @@ public class InventoryScript : MonoBehaviour {
             {
                 CanCraft = false;
             }
-
-
-
-
-
-
-
-
+            
 
 
             //------------------------Input Data into Array---------------------------------------
@@ -287,7 +275,7 @@ public class InventoryScript : MonoBehaviour {
         //Print until UI is finished
         for (int i = 0; i < CraftingTable.GetLength(0); i++)
         {
-            print("Name: " + CraftingTable[i, 1] + "              " + "Can Craft: " + CraftingTable[i, 4]);
+            print("Item: " + CraftingTable[i, 1] + "         " + "Can you Craft it?: " + CraftingTable[i, 4]);
         }
 
 
@@ -300,7 +288,13 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    
+    public static void DisplayCraftingIngredient()
+    {
 
+
+
+    }
 
 
 
