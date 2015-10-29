@@ -131,7 +131,41 @@ public class ConversationManager {
 
                     break;
                     #endregion
-            }
+				#region In Scene Conditions
+				case "StoryPaths": //Previous Choice.
+
+					//Looping through All StoryPath Conditions
+					foreach (XmlNode Path in Condition.ChildNodes)
+					{
+						bool PathFound = false;
+
+						//Looks for matching Path in Save File.
+						foreach(XmlNode Situation in Save.SelectSingleNode("SaveData/StoryPaths"))
+					    {
+						string Test = Path.Name.Remove(0,4);
+						string Test2 = Situation.SelectSingleNode("ID").InnerText;
+							//Checking Current Situation for Correct ID.
+							if (Situation.SelectSingleNode("ID").InnerText == (Path.Name.Remove(0,4)))
+							{
+								PathFound = true;
+								if(Situation.SelectSingleNode("Outcome").InnerText != Path.InnerText) 
+								{
+									ConditionsValid = false;
+									break;
+								}
+							}
+						}
+
+						//If the Path is not in the save File.
+						//Could be caused by not Adding it to the Scene file.
+						//Could be caused by referencing the wrong scene.
+						if (!PathFound)
+							 ConditionsValid = false;
+					}
+				
+				break;
+				#endregion
+			}
         }
 
         #endregion
@@ -252,12 +286,18 @@ public class ConversationManager {
 				{
 					string CurrentPlayer = GameObject.FindWithTag("Player").name;
 					CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
-					
-					Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = 
-						(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) + 
-						 int.Parse(Person.InnerText)).ToString();
 
-
+					//if Adding Conquence will bring total over 100 set total to 100.
+					if(int.Parse(Person.InnerText) + int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) > 100)
+					{
+						Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = (100).ToString();
+					}
+					else //won't go over 100, just add normally.
+					{
+						Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = 
+							(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) + 
+							 int.Parse(Person.InnerText)).ToString();
+					}
 				}
 			}
 			#endregion
@@ -282,7 +322,7 @@ public class ConversationManager {
         TimerUI.SetActive(false);
         TimerIsActive = false;
 
-
+		Save.Save("Assets/Scripts/SaveGame.xml");//Save Save File.
 
         //Process Dialogue Afterwards
         DialogueLevel = 1;

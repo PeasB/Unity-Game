@@ -2,7 +2,7 @@
 
 <QTE>
 	
-	<MinConquenceAmount>20</MinConquenceAmount>
+	<FailLimit>20</FailLimit>
 	
 	<Level1>
 		<Button>Button 2</Button>

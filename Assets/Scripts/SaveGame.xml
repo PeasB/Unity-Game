@@ -1,61 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SaveData>
-  
   <Settings>
-    <DateTimeStarted></DateTimeStarted>
-    <DateTimeOfSave></DateTimeOfSave>
+    <DateTimeStarted>
+    </DateTimeStarted>
+    <DateTimeOfSave>
+    </DateTimeOfSave>
     <SoundEffects>1</SoundEffects>
     <Music>1</Music>
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   
-  <Relationships>    
+  <Status>
+	  <Josh>1</Josh>
+	  <Matt>0</Matt>
+	  <Kate>2</Kate>
+	  <April>1</April>
+	  <Ethan>1</Ethan>
+  </Status>
+  <Relationships>
     <Josh>
       <Matt>100</Matt>
       <Kate>100</Kate>
       <April>100</April>
       <Ethan>100</Ethan>
     </Josh>
-    
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
       <April>100</April>
       <Ethan>100</Ethan>
     </Matt>
-    
     <Kate>
       <Josh>100</Josh>
       <Matt>100</Matt>
       <April>100</April>
       <Ethan>100</Ethan>
     </Kate>
-    
     <April>
       <Josh>100</Josh>
       <Matt>100</Matt>
       <Kate>100</Kate>
       <Ethan>100</Ethan>
     </April>
-    
     <Ethan>
       <Josh>100</Josh>
       <Matt>100</Matt>
       <Kate>100</Kate>
       <April>100</April>
     </Ethan>
-    
   </Relationships>
-
   <StoryPaths>
-    
     <Situation>
       <ID>1.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>2</Outcome>
     </Situation>
-        <Situation>
+    <Situation>
       <ID>1.2</ID>
-      <Outcome>0</Outcome>
+      <Outcome>1</Outcome>
     </Situation>
     <Situation>
       <ID>2</ID>
@@ -69,12 +70,7 @@
       <ID>4</ID>
       <Outcome>0</Outcome>
     </Situation>
-
   </StoryPaths>
-  
-  
-  
-  
   <Inventory>
     <ItemID>1</ItemID>
     <ItemID>0</ItemID>
@@ -90,5 +86,4 @@
     <ItemID>1</ItemID>
     <ItemID>3</ItemID>
   </Inventory>
-  
 </SaveData>

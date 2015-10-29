@@ -103,7 +103,9 @@
           <Text>Myles: This Conversation System is so cool!</Text>
         </Dialogue>
         <Dialogue>
-          <Conditions>None</Conditions>
+          <Conditions>
+          	<StoryPaths><Path1.1>2</Path1.1></StoryPaths>
+          </Conditions>
           <Text>Adam: I know right!</Text>
         </Dialogue>
         <Dialogue>
