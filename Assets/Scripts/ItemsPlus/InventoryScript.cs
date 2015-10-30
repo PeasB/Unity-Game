@@ -5,7 +5,12 @@ using System.Xml;
 
 public class InventoryScript : MonoBehaviour {
 
-    
+    //Y value is 4 (ID, Name, Description, Stacks, picturePath).
+    static string[,] InventoryBox;    
+
+    //2D array for items to craft (Find X base on how much craftable items there are. Y value is 5 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
+    static string[,] CraftingTable;
+
 
 
     public static void DisplayInventory() //<--Make so it either displays in Items menu or crafting menu
@@ -26,7 +31,7 @@ public class InventoryScript : MonoBehaviour {
         }
         
         //Loop each item in array and compare with Items.xml (ItemsDoc) to get full info of Item. Then store in 2D Array
-        string[,] InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 36.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
+        InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 36.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
         int InventoryCount = 0;
 
         for (int i = 0; i < InventoryItemsID.Count; i++)
@@ -103,12 +108,12 @@ public class InventoryScript : MonoBehaviour {
                 print(InventoryBox[i, 1] + " " + InventoryBox[i, 3]);
             }
         }
-        
-    
+        print("----------------------");
+
 
     }
 
-    public static void DisplayCrafting() //Show what can be crafted, and if player doesn't have the required items to craft an item, darken the image of the item
+    public static void DisplayCrafting() 
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
@@ -134,7 +139,7 @@ public class InventoryScript : MonoBehaviour {
         }
 
         //2D array for items to craft (Find X base on how much craftable items there are. Y value is 9 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
-        string[,] CraftingTable = new string[CraftableItemsCount, 5];
+        CraftingTable = new string[CraftableItemsCount, 5];
 
         int iCounter = 0;
 
@@ -277,7 +282,7 @@ public class InventoryScript : MonoBehaviour {
         {
             print("Item: " + CraftingTable[i, 1] + "         " + "Can you Craft it?: " + CraftingTable[i, 4]);
         }
-
+        print("----------------------");
 
 
 
@@ -289,9 +294,11 @@ public class InventoryScript : MonoBehaviour {
     }
 
     
-    public static void DisplayCraftingIngredient()
+    public static void DisplayItemFormula(int SelectedCraftID) 
     {
+      //Use the array that DisplayCrafting nicely constructed and donated to us :)
 
+        
 
 
     }

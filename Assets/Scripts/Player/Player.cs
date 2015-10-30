@@ -45,11 +45,16 @@ public class Player : MonoBehaviour {
                 //}
                 
                 //
+                
                 InventoryScript.DisplayInventory();
         }
         else if (Input.GetButtonDown("Button 2") == true) //If o is pressed down on keyboard or X in controller, open inventory
         {
             InventoryScript.DisplayCrafting();
+        }
+        else if (Input.GetButtonDown("Button 6") == true) //If bksp is pressed down on keyboard or Back in controller, penis
+        {
+            InventoryScript.DisplayItemFormula(5);
         }
 
         //Movement
