@@ -14,7 +14,7 @@
 		<Button>Button 3</Button>
 		<PressAmount>4</PressAmount>
 		<ConquenceWorth>-10</ConquenceWorth>
-		<TimeAllowed>10</TimeAllowed>
+		<TimeAllowed>6</TimeAllowed>
 	</Level2>
 
 

@@ -14,9 +14,15 @@ public class QTE : MonoBehaviour {
 	public bool IsTriggeredByMovement; //Triggered By Player entering Area.
 	public GameObject Prompt; //The Prompt Prefab Canvas.
 	public GameObject MainCamera; //used for the location to put the Prompt.
+	[HideInInspector]
 	public bool OverallPass; // The Overall Outcome of the QTE's. True if Overall Sucesss and False is overall Failure.
+	[HideInInspector]
 	public bool IsOver = false; //Has Happened.
+	[HideInInspector]
 	public bool IsActive = false; //Read if Active.
+	[HideInInspector]
+	public bool NewQTEReady = true;
+	[HideInInspector]
 	public int SuccessCount = 0;
 	
 	private XmlDocument QTEInstructions = new XmlDocument(); //The Quick time event Xml.
@@ -24,7 +30,6 @@ public class QTE : MonoBehaviour {
 	private int QTELevel = 1; //The QTE level in File.
 	private int FailLimit; //The Max Fails that can happen
 	private int FailCount; //The Current Amount of fails that has happened.
-
     private string PendingButton; //The Button being waited on.
     private float CurrentTimeRemaining; //The Time the player has.
 	
@@ -58,7 +63,7 @@ public class QTE : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D Other)
 	{
-		if (IsTriggeredByMovement && Other.tag == "Player") 
+		if (IsTriggeredByMovement && Other.tag == "Player" && !IsOver) 
 		{
 			//Instantiating a prompt object
 			PromptCanvasOnScreen = Instantiate(Prompt, new Vector3(MainCamera.GetComponent<Transform>().position.x, MainCamera.GetComponent<Transform>().position.y, 0), new Quaternion()) as GameObject;
@@ -75,13 +80,15 @@ public class QTE : MonoBehaviour {
         ProcessNextQTE();
 	}
     
-    void ProcessNextQTE() //Process a new QTE.
+    public void ProcessNextQTE() //Process a new QTE.
     {
+		PromptCanvasOnScreen.SetActive(true);
 
         PendingButton = QTEInstructions.SelectSingleNode("QTE/Level" + QTELevel + "/Button").InnerText;
         CurrentTimeRemaining = float.Parse(QTEInstructions.SelectSingleNode("QTE/Level" + QTELevel + "/TimeAllowed").InnerText);
 
 		PromptCanvasOnScreen.transform.FindChild("Button").GetComponent<Animator>().SetInteger("ButtonValue",int.Parse(PendingButton.Remove(0,7)));
+		NewQTEReady = false;
     }
 
 	//Called when Current Qte is Passed.
@@ -114,23 +121,21 @@ public class QTE : MonoBehaviour {
 	//Check if the whole QTE Event should end. No more Qtes or Too many fails.
 	bool ShouldEnd()
 	{
-
-
 		//if overall fail no chance of a continued QTE.
 		if (FailCount < FailLimit) {
 			QTELevel++;
 			foreach (XmlNode Child in QTEInstructions.SelectSingleNode("QTE")) {
 				if (Child.Name == "Level" + QTELevel) {
+					NewQTEReady = true;
 					return false;
 				}
 			}
-
 		}
 
 		//Set all Closing States.
 		IsActive = false;
 		IsOver = true;
-		PromptCanvasOnScreen.SetActive (false);
+		Destroy (PromptCanvasOnScreen);
 
 		return true;
 	}
