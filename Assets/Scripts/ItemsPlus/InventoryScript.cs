@@ -471,15 +471,15 @@ public class InventoryScript : MonoBehaviour {
                         }
                         else if (NumOfIngredients == 3)
                         {
-                            IngredientIDs[NumOfIngredients - 1] = subnode.InnerText; //Third Ingredient ID
+                            IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //Third Ingredient ID
                         }
                         else if (NumOfIngredients == 4)
                         {
-                            IngredientIDs[NumOfIngredients - 1] = subnode.InnerText; //Fourth Ingredient ID
+                            IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //Fourth Ingredient ID
                         }
                         else if (NumOfIngredients == 5)
                         {
-                            IngredientIDs[NumOfIngredients - 1] = subnode.InnerText; //Fifth Ingredient ID
+                            IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //Fifth Ingredient ID
                         }
                         NumOfIngredients++;
                     }
