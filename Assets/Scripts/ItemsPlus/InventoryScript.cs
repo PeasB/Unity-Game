@@ -13,7 +13,7 @@ public class InventoryScript : MonoBehaviour {
 
 
 
-    public static void DisplayInventory(bool CraftInventory) //<--Make so it either displays in Items menu or crafting menu
+    public static void DisplayInventory(bool CraftInventory) //<--Make so it either displays in Items menu or crafting menu. False = show in inventory
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
@@ -309,7 +309,7 @@ public class InventoryScript : MonoBehaviour {
 
         //var
         string[,] IngredientIDs = new string[5, 5]; //X: 5 is max number of ingredients(which item). Y is 5 (ID, Name, Description, PicPath, HasItem)
-        int NumOfIngredients = 1; //Start at defult 1 (Dont change)
+        int NumOfIngredients = 0; //Start at defult 0 (Dont change)
         //var of New_ID (ID to be crafted)
         string SC_Name = "?";
         string SC_Description = "?";
@@ -354,6 +354,7 @@ public class InventoryScript : MonoBehaviour {
                 {
                     if (subnode.Name != "NewID") //Check if its not the last child
                     {
+                        NumOfIngredients++;
                         if (NumOfIngredients == 1)
                         {
                             IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //First Ingredient ID
@@ -373,8 +374,7 @@ public class InventoryScript : MonoBehaviour {
                         else if (NumOfIngredients == 5)
                         {
                             IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //Fifth Ingredient ID
-                        }
-                        NumOfIngredients++;
+                        }                        
                     }
                 }
                 break;
@@ -449,7 +449,7 @@ public class InventoryScript : MonoBehaviour {
 
         //Var
         int[] IngredientIDs = new int[5];
-        int NumOfIngredients = 1; //Start at defult 1 (Dont change)
+        int NumOfIngredients = 0; //Start at defult 0 (Dont change)
 
         //Get all the IngredientIDs and store into array
         foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
@@ -461,6 +461,7 @@ public class InventoryScript : MonoBehaviour {
                 {
                     if (subnode.Name != "NewID") //Check if its not the last child
                     {
+                        NumOfIngredients++;
                         if (NumOfIngredients == 1)
                         {
                             IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //First Ingredient ID
@@ -480,30 +481,93 @@ public class InventoryScript : MonoBehaviour {
                         else if (NumOfIngredients == 5)
                         {
                             IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //Fifth Ingredient ID
-                        }
-                        NumOfIngredients++;
+                        }                        
                     }
                 }
                 break;
             }
         }
 
+        int NumOfCanCraft = 0; //The number of items that can be crafted. Check if it compares to the NumOfIngredients. If yes, preform craft
+
         //Do a check if user has the required ingredient items
-
-
+        for (int i = 0; i < NumOfIngredients; i++) //Find what ingredient is missing
+        {
+            foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
+            {
+                if (IngredientIDs[i].ToString() == node.InnerText)
+                {
+                    NumOfCanCraft++;                    
+                    break;
+                }
+            }
+        }
+        
         //if pass, craft!!!
+        if (NumOfIngredients == NumOfCanCraft)
+        {
+            //Create Item
+            CreateItem(SelectedCraftID);
 
+            //Delete ingredient items from the player inventory
+            for (int i = 0; i < NumOfIngredients; i++)
+            {
+                DeleteItem(IngredientIDs[i]); //<-Fix this so 0 doesn't get deleted
+            }
+            
+            //refresh inventory by calling in a DisplayInventory(true)
+            DisplayInventory(true);
+            ////refresh display crafting by calling it
+            //DisplayCrafting();
+            ////refresh itemformula by calling it
+            //DisplayItemFormula(SelectedCraftID);
+        }
+        else
+        {
+            //Error!!! Cannot craft because player does not have required items
+            print("Error: Cannot craft! Player does not have the required ingredients");
+        }
 
-        //Create new item in the players inventory
+       
 
-
-
-        //Delete ingredient items from the player inventory
-
-
-        //refresh inventory by calling in a DisplayInventory(true)
     }
 
+    public static void CreateItem(int SelectedItemID)
+    {
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        //Create new item in the players inventory
+        XmlNode Item = SaveGameDoc.CreateElement("ItemID");
+        Item.InnerText = SelectedItemID.ToString();
+        SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
+        //Save XML
+        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+    }
+
+    public static void DeleteItem(int SelectedItemID)
+    {
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        //Check if Item exists / find item
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
+        {
+            if (SelectedItemID.ToString() == node.InnerText)
+            {
+                //Item found. Now delete item. Goodbye :)
+                node.ParentNode.RemoveChild(node);
+                //Save XML
+                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                break;
+            }
+        }
+
+    }
+
+    
 
     // Use this for initialization
     void Start () {

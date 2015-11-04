@@ -54,7 +54,8 @@ public class Player : MonoBehaviour {
         }
         else if (Input.GetButtonDown("Button 6") == true) //If bksp is pressed down on keyboard or Back in controller, penis
         {
-            InventoryScript.DisplayItemFormula(5);
+            //InventoryScript.DisplayItemFormula(5);
+            InventoryScript.PerformCraft(5);
         }
 
         //Movement

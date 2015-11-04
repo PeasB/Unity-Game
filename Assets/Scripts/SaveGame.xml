@@ -9,15 +9,13 @@
     <Music>1</Music>
     <ControllerSupport>0</ControllerSupport>
   </Settings>
-  
   <Status>
-	  <Josh>1</Josh>
-	  <Matt>0</Matt>
-	  <Kate>2</Kate>
-	  <April>1</April>
-	  <Ethan>1</Ethan>
+    <Josh>1</Josh>
+    <Matt>0</Matt>
+    <Kate>2</Kate>
+    <April>1</April>
+    <Ethan>1</Ethan>
   </Status>
-  
   <Relationships>
     <Josh>
       <Matt>100</Matt>
@@ -50,7 +48,6 @@
       <April>100</April>
     </Ethan>
   </Relationships>
-  
   <StoryPaths>
     <Situation>
       <ID>1.1</ID>
@@ -73,21 +70,13 @@
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
-   
   <Inventory>
     <ItemID>1</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>2</ItemID>
+    <ItemID>4</ItemID>
     <ItemID>1</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>3</ItemID>
+    <ItemID>4</ItemID>
+    <ItemID>5</ItemID>
+    <ItemID>5</ItemID>
+    <ItemID>5</ItemID>
   </Inventory>
-  
 </SaveData>
