@@ -13,7 +13,7 @@ public class InventoryScript : MonoBehaviour {
 
 
 
-    public static void DisplayInventory() //<--Make so it either displays in Items menu or crafting menu
+    public static void DisplayInventory(bool CraftInventory) //<--Make so it either displays in Items menu or crafting menu
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
@@ -100,6 +100,15 @@ public class InventoryScript : MonoBehaviour {
 
         //------------------------Display into UI---------------------------
         //Display array info into the UI (Display the items in the players inventory)
+
+        if (CraftInventory == false) //Display inventory in the main inventory tab
+        {
+
+        }
+        else if (CraftInventory == true) //Display inventory in the inventory section in the crafting tab
+        {
+
+        }
         //Print it out until Andrew finishes inventory UI
         for (int i = 0; i < InventoryBox.GetLength(0); i++)
         {
@@ -292,8 +301,7 @@ public class InventoryScript : MonoBehaviour {
 
 
     }
-
-    
+        
     public static void DisplayItemFormula(int SelectedCraftID) 
     {
       //Use the array that DisplayCrafting nicely constructed and donated to us :)
@@ -303,6 +311,73 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    public static void PerformCraft(int SelectedCraftID) //Do craft
+    {
+
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        //Read in Items.xml
+        XmlDocument ItemsDoc = new XmlDocument();
+        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+
+        //Var
+        int[] IngredientIDs = new int[5];
+        int NumOfIngredients = 1; //Start at defult 1 (Dont change)
+
+        //Get all the IngredientIDs and store into array
+        foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
+        {
+            if (node.SelectSingleNode("NewID").InnerText == SelectedCraftID.ToString()) // IF Matched ID
+            {
+                //Get Ingredient ID's
+                foreach (XmlNode subnode in node.ChildNodes)
+                {
+                    if (subnode.Name != "NewID") //Check if its not the last child
+                    {
+                        if (NumOfIngredients == 1)
+                        {
+                            IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //First Ingredient ID
+                        }
+                        else if (NumOfIngredients == 2)
+                        {
+                            IngredientIDs[NumOfIngredients - 1] = int.Parse(subnode.InnerText); //Second Ingredient ID
+                        }
+                        else if (NumOfIngredients == 3)
+                        {
+                            IngredientIDs[NumOfIngredients - 1] = subnode.InnerText; //Third Ingredient ID
+                        }
+                        else if (NumOfIngredients == 4)
+                        {
+                            IngredientIDs[NumOfIngredients - 1] = subnode.InnerText; //Fourth Ingredient ID
+                        }
+                        else if (NumOfIngredients == 5)
+                        {
+                            IngredientIDs[NumOfIngredients - 1] = subnode.InnerText; //Fifth Ingredient ID
+                        }
+                        NumOfIngredients++;
+                    }
+                }
+                break;
+            }
+        }
+
+        //Do a check if user has the required ingredient items
+
+
+        //if pass, craft!!!
+
+
+        //Create new item in the players inventory
+
+
+
+        //Delete ingredient items from the player inventory
+
+
+        //refresh inventory by calling in a DisplayInventory(true)
+    }
 
 
 	// Use this for initialization
