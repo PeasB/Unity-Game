@@ -17,6 +17,7 @@
 	  <April>1</April>
 	  <Ethan>1</Ethan>
   </Status>
+  
   <Relationships>
     <Josh>
       <Matt>100</Matt>
@@ -49,6 +50,7 @@
       <April>100</April>
     </Ethan>
   </Relationships>
+  
   <StoryPaths>
     <Situation>
       <ID>1.1</ID>
@@ -71,6 +73,7 @@
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
+   
   <Inventory>
     <ItemID>1</ItemID>
     <ItemID>0</ItemID>
@@ -86,4 +89,5 @@
     <ItemID>1</ItemID>
     <ItemID>3</ItemID>
   </Inventory>
+  
 </SaveData>

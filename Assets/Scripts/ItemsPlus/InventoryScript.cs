@@ -175,6 +175,7 @@ public class InventoryScript : MonoBehaviour {
                     Main_Name = x_Node.SelectSingleNode("Name").InnerText; //Store Name
                     Main_Description = x_Node.SelectSingleNode("Description").InnerText; //Store Description
                     Main_PicturePath = x_Node.SelectSingleNode("PicPath").InnerText; //Store Picture Path
+                    break;
                 }
             }
 
@@ -193,7 +194,7 @@ public class InventoryScript : MonoBehaviour {
             int IngredientID = 1;
 
             //Get Ingredient ID's
-            foreach (XmlNode subnode in node.ChildNodes) //<------node.id //OLD: ItemsDoc.SelectNodes("Items/Crafting/Craft/ID)"  WORK ON tHIS!!!
+            foreach (XmlNode subnode in node.ChildNodes)
             {
                 if (subnode.Name != "NewID") //Check if its not the last child
                 {    
@@ -304,9 +305,133 @@ public class InventoryScript : MonoBehaviour {
         
     public static void DisplayItemFormula(int SelectedCraftID) 
     {
-      //Use the array that DisplayCrafting nicely constructed and donated to us :)
+        //Use the array that DisplayCrafting nicely constructed and donated to us :)
+
+        //var
+        string[,] IngredientIDs = new string[5, 5]; //X: 5 is max number of ingredients(which item). Y is 5 (ID, Name, Description, PicPath, HasItem)
+        int NumOfIngredients = 1; //Start at defult 1 (Dont change)
+        //var of New_ID (ID to be crafted)
+        string SC_Name = "?";
+        string SC_Description = "?";
+        string SC_PicPath = "?";
+        bool SC_CanCraft = false;
+
+        //Match info from SC_ID (SelectedCraftID)
+        for (int i = 0; i < CraftingTable.GetLength(0); i++)
+        {
+            if (CraftingTable[i, 0] == SelectedCraftID.ToString())
+            {
+                SC_Name = CraftingTable[i, 1];
+                SC_Description = CraftingTable[i, 2];
+                SC_PicPath = CraftingTable[i, 3];
+                if (CraftingTable[i, 4] == "1")
+                {
+                    SC_CanCraft = true;
+                }
+                break;
+            }
+        }
+
+        //--------------------------------------------------------------------------
+
+        //Find out how many ingredients there are for this Craft Item so you know how many ingredient boxs to display on UI
+        //Do a count on how many ingredients in item, then Store IngredientID's in array.
+               
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        //Read in Items.xml
+        XmlDocument ItemsDoc = new XmlDocument();
+        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+
+        foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
+        {
+            if (node.SelectSingleNode("NewID").InnerText == SelectedCraftID.ToString()) // IF Matched ID
+            {
+                //Get Ingredient ID's
+                foreach (XmlNode subnode in node.ChildNodes)
+                {
+                    if (subnode.Name != "NewID") //Check if its not the last child
+                    {
+                        if (NumOfIngredients == 1)
+                        {
+                            IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //First Ingredient ID
+                        }
+                        else if (NumOfIngredients == 2)
+                        {
+                            IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //Second Ingredient ID
+                        }
+                        else if (NumOfIngredients == 3)
+                        {
+                            IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //Third Ingredient ID
+                        }
+                        else if (NumOfIngredients == 4)
+                        {
+                            IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //Fourth Ingredient ID
+                        }
+                        else if (NumOfIngredients == 5)
+                        {
+                            IngredientIDs[NumOfIngredients - 1, 0] = subnode.InnerText; //Fifth Ingredient ID
+                        }
+                        NumOfIngredients++;
+                    }
+                }
+                break;
+            }
+        }
+
+
+        //--------------------------------------------------------------------------
+
+        //If SC_CanCraft == false, Check what items are missing so you darken the missing item on the ui.
+        //If SC_CanCraft == true, skip all since no item pics need to be darken since you have all the required items.
+        //Also Find the rest of the info of ingredients (like name, description, picpath, ect)
 
         
+            for (int i = 0; i < NumOfIngredients; i++) //Find what ingredient is missing
+            {
+
+                //Find other info
+                foreach (XmlNode node in ItemsDoc.SelectNodes("Items/ItemsList/Item")) //Get info of ItemID
+                {
+                    if (IngredientIDs[i, 0] == node.SelectSingleNode("ID").InnerText)
+                    {
+                        IngredientIDs[i, 1] = node.SelectSingleNode("Name").InnerText; //Name 
+                        IngredientIDs[i, 2] = node.SelectSingleNode("Description").InnerText; //Descripition
+                        IngredientIDs[i, 3] = node.SelectSingleNode("PicPath").InnerText; //PicPath
+                    }
+                }
+
+                if (SC_CanCraft == false) //you dont have all required items, so see if you own this selected ingredient
+                {
+                    foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
+                    {
+                        if (IngredientIDs[i, 0] == node.InnerText)
+                        {
+                            IngredientIDs[i, 4] = "1"; //Has item
+                            break;
+                        }
+                    }
+
+                    if (IngredientIDs[i, 4] != "1") //If no item match 
+                        IngredientIDs[i, 4] = "0"; 
+
+                }
+                else //true (you already have all items
+                {
+                    IngredientIDs[i, 4] = "1"; //HasItem
+                }
+           }
+
+       //--------------------------------------------------------------------------
+
+       //========================Display into UI==============================
+       print("Babatunde");
+
+       //Given: SelectedCraft_ID, SC_CanCraft, SC_Description, SC_PicPath, and all that for each ingredient in the IngredientID array
+
+
 
 
     }
@@ -380,8 +505,8 @@ public class InventoryScript : MonoBehaviour {
     }
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
