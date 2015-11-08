@@ -29,24 +29,27 @@ public class Player : MonoBehaviour {
         //If i is pressed down on keyboard or Y in controller, open inventory
         if (Input.GetButtonDown("Button 3") == true)
         {
-                ////pause / unpause   <--------********Causes conflict if the canvas is not in the scene**********
-                //if (Paused == true)
-                //{
-                //    Time.timeScale = 1.0f;
-                //    Canvas.gameObject.SetActive(false);
-                //    Paused = false;
-                //}
-                //else
-                //{
-                //    Time.timeScale = 0.0f;
-                //    Canvas.gameObject.SetActive(true);
-                //    Paused = true;
+            ////pause / unpause   <--------********Causes conflict if the canvas is not in the scene**********
+            //if (Paused == true)
+            //{
+            //    Time.timeScale = 1.0f;
+            //    Canvas.gameObject.SetActive(false);
+            //    Paused = false;
+            //}
+            //else
+            //{
+            //    Time.timeScale = 0.0f;
+            //    Canvas.gameObject.SetActive(true);
+            //    Paused = true;
 
-                //}
-                
-                //
-                
-                InventoryScript.DisplayInventory(false); //true inputs into crafting inventory, false inputs into inventory tab
+            //}
+
+            //
+
+            //print(AES_String_.EncryptText("Hello Unity!"));
+
+
+               InventoryScript.DisplayInventory(false); //true inputs into crafting inventory, false inputs into inventory tab
         }
         else if (Input.GetButtonDown("Button 2") == true) //If o is pressed down on keyboard or X in controller, open inventory
         {
