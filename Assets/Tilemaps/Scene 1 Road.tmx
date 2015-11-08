@@ -29,4 +29,14 @@
    eJztz7ENwCAAA0FGDuxfJBNQgfLFneTa+jHOer7Nzdbhv1t0tOho0dGio0VHi44WHS06WnS06GjR0aKjRUeLjhYdLTpadLToaNHRoqNFR4uOFh0tOlp0tOho0dGio0VHi44WHS06WnS06GjR0aKjRUeLjhYdLTpadLToaNHRoqNFR4uOFh0tOlp0tPzV8QI0yI1U
   </data>
  </layer>
+ <layer name="TreeStumps" width="50" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1kESgyAMBVCm9649ifWqxV134JgSqe/NsA46SfilAORZH9k3AADgzp41jy71vAbn0ui6e65+17MN/o6suswrovez5vZbRO+bHwCAY66QA1t67hiVA3/5P0ZmVbkY8sywV3vYI3BOaxfMsitau8CuAPhPs7xTLd6pe8vs48jamX1shgDiyVkAAAAAAHAdH1BOL+A=
+  </data>
+ </layer>
+ <layer name="Trees" width="50" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztmdtRAzEMRR1CEzz74FkJUBpQCVAJ0AavgPYjM8uOtZZsaWWYe2b8lexatuSr6yQlAAAAAAAA/i+365TuaNyvoyPJI43vgT5/pPHU6Tqk8T3T5y80XivW8blK6YvGZlUXo4RcfLl5N/T59/CdXf5dXG4Pd1I6onG8Yxr6L3Lx1c7L5fac3nNB47JiHW+0l+80PipyWTsvV3tX9J5rGjcV69ijZ/ZpHFQ8WzuvpPa0nFAMpzTOJrFYnLklzm0JizO3xLkt0XLmat/RclY5Ws5c7TtazmotHnvHnVUNWl8UsXcStL7IYu88aPFFtXh4Y4/eVKJ3bzwg0YGIGtAi0YGIGhjQ1HOEDkh7Qe/1LO0F03ruwQeOydWA5K4n8YGSWvTcD0mMEh8oqUVPXyyJUeIDJdpq4a0Hcrm38LsDEm21mqt3HZLyF/qqBC73HjricW8p4aEjEfcWTkda/HaEX+F0BLqQJ+q/hrEulLRAohU95LekBRKt8NB9bY5LnkLiOTzuU9oclzyFlefQEt3brfpk1J15S6+/72mx7pNcfnv/X3kKl1+NDiy5Zq5PcfnV6MCS/U3raac6MKcvS2pf6914Tl+02tdSh619Sqsvc37Luw4t74Vzdexdh5b3wrk69u7BNWeIO/9Rfqt27gh/0aIT3LMR9/AWnejhLrclpxNS/xzt88fkdEJa31YaY+XFpj1i6fq2qs9Sj/D2rlb1WeoR2v3SrtuqPks9QrtfPenYGO1+9aRjLUT/XgEAAAAAAAAAAAAAAABAxw8oLRyM
+  </data>
+ </layer>
 </map>

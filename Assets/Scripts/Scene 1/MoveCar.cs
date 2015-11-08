@@ -2,21 +2,25 @@
 
 public class MoveCar : MonoBehaviour {
 
-	public Vector2 MoveSpeed; //Speed of object
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
+	public Vector2 MoveSpeed = new Vector2(); //Speed of object
+    public bool CanDrive = false;
 	
 	// Update is called once per frame
 	void Update () 
 	{	
-		var X = transform.position.x; // get truck x
-		var Y = transform.position.y; // get truck y	
-		 
-
-		transform.position = new Vector3 (X, Y + MoveSpeed.y,transform.position.z); //move up by speed
+        if (CanDrive)
+		    this.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed.x,MoveSpeed.y); //move up by speed
 	}
+
+
+
+    void OnTriggerEnter2D(Collider2D Other)
+    {
+        if(Other.tag == "Respawn")
+            this.GetComponent<Transform>().position = new Vector3(-5, -135);
+
+
+
+
+    }
 }

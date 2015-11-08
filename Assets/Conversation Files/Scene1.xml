@@ -9,18 +9,35 @@
     <Level1>
 
       <initialDialogue>
-        <DialogueCount>3</DialogueCount>
+        <DialogueCount>7</DialogueCount>
         <Dialogue>
           <Conditions>None</Conditions>
-          <Text>Kate: You son of a...</Text>
+          <Text>Josh: Oh we are going to get smashed this week! Right Ethan?</Text>
         </Dialogue>
         <Dialogue>
           <Conditions>None</Conditions>
-          <Text>April: Ok! Enough you two! I feel like a parent</Text>
+          <Text>Ethan: Hell Ya!</Text>
         </Dialogue>
         <Dialogue>
           <Conditions>None</Conditions>
-          <Text>Ethan: Oh who's the father, Matt?</Text>
+          <Text>Kate: Please Ethan at least i'm not an alcoholic.</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Josh: Ooooooh.</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Kate: You son of a B....</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>April: Ok! Enough you two! I feel like a parent.</Text>
+        </Dialogue>
+        
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Ethan: Oh Who's the father, Matt?</Text>
         </Dialogue>
       </initialDialogue>
 
@@ -28,14 +45,7 @@
 
       <Choice1>
 
-        <Conditions>
-          <Relationship>
-            <April>100</April>
-          </Relationship>
-          <InScene>
-            <April>true</April>
-          </InScene>
-        </Conditions>
+        <Conditions>None</Conditions>
         <Text>Protective - Come on guys cut it out!</Text>
         <Conquences>
           <Relationship>
@@ -43,6 +53,7 @@
             <Ethan>-15</Ethan>
           </Relationship>
         </Conquences>
+       
         <AdditionalDialogue>
           <DialogueCount>3</DialogueCount>
           <Dialogue>
@@ -57,26 +68,32 @@
             <Conditions>None</Conditions>
             <Text>Ethan: Man it was just a joke.</Text>
           </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Kate: Enough Jokes! How far is this cabin Ethan?</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Ethan: Well my uncle said that it should be right up ahead, we should be there soon.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Josh: Good, cuz I gotta peee...</Text>
+          </Dialogue>
         </AdditionalDialogue>
 
       </Choice1>
       <Choice2>
 
-        <Conditions>
-          <Relationship>
-            <April>100</April>
-          </Relationship>
-          <InScene>
-            <April>true</April>
-          </InScene>
-        </Conditions>
+        <Conditions>None</Conditions>
         <Text>Encourage - You know it!</Text>
         <Conquences>
-			<Relationship>
-            	<April>15</April>
-            	<Ethan>-15</Ethan>
-          	</Relationship>
+          <Relationship>
+            <April>-15</April>
+            <Ethan>15</Ethan>
+          </Relationship>
         </Conquences>
+        
         <AdditionalDialogue>
           <DialogueCount>2</DialogueCount>
           <Dialogue>
@@ -94,86 +111,6 @@
 
 
     </Level1>
-    <Level2>
-
-      <initialDialogue>
-        <DialogueCount>3</DialogueCount>
-        <Dialogue>
-          <Conditions>None</Conditions>
-          <Text>Myles: This Conversation System is so cool!</Text>
-        </Dialogue>
-        <Dialogue>
-          <Conditions>
-          	<StoryPaths><Path1.1>2</Path1.1></StoryPaths>
-          </Conditions>
-          <Text>Adam: I know right!</Text>
-        </Dialogue>
-        <Dialogue>
-          <Conditions>None</Conditions>
-          <Text> Ryan: Ya very cool now lets play some melee!</Text>
-        </Dialogue>
-      </initialDialogue>
-
-      <TimeToChoose>4.5</TimeToChoose>
-
-      <Choice1>
-
-        <Conditions>
-          <Relationship>
-            <April>100</April>
-          </Relationship>
-          <InScene>
-            <April>true</April>
-          </InScene>
-        </Conditions>
-        <Text>Agree - Alright Im going to beat you!</Text>
-        <Conquences>
-          <Relationship>
-            <April>15</April>
-            <Ethan>-15</Ethan>
-          </Relationship>
-        </Conquences>
-        <AdditionalDialogue>
-          <DialogueCount>1</DialogueCount>
-          <Dialogue>
-            <Conditions>None</Conditions>
-            <Text>Adam: Ya right Im going to lose!</Text>
-          </Dialogue>
-          <Dialogue></Dialogue>
-        </AdditionalDialogue>
-
-      </Choice1>
-      <Choice2>
-
-        <Conditions>
-          <Relationship>
-            <April>100</April>
-          </Relationship>
-          <InScene>
-            <April>true</April>
-          </InScene>
-        </Conditions>
-        <Text>Disagree - Your going to destory me!</Text>
-        <Conquences>
-			<Relationship>
-            	<April>15</April>
-            	<Ethan>-15</Ethan>
-          	</Relationship>
-        </Conquences>
-        <AdditionalDialogue>
-          <DialogueCount>2</DialogueCount>
-          <Dialogue>
-            <Conditions>None</Conditions>
-            <Text>Adam: You're going to destory me.... Myles you play.</Text>
-          </Dialogue>
-          <Dialogue>
-            <Conditions>None</Conditions>
-            <Text>Myles: Alright!</Text>
-          </Dialogue>
-        </AdditionalDialogue>
-
-      </Choice2>
-    </Level2>
 
 
 	 </Conversation>

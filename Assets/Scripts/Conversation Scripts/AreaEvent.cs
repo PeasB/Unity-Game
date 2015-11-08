@@ -13,7 +13,8 @@ public class AreaEvent : MonoBehaviour {
     public Canvas ChoiceCanvas;
 	public bool CanReactivate;
 	public bool ButtonActivated;
-    private ConversationManager ConversationInstance;
+    [HideInInspector]
+    public ConversationManager ConversationInstance;
 	private bool JustActivated = false;
 
     
@@ -57,8 +58,7 @@ public class AreaEvent : MonoBehaviour {
 
     void Update()
     {
-
-        if(ConversationInstance.IsActive) //Makes sure ConversationInstance has been initalized.
+        if (ConversationInstance.IsActive) //Makes sure ConversationInstance has been initalized.
         {
             //if pressed show next Dialogue. JustActivated prevents Dialogue from being processed when clicked to talk.
 			//Process Dialogue is run in Start Conversation and running it again will cause the second dialogue to overwrite the first Dialogue.
@@ -93,6 +93,7 @@ public class AreaEvent : MonoBehaviour {
             }
 
         }
+        
 
 		JustActivated = false;
 

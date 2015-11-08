@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 599a25a2f43a63e4aa24363f433067df
+timeCreated: 1432400802
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bg_mountains_0
+    21300002: bg_mountains_2
+    21300004: bg_mountains_3
+    21300006: bg_mountains_4
+    21300008: bg_mountains_5
+    21300010: bg_mountains_6
+    21300012: bg_mountains_7
+    21300014: bg_mountains_8
+    21300016: bg_mountains_9
+    21300018: bg_mountains_10
+    21300020: bg_mountains_11
+    21300022: bg_mountains_12
+    21300024: bg_mountains_13
+    21300026: bg_mountains_14
+    21300028: bg_mountains_15
+    21300030: bg_mountains_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bg_mountains_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 979
+        width: 320
+        height: 121
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 320
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 820
+        width: 320
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 780
+        width: 320
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 716
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 652
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 588
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 396
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 332
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 320
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bg_mountains_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 320
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
