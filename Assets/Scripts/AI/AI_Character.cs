@@ -15,6 +15,15 @@ public class AI_Character : MonoBehaviour {
     int Original_Y = 0;
     int EventStepCase = 0; //The step case for an event. 
 
+    int PlayerPositionCounter = 0; //Everytime it hits 30, take a snapshot of the players x and y position
+    int[,] PlayerPreviousPosition = new int[120, 2];
+    int ArrayCount = 0; //Goes up to 119
+    int AIarrayPart = 0; //Where in the array is the AI?
+    int Counter7 = 0;
+
+    int PlayerPreviousX = (int)Player.Body.position.x; //Previous X position of player after 30 frames
+    int PlayerPreviousY = (int)Player.Body.position.y; //Previous Y position of player after 30 frames
+
     //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
     //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
 
@@ -48,8 +57,8 @@ public class AI_Character : MonoBehaviour {
     
     private int Find_X_Distance()
     {
-        int X_Distance = (int)Player.Body.position.x - (int)Body.position.x;
-
+        int X_Distance = PlayerPreviousPosition[AIarrayPart, 0] - (int)Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
+        
         int X_Direction = 0;
 
         if (X_Distance < 0)
@@ -66,7 +75,7 @@ public class AI_Character : MonoBehaviour {
 
     private int Find_Y_Distance()
     {
-        int Y_Distance = (int)Player.Body.position.y - (int)Body.position.y;
+        int Y_Distance = PlayerPreviousPosition[AIarrayPart, 1] - (int)Body.position.y; //(int)Player.Body.position.y - (int)Body.position.y;
 
         int Y_Direction = 0;
 
@@ -99,9 +108,7 @@ public class AI_Character : MonoBehaviour {
         }
 
         //The AI is stuck!!! :(
-        //Find it's own path to come back
-
-        
+        //Find it's own path to come back        
 
     }
 
@@ -164,18 +171,59 @@ public class AI_Character : MonoBehaviour {
 
             if (FindPath() > 25) //If AI far away from Player, go to the player
             {
-                if (Body.position.x != (int)Player.Body.position.x)
-                {
-                    XMove = Find_X_Distance();
-                }
+                //find players position every 10 frames (1/6 a second). This is so it remembers the players path. Dont remember when player is stationary
+               // if (PlayerPreviousPosition[ArrayCount, 0] != (int)Player.Body.position.x && PlayerPreviousPosition[ArrayCount, 1] != (int)Player.Body.position.y)
+                //{
+                    if (PlayerPositionCounter >= 10)
+                    {                        
+                        if (ArrayCount >= 120) //Go to beginning of array
+                        {
+                            ArrayCount = 0;
+                        }
+                        PlayerPreviousPosition[ArrayCount, 0] = (int)Player.Body.position.x;
+                        PlayerPreviousPosition[ArrayCount, 1] = (int)Player.Body.position.y;
+                        ArrayCount++;
 
-                if (Body.position.y != (int)Player.Body.position.y)
+                        PlayerPositionCounter = 0;
+                    }
+                    PlayerPositionCounter++;
+               // }
+                                
+
+                if (Counter7 >= 13)
                 {
-                    YMove = Find_Y_Distance();
+                    AIarrayPart++;
+                    if (AIarrayPart >= 120)
+                    {
+                        AIarrayPart = 0;
+                    }
+                    Counter7 = 0;
+                }
+                Counter7++;
+
+                if (PlayerPreviousPosition[AIarrayPart, 0] != 0 && PlayerPreviousPosition[AIarrayPart, 1] != 0)
+                {
+                    if (Body.position.x != PlayerPreviousPosition[AIarrayPart, 0])
+                    {
+                        XMove = Find_X_Distance();
+                    }
+
+                    if (Body.position.y != PlayerPreviousPosition[AIarrayPart, 1])
+                    {
+                        YMove = Find_Y_Distance();
+                    }
+                }
+                else
+                {
+                    Counter7 = ArrayCount;
                 }
                 
+
+
+                               
+
             }
-            else if (FindPath() < 18) //If Player and AI collide
+            else if (FindPath() < 25) //If Player and AI collide
             {
                 //Let Player go through AI, temporarily disable circle collider
                 //(gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
