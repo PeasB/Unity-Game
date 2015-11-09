@@ -2,9 +2,8 @@
 using System.Security.Cryptography;
 using System.IO;
 
-public class AES_String_ : MonoBehaviour {
-
-
+public class AES_Crypto : MonoBehaviour {
+    
     private static byte[] AES_Encrypt(byte[] bytesToBeEncrypted, byte[] passwordBytes)
     {
         byte[] encryptedBytes = null;
@@ -37,7 +36,7 @@ public class AES_String_ : MonoBehaviour {
 
         return encryptedBytes;
     }
-    
+
     private static byte[] AES_Decrypt(byte[] bytesToBeDecrypted, byte[] passwordBytes)
     {
         byte[] decryptedBytes = null;
@@ -51,8 +50,8 @@ public class AES_String_ : MonoBehaviour {
             using (RijndaelManaged AES = new RijndaelManaged())
             {
                 AES.KeySize = 256;
-                AES.BlockSize = 128;
-
+                AES.BlockSize = 128; //128
+                
                 var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000);
                 AES.Key = key.GetBytes(AES.KeySize / 8);
                 AES.IV = key.GetBytes(AES.BlockSize / 8);
@@ -88,7 +87,11 @@ public class AES_String_ : MonoBehaviour {
     }
 
     public static string DecryptText(string input) //, string password
-    {
+    {   
+        //So it is a multiple of 4, idek     
+        int len = input.Length % 4;
+        if (len > 0) input = input.PadRight(input.Length + (4 - len), '=');
+
         // Get the bytes of the string
         byte[] bytesToBeDecrypted = System.Convert.FromBase64String(input);
         byte[] passwordBytes = System.Text.Encoding.UTF8.GetBytes("akvbfhs82A1R1M1A134912"); //(password)
@@ -100,7 +103,8 @@ public class AES_String_ : MonoBehaviour {
 
         return result;
     }
-    
+
+
 
     // Use this for initialization
     void Start () {

@@ -537,12 +537,21 @@ public class InventoryScript : MonoBehaviour {
         XmlDocument SaveGameDoc = new XmlDocument();
         SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
 
+        ////---For encrypted one---
+        ////Read in SaveGame.xml
+        //XmlDocument SaveGameDoc = new XmlDocument();
+        //SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
+        
         //Create new item in the players inventory
         XmlNode Item = SaveGameDoc.CreateElement("ItemID");
         Item.InnerText = SelectedItemID.ToString();
         SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
         //Save XML
         SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+        ////---For encrypted one---
+        ////Save XML
+        //DoSaveGame.UpdateSaveData(SaveGameDoc.OuterXml);        
     }
 
     public static void DeleteItem(int SelectedItemID)
