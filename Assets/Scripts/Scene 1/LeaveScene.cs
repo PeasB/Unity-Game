@@ -22,7 +22,11 @@ public class LeaveScene : MonoBehaviour {
             Timer -= Time.deltaTime;
 
         if (Timer <= 0)
+        {
+            Car.CanDrive = false;
             Application.LoadLevel("Scene 2");
+        }
+            
 
 
 

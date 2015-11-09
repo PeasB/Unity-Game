@@ -100,5 +100,5 @@
         }
     }
 
-    Fallback "Sprites/Default"
+    Fallback "Sprites/Diffuse"
 }

@@ -55,7 +55,7 @@
         </Conquences>
        
         <AdditionalDialogue>
-          <DialogueCount>3</DialogueCount>
+          <DialogueCount>6</DialogueCount>
           <Dialogue>
             <Conditions>None</Conditions>
             <Text>Matt: Come on guys cut it out! You know there is nothing between us.</Text>
@@ -95,7 +95,7 @@
         </Conquences>
         
         <AdditionalDialogue>
-          <DialogueCount>2</DialogueCount>
+          <DialogueCount>5</DialogueCount>
           <Dialogue>
             <Conditions>None</Conditions>
             <Text>April: Your a jerk Matt.</Text>
@@ -103,6 +103,18 @@
           <Dialogue>
             <Conditions>None</Conditions>
             <Text>Matt: It was just a joke April. Chill...</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Kate: Enough Jokes! How far is this cabin Ethan?</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Ethan: Well my uncle said that it should be right up ahead, we should be there soon.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Josh: Good, cuz I gotta peee...</Text>
           </Dialogue>
         </AdditionalDialogue>
 
