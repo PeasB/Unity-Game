@@ -15,11 +15,11 @@ public class AI_Character : MonoBehaviour {
     int Original_Y = 0;
     int EventStepCase = 0; //The step case for an event. 
 
-    int PlayerPositionCounter = 0; //Everytime it hits 30, take a snapshot of the players x and y position
+    int PlayerPositionCounter = 0; //Everytime it hits 10, take a snapshot of the players x and y position
     int[,] PlayerPreviousPosition = new int[120, 2];
     int ArrayCount = 0; //Goes up to 119
     int AIarrayPart = 0; //Where in the array is the AI?
-    int Counter7 = 0;
+    int Counter7 = 0; //when it hits 11, AIarrayCount++
 
     int PlayerPreviousX = (int)Player.Body.position.x; //Previous X position of player after 30 frames
     int PlayerPreviousY = (int)Player.Body.position.y; //Previous Y position of player after 30 frames
@@ -42,8 +42,9 @@ public class AI_Character : MonoBehaviour {
 		Body = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
         CircleCollition = GetComponent<CircleCollider2D>();
-        
-	}
+                
+
+    }
 	
     private int FindPath() //Distance from Player to AI
     {        
@@ -171,9 +172,7 @@ public class AI_Character : MonoBehaviour {
 
             if (FindPath() > 25) //If AI far away from Player, go to the player
             {
-                //find players position every 10 frames (1/6 a second). This is so it remembers the players path. Dont remember when player is stationary
-               // if (PlayerPreviousPosition[ArrayCount, 0] != (int)Player.Body.position.x && PlayerPreviousPosition[ArrayCount, 1] != (int)Player.Body.position.y)
-                //{
+                //find players position every 10 frames (1/6 a second). This is so it remembers the players path. (history path)               
                     if (PlayerPositionCounter >= 10)
                     {                        
                         if (ArrayCount >= 120) //Go to beginning of array
@@ -187,10 +186,12 @@ public class AI_Character : MonoBehaviour {
                         PlayerPositionCounter = 0;
                     }
                     PlayerPositionCounter++;
-               // }
-                                
 
-                if (Counter7 >= 13)
+
+                //AI follow the history path of player
+
+                //Follow to interval 
+                if (Counter7 >= 11) //Do not make is 10 or less!!!
                 {
                     AIarrayPart++;
                     if (AIarrayPart >= 120)
@@ -198,11 +199,57 @@ public class AI_Character : MonoBehaviour {
                         AIarrayPart = 0;
                     }
                     Counter7 = 0;
+
+                    //check 1 behind ai count to see if the (x,y) is the same, and if so, preform a skip (for a max skip length of one full period (120)
+                    //special case of when array index is 0, it looks back at index 119
+                    if (AIarrayPart == 0) //Special Case
+                    {
+                        //Look back in time
+                        if (PlayerPreviousPosition[AIarrayPart, 0] == PlayerPreviousPosition[119, 0] && PlayerPreviousPosition[AIarrayPart, 1] == PlayerPreviousPosition[119, 1])
+                        {
+                            //If the same, do a skip
+                            for (int i = 0; i < 120; i++)
+                            {
+                                AIarrayPart++; //Increment AIarrayPart counter
+                                if (AIarrayPart >= 120) //Check if is at end of array so it can start from beginning
+                                {
+                                    AIarrayPart = 0;
+                                }
+
+                                if (AIarrayPart == ArrayCount || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[119, 0])
+                                {
+                                    break; //Exit loop
+                                }
+                            }
+                        }
+                    }
+                    else //Regular Case
+                    {
+                        //Look back in time
+                        if (PlayerPreviousPosition[AIarrayPart, 0] == PlayerPreviousPosition[AIarrayPart - 1, 0] && PlayerPreviousPosition[AIarrayPart, 1] == PlayerPreviousPosition[AIarrayPart - 1, 1])
+                        {
+                            //If the same, do a skip
+                            for (int i = 0; i < 120; i++)
+                            {
+                                AIarrayPart++; //Increment AIarrayPart counter
+                                if (AIarrayPart >= 120) //Check if is at end of array so it can start from beginning
+                                {
+                                    AIarrayPart = 0;
+                                }
+
+                                if (AIarrayPart == ArrayCount || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[AIarrayPart - 1, 0])
+                                {
+                                    break; //Exit loop
+                                }
+                            }
+                        }
+                    }
+
+
                 }
                 Counter7++;
 
-                if (PlayerPreviousPosition[AIarrayPart, 0] != 0 && PlayerPreviousPosition[AIarrayPart, 1] != 0)
-                {
+
                     if (Body.position.x != PlayerPreviousPosition[AIarrayPart, 0])
                     {
                         XMove = Find_X_Distance();
@@ -212,15 +259,6 @@ public class AI_Character : MonoBehaviour {
                     {
                         YMove = Find_Y_Distance();
                     }
-                }
-                else
-                {
-                    Counter7 = ArrayCount;
-                }
-                
-
-
-                               
 
             }
             else if (FindPath() < 25) //If Player and AI collide
