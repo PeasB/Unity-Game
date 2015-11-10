@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class Player : MonoBehaviour {
@@ -9,7 +10,10 @@ public class Player : MonoBehaviour {
 
     //crafting menu
     public GameObject Canvas;
-    //public GameObject Camera;
+    public GameObject Inventory;
+    public GameObject Crafting;
+    public GameObject Map;
+    public GameObject Dialogue;
     bool Paused = false;
 
 
@@ -18,8 +22,9 @@ public class Player : MonoBehaviour {
 
         Body = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
-        //Canvas.gameObject.SetActive(false); <--------------**********Causes conflict if the canvas is not in the scene****************
-
+        Canvas.gameObject.SetActive(false); //<--------------**********Causes conflict if the canvas is not in the scene**************** - canvas will be in every scene
+        Inventory.gameObject.SetActive(false);
+        Dialogue.gameObject.SetActive(false);
     }
 
 
@@ -29,20 +34,20 @@ public class Player : MonoBehaviour {
         //If i is pressed down on keyboard or Y in controller, open inventory
         if (Input.GetButtonDown("Button 3") == true)
         {
-            ////pause / unpause   <--------********Causes conflict if the canvas is not in the scene**********
-            //if (Paused == true)
-            //{
-            //    Time.timeScale = 1.0f;
-            //    Canvas.gameObject.SetActive(false);
-            //    Paused = false;
-            //}
-            //else
-            //{
-            //    Time.timeScale = 0.0f;
-            //    Canvas.gameObject.SetActive(true);
-            //    Paused = true;
+            //pause / unpause   <--------********Causes conflict if the canvas is not in the scene********** - canvas will be in every scene
+            if (Paused == true)
+            {
+                Time.timeScale = 1.0f;
+                Canvas.gameObject.SetActive(false);
+                Paused = false;
+            }
+            else
+            {
+                Time.timeScale = 0.0f;
+                Canvas.gameObject.SetActive(true);
+                Paused = true;
 
-            //}
+            }
 
             //
 
@@ -70,4 +75,18 @@ public class Player : MonoBehaviour {
 
 
 	}
+
+    public void ToInventory()
+    {
+
+        Inventory.gameObject.SetActive(true);
+        Crafting.gameObject.SetActive(false);
+
+    }
+
+    public void Test()
+    {
+        Debug.Log("Button was pressed");
+    }
+
 }
