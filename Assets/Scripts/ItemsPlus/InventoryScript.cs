@@ -5,7 +5,7 @@ using System.Xml;
 
 public class InventoryScript : MonoBehaviour {
 
-    //Y value is 4 (ID, Name, Description, Stacks, picturePath).
+    //Y value is 5 (ID, Name, Description, Stacks, picturePath).
     static string[,] InventoryBox;    
 
     //2D array for items to craft (Find X base on how much craftable items there are. Y value is 5 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
@@ -30,7 +30,7 @@ public class InventoryScript : MonoBehaviour {
         }
         
         //Loop each item in array and compare with Items.xml (ItemsDoc) to get full info of Item. Then store in 2D Array
-        InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 36.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
+        InventoryBox = new string[30, 5]; //X value is 30, because the max amount of items you can carry is 30.  Y value is 5 (ID, Name, Description, Stacks, picturePath).
         int InventoryCount = 0;
 
         for (int i = 0; i < InventoryItemsID.Count; i++)
@@ -505,15 +505,16 @@ public class InventoryScript : MonoBehaviour {
         //if pass, craft!!!
         if (NumOfIngredients == NumOfCanCraft)
         {
-            //Create Item
-            CreateItem(SelectedCraftID);
-
+            
             //Delete ingredient items from the player inventory
             for (int i = 0; i < NumOfIngredients; i++)
             {
                 DeleteItem(IngredientIDs[i]); //<-Fix this so 0 doesn't get deleted
             }
-            
+
+            //Create Item
+            CreateItem(SelectedCraftID);
+
             //refresh inventory by calling in a DisplayInventory(true)
             DisplayInventory(true);
             ////refresh display crafting by calling it
@@ -531,6 +532,12 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    public static void SelectItem(int SelectedCraftID)
+    {
+        //Get Payload
+        
+    } 
+
     public static void CreateItem(int SelectedItemID)
     {
         //Read in SaveGame.xml
@@ -541,17 +548,27 @@ public class InventoryScript : MonoBehaviour {
         ////Read in SaveGame.xml
         //XmlDocument SaveGameDoc = new XmlDocument();
         //SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
-        
-        //Create new item in the players inventory
-        XmlNode Item = SaveGameDoc.CreateElement("ItemID");
-        Item.InnerText = SelectedItemID.ToString();
-        SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
-        //Save XML
-        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
-        ////---For encrypted one---
-        ////Save XML
-        //DoSaveGame.UpdateSaveData(SaveGameDoc.OuterXml);        
+        //Check if there is enough space
+        if (InventorySpace() == true)
+        {
+            //Create new item in the players inventory
+            XmlNode Item = SaveGameDoc.CreateElement("ItemID");
+            Item.InnerText = SelectedItemID.ToString();
+            SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
+            //Save XML
+            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+            ////---For encrypted one---
+            ////Save XML
+            //DoSaveGame.UpdateSaveData(SaveGameDoc.OuterXml); 
+        }
+        else
+        {
+            //Not enough space
+        }
+
+
     }
 
     public static void DeleteItem(int SelectedItemID)
@@ -575,9 +592,19 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    public static bool InventorySpace()
+    {
+        bool EnoughSpace = false;
+                
+        if (InventoryBox[29, 0] == null)
+        {
+            EnoughSpace = true;
+        }
 
+        return EnoughSpace;
+    }
     
-        
+            
 
     // Use this for initialization
     void Start () {
