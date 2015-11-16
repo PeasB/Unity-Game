@@ -15,7 +15,7 @@ public class AI_Character : MonoBehaviour {
     int Original_Y = 0;
     int EventStepCase = 0; //The step case for an event. 
 
-    int PlayerPositionCounter = 0; //Everytime it hits 10, take a snapshot of the players x and y position
+    int PlayerPositionCounter = 10; //Everytime it hits 10, take a snapshot of the players x and y position
     int[,] PlayerPreviousPosition = new int[120, 2];
     int ArrayCount = 0; //Goes up to 119
     int AIarrayPart = 0; //Where in the array is the AI?
@@ -42,8 +42,8 @@ public class AI_Character : MonoBehaviour {
 		Body = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
         CircleCollition = GetComponent<CircleCollider2D>();
-                
 
+       
     }
 	
     private int FindPath() //Distance from Player to AI
@@ -172,8 +172,18 @@ public class AI_Character : MonoBehaviour {
 
             if (FindPath() > 25) //If AI far away from Player, go to the player
             {
+                //if game just started and everything is set to 0 (and if everything is 0, it causes problems)
+                if (PlayerPreviousPosition[0, 0] == 0 && PlayerPreviousPosition[0, 1] == 0 && AIarrayPart == 0)
+                {
+                    for (int i = 0; i < 120; i++) //fill entire array with players position (better than 0)
+                    {
+                        PlayerPreviousPosition[i, 0] = (int)Player.Body.position.x;
+                        PlayerPreviousPosition[i, 1] = (int)Player.Body.position.y;
+                    }
+                }
+
                 //find players position every 10 frames (1/6 a second). This is so it remembers the players path. (history path)               
-                    if (PlayerPositionCounter >= 10)
+                if (PlayerPositionCounter >= 10)
                     {                        
                         if (ArrayCount >= 120) //Go to beginning of array
                         {
@@ -211,14 +221,20 @@ public class AI_Character : MonoBehaviour {
                             for (int i = 0; i < 120; i++)
                             {
                                 AIarrayPart++; //Increment AIarrayPart counter
-                                if (AIarrayPart >= 120) //Check if is at end of array so it can start from beginning
+                                if (AIarrayPart >= 120) //Check if is at end of array so it can start from beginning. Kinda like a special case
                                 {
                                     AIarrayPart = 0;
+                                    if (ArrayCount == 119 || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[119, 0] || PlayerPreviousPosition[AIarrayPart, 1] != PlayerPreviousPosition[119, 1])
+                                    {
+                                        break; //Exit loop
+                                    }
                                 }
-
-                                if (AIarrayPart == ArrayCount || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[119, 0])
+                                else //non-special case / regular case
                                 {
-                                    break; //Exit loop
+                                    if (AIarrayPart == ArrayCount + 1 || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[AIarrayPart - 1, 0] || PlayerPreviousPosition[AIarrayPart, 1] != PlayerPreviousPosition[AIarrayPart - 1, 1])
+                                    {
+                                        break; //Exit loop
+                                    }
                                 }
                             }
                         }
@@ -232,14 +248,20 @@ public class AI_Character : MonoBehaviour {
                             for (int i = 0; i < 120; i++)
                             {
                                 AIarrayPart++; //Increment AIarrayPart counter
-                                if (AIarrayPart >= 120) //Check if is at end of array so it can start from beginning
+                                if (AIarrayPart >= 120) //Check if is at end of array so it can start from beginning. Kinda like a special case
                                 {
                                     AIarrayPart = 0;
+                                    if (ArrayCount == 119 || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[119, 0] || PlayerPreviousPosition[AIarrayPart, 1] != PlayerPreviousPosition[119, 1])
+                                    {
+                                        break; //Exit loop
+                                    }
                                 }
-
-                                if (AIarrayPart == ArrayCount || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[AIarrayPart - 1, 0])
+                                else //non-special case / regular case
                                 {
-                                    break; //Exit loop
+                                    if (AIarrayPart == ArrayCount + 1 || PlayerPreviousPosition[AIarrayPart, 0] != PlayerPreviousPosition[AIarrayPart - 1, 0] || PlayerPreviousPosition[AIarrayPart, 1] != PlayerPreviousPosition[AIarrayPart - 1, 1])
+                                    {
+                                        break; //Exit loop
+                                    }
                                 }
                             }
                         }
@@ -266,6 +288,15 @@ public class AI_Character : MonoBehaviour {
                 //Let Player go through AI, temporarily disable circle collider
                 //(gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
                 CircleCollition.enabled = false;
+
+                //Reset PreviousPlayerPosition Array
+                AIarrayPart = 0;
+                for (int i = 0; i < 120; i++)
+                {
+                    PlayerPreviousPosition[i, 0] = (int)Player.Body.position.x;
+                    PlayerPreviousPosition[i, 1] = (int)Player.Body.position.y;
+                }
+            
             }
 
             //Execute Movement

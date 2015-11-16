@@ -14,6 +14,11 @@ public class SceneTransition : MonoBehaviour {
         }
     }
 
+    public static void GoToScene(string SceneName)
+    {
+        Application.LoadLevel(SceneName);
+    }
+
 
     // Use this for initialization
     void Start () {
