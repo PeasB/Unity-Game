@@ -5,14 +5,13 @@ using System.Xml;
 
 public class InventoryScript : MonoBehaviour {
 
-    //Y value is 4 (ID, Name, Description, Stacks, picturePath).
+    //Y value is 5 (ID, Name, Description, Stacks, picturePath).
     static string[,] InventoryBox;    
 
     //2D array for items to craft (Find X base on how much craftable items there are. Y value is 5 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
     static string[,] CraftingTable;
     
-
-    public static void DisplayInventory(bool CraftInventory) //<--Make so it either displays in Items menu or crafting menu. False = show in inventory
+    private static void FillInventoryBox()
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
@@ -28,19 +27,26 @@ public class InventoryScript : MonoBehaviour {
         {
             InventoryItemsID.Add(int.Parse(node.InnerText));
         }
-        
+
         //Loop each item in array and compare with Items.xml (ItemsDoc) to get full info of Item. Then store in 2D Array
-        InventoryBox = new string[36, 5]; //X value is 36, because the max amount of items you can carry is 36.  Y value is 4 (ID, Name, Description, Stacks, picturePath).
+        InventoryBox = new string[30, 5]; //X value is 30, because the max amount of items you can carry is 30.  Y value is 5 (ID, Name, Description, Stacks, picturePath).
         int InventoryCount = 0;
 
         for (int i = 0; i < InventoryItemsID.Count; i++)
         {
+            //Check if item count is greater or equal to 30, and if so, break loop
+            if (InventoryCount >= 30)
+            {
+                break;
+            }
+
+            //Var
             int ItemID = InventoryItemsID[i];
             string ItemName = "?"; //Will soon be filled
             string ItemDescription = "?"; //Will soon be filled
             string PicturePath = "?"; //Will soon be filled
             bool Stackable = false; //Could change to true
-            
+
             foreach (XmlNode node in ItemsDoc.SelectNodes("Items/ItemsList/Item")) //Get info of ItemID
             {
                 if (ItemID == int.Parse(node.SelectSingleNode("ID").InnerText)) //If it matches the item ID
@@ -54,7 +60,7 @@ public class InventoryScript : MonoBehaviour {
                     }
                 }
             }
-            
+
             if (i == 0 || Stackable == false) //First item. Does not need to check if it can stack on other items since it is the first item. OR if item has initial property that disables stacking.
             {
                 InventoryBox[InventoryCount, 0] = ItemID.ToString();
@@ -67,11 +73,11 @@ public class InventoryScript : MonoBehaviour {
             }
             else //Check if it can stack on other items
             {
-                
+
                 bool FirstStackableItem = true; //If this stays true, a item that can be stackable will be created for the very first time. This can be changed to false, if the item already exists and stacks on the matching item
-                
+
                 for (int k = 0; k < InventoryBox.GetLength(0); k++) //Loop through 32 items to see if it can stack on to any items
-                {         
+                {
                     if (InventoryBox[k, 0] == ItemID.ToString() && Stackable == true) //There is a stackable item that already exists that matches your item. Stack ontop of the item
                     {
                         InventoryBox[k, 3] = (int.Parse(InventoryBox[k, 3]) + 1).ToString(); //Add 1 to stack
@@ -80,7 +86,7 @@ public class InventoryScript : MonoBehaviour {
                         break;
                     }
                 }
-                
+
                 if (FirstStackableItem == true) //First time adding a stackable item (Stack will be 1, since it is the first item)
                 {
                     InventoryBox[InventoryCount, 0] = ItemID.ToString();
@@ -91,11 +97,19 @@ public class InventoryScript : MonoBehaviour {
 
                     InventoryCount++; //Go on to the next item slot
                 }
-                
+
             }
-            
+
         }
 
+
+
+    }
+
+    public static void DisplayInventory(bool CraftInventory) //<--Make so it either displays in Items menu or crafting menu. False = show in inventory
+    {
+        //Fill the arary of InventoryBox (basically get the players inventory box)
+        FillInventoryBox();
 
         //------------------------Display into UI---------------------------
         //Display array info into the UI (Display the items in the players inventory)
@@ -505,15 +519,16 @@ public class InventoryScript : MonoBehaviour {
         //if pass, craft!!!
         if (NumOfIngredients == NumOfCanCraft)
         {
-            //Create Item
-            CreateItem(SelectedCraftID);
-
+            
             //Delete ingredient items from the player inventory
             for (int i = 0; i < NumOfIngredients; i++)
             {
                 DeleteItem(IngredientIDs[i]); //<-Fix this so 0 doesn't get deleted
             }
-            
+
+            //Create Item
+            CreateItem(SelectedCraftID);
+
             //refresh inventory by calling in a DisplayInventory(true)
             DisplayInventory(true);
             ////refresh display crafting by calling it
@@ -531,6 +546,12 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    public static void SelectItem(int SelectedCraftID)
+    {
+        //Get Payload
+        
+    } 
+
     public static void CreateItem(int SelectedItemID)
     {
         //Read in SaveGame.xml
@@ -541,17 +562,28 @@ public class InventoryScript : MonoBehaviour {
         ////Read in SaveGame.xml
         //XmlDocument SaveGameDoc = new XmlDocument();
         //SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
-        
-        //Create new item in the players inventory
-        XmlNode Item = SaveGameDoc.CreateElement("ItemID");
-        Item.InnerText = SelectedItemID.ToString();
-        SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
-        //Save XML
-        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
-        ////---For encrypted one---
-        ////Save XML
-        //DoSaveGame.UpdateSaveData(SaveGameDoc.OuterXml);        
+        //Check if there is enough space
+        if (InventorySpace() == true)
+        {
+            //Create new item in the players inventory
+            XmlNode Item = SaveGameDoc.CreateElement("ItemID");
+            Item.InnerText = SelectedItemID.ToString();
+            SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
+            //Save XML
+            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+            ////---For encrypted one---
+            ////Save XML
+            //DoSaveGame.UpdateSaveData(SaveGameDoc.OuterXml); 
+        }
+        else
+        {
+            //Not enough space
+            print("Not enought space in inventory!");
+        }
+
+
     }
 
     public static void DeleteItem(int SelectedItemID)
@@ -575,9 +607,21 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    private static bool InventorySpace()
+    {
+        bool EnoughSpace = false;
 
-    
+        FillInventoryBox();
+
+        if (InventoryBox[29, 0] == null)
+        {
+            EnoughSpace = true;
+        }
         
+        return EnoughSpace;
+    }
+    
+            
 
     // Use this for initialization
     void Start () {

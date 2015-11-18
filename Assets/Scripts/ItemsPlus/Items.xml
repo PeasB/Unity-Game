@@ -8,8 +8,9 @@
       <Name>Wood</Name>
       <Description>Comes from trees!</Description>
       <Craftable>1</Craftable>
-      <Stackable>1</Stackable>
+      <Stackable>1</Stackable>      
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
     
     <Item>
@@ -19,6 +20,7 @@
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
 
     <Item>
@@ -28,6 +30,7 @@
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
 
     <Item>
@@ -37,6 +40,7 @@
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
 
     <Item>
@@ -46,6 +50,7 @@
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
     
     <Item>
@@ -55,6 +60,7 @@
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
 
     <Item>
@@ -64,6 +70,7 @@
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
 
     <Item>
@@ -73,6 +80,7 @@
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
       <PicPath></PicPath>
+      <Payload></Payload>
     </Item>
 
     
