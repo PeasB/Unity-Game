@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="terrain_atlas" tilewidth="32" tileheight="32" spacing="8" tilecount="1156">
+  <image source="../Sprites/terrain_atlas.png" width="1352" height="1352"/>
+  <terraintypes>
+   <terrain name="Dirt Path" tile="-1"/>
+  </terraintypes>
+  <tile id="51" terrain="0,0,0,">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.125" width="31.875" height="32.25"/>
+   </objectgroup>
+  </tile>
+  <tile id="52" terrain="0,0,,0">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.375" width="32.25" height="32.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="85" terrain="0,,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="86" terrain=",0,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="0.125" width="31.875" height="31.875"/>
+   </objectgroup>
+  </tile>
+  <tile id="118" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.5" width="31.75" height="32.375"/>
+   </objectgroup>
+  </tile>
+  <tile id="119" terrain=",,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.375" width="31.875" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="120" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="0.625" width="31.25" height="31.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="152" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.25" width="32" height="32.25"/>
+   </objectgroup>
+  </tile>
+  <tile id="153" terrain="0,0,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="0" width="31.875" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="154" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.25" width="32.375" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="186" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="0" x="2" y="-0.375" width="29.75" height="31.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="187" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.125" width="32.125" height="31.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="188" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.125" width="30" height="29.375"/>
+   </objectgroup>
+  </tile>
+  <tile id="226">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.375" width="31.875" height="31.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="227">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.25" width="32.125" height="32.5"/>
+   </objectgroup>
+  </tile>
+  <tile id="228">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0.125" width="31.875" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="430">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.125" width="31.875" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="431">
+   <objectgroup draworder="index">
+    <object id="0" x="0.125" y="0" width="31.75" height="31.875"/>
+   </objectgroup>
+  </tile>
+  <tile id="432">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0.125" width="31.625" height="31.625"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Grass" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJx1k9ERwyAMQ+39hzHMhL1Hkwu6PNz2w5cAQviJpMxsXTX8rHlV2VNaD3/e77W0cz33kzW3j/anvd7UlZ06+eWeH/5qNL41Aa/Y/rG1AQb1OtpYXgl9Nr5s3tHOTjD0DKUjE7NZ8Ge+Yv+XWaFH6ha0/a5W45GG2oKOrPLkOT0XMhYYyCx/svP+ZvNnlr1H7v3FVehLefFbLpxBrZg4r+K/QY/w8/sM/85A+8VHzQfvU7Od
+  </data>
+ </layer>
+ <layer name="Dirt Path" width="15" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAuKAfiChy4koC6cCCehQOHIZkxE486EyDeA8WmWMzAphemZy+S+3ZjMQNdrwmaHnSwG0k/ut7ZePTBAEzPUNELilNYHJKqF1k9MptQGCPbCVKLHOawNIMLI6c3mPuwxTs+jM19MDMIYZg+AGCBUZc=
+  </data>
+ </layer>
+</map>
