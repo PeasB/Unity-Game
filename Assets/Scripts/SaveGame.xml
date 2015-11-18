@@ -1,4 +1,4 @@
-﻿<SaveData>
+<SaveData>
   <Settings>
     <DateTimeStarted>
     </DateTimeStarted>
@@ -26,7 +26,7 @@
       <Josh>100</Josh>
       <Kate>100</Kate>
       <April>100</April>
-      <Ethan>100</Ethan>
+      <Ethan>85</Ethan>
     </Matt>
     <Kate>
       <Josh>100</Josh>
@@ -50,7 +50,7 @@
   <StoryPaths>
     <Situation>
       <ID>1.1</ID>
-      <Outcome>2</Outcome>
+      <Outcome>1</Outcome>
     </Situation>
     <Situation>
       <ID>1.2</ID>
