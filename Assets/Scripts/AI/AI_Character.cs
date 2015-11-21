@@ -102,19 +102,21 @@ public class AI_Character : MonoBehaviour {
     //    }
     //}
 
-    void OnCollisionStay2D(Collision2D collisionInfo)
-    {       
-        if (collisionInfo.gameObject.tag == "") //This is just to make the method happy 
-        {
-        }
+    //void OnCollisionStay2D(Collision2D collisionInfo)
+    //{       
+    //    //if (collisionInfo.gameObject.tag == "AI") 
+    //    //{
+    //    //    //var
+    //    //    CircleCollition.enabled = false;
+    //    //    print("HIT");
+    //    //}       
 
-        //The AI is stuck!!! :(
-        //Find it's own path to come back        
-
-    }
+    //}
 
 
         // Update is called once per frame
+
+
         void Update () {
 
         //var
