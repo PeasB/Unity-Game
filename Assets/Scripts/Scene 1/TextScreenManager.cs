@@ -15,8 +15,6 @@ public class TextScreenManager : MonoBehaviour {
     private Text CurrentTextObject;
     private bool TextHasAppeared = false;
     private bool NextText = true;
-    private bool IsComplete = false;
-
 
 
 
