@@ -5,7 +5,7 @@ public class WalkingSounds : MonoBehaviour {
 	
 	public AudioClip DirtWalking;
 	public AudioClip GrassWalking;
-	public AudioClip HardwardWalking;
+	public AudioClip HardwoodWalking;
 	public AudioClip TileWalking;
 
 
@@ -22,13 +22,13 @@ public class WalkingSounds : MonoBehaviour {
 	void Update()
 	{
 		//Player is moving and Audio is not playing.
-		if ((Input.GetAxis ("Vertical") != 0 || Input.GetAxis ("Horizontal") != 0) && !AudioPlayer.isPlaying)	
+		if ((this.GetComponent<Rigidbody2D>().velocity.x != 0 || this.GetComponent<Rigidbody2D>().velocity.y != 0) && !AudioPlayer.isPlaying)	
 			AudioPlayer.Play ();
-		else if (Input.GetAxis ("Vertical") == 0 && Input.GetAxis ("Horizontal") == 0 && AudioPlayer.isPlaying) //Player is not moving stop Audio.
+		else if (this.GetComponent<Rigidbody2D>().velocity.x == 0 && this.GetComponent<Rigidbody2D>().velocity.y == 0 && AudioPlayer.isPlaying) //Player is not moving stop Audio.
 			AudioPlayer.Stop ();
 
 		//If Player is not on a surface must be grass.
-		if (CurrentSurface == null)
+		if (CurrentSurface == null)                                             
 			AudioPlayer.clip = GrassWalking;
 		
 	}
@@ -46,7 +46,7 @@ public class WalkingSounds : MonoBehaviour {
 				CurrentSurface = Other;
 				break;
 			case "Ground Hardwood": //Hardwood.
-				AudioPlayer.clip = HardwardWalking;
+				AudioPlayer.clip = HardwoodWalking;
 				//Set the Current Surface.
 				CurrentSurface = Other;
 				break;

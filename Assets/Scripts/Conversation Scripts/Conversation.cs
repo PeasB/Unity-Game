@@ -142,8 +142,6 @@ public class ConversationManager {
 						//Looks for matching Path in Save File.
 						foreach(XmlNode Situation in Save.SelectSingleNode("SaveData/StoryPaths"))
 					    {
-						string Test = Path.Name.Remove(0,4);
-						string Test2 = Situation.SelectSingleNode("ID").InnerText;
 							//Checking Current Situation for Correct ID.
 							if (Situation.SelectSingleNode("ID").InnerText == (Path.Name.Remove(0,4)))
 							{
