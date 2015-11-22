@@ -27,7 +27,7 @@ namespace Delirium_Laucher
             InitializeComponent();
         }
 
-        private void btnPlay_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             ForceUpdateCount = 0; //Allow User to attempt to update normally. (After 3 Forced Updates)
 
@@ -47,15 +47,12 @@ namespace Delirium_Laucher
                 ClientVersionNum = 0;
             }
 
-            btnPlay.Enabled = false; //Stop user from hitting the button while update is in progress.
-
             WebClient VersionWC = new WebClient();
 
             VersionWC.DownloadStringCompleted += VersionWC_DownloadStringCompleted;
             VersionWC.DownloadStringAsync(new Uri("http://www.peastudios.net/Delirium/CurrentVersion.txt"));
             lblActivity.Text = "Checking Version";
             lblActivity.Visible = true;
-
         }
 
         private void VersionWC_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
@@ -83,7 +80,6 @@ namespace Delirium_Laucher
                 else if(e.Error != null)
                 {
                     lblActivity.Text = "No network connection. Please connect to the Internet to download game.";
-                    btnPlay.Enabled = true;
                 }
                 //If Launcher has failed to boot game then force an update.
                 else if (ForceUpdateCount != 3)
@@ -94,7 +90,6 @@ namespace Delirium_Laucher
                 }
                 else //Could not get a boot even after 3 Forced Updates.
                 {
-                    btnPlay.Enabled = true;
                     lblActivity.Text = "All 3 Attempts to force Update has failed. Please reinstall the launcher, or Contact the Developer";
                 }
 
@@ -132,7 +127,6 @@ namespace Delirium_Laucher
             else if (e.Error != null) //If errors downloading files.
             {
                 lblActivity.Text = "No network connection. Please connect to the Internet to download game.";
-                btnPlay.Enabled = true;
             }
             //If Launcher has failed to boot game then force an update.
             else if(ForceUpdateCount != 3)
@@ -143,7 +137,6 @@ namespace Delirium_Laucher
             }
             else //Could not get a boot even after 3 Forced Updates.
             {
-                btnPlay.Enabled = true;
                 lblActivity.Text = "All 3 Attempts to force Update has failed. Please reinstall the launcher, or contact the developer.";
             }
             
@@ -167,6 +160,7 @@ namespace Delirium_Laucher
             UpdateWC.DownloadFileAsync(new Uri("http://www.peastudios.net/Delirium/Delirium.zip"), GameRoot + "Delirium.zip");
 
         }
+
 
     }
 

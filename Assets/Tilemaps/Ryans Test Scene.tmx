@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Ryan Test Scene" tilewidth="32" tileheight="32" spacing="8" tilecount="1156">
+  <image source="../Sprites/terrain_atlas.png" width="1352" height="1352"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztlmGqwzAMg0Puf7zE5xkPVuZ9TzFjqH+GBWENXhNVke2M0Wg0vkHMMdZz7Pmax3yPXfFrcJ7H33suXOvlfVd6zhwz5334jjDzy/qs+V+fSL+ZC3Xf+L8L3C8OPPPe/KYlODv55bHBkbGN+d36ZZ2Ul+hPlT/qzF04abUOvDZi9G6Y+am16TnGmefKqy6oOnLyvNJV5bo7f3lW1Ir+pKYqp11QfUBpVdVI1manfuoMVT6r2sOek9dwoaoRqrdUvOMGfqquqNyo+jTrttN/VT/gM3NE1e+76rM6R6UT8+DkSxfU3Y1nRd3IX+WXk191L1H3BvpSveeC4kO/f6Il67YLqu/SW/Skqi1cx4Wq3ytfqnxXvbDRaDQajUbjl/EA5ZmD7w==
+  </data>
+ </layer>
+</map>
