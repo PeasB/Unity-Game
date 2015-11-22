@@ -10,7 +10,7 @@ public class SceneTransition : MonoBehaviour {
     {
         if (collisionInfo.gameObject.tag == "Player")
         {
-            Application.LoadLevel("Scene 1");
+            Application.LoadLevel(WhatScene);
         }
     }
 
