@@ -2,42 +2,79 @@
 using System.Collections;
 
 public class WalkingSounds : MonoBehaviour {
+	
+	public AudioClip DirtWalking;
+	public AudioClip GrassWalking;
+	public AudioClip HardwardWalking;
+	public AudioClip TileWalking;
 
-	string CurrentSurface;
 
+	private Collider2D CurrentSurface;
+	private AudioSource AudioPlayer;
+	private bool[] OnLayer = new bool[4];
+
+	void Start()
+	{
+		AudioPlayer = this.GetComponent<AudioSource>();
+	}
+
+
+	void Update()
+	{
+		//Player is moving and Audio is not playing.
+		if ((Input.GetAxis ("Vertical") != 0 || Input.GetAxis ("Horizontal") != 0) && !AudioPlayer.isPlaying)	
+			AudioPlayer.Play ();
+		else if (Input.GetAxis ("Vertical") == 0 && Input.GetAxis ("Horizontal") == 0 && AudioPlayer.isPlaying) //Player is not moving stop Audio.
+			AudioPlayer.Stop ();
+
+		//If Player is not on a surface must be grass.
+		if (CurrentSurface == null)
+			AudioPlayer.clip = GrassWalking;
+		
+	}
 
 	void OnTriggerEnter2D(Collider2D Other)
 	{
-		/*
-		if(CurrentSurface != Other.tag)
-
-		AudioClip Audio;
-
-		switch (Other.tag) {
+		//Player enters new Surface.
+		if (Other.tag != "Camera Bounds") {
 		
-		case "Ground Dirt":
+			switch(Other.tag){
 			
+			case "Ground Dirt": //Dirt.
+				AudioPlayer.clip = DirtWalking;
+				//Set the Current Surface.
+				CurrentSurface = Other;
+				break;
+			case "Ground Hardwood": //Hardwood.
+				AudioPlayer.clip = HardwardWalking;
+				//Set the Current Surface.
+				CurrentSurface = Other;
+				break;
+			case "Ground Tile": //tiled floor(Kitchen).
+				AudioPlayer.clip = TileWalking;
+				//Set the Current Surface.
+				CurrentSurface = Other;
+				break;
+			
+			}
 		
-		
-		} */
-
-
+		}
 	}
-
-	private bool IsFloor(string Tag)
+		
+	void OnTriggerExit2D(Collider2D Other)
 	{
-		/*
-		//Ground
-		if (Tag.Substring(0, 6)) 
-		{
-			
-		
-		} */
-
-		return true;
-
-
+		//Leave the Surface.
+		AudioPlayer.Stop();
+		CurrentSurface = null;
 	}
+
+
+
+
+
+
+
+
 	
 
 

@@ -103,7 +103,7 @@
  </tileset>
  <layer name="Grass" width="15" height="15">
   <data encoding="base64" compression="zlib">
-   eJx1k9ERwyAMQ+39hzHMhL1Hkwu6PNz2w5cAQviJpMxsXTX8rHlV2VNaD3/e77W0cz33kzW3j/anvd7UlZ06+eWeH/5qNL41Aa/Y/rG1AQb1OtpYXgl9Nr5s3tHOTjD0DKUjE7NZ8Ge+Yv+XWaFH6ha0/a5W45GG2oKOrPLkOT0XMhYYyCx/svP+ZvNnlr1H7v3FVehLefFbLpxBrZg4r+K/QY/w8/sM/85A+8VHzQfvU7Od
+   eJyFkgEOhCAMBJf/PwZ4k+Ufp5GJS8VckwYDZdsdGZKOM1tZs585dCfntdzf11loPY+5evapw/3Qo+11Q8/eVwzTuzS+os6566z1aPMsR1h9JH+RtD2ow0NmeNid7A2/9Ha+oYeV9PYLC69jDvjSNzNwr77igXXn1/ug4/OzL63c8I++e+/GqW9YtcTG31sv67z4ZW7mgpe/5d2/pY+z/xf49/dZTT+0MoKf1/wAn7qCfg==
   </data>
  </layer>
  <layer name="Dirt Path" width="15" height="15">
