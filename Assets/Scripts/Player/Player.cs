@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
             
             InventoryScript.DisplayInventory(false); //true inputs into crafting inventory, false inputs into inventory tab
         }
-        else if (Input.GetButtonDown("Button 2") == true) //If o is pressed down on keyboard or X in controller, open inventory
+        else if (Input.GetButtonDown("Button 2") == true) //If q is pressed down on keyboard or X in controller, open inventory
         {
             InventoryScript.DisplayCrafting();
         }

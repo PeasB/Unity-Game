@@ -5,28 +5,24 @@ public class InteractionsItem : MonoBehaviour {
     CircleCollider2D CircleCollition;
     bool EnableCollition = true;
 
-    void OnCollisionEnter2D(Collision2D collisionInfo)
+    void OnTriggerEnter2D(Collider2D collisionInfo)
     {
-        if (collisionInfo.gameObject.tag == "Player")
+        if (collisionInfo.tag == "Player")
         {
-            print("On Enter");
+            //Show "press x to pick up item"
+
+
         }
     }
+    
 
-    //void OnCollisionStay2D(Collision2D collisionInfo)
-    //{
-    //    if (collisionInfo.gameObject.tag == "Player")
-    //    {
-    //        CircleCollition.enabled = false;
-    //    }
-    //}
-
-
-    void OnCollisionExit2D(Collision2D collisionInfo)
+    void OnTriggerExit2D(Collider2D collisionInfo)
     {
-        if (collisionInfo.gameObject.tag == "Player")
+        if (collisionInfo.tag == "Player")
         {
-            print("Exit");
+            //Stop showing "press x to pick up item"
+
+
         }
 
     }
