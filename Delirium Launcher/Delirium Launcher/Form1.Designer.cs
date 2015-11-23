@@ -34,16 +34,16 @@
             // 
             // prgDownloadBar
             // 
-            this.prgDownloadBar.Location = new System.Drawing.Point(45, 260);
+            this.prgDownloadBar.Location = new System.Drawing.Point(29, 275);
             this.prgDownloadBar.Name = "prgDownloadBar";
-            this.prgDownloadBar.Size = new System.Drawing.Size(386, 34);
+            this.prgDownloadBar.Size = new System.Drawing.Size(421, 34);
             this.prgDownloadBar.TabIndex = 0;
             // 
             // lblActivity
             // 
-            this.lblActivity.Location = new System.Drawing.Point(45, 307);
+            this.lblActivity.Location = new System.Drawing.Point(29, 312);
             this.lblActivity.Name = "lblActivity";
-            this.lblActivity.Size = new System.Drawing.Size(386, 13);
+            this.lblActivity.Size = new System.Drawing.Size(421, 13);
             this.lblActivity.TabIndex = 2;
             this.lblActivity.Text = "Activity";
             this.lblActivity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
