@@ -19,34 +19,22 @@
   <tile id="187" terrain="0,0,,"/>
   <tile id="188" terrain="0,,,"/>
   <tile id="226">
-   <objectgroup draworder="index">
-    <object id="0" x="0" y="0.125" width="31.75" height="31.875"/>
-   </objectgroup>
+   <objectgroup draworder="index"/>
   </tile>
   <tile id="227">
-   <objectgroup draworder="index">
-    <object id="0" x="0" y="0" width="31.875" height="32"/>
-   </objectgroup>
+   <objectgroup draworder="index"/>
   </tile>
   <tile id="228">
-   <objectgroup draworder="index">
-    <object id="0" x="0.125" y="0.125" width="31.875" height="31.75"/>
-   </objectgroup>
+   <objectgroup draworder="index"/>
   </tile>
   <tile id="430">
-   <objectgroup draworder="index">
-    <object id="0" x="0.125" y="0.25" width="31.875" height="31.75"/>
-   </objectgroup>
+   <objectgroup draworder="index"/>
   </tile>
   <tile id="431">
-   <objectgroup draworder="index">
-    <object id="0" x="0" y="0.125" width="31.875" height="31.75"/>
-   </objectgroup>
+   <objectgroup draworder="index"/>
   </tile>
   <tile id="432">
-   <objectgroup draworder="index">
-    <object id="0" x="0.25" y="0.125" width="31.5" height="31.75"/>
-   </objectgroup>
+   <objectgroup draworder="index"/>
   </tile>
  </tileset>
  <layer name="Grass Layer" width="50" height="100">
@@ -57,6 +45,21 @@
  <layer name="Road Layer" width="50" height="100">
   <data encoding="base64" compression="zlib">
    eJztz7ENwCAAA0H23yCwbDIAJShf3EmurR/jvOfb3Gxd+LpJR4uOFh0tOlp0tOho0dGio0VHi44WHS06WnS06GjR0aKjRUeLjhYdLTpadLToaNHRoqNFR4uOFh0tOlp0tOho0dGio0VHi44WHS06WnS06GjR0aKjRUeLjhYdLTpadLToaNHRoqNFR8sfHS+XBaUo
+  </data>
+ </layer>
+ <layer name="Tree Bottom" width="50" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1kkOgzAMBVDE/W/V8SIdT9FIXRc1TiNM856UHYjgmG+mCQAAAPil4zxNp7LO89o7aXMv+3+U9dz4e0S1nGPtvbty3b6sQ7DWS89rOcfaey/lumtZt+B7jN5ztJG9ZDFaL7bOsCxaZxj/bdQ+75Fna2Rkj9lqXvONUbMDtiL6jWb7349+o2bZZ9nOOGrtMzYH2TpZADHy/00d+pHPcTW1y1znmtqZg0BU5hysIQf70SMsydwfNXvL3B+Z9wYAAAAAPbwAfsGESQ==
+  </data>
+ </layer>
+ <layer name="Trees" width="50" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztW1tOHTEMDQOLaCldCrAUYCm0C+Gj7Y7aLqXPHwJlUGTZzvEjFyr5SJFgbm7s+O1kbmuFQqFQKBQKhRX4fdzanz7+HsfmvDTenbR21sf7k3//n2+tXfRxuclzXiPOO28XfVw+8XjV+b/u42aT5zw/Z/acDdQWrjpv133cPPF423n60MfHTZ7z/JzZcza8tvCp8/S5jy8Ab9yeZ9Dky+lXsgUrxrUpHcued2jy5fQr2YIV49oZdqTJ16PfxzU5PZJn49rj314f1+Sr6Vejx+qRPBvXHv+26ubrUWvf+vh+hPM343UHp0dUt1Yb+NH5/9nHL7IPVB4aPU6P3DMuxlh9/E2f97aPUzIflYcnplCszOeUv5W5NSuG79ByiGZnlj1yNKQY45Wdpl/NziyxxWJD3nyi6VfzA2mP0TrAm7e8OVraY7QOyIghKDSfQuUp5TALNF9C/Eyzd1SeUg6zQPMlxM8yYqaUwyzQdM99RnWUVfdGoeme+yyzR5PsNnLugOYcbyzkIMkkUqegcrbGQk88i/icJmdrzzvCE88iPqfJ2drzjsiuASOI9LyobCW9ZuRIjpeMMw2WhqBXb46c2btEL9qfSHr15siZvUv0onkluyac2btED8krXNy7c9Z1s/U5PjlaFNz3qI+i+c2rW0/+RGoH6qNoDHaf+ynrSzpG7jWoj6J9uNdXtBgvxifgXgOmn1h7ShDjE3CvwYHTm/ZdTx7kaKA6Rudxste+68mDqH4jOc/qw548iNKg+7X0Q4c4A0Fp0P1G+iEpfmeew0pr0f1G+iFpr5EYRmUT7RGRml3aa6R/prLJ7MUlSHuN+BGVjbTWa3+PAu3dDvkeRWY/SOHtuZH7W4qMM1OND895BnJ/S23WkgdROUV7WuT+FqmjJSBykvjQ9keB3N9G6mj0njvS00qYnXtb1kbvuS3fR3h+5HvTa7VQHjHYpAT2Xhaw1cyeilvLWs9xOQax1YiNUh65taz1HJdjEBsZ51jtgvLI0bPWcxn3VFYb43hE78+ifVHGfe8OjsfsMwyLH+3wymikNZPFeMaI1L8WP4pipGWRBVL/rvQjlNYI7zsjqFyQs+QZb0jMW/nuqMQXGnfROvEBh+h1ZzxIsLwPyeYWo9w4cLHCKrNonTiTGxLPuFiRdWaHnifM5IbEs5X30+h5wkxuCI8r37dB6EM5cCGPCBD6/8NvaRBE7Xrlb20seGmbKRQKhUKhUCgUCoVCYQXuAcax4Qs=
+  </data>
+ </layer>
+ <layer name="Decor" width="50" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2E0OgjAQhuEi/t5APYKuuP811KOoS2djYggpQ3DaoX2fpFt+2jL9mBAAAACAfHZt7icAAACAd20kM+bIk2sybJX2su4H47XfJthbF7nHNdEeTjFnc2i/5TlzFqtfADAmRx21yDkpzx7P6IPiXyzyRbfyfb0v7/lSi7qIIZwTdWCdMVWKXtGvJfQx+nng1oRwl/Fo9NdIPa9D+nngKc//kvEeeQ/vdeQoOfAk42yUB8csYQ+jPNr/FA+1J4b/FACYZkPNdEtz5pIbdaz6vNDxnh+tUWfL5b23UaLa6wkAAAAAACX4AAxDCc8=
   </data>
  </layer>
 </map>
