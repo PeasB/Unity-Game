@@ -16,7 +16,7 @@ public class AI_Character : MonoBehaviour {
     int EventStepCase = 0; //The step case for an event. 
 
     int PlayerPositionCounter = 10; //Everytime it hits 10, take a snapshot of the players x and y position
-    int[,] PlayerPreviousPosition = new int[120, 2];
+    double[,] PlayerPreviousPosition = new double[120, 2]; //int[,] PlayerPreviousPosition = new int[120, 2];
     int ArrayCount = 0; //Goes up to 119
     int AIarrayPart = 0; //Where in the array is the AI?
     int Counter7 = 0; //when it hits 11, AIarrayCount++
@@ -46,27 +46,28 @@ public class AI_Character : MonoBehaviour {
        
     }
 	
-    private int FindPath() //Distance from Player to AI
+    private double FindPath() //Distance from Player to AI
     {        
         //Find Distance from AI to Player using distance formula
         //Body.position.x & Body.position.y is the x and y position of the AI
         //Player.Body.position.x & Player.Body.position.y is the x and y position of the Player
-        int Distance = (int)Mathf.Round(Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2)));
-                
+        double Distance = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2));
+        //int Distance = (int)Mathf.Round(Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2)));
+
         return Distance; //Hey Method, are you happy now that you finally get a return value?
     }
     
     private int Find_X_Distance()
     {
-        int X_Distance = PlayerPreviousPosition[AIarrayPart, 0] - (int)Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
-        
+        double X_Distance = PlayerPreviousPosition[AIarrayPart, 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
+        //int X_Distance = (int)PlayerPreviousPosition[AIarrayPart, 0] - (int)Body.position.x;
         int X_Direction = 0;
 
-        if (X_Distance < 0)
+        if (X_Distance < -0.05)
         {
             X_Direction = -1;
         }
-        else if (X_Distance > 0)
+        else if (X_Distance > 0.05)
         {
             X_Direction = 1;
         }
@@ -76,15 +77,15 @@ public class AI_Character : MonoBehaviour {
 
     private int Find_Y_Distance()
     {
-        int Y_Distance = PlayerPreviousPosition[AIarrayPart, 1] - (int)Body.position.y; //(int)Player.Body.position.y - (int)Body.position.y;
-
+        double Y_Distance = PlayerPreviousPosition[AIarrayPart, 1] - Body.position.y; //(int)Player.Body.position.y - (int)Body.position.y;
+        //int Y_Distance = (int)PlayerPreviousPosition[AIarrayPart, 1] - (int)Body.position.y;
         int Y_Direction = 0;
 
-        if (Y_Distance < 0)
+        if (Y_Distance < -0.05)
         {
             Y_Direction = -1;
         }
-        else if (Y_Distance > 0)
+        else if (Y_Distance > 0.05)
         {
             Y_Direction = 1;
         }
@@ -136,7 +137,7 @@ public class AI_Character : MonoBehaviour {
 
             Body.isKinematic = true;
 
-            if (Random.Range(0, 150) == 69) //Choose random number from 1 - 100. If the number is 69, change directions
+            if (Random.Range(0, 150) == 69) //Choose random number from 1 - 150. If the number is 69, change directions
             {
                 int DirectionRange = Random.Range(0, 4); //Randomly choose a direction: 0 is down, 1 is right, 2 is up, 3 is left
                 
@@ -172,15 +173,15 @@ public class AI_Character : MonoBehaviour {
             
             Body.isKinematic = false;
 
-            if (FindPath() > 25) //If AI far away from Player, go to the player
+            if (FindPath() > 1.75) //If AI far away from Player, go to the player
             {
                 //if game just started and everything is set to 0 (and if everything is 0, it causes problems)
                 if (PlayerPreviousPosition[0, 0] == 0 && PlayerPreviousPosition[0, 1] == 0 && AIarrayPart == 0)
                 {
                     for (int i = 0; i < 120; i++) //fill entire array with players position (better than 0)
                     {
-                        PlayerPreviousPosition[i, 0] = (int)Player.Body.position.x;
-                        PlayerPreviousPosition[i, 1] = (int)Player.Body.position.y;
+                        PlayerPreviousPosition[i, 0] = Player.Body.position.x;
+                        PlayerPreviousPosition[i, 1] = Player.Body.position.y;
                     }
                 }
 
@@ -191,8 +192,8 @@ public class AI_Character : MonoBehaviour {
                         {
                             ArrayCount = 0;
                         }
-                        PlayerPreviousPosition[ArrayCount, 0] = (int)Player.Body.position.x;
-                        PlayerPreviousPosition[ArrayCount, 1] = (int)Player.Body.position.y;
+                        PlayerPreviousPosition[ArrayCount, 0] = Player.Body.position.x;
+                        PlayerPreviousPosition[ArrayCount, 1] = Player.Body.position.y;
                         ArrayCount++;
 
                         PlayerPositionCounter = 0;
@@ -285,7 +286,7 @@ public class AI_Character : MonoBehaviour {
                     }
 
             }
-            else if (FindPath() < 25) //If Player and AI collide
+            else if (FindPath() < 1.75) //If Player and AI collide
             {
                 //Let Player go through AI, temporarily disable circle collider
                 //(gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
