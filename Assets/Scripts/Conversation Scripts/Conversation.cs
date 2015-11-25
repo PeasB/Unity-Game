@@ -215,7 +215,7 @@ public class ConversationManager {
             if(DialogueLevel == int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "initialDialogue")
             {
 
-				if(!ValidateConditions(DialogueNode.ChildNodes[DialogueLevel].SelectSingleNode("Conditions")) && Conversation.SelectSingleNode ("Level" + ConversationLevel + "/AreChoices").InnerText != "No")
+				if(!ValidateConditions(DialogueNode.ChildNodes[DialogueLevel].SelectSingleNode("Conditions")))
                 {
                     DisplayChoices();
                 }
@@ -223,7 +223,19 @@ public class ConversationManager {
             }
             else if(DialogueLevel > int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "initialDialogue") //if Dialogue Level is greater then Dialogue Count, (No dialogue after) Then Displayed Dialogue must be the last piece.
             {
-                DisplayChoices();
+                //If there is no Choices then allow the current text on the screen go uninterupted. Then Increace Dialogue Level, so when next Time method is called Dialogue Disappears.
+                if(Conversation.SelectSingleNode("Level" + ConversationLevel + "/HasChoices").InnerText == "No")
+                {
+                    if(DialogueLevel >= int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) + 2)
+                    {
+                        ShouldEndConversation();
+                    }
+
+                    DialogueLevel++;
+
+                }   
+                else
+                    DisplayChoices();
             }
 
         }
@@ -233,9 +245,6 @@ public class ConversationManager {
     private void DisplayChoices()
     {
         
-		if (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/AreChoices").InnerText != "No") 
-		{
-
 			//Vaildating Choice 1 and Choice 2.
 			bool Choice1Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Conditions"));
 			bool Choice2Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Conditions"));
@@ -271,10 +280,6 @@ public class ConversationManager {
 			{
 				ChooseChoice (); //Should avoid reaching. Chould cause natural conversation flow issues. Dialogue after might not make sense. Default 2.
 			}
-		} 
-		else ;
-			//ChooseChoice (0);
-
     }
 
     //ran when the player chooses a choice. Saves the players choice, and moves on.
