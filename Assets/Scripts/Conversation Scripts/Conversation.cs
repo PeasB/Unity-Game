@@ -58,7 +58,7 @@ public class ConversationManager {
 
         //Load Scene Conversation XML
         XmlDocument Doc = new XmlDocument();
-        Doc.Load("Assets/Conversation Files/Scene" + SceneID + ".xml");
+        Doc.Load("Assets/Conversation Files/Scene " + SceneID + ".xml");
 
         //Find Correct Conversation in Scene XML file.
         foreach(XmlNode Node in Doc.SelectNodes("Conversations/Conversation"))
@@ -91,13 +91,13 @@ public class ConversationManager {
         if (ConditionNode.InnerText == "None")
             return true;
 
-        //Condition Is a single Condition set under Conditions ex: All Relationship Conditions are under Condition.
+        //Condition Is a single Condition set under Conditions ex: All Relationship Conditions are under the Condition set.
         //Example List: For Relationship Condition <Kate>100</Kate> <Matt>50</Matt>
-        foreach (XmlNode Condition in ConditionNode.ChildNodes)
+        foreach (XmlNode ConditionSet in ConditionNode.ChildNodes)
         {
 
             //Different Condition Checks
-            switch (Condition.Name)
+            switch (ConditionSet.Name)
             {
                 #region Relationship Conditions
                 case "Relationship": //Relationship Requirment
@@ -105,7 +105,7 @@ public class ConversationManager {
                     string CurrentPlayer = GameObject.FindWithTag("Player").name;
                     CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
 
-                    foreach (XmlNode Person in Condition.ChildNodes)
+                    foreach (XmlNode Person in ConditionSet.ChildNodes)
                     {
                         //if Condition does not meet min Relationship value.
                         if (!(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) >= int.Parse(Person.InnerText)))
@@ -119,7 +119,7 @@ public class ConversationManager {
                 #region In Scene Conditions
                 case "InScene": //Character in Scene Requirment check at In Scene Requirments.
 
-                    foreach (XmlNode Person in Condition.ChildNodes)
+                    foreach (XmlNode Person in ConditionSet.ChildNodes)
                     {
                         //If Character does not exist in Scene.
                         if (!((GameObject.Find("AI " + Person.Name) != null) == bool.Parse(Person.InnerText)))
@@ -135,7 +135,7 @@ public class ConversationManager {
 				case "StoryPaths": //Previous Choice.
 
 					//Looping through All StoryPath Conditions
-					foreach (XmlNode Path in Condition.ChildNodes)
+					foreach (XmlNode Path in ConditionSet.ChildNodes)
 					{
 						bool PathFound = false;
 
@@ -176,6 +176,7 @@ public class ConversationManager {
     {
         if (!ChoicesIsActive)
         {
+
            //Setting DialogueFound to false.
             bool DialogueFound = false;
 
@@ -201,9 +202,9 @@ public class ConversationManager {
             //Notes: For Below.
             //The Current Dialogue is the last vaild Dialogue in the Node.
             //Dialogue Level will be greater then than total Dialogue as when the player clicks for the next dialogue no Dialogue will be found.
-            //Since no dialogue after the one displayed on the screen (last piece of Dialogue) then  it attempts to end the Conversation.
+            //Since there is no dialogue after the one displayed on the screen (last piece of Dialogue) then  it attempts to end the Conversation.
             //Conversation May not end b/c there might be another Conversation Level.
-            //************** To summarize Dialogue Level with always be greater then the Dialogue Currently On Screen. Dialogue level represents the next level **********
+            //************** To summarize Dialogue Level will always be greater then the Dialogue Currently On Screen. Dialogue level represents the next level **********
             if (DialogueLevel > int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "AdditionalDialogue" && !DialogueFound)
             {
                 ShouldEndConversation();
@@ -213,10 +214,12 @@ public class ConversationManager {
             //If it is not vaild then display Choices now.
             if(DialogueLevel == int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "initialDialogue")
             {
-                if(!ValidateConditions(DialogueNode.ChildNodes[DialogueLevel].SelectSingleNode("Conditions")))
+
+				if(!ValidateConditions(DialogueNode.ChildNodes[DialogueLevel].SelectSingleNode("Conditions")) && Conversation.SelectSingleNode ("Level" + ConversationLevel + "/AreChoices").InnerText != "No")
                 {
                     DisplayChoices();
                 }
+
             }
             else if(DialogueLevel > int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "initialDialogue") //if Dialogue Level is greater then Dialogue Count, (No dialogue after) Then Displayed Dialogue must be the last piece.
             {
@@ -226,45 +229,51 @@ public class ConversationManager {
         }
     }
 
-    //Displays the Choices the Player has. Along with the Timer is needed.
+    //Displays the Choices the Player has. Along with the Timer if needed.
     private void DisplayChoices()
     {
-        //Vaildating Choice 1 and Choice 2.
-        bool Choice1Valid = ValidateConditions(Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Conditions"));
-        bool Choice2Valid = ValidateConditions(Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Conditions"));
+        
+		if (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/AreChoices").InnerText != "No") 
+		{
 
-        if (Choice1Valid && Choice2Valid)
-        {
-            //Choice Setup.
-            ChoicesIsActive = true;
-            Choice1UI.SetActive(true);
-            Choice2UI.SetActive(true);
-            Choice1UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice1/Text").InnerText;
-            Choice2UI.GetComponentInChildren<Text>().text = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice2/Text").InnerText;
+			//Vaildating Choice 1 and Choice 2.
+			bool Choice1Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Conditions"));
+			bool Choice2Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Conditions"));
 
-            if (Conversation.SelectSingleNode("Level" + ConversationLevel + "/TimeToChoose").InnerText != "None")
-            {
-                TimeToChoose = float.Parse(Conversation.SelectSingleNode("Level" + ConversationLevel + "/TimeToChoose").InnerText); //Amount of Time Player has to choose thier choice.
-                TimerUI.SetActive(true);
-                TimerUI.GetComponent<Slider>().maxValue = TimeToChoose;
-                TimerUI.GetComponent<Slider>().value = TimeToChoose;
-                TimerIsActive = true;
-            }
+			if (Choice1Valid && Choice2Valid) 
+			{
+				//Choice Setup.
+				ChoicesIsActive = true;
+				Choice1UI.SetActive (true);
+				Choice2UI.SetActive (true);
+				Choice1UI.GetComponentInChildren<Text> ().text = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Text").InnerText;
+				Choice2UI.GetComponentInChildren<Text> ().text = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Text").InnerText;
+
+				if (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/TimeToChoose").InnerText != "None") 
+				{
+					TimeToChoose = float.Parse (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/TimeToChoose").InnerText); //Amount of Time Player has to choose thier choice.
+					TimerUI.SetActive (true);
+					TimerUI.GetComponent<Slider> ().maxValue = TimeToChoose;
+					TimerUI.GetComponent<Slider> ().value = TimeToChoose;
+					TimerIsActive = true;
+				}
 
 
-        }
-        else if (Choice1Valid && !Choice2Valid) //Choice One is only true. Choose Choice 1 automatically.
-        {
-            ChooseChoice(1);
-        }
-        else if (Choice2Valid && !Choice1Valid)  //Choice two is only true. Choose Choice 2 automatically.
-        {
-            ChooseChoice(2);
-        }
-        else
-        {
-            ChooseChoice(); //Should avoid reaching. Chould cause natural conversation flow issues. Dialogue after might not make sense. Default 2.
-        }
+			} 
+			else if (Choice1Valid && !Choice2Valid) 
+			{ //Choice One is only true. Choose Choice 1 automatically.
+				ChooseChoice (1);
+			} else if (Choice2Valid && !Choice1Valid) 
+			{  //Choice two is only true. Choose Choice 2 automatically.
+				ChooseChoice (2);
+			} 
+			else 
+			{
+				ChooseChoice (); //Should avoid reaching. Chould cause natural conversation flow issues. Dialogue after might not make sense. Default 2.
+			}
+		} 
+		else ;
+			//ChooseChoice (0);
 
     }
 
@@ -274,33 +283,37 @@ public class ConversationManager {
 		XmlDocument Save = new XmlDocument();
 		Save.Load("Assets/Scripts/SaveGame.xml");
 
-		//Other Conquences.
-		foreach (XmlNode Conquence in Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/Conquences")) 
+		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in AreChoices Node)
+		if (ChoiceNumber != 0) 
 		{
-			#region Relationship Conquence
-			if (Conquence.Name == "Relationship")
+			//Other Conquences.
+			foreach (XmlNode Conquence in Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/Conquences")) 
 			{
-				foreach(XmlNode Person in Conquence)
+				#region Relationship Conquence
+				if (Conquence.Name == "Relationship") 
 				{
-					string CurrentPlayer = GameObject.FindWithTag("Player").name;
-					CurrentPlayer = CurrentPlayer.Remove(0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
+					foreach (XmlNode Person in Conquence) 
+					{
+						string CurrentPlayer = GameObject.FindWithTag ("Player").name;
+						CurrentPlayer = CurrentPlayer.Remove (0, 7); //Removing "Player " in Game object name. ex: Player Josh -> Josh
 
-					//if Adding Conquence will bring total over 100 set total to 100.
-					if(int.Parse(Person.InnerText) + int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) > 100)
-					{
-						Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = (100).ToString();
-					}
-					else //won't go over 100, just add normally.
-					{
-						Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = 
-							(int.Parse(Save.SelectSingleNode("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) + 
-							 int.Parse(Person.InnerText)).ToString();
+						//if Adding Conquence will bring total over 100 set total to 100.
+						if (int.Parse (Person.InnerText) + int.Parse (Save.SelectSingleNode ("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) > 100) 
+						{
+							Save.SelectSingleNode ("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = (100).ToString ();
+						} 
+						else 
+						{ //won't go over 100, just add normally.
+							Save.SelectSingleNode ("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText = 
+							(int.Parse (Save.SelectSingleNode ("SaveData/Relationships/" + CurrentPlayer + "/" + Person.Name).InnerText) + 
+								int.Parse (Person.InnerText)).ToString ();
+						}
 					}
 				}
+				#endregion
+		
+		
 			}
-			#endregion
-		
-		
 		}
 
         //Path Conquences
@@ -322,10 +335,16 @@ public class ConversationManager {
 
 		Save.Save("Assets/Scripts/SaveGame.xml");//Save Save File.
 
-        //Process Dialogue Afterwards
-        DialogueLevel = 1;
-        DialogueNode = Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/AdditionalDialogue");
-        ProcessDialogue();
+		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in AreChoices Node)
+		if (ChoiceNumber != 0) 
+		{
+			//Process Dialogue Afterwards
+			DialogueLevel = 1; //The Dialogue Node to start at in Additional Dialogue.
+			DialogueNode = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/AdditionalDialogue");
+			ProcessDialogue ();
+		} 
+		else
+			ShouldEndConversation ();
 
 
 

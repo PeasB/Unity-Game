@@ -42,6 +42,7 @@
       </initialDialogue>
 
       <TimeToChoose>10</TimeToChoose>
+      <AreChoices>Yes</AreChoices>
 
       <Choice1>
 
