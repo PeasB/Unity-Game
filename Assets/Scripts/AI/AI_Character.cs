@@ -11,8 +11,8 @@ public class AI_Character : MonoBehaviour {
     public AI_Action Action;
     public int EventType = 0;
     int PreviousEventType = 0; //Checks if the EventType has made a change, if so, create new Original X and Y points
-    int Original_X = 0;
-    int Original_Y = 0;
+    double Original_X = 0;
+    double Original_Y = 0;
     int EventStepCase = 0; //The step case for an event. 
 
     int PlayerPositionCounter = 10; //Everytime it hits 10, take a snapshot of the players x and y position
@@ -21,8 +21,8 @@ public class AI_Character : MonoBehaviour {
     int AIarrayPart = 0; //Where in the array is the AI?
     int Counter7 = 0; //when it hits 11, AIarrayCount++
 
-    int PlayerPreviousX = (int)Player.Body.position.x; //Previous X position of player after 30 frames
-    int PlayerPreviousY = (int)Player.Body.position.y; //Previous Y position of player after 30 frames
+    double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after 30 frames
+    double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after 30 frames
 
     //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
     //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
@@ -296,8 +296,8 @@ public class AI_Character : MonoBehaviour {
                 AIarrayPart = 0;
                 for (int i = 0; i < 120; i++)
                 {
-                    PlayerPreviousPosition[i, 0] = (int)Player.Body.position.x;
-                    PlayerPreviousPosition[i, 1] = (int)Player.Body.position.y;
+                    PlayerPreviousPosition[i, 0] = Player.Body.position.x;
+                    PlayerPreviousPosition[i, 1] = Player.Body.position.y;
                 }
             
             }
@@ -319,8 +319,8 @@ public class AI_Character : MonoBehaviour {
             }
             else //Start a new event
             {
-                Original_X = (int)Body.position.x;
-                Original_Y = (int)Body.position.y;
+                Original_X = Body.position.x;
+                Original_Y = Body.position.y;
                 EventStepCase = 0;
 
                 PreviousEventType = EventType;

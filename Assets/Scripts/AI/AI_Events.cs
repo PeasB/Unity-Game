@@ -5,7 +5,7 @@ public class AI_Events : MonoBehaviour {
 
     
 
-    public static int PreformEvent (Rigidbody2D Body, int Speed, Animator Anim, int EventNumber, int X_Original, int Y_Original, int CaseStep)
+    public static int PreformEvent (Rigidbody2D Body, int Speed, Animator Anim, int EventNumber, double X_Original, double Y_Original, int CaseStep)
     {
         //Var for AI x and y
         float XMove = 0;
