@@ -21,8 +21,8 @@ public class AI_Character : MonoBehaviour {
     int AIarrayPart = 0; //Where in the array is the AI?
     int Counter7 = 0; //when it hits 11, AIarrayCount++
 
-    double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after x frames
-    double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after x frames
+    //double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after x frames
+    //double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after x frames
 
     bool FollowOtherAI = false; //if false, follow player. if true, follow other AI
     
