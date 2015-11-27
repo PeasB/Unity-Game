@@ -21,13 +21,18 @@ public class AI_Character : MonoBehaviour {
     int AIarrayPart = 0; //Where in the array is the AI?
     int Counter7 = 0; //when it hits 11, AIarrayCount++
 
-    double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after 30 frames
-    double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after 30 frames
+    double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after x frames
+    double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after x frames
+
+    bool FollowOtherAI = false; //if false, follow player. if true, follow other AI
+    
+    public GameObject OtherAI_Object;
+    private AI_Character Script_OtherAIObject;
 
     //int Player_X = (int)Player.Body.position.x; //This is the players X position, NOT the AI's X position
     //int Player_Y = (int)Player.Body.position.y; //This is the players Y position, NOT the AI's Y position
 
-
+    
     public enum AI_Action
     {
         Stationary, //AI is completely rest
@@ -43,24 +48,68 @@ public class AI_Character : MonoBehaviour {
 		Anim = GetComponent<Animator>();
         CircleCollition = GetComponent<CircleCollider2D>();
 
-       
+        if (OtherAI_Object != null)
+            Script_OtherAIObject = OtherAI_Object.GetComponent<AI_Character>();
+        
+
     }
 	
     private double FindPath() //Distance from Player to AI
-    {        
+    {
         //Find Distance from AI to Player using distance formula
         //Body.position.x & Body.position.y is the x and y position of the AI
         //Player.Body.position.x & Player.Body.position.y is the x and y position of the Player
-        double Distance = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2));
-        //int Distance = (int)Mathf.Round(Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2)));
 
+        double Distance;
+
+        if (OtherAI_Object != null)
+        {
+            double AI_To_Player = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2));
+            double OtherAI_To_Player = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Script_OtherAIObject.Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Script_OtherAIObject.Body.position.y), 2));
+            double AI_To_OtherAI = Mathf.Sqrt(Mathf.Pow((Body.position.x - Script_OtherAIObject.Body.position.x), 2) + Mathf.Pow((Body.position.y - Script_OtherAIObject.Body.position.y), 2));
+
+            if (AI_To_Player < OtherAI_To_Player)
+            {
+                Distance = AI_To_Player;
+                FollowOtherAI = false;
+            }
+            else
+            {
+                Distance = AI_To_OtherAI;
+                FollowOtherAI = true;
+            }
+        }
+        else
+        {
+            Distance = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2));
+            FollowOtherAI = false;
+        }
+        
+        //Distance = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2));
         return Distance; //Hey Method, are you happy now that you finally get a return value?
     }
     
     private int Find_X_Distance()
     {
-        double X_Distance = PlayerPreviousPosition[AIarrayPart, 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
-        //int X_Distance = (int)PlayerPreviousPosition[AIarrayPart, 0] - (int)Body.position.x;
+        double X_Distance;
+
+        if (FollowOtherAI == true) //AI follow AI
+        {
+            if (AIarrayPart < 10) //Special Case
+            {
+                X_Distance = PlayerPreviousPosition[120 + (AIarrayPart - 10), 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
+            }
+            else //Regular Case
+            {
+                X_Distance = PlayerPreviousPosition[AIarrayPart - 10, 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
+            }
+        }
+        else //AI follow Player
+        {
+            X_Distance = PlayerPreviousPosition[AIarrayPart, 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
+        }
+
+        
         int X_Direction = 0;
 
         if (X_Distance < -0.05)
@@ -77,8 +126,26 @@ public class AI_Character : MonoBehaviour {
 
     private int Find_Y_Distance()
     {
-        double Y_Distance = PlayerPreviousPosition[AIarrayPart, 1] - Body.position.y; //(int)Player.Body.position.y - (int)Body.position.y;
-        //int Y_Distance = (int)PlayerPreviousPosition[AIarrayPart, 1] - (int)Body.position.y;
+        double Y_Distance;
+
+        if (FollowOtherAI == true) //AI follow AI
+        {
+            if (AIarrayPart < 10) //Special Case
+            {
+                Y_Distance = PlayerPreviousPosition[120 + (AIarrayPart - 10), 1] - Body.position.y;
+            }
+            else //Regular Case
+            {
+                Y_Distance = PlayerPreviousPosition[AIarrayPart - 10, 1] - Body.position.y;
+            }
+
+        }
+        else //AI follow Player
+        {
+            Y_Distance = PlayerPreviousPosition[AIarrayPart, 1] - Body.position.y;
+        }
+
+
         int Y_Direction = 0;
 
         if (Y_Distance < -0.05)
@@ -92,33 +159,18 @@ public class AI_Character : MonoBehaviour {
                 
         return Y_Direction;
     }
-
     
-    //void OnCollisionEnter2D(Collision2D collisionInfo)
-    //{
-    //    print("Collision Detected");
-
-    //    if (collisionInfo.gameObject.tag == "")
-    //    {            
-    //    }
-    //}
-
-    //void OnCollisionStay2D(Collision2D collisionInfo)
-    //{       
-    //    //if (collisionInfo.gameObject.tag == "AI") 
-    //    //{
-    //    //    //var
-    //    //    CircleCollition.enabled = false;
-    //    //    print("HIT");
-    //    //}       
-
-    //}
-
-
         // Update is called once per frame
-
-
         void Update () {
+
+        //if (OtherAI_Object != null)
+        //{
+        //    //if (OtherAI_Object.name == "AI April")
+        //    //{
+
+        //    //}
+        //}
+
 
         //var
         CircleCollition.enabled = true;
@@ -204,7 +256,7 @@ public class AI_Character : MonoBehaviour {
                 //AI follow the history path of player
 
                 //Follow to interval 
-                if (Counter7 >= 11) //Do not make is 10 or less!!!
+                if (Counter7 >= 11) //Do not make is 11 or less!!!
                 {
                     AIarrayPart++;
                     if (AIarrayPart >= 120)
@@ -213,6 +265,7 @@ public class AI_Character : MonoBehaviour {
                     }
                     Counter7 = 0;
 
+                    //---Check if skip is needed---
                     //check 1 behind ai count to see if the (x,y) is the same, and if so, preform a skip (for a max skip length of one full period (120)
                     //special case of when array index is 0, it looks back at index 119
                     if (AIarrayPart == 0) //Special Case
