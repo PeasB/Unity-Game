@@ -17,7 +17,10 @@ public class Player : MonoBehaviour {
     bool Paused = false;
 	bool FlashLightToggle = false;
 
+    
+    
 
+    
     // Use this for initialization
     void Start () {
 
@@ -79,6 +82,13 @@ public class Player : MonoBehaviour {
 
         //If i is pressed down on keyboard or Y in controller, open inventory
         if (Input.GetButtonDown("Button 3") == true)
+
+        if (Input.GetButtonDown("Button 0") == true) //A on controller, x on keyboard
+        {
+            
+        }
+        else if (Input.GetButtonDown("Button 3") == true) //If i is pressed down on keyboard or Y in controller, open inventory
+
         {
             ////pause / unpause   <--------********Causes conflict if the canvas is not in the scene********** - canvas will be in every scene
             //if (Paused == true)
@@ -103,15 +113,14 @@ public class Player : MonoBehaviour {
             //print(DoSaveGame.FetchSaveData());
             //InventoryScript.CreateItem(10);
             
-            InventoryScript.DisplayInventory(false); //true inputs into crafting inventory, false inputs into inventory tab
+            InventoryScript.DisplayInventory();
         }
-        else if (Input.GetButtonDown("Button 2") == true) //If q is pressed down on keyboard or X in controller, open inventory
+        else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
         {
             InventoryScript.DisplayCrafting();
         }
-        else if (Input.GetButtonDown("Button 6") == true) //If bksp is pressed down on keyboard or Back in controller, penis
-        {
-            //InventoryScript.DisplayItemFormula(5);
+        else if (Input.GetButtonDown("Button 6") == true) //Back on controller, p on keyboard
+        {            
             InventoryScript.PerformCraft(5);
         }
 

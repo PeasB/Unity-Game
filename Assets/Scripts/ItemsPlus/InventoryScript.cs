@@ -106,7 +106,7 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
-    public static void DisplayInventory(bool CraftInventory) //<--Make so it either displays in Items menu or crafting menu. False = show in inventory
+    public static void DisplayInventory() //<--Make so it either displays in Items menu or crafting menu. False = show in inventory
     {
         //Fill the arary of InventoryBox (basically get the players inventory box)
         FillInventoryBox();
@@ -114,14 +114,10 @@ public class InventoryScript : MonoBehaviour {
         //------------------------Display into UI---------------------------
         //Display array info into the UI (Display the items in the players inventory)
 
-        if (CraftInventory == false) //Display inventory in the main inventory tab
-        {
+        
 
-        }
-        else if (CraftInventory == true) //Display inventory in the inventory section in the crafting tab
-        {
 
-        }
+
         //Print it out until Andrew finishes inventory UI
         for (int i = 0; i < InventoryBox.GetLength(0); i++)
         {
@@ -131,6 +127,18 @@ public class InventoryScript : MonoBehaviour {
             }
         }
         print("----------------------");
+
+
+    }
+
+    public static void DisplayInventoryInCraft()
+    {
+        //Fill the arary of InventoryBox (basically get the players inventory box)
+        FillInventoryBox();
+
+        //------------------------Display into UI---------------------------
+        //Display array info into the UI (Display the items in the players inventory)
+
 
 
     }
@@ -530,7 +538,7 @@ public class InventoryScript : MonoBehaviour {
             CreateItem(SelectedCraftID);
 
             //refresh inventory by calling in a DisplayInventory(true)
-            DisplayInventory(true);
+            DisplayInventoryInCraft();
             ////refresh display crafting by calling it
             //DisplayCrafting();
             ////refresh itemformula by calling it
@@ -607,7 +615,7 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
-    private static bool InventorySpace()
+    public static bool InventorySpace()
     {
         bool EnoughSpace = false;
 

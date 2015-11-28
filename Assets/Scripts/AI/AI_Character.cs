@@ -21,8 +21,8 @@ public class AI_Character : MonoBehaviour {
     int AIarrayPart = 0; //Where in the array is the AI?
     int Counter7 = 0; //when it hits 11, AIarrayCount++
 
-    double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after x frames
-    double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after x frames
+    //double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after x frames
+    //double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after x frames
 
     bool FollowOtherAI = false; //if false, follow player. if true, follow other AI
     
@@ -62,7 +62,7 @@ public class AI_Character : MonoBehaviour {
 
         double Distance;
 
-        if (OtherAI_Object != null)
+        if (OtherAI_Object != null && Script_OtherAIObject.Action == AI_Action.FollowPlayer)
         {
             double AI_To_Player = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Body.position.y), 2));
             double OtherAI_To_Player = Mathf.Sqrt(Mathf.Pow((Player.Body.position.x - Script_OtherAIObject.Body.position.x), 2) + Mathf.Pow((Player.Body.position.y - Script_OtherAIObject.Body.position.y), 2));
@@ -93,21 +93,9 @@ public class AI_Character : MonoBehaviour {
     {
         double X_Distance;
 
-        if (FollowOtherAI == true) //AI follow AI
-        {
-            if (AIarrayPart < 10) //Special Case
-            {
-                X_Distance = PlayerPreviousPosition[120 + (AIarrayPart - 10), 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
-            }
-            else //Regular Case
-            {
-                X_Distance = PlayerPreviousPosition[AIarrayPart - 10, 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
-            }
-        }
-        else //AI follow Player
-        {
+        
             X_Distance = PlayerPreviousPosition[AIarrayPart, 0] - Body.position.x; //(int)Player.Body.position.x - (int)Body.position.x;
-        }
+        
 
         
         int X_Direction = 0;
@@ -128,22 +116,9 @@ public class AI_Character : MonoBehaviour {
     {
         double Y_Distance;
 
-        if (FollowOtherAI == true) //AI follow AI
-        {
-            if (AIarrayPart < 10) //Special Case
-            {
-                Y_Distance = PlayerPreviousPosition[120 + (AIarrayPart - 10), 1] - Body.position.y;
-            }
-            else //Regular Case
-            {
-                Y_Distance = PlayerPreviousPosition[AIarrayPart - 10, 1] - Body.position.y;
-            }
-
-        }
-        else //AI follow Player
-        {
+        
             Y_Distance = PlayerPreviousPosition[AIarrayPart, 1] - Body.position.y;
-        }
+      
 
 
         int Y_Direction = 0;
@@ -268,6 +243,7 @@ public class AI_Character : MonoBehaviour {
                     //---Check if skip is needed---
                     //check 1 behind ai count to see if the (x,y) is the same, and if so, preform a skip (for a max skip length of one full period (120)
                     //special case of when array index is 0, it looks back at index 119
+                   
                     if (AIarrayPart == 0) //Special Case
                     {
                         //Look back in time
@@ -327,7 +303,7 @@ public class AI_Character : MonoBehaviour {
                 }
                 Counter7++;
 
-
+               
                     if (Body.position.x != PlayerPreviousPosition[AIarrayPart, 0])
                     {
                         XMove = Find_X_Distance();
@@ -337,6 +313,8 @@ public class AI_Character : MonoBehaviour {
                     {
                         YMove = Find_Y_Distance();
                     }
+               
+                    
 
             }
             else if (FindPath() < 1.75) //If Player and AI collide
@@ -345,14 +323,24 @@ public class AI_Character : MonoBehaviour {
                 //(gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
                 CircleCollition.enabled = false;
 
-                //Reset PreviousPlayerPosition Array
-                AIarrayPart = 0;
-                for (int i = 0; i < 120; i++)
+
+                if (FollowOtherAI == true && Script_OtherAIObject.FindPath() > 1.75)
                 {
-                    PlayerPreviousPosition[i, 0] = Player.Body.position.x;
-                    PlayerPreviousPosition[i, 1] = Player.Body.position.y;
+                    //Do Nothing
                 }
-            
+                else
+                {
+                    //Reset PreviousPlayerPosition Array
+                    AIarrayPart = 0;
+                    for (int i = 0; i < 120; i++)
+                    {
+                        PlayerPreviousPosition[i, 0] = Player.Body.position.x;
+                        PlayerPreviousPosition[i, 1] = Player.Body.position.y;
+                    }
+                }
+               
+                
+
             }
 
             //Execute Movement

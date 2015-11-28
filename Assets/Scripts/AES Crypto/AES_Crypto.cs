@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 using System.Security.Cryptography;
 using System.IO;
 
