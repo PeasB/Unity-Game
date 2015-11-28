@@ -3,7 +3,7 @@
 public class SceneTransition : MonoBehaviour {
 
 
-    public static string WhatScene = "";
+    public string WhatScene = "";
 
     //Check for collition    
     void OnCollisionEnter2D(Collision2D collisionInfo)
