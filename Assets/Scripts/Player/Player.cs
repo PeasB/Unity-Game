@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Xml;
 
 public class Player : MonoBehaviour {
 
@@ -24,11 +25,25 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+		//Check for players position
+		//Read in SaveGame.xml
+		XmlDocument SaveGameDoc = new XmlDocument();
+		SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+		
+		if (SaveGameDoc.SelectSingleNode ("SaveData/SaveState/PlayerPosition/X").InnerText != "" && SaveGameDoc.SelectSingleNode ("SaveData/SaveState/PlayerPosition/Y").InnerText != "")
+		{
+			//Set players x and y to what its saved in the save data
+
+		} 
+
+
         Body = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
-        Canvas.gameObject.SetActive(false); //<--------------**********Causes conflict if the canvas is not in the scene**************** - canvas will be in every scene <- Not main menu
+        //Canvas.gameObject.SetActive(false); //<--------------**********Causes conflict if the canvas is not in the scene**************** - canvas will be in every scene <- Not main menu
         Inventory.gameObject.SetActive(false);
         Dialogue.gameObject.SetActive(false);
+
+	
     }
 
 	private void FlashlightRotation()
@@ -90,7 +105,7 @@ public class Player : MonoBehaviour {
         else if (Input.GetButtonDown("Button 3") == true) //If i is pressed down on keyboard or Y in controller, open inventory
 
         {
-            ////pause / unpause   <--------********Causes conflict if the canvas is not in the scene********** - canvas will be in every scene
+            //pause / unpause   <--------********Causes conflict if the canvas is not in the scene********** - canvas will be in every scene
             //if (Paused == true)
             //{
             //    Time.timeScale = 1.0f;

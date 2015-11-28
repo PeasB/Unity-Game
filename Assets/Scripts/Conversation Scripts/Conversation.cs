@@ -224,7 +224,7 @@ public class ConversationManager {
             else if(DialogueLevel > int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "initialDialogue") //if Dialogue Level is greater then Dialogue Count, (No dialogue after) Then Displayed Dialogue must be the last piece.
             {
                 //If there is no Choices then allow the current text on the screen go uninterupted. Then Increace Dialogue Level, so when next Time method is called Dialogue Disappears.
-                if(Conversation.SelectSingleNode("Level" + ConversationLevel + "/HasChoices").InnerText == "No")
+                if(Conversation.SelectSingleNode("Level" + ConversationLevel + "/AreChoices").InnerText == "No")
                 {
                     if(DialogueLevel >= int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) + 2)
                     {
