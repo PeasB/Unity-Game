@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public GameObject Map;
     public GameObject Dialogue;
     bool Paused = false;
+	bool FlashLightToggle = false;
 
 
     // Use this for initialization
@@ -27,9 +28,54 @@ public class Player : MonoBehaviour {
         Dialogue.gameObject.SetActive(false);
     }
 
+	private void FlashlightRotation()
+	{
+		int Direction = Anim.GetInteger("Direction");
+
+		if (Direction == 1 && this.transform.GetChild (0).transform.rotation.z != 90) //Right
+		{ 
+			this.transform.GetChild (0).transform.position = new Vector3 (this.GetComponent<Transform> ().position.x + 2.2f, this.GetComponent<Transform> ().position.y - 0.3f, -5);
+			this.transform.GetChild (0).transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, 90);
+			                                                               	
+		} else if (Direction == 0 && this.transform.GetChild (0).transform.rotation.z != 0) //Down
+		{
+			this.transform.GetChild (0).transform.position = new Vector3 (this.GetComponent<Transform> ().position.x, this.GetComponent<Transform> ().position.y - 2.4f, -5);
+			this.transform.GetChild (0).transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, 0);
+		}
+		else if(Direction == 2 && this.transform.GetChild(0).transform.rotation.z != 180) //Up 
+		{
+			this.transform.GetChild (0).transform.position = new Vector3 (this.GetComponent<Transform> ().position.x, this.GetComponent<Transform> ().position.y + 2.4f, -5);
+			this.transform.GetChild (0).transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, 180);
+		}
+		else if(Direction == 3 && this.transform.GetChild(0).transform.rotation.z != 270) //Left
+		{
+			this.transform.GetChild (0).transform.position = new Vector3 (this.GetComponent<Transform> ().position.x -2.2f , this.GetComponent<Transform> ().position.y - 0.3f , -5);
+			this.transform.GetChild (0).transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, 270);
+		}
+	}
+
 
     // Update is called once per frame
     void Update () {
+
+		if(Input.GetButtonDown("Button 4"))
+		{
+			if(!FlashLightToggle)
+			{
+				this.transform.GetChild (0).gameObject.SetActive(true);
+				FlashLightToggle = true;
+			}
+			else
+			{
+				this.transform.GetChild (0).gameObject.SetActive(false);
+				FlashLightToggle = false;
+			}
+
+
+		}
+
+		if(FlashLightToggle)
+			FlashlightRotation();
 
         //If i is pressed down on keyboard or Y in controller, open inventory
         if (Input.GetButtonDown("Button 3") == true)
