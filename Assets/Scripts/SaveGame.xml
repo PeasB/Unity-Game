@@ -69,6 +69,20 @@
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
+  <ItemPickUp>
+    <Scene>
+      <SceneName>Ryans Test Scene</SceneName>
+    </Scene>
+    <Scene>
+      <SceneName>Scene 1</SceneName>
+    </Scene>
+    <Scene>
+      <SceneName>Scene 2</SceneName>
+    </Scene>
+    <Scene>
+      <SceneName>Walking Sounds Test Scene</SceneName>
+    </Scene>
+  </ItemPickUp>
   <Inventory>
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
@@ -85,6 +99,14 @@
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
     <ItemID>2</ItemID>
-    
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
   </Inventory>
 </SaveData>

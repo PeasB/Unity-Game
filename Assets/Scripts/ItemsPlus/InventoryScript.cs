@@ -106,7 +106,7 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
-    public static void DisplayInventory() //<--Make so it either displays in Items menu or crafting menu. False = show in inventory
+    public static void DisplayInventory() 
     {
         //Fill the arary of InventoryBox (basically get the players inventory box)
         FillInventoryBox();

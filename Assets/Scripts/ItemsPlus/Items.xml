@@ -11,6 +11,7 @@
       <Stackable>1</Stackable>      
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Wood</ObjectName>
     </Item>
     
     <Item>
@@ -21,6 +22,7 @@
       <Stackable>1</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Stick</ObjectName>
     </Item>
 
     <Item>
@@ -31,26 +33,29 @@
       <Stackable>0</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Book</ObjectName>
     </Item>
 
     <Item>
       <ID>3</ID>
-      <Name>Water Bottle</Name>
-      <Description>A full unopened water bottle</Description>
+      <Name>Rock</Name>
+      <Description>A small light rock</Description>
       <Craftable>0</Craftable>
-      <Stackable>0</Stackable>
+      <Stackable>1</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Rock</ObjectName>
     </Item>
 
     <Item>
       <ID>4</ID>
-      <Name>Lighter</Name>
+      <Name>Match</Name>
       <Description>A device that creates a flame</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Match</ObjectName>
     </Item>
     
     <Item>
@@ -61,27 +66,43 @@
       <Stackable>1</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Torch</ObjectName>
     </Item>
 
     <Item>
       <ID>6</ID>
-      <Name>Sign</Name>
-      <Description>A sign that can be placed down, and can have text on it</Description>
+      <Name>Hammer</Name>
+      <Description>A weak but useful hammer. Looks like it will break after one hit.</Description>
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Hammer</ObjectName>
     </Item>
 
     <Item>
       <ID>7</ID>
-      <Name>Wooden Bucket</Name>
-      <Description>A bucket made of wood</Description>
-      <Craftable>1</Craftable>
+      <Name>Key</Name>
+      <Description>A key that opens a door</Description>
+      <Craftable>0</Craftable>
       <Stackable>0</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
+      <ObjectName>Item_Key</ObjectName>
     </Item>
+
+    <Item>
+      <ID>8</ID>
+      <Name>CD</Name>
+      <Description>A CD that has a song on it</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Key</ObjectName>
+    </Item>
+
+    
 
     
   </ItemsList>
@@ -98,20 +119,11 @@
     
     <Craft>
       <ID>1</ID>
-      <ID>0</ID>
-      <ID>0</ID>
-      <ID>0</ID>
+      <ID>3</ID>
       <NewID>6</NewID>
     </Craft>
 
-    
-    <Craft>
-      <ID>0</ID>
-      <ID>0</ID>
-      <ID>0</ID>
-      <NewID>7</NewID>
-    </Craft>
-    
+        
   </Crafting>
 
 </Items>
