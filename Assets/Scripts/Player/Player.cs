@@ -9,13 +9,7 @@ public class Player : MonoBehaviour {
     Animator Anim;
     public int WalkSpeed;
 
-    //crafting menu
-    public GameObject Canvas;
-    public GameObject Inventory;
-    public GameObject Crafting;
-    public GameObject Map;
-    public GameObject Dialogue;
-    bool Paused = false;
+    
 	bool FlashLightToggle = false;
 
     int CounterPos = 0; //After every 150 frames, write players x and y position to SaveData
@@ -26,11 +20,10 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-		//Check for players position
+		//--Check for players position--
 		//Read in SaveGame.xml
 		XmlDocument SaveGameDoc = new XmlDocument();
 		SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
-		
 
 		if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText != "")
 		{
@@ -39,12 +32,10 @@ public class Player : MonoBehaviour {
         } 
 
 
+        //--Other--
         Body = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
-        //Canvas.gameObject.SetActive(false); //<--------------**********Causes conflict if the canvas is not in the scene**************** - canvas will be in every scene <- Not main menu
-        Inventory.gameObject.SetActive(false);
-        Dialogue.gameObject.SetActive(false);
-
+        
 	
     }
 
@@ -105,7 +96,6 @@ public class Player : MonoBehaviour {
             
         }
         else if (Input.GetButtonDown("Button 3") == true) //If i is pressed down on keyboard or Y in controller, open inventory
-
         {
             //pause / unpause   <--------********Causes conflict if the canvas is not in the scene********** - canvas will be in every scene
             //if (Paused == true)
@@ -130,7 +120,7 @@ public class Player : MonoBehaviour {
             //print(DoSaveGame.FetchSaveData());
             //InventoryScript.CreateItem(10);
             
-            InventoryScript.DisplayInventory();
+            //InventoryScript.DisplayInventory();
         }
         else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
         {
@@ -170,17 +160,5 @@ public class Player : MonoBehaviour {
 
 	}
 
-    public void ToInventory()
-    {
-
-        Inventory.gameObject.SetActive(true);
-        Crafting.gameObject.SetActive(false);
-
-    }
-
-    public void Test()
-    {
-        Debug.Log("Button was pressed");
-    }
-
+  
 }

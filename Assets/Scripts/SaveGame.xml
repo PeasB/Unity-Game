@@ -10,12 +10,12 @@
   </Settings>
   <SaveState>
     <PlayerPosition>
-      <X>-4.096562</X>
-      <Y>-6.843344</Y>
+      <X>-7.278434</X>
+      <Y>-2.554895</Y>
     </PlayerPosition>
     <JoshAI>
-      <X></X>
-      <Y></Y>
+      <X>-5.47217</X>
+      <Y>-2.547147</Y>
     </JoshAI>
     <MattAI>
       <X>
@@ -106,6 +106,7 @@
       <SceneName>Ryans Test Scene</SceneName>
       <ObjectName>Item_Book</ObjectName>
       <ObjectName>Item_Book (6)</ObjectName>
+      <ObjectName>Item_Book (1)</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 1</SceneName>
@@ -132,6 +133,7 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
+    <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
