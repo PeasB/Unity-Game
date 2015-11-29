@@ -10,34 +10,46 @@
   </Settings>
   <SaveState>
     <PlayerPosition>
-      <X>-7.278434</X>
-      <Y>-2.554895</Y>
+      <X></X>
+      <Y></Y>
     </PlayerPosition>
     <JoshAI>
-      <X>-5.47217</X>
-      <Y>-2.547147</Y>
+      <X>
+      </X>
+      <Y>
+      </Y>
+      <Action>
+      </Action>
     </JoshAI>
     <MattAI>
       <X>
       </X>
       <Y>
       </Y>
+      <Action>
+      </Action>
     </MattAI>
     <KateAI>
       <X>
       </X>
       <Y>
       </Y>
+      <Action>
+      </Action>
     </KateAI>
     <AprilAI>
-      <X>-0.6448681</X>
-      <Y>1.905725</Y>
+      <X>-2.657856</X>
+      <Y>-5.692827</Y>
+      <Action>
+      </Action>
     </AprilAI>
     <EthanAI>
       <X>
       </X>
       <Y>
       </Y>
+      <Action>
+      </Action>
     </EthanAI>
   </SaveState>
   <Status>
@@ -57,7 +69,7 @@
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
-      <April>70</April>
+      <April>55</April>
       <Ethan>100</Ethan>
     </Matt>
     <Kate>
@@ -82,7 +94,7 @@
   <StoryPaths>
     <Situation>
       <ID>1.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>2</Outcome>
     </Situation>
     <Situation>
       <ID>1.2</ID>
@@ -107,6 +119,7 @@
       <ObjectName>Item_Book</ObjectName>
       <ObjectName>Item_Book (6)</ObjectName>
       <ObjectName>Item_Book (1)</ObjectName>
+      <ObjectName>Item_Book (16)</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 1</SceneName>
@@ -133,6 +146,7 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
+    <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>

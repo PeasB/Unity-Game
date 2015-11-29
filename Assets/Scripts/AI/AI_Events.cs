@@ -7,6 +7,9 @@ public class AI_Events : MonoBehaviour {
 
     public static int PreformEvent (Rigidbody2D Body, int Speed, Animator Anim, int EventNumber, double X_Original, double Y_Original, int CaseStep)
     {
+        //SavePosition(Body.gameObject.name);  //<---- For saving an AI's location
+        
+
         //Var for AI x and y
         float XMove = 0;
         float YMove = 0;
@@ -203,6 +206,12 @@ public class AI_Events : MonoBehaviour {
         PlayerMovement.PlayerMove(Body, Speed, Anim, XMove, YMove);
 
         return CaseStep;
+
+    }
+
+
+    private static void SavePosition(string AI_Name)
+    {
 
     }
 
