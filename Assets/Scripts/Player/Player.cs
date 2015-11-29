@@ -31,7 +31,8 @@ public class Player : MonoBehaviour {
 		XmlDocument SaveGameDoc = new XmlDocument();
 		SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
 		
-		if (SaveGameDoc.SelectSingleNode ("SaveData/SaveState/PlayerPosition/X").InnerText != "" && SaveGameDoc.SelectSingleNode ("SaveData/SaveState/PlayerPosition/Y").InnerText != "")
+
+		if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText != "")
 		{
             //Set players x and y to what its saved in the save data
             this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText));

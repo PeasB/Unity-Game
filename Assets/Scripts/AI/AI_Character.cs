@@ -1,5 +1,6 @@
 ﻿//By: Ryan Dailey
 using UnityEngine;
+using System.Xml;
 
 public class AI_Character : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class AI_Character : MonoBehaviour {
     int ArrayCount = 0; //Goes up to 119
     int AIarrayPart = 0; //Where in the array is the AI?
     int Counter7 = 0; //when it hits 11, AIarrayCount++
+
+    int CounterPos = 0; //After every 150 frames, write AI's x and y position to SaveData
 
     //double PlayerPreviousX = Player.Body.position.x; //Previous X position of player after x frames
     //double PlayerPreviousY = Player.Body.position.y; //Previous Y position of player after x frames
@@ -44,7 +47,40 @@ public class AI_Character : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Body = GetComponent<Rigidbody2D>();
+        //Check for players position
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        
+        if (this.gameObject.name == "AI Josh" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Y").InnerText != "")
+        {
+            //Set players x and y to what its saved in the save data
+            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Y").InnerText));
+        }
+        else if (this.gameObject.name == "AI Matt" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Y").InnerText != "")
+        {
+            //Set players x and y to what its saved in the save data
+            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Y").InnerText));
+        }
+        else if (this.gameObject.name == "AI Kate" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Y").InnerText != "")
+        {
+            //Set players x and y to what its saved in the save data
+            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Y").InnerText));
+        }
+        else if (this.gameObject.name == "AI April" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Y").InnerText != "")
+        {
+            //Set players x and y to what its saved in the save data
+            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Y").InnerText));
+        }
+        else if (this.gameObject.name == "AI Ethan" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Y").InnerText != "")
+        {
+            //Set players x and y to what its saved in the save data
+            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Y").InnerText));
+        }
+
+
+        Body = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
         CircleCollition = GetComponent<CircleCollider2D>();
 
@@ -136,17 +172,9 @@ public class AI_Character : MonoBehaviour {
     }
     
         // Update is called once per frame
-        void Update () {
-
-        //if (OtherAI_Object != null)
-        //{
-        //    //if (OtherAI_Object.name == "AI April")
-        //    //{
-
-        //    //}
-        //}
-
-
+    void Update ()
+    {
+                
         //var
         CircleCollition.enabled = true;
 
@@ -372,6 +400,47 @@ public class AI_Character : MonoBehaviour {
             #endregion
         }
 
-           
+
+        //Check if you need to write player position to save data
+        CounterPos++;
+        if (CounterPos >= 150)
+        {
+            //Read in SaveGame.xml
+            XmlDocument SaveGameDoc = new XmlDocument();
+            SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+            if (this.gameObject.name == "AI Josh")
+            {
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/X").InnerText = transform.position.x.ToString();
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Y").InnerText = transform.position.y.ToString();
+            }
+            else if (this.gameObject.name == "AI Matt")
+            {
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/X").InnerText = transform.position.x.ToString();
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Y").InnerText = transform.position.y.ToString();
+            }
+            else if (this.gameObject.name == "AI Kate")
+            {
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/X").InnerText = transform.position.x.ToString();
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Y").InnerText = transform.position.y.ToString();
+            }
+            else if (this.gameObject.name == "AI April")
+            {
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/X").InnerText = transform.position.x.ToString();
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Y").InnerText = transform.position.y.ToString();
+            }
+            else if (this.gameObject.name == "AI Ethan")
+            {
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/X").InnerText = transform.position.x.ToString();
+                SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Y").InnerText = transform.position.y.ToString();
+            }
+
+            //Save XML
+            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+            CounterPos = 0;
+        }
+
+
     }
 }
