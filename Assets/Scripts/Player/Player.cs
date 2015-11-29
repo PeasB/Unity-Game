@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
     bool Paused = false;
 	bool FlashLightToggle = false;
 
+    int CounterPos = 0; //After every 150 frames, write players x and y position to SaveData
     
     
 
@@ -32,9 +33,9 @@ public class Player : MonoBehaviour {
 		
 		if (SaveGameDoc.SelectSingleNode ("SaveData/SaveState/PlayerPosition/X").InnerText != "" && SaveGameDoc.SelectSingleNode ("SaveData/SaveState/PlayerPosition/Y").InnerText != "")
 		{
-			//Set players x and y to what its saved in the save data
-
-		} 
+            //Set players x and y to what its saved in the save data
+            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText));
+        } 
 
 
         Body = GetComponent<Rigidbody2D>();
@@ -138,6 +139,26 @@ public class Player : MonoBehaviour {
         {            
             InventoryScript.PerformCraft(5);
         }
+
+
+        //Check if you need to write player position to save data
+        CounterPos++;
+        if (CounterPos >= 150)
+        {
+            //Read in SaveGame.xml
+            XmlDocument SaveGameDoc = new XmlDocument();
+            SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+            SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText = transform.position.x.ToString();
+            SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText = transform.position.y.ToString();
+
+            //Save XML
+            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+            CounterPos = 0;
+        }
+
+
 
         //Movement
         float XMove = Input.GetAxis("Horizontal");

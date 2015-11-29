@@ -1,5 +1,4 @@
 <SaveData>
-
   <Settings>
     <DateTimeStarted>
     </DateTimeStarted>
@@ -9,34 +8,42 @@
     <Music>1</Music>
     <ControllerSupport>0</ControllerSupport>
   </Settings>
-  
   <SaveState>
-  	<PlayerPosition>
-  		<X></X>
-  		<Y></Y>
-  	</PlayerPosition>
-  	<JoshAI>
-  		<X></X>
-  		<Y></Y>
-  	</JoshAI>
-  	<MattAI>
-  		<X></X>
-  		<Y></Y>
-  	</MattAI>
-  	<KateAI>
-  		<X></X>
-  		<Y></Y>
-  	</KateAI>
-  	<AprilAI>
-  		<X></X>
-  		<Y></Y>
-  	</AprilAI>
-  	<EthanAI>
-  		<X></X>
-  		<Y></Y>
-  	</EthanAI>
+    <PlayerPosition>
+      <X>5.938192</X>
+      <Y>-4.254568</Y>
+    </PlayerPosition>
+    <JoshAI>
+      <X>
+      </X>
+      <Y>
+      </Y>
+    </JoshAI>
+    <MattAI>
+      <X>
+      </X>
+      <Y>
+      </Y>
+    </MattAI>
+    <KateAI>
+      <X>
+      </X>
+      <Y>
+      </Y>
+    </KateAI>
+    <AprilAI>
+      <X>
+      </X>
+      <Y>
+      </Y>
+    </AprilAI>
+    <EthanAI>
+      <X>
+      </X>
+      <Y>
+      </Y>
+    </EthanAI>
   </SaveState>
-  
   <Status>
     <Josh>1</Josh>
     <Matt>0</Matt>
@@ -44,7 +51,6 @@
     <April>1</April>
     <Ethan>1</Ethan>
   </Status>
-  
   <Relationships>
     <Josh>
       <Matt>100</Matt>
@@ -77,7 +83,6 @@
       <April>100</April>
     </Ethan>
   </Relationships>
-  
   <StoryPaths>
     <Situation>
       <ID>1.1</ID>
@@ -100,7 +105,6 @@
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
-  
   <ItemPickUp>
     <Scene>
       <SceneName>Ryans Test Scene</SceneName>
@@ -115,7 +119,6 @@
       <SceneName>Walking Sounds Test Scene</SceneName>
     </Scene>
   </ItemPickUp>
-  
   <Inventory>
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
@@ -142,6 +145,8 @@
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
   </Inventory>
-  
 </SaveData>
