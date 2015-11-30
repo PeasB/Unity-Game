@@ -24,7 +24,7 @@ public class AI_Events : MonoBehaviour {
             #region Event 1: Up and Down
             if (CaseStep == 0) //Case going down
             {
-                if (Body.position.y > Y_Original - 60) //Down
+                if (Body.position.y > Y_Original - 4) //Down
                 {
                     YMove = -1;
                 }
@@ -48,7 +48,7 @@ public class AI_Events : MonoBehaviour {
 
             if (CaseStep == 0) //Case going down
             {
-                if (Body.position.y > Y_Original - 60) //Down
+                if (Body.position.y > Y_Original - 5) //Down
                 {
                     YMove = -1;
                 }
@@ -57,7 +57,7 @@ public class AI_Events : MonoBehaviour {
             }
             else if (CaseStep == 1) //Case going right
             {
-                if (Body.position.x < X_Original + 30) //Right
+                if (Body.position.x < X_Original + 3) //Right
                 {
                     XMove = 1;
                 }
@@ -91,7 +91,7 @@ public class AI_Events : MonoBehaviour {
 
             if (CaseStep == 0) //Case going right
             {
-                if (Body.position.x < X_Original + 30) //Right
+                if (Body.position.x < X_Original + 3) //Right
                 {
                     XMove = 1;
                 }
@@ -100,7 +100,7 @@ public class AI_Events : MonoBehaviour {
             }
             else if (CaseStep == 1) //Case going down
             {
-                if (Body.position.y > Y_Original - 30) //Down
+                if (Body.position.y > Y_Original - 3) //Down
                 {
                     YMove = -1;
                 }
@@ -128,13 +128,13 @@ public class AI_Events : MonoBehaviour {
             
             #endregion
         }
-        else if (EventNumber == 4)
+        else if (EventNumber == 4) //Walking in a square Counter Clock wise (down, right, up, left). Has 4 cases
         {
             #region Event 4: Sqaure CCW
 
             if (CaseStep == 0) //Case going Down
             {
-                if (Body.position.y > Y_Original - 30) //Down
+                if (Body.position.y > Y_Original - 1.5) //Down
                 {
                     YMove = -1;
                 }
@@ -143,7 +143,7 @@ public class AI_Events : MonoBehaviour {
             }
             else if (CaseStep == 1) //Case going right
             {                
-                if (Body.position.x < X_Original + 30) //Right
+                if (Body.position.x < X_Original + 1.5) //Right
                 {
                     XMove = 1;
                 }
@@ -171,7 +171,7 @@ public class AI_Events : MonoBehaviour {
 
             #endregion
         }
-        else if (EventNumber == 5)
+        else if (EventNumber == 5) 
         {
             #region Event 5: 
 

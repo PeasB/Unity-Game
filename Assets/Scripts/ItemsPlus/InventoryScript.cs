@@ -629,6 +629,26 @@ public class InventoryScript : MonoBehaviour {
         return EnoughSpace;
     }
     
+    public static bool CheckItem (int SelectedItemID)
+    {
+        bool ItemExists = false;
+
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        //Check if Item exists / find item
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
+        {
+            if (SelectedItemID.ToString() == node.InnerText)
+            {
+                ItemExists = true;
+                break;
+            }
+        }
+        
+        return ItemExists;
+    }
             
 
     // Use this for initialization

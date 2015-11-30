@@ -10,8 +10,8 @@
   </Settings>
   <SaveState>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>-1.855902</X>
+      <Y>-9.266614</Y>
     </PlayerPosition>
     <JoshAI>
       <X>
@@ -38,8 +38,10 @@
       </Action>
     </KateAI>
     <AprilAI>
-      <X>-2.657856</X>
-      <Y>-5.692827</Y>
+      <X>
+      </X>
+      <Y>
+      </Y>
       <Action>
       </Action>
     </AprilAI>
@@ -113,13 +115,9 @@
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
-  <ItemPickUp>
+  <DestroyObjects>
     <Scene>
       <SceneName>Ryans Test Scene</SceneName>
-      <ObjectName>Item_Book</ObjectName>
-      <ObjectName>Item_Book (6)</ObjectName>
-      <ObjectName>Item_Book (1)</ObjectName>
-      <ObjectName>Item_Book (16)</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 1</SceneName>
@@ -130,7 +128,7 @@
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
     </Scene>
-  </ItemPickUp>
+  </DestroyObjects>
   <Inventory>
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
@@ -145,24 +143,5 @@
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
-    <ItemID>5</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
   </Inventory>
 </SaveData>

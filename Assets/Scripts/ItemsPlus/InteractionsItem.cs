@@ -73,7 +73,7 @@ public class InteractionsItem : MonoBehaviour {
         XmlDocument SaveGameDoc = new XmlDocument();
         SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
 
-        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/ItemPickUp/Scene"))
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/DestroyObjects/Scene"))
         {
             if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
             {
@@ -125,7 +125,7 @@ public class InteractionsItem : MonoBehaviour {
                 XmlNode ObjectName = SaveGameDoc.CreateElement("ObjectName");
                 ObjectName.InnerText = this.gameObject.name;
                                 
-                foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/ItemPickUp/Scene"))
+                foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/DestroyObjects/Scene"))
                 {
                     if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
                     {
