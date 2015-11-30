@@ -105,5 +105,4 @@ public class TextScreenManager : MonoBehaviour {
         EntryCanvas.enabled = false;
 
     }
-
 }
