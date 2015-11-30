@@ -41,15 +41,10 @@
       </Action>
     </KateAI>
     <AprilAI>
-<<<<<<< HEAD
       <X>
       </X>
       <Y>
       </Y>
-=======
-      <X>-8.21852</X>
-      <Y>1.549647</Y>
->>>>>>> origin/master
       <Action>
       </Action>
     </AprilAI>
@@ -135,7 +130,6 @@
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
-      <ObjectName>Item_Book (1)</ObjectName>
     </Scene>
   </DestroyObjects>
   <Inventory>
@@ -152,28 +146,6 @@
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
-<<<<<<< HEAD
-=======
     <ItemID>5</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
->>>>>>> origin/master
   </Inventory>
 </SaveData>
