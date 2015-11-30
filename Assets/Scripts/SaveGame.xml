@@ -10,14 +10,12 @@
   </Settings>
   <SaveState>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>-8.252822</X>
+      <Y>2.653542</Y>
     </PlayerPosition>
     <JoshAI>
-      <X>
-      </X>
-      <Y>
-      </Y>
+      <X>-7.062231</X>
+      <Y>2.6839</Y>
       <Action>
       </Action>
     </JoshAI>
@@ -38,8 +36,8 @@
       </Action>
     </KateAI>
     <AprilAI>
-      <X>-2.657856</X>
-      <Y>-5.692827</Y>
+      <X>-8.21852</X>
+      <Y>1.549647</Y>
       <Action>
       </Action>
     </AprilAI>
@@ -129,6 +127,7 @@
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
+      <ObjectName>Item_Book (1)</ObjectName>
     </Scene>
   </ItemPickUp>
   <Inventory>
@@ -146,6 +145,7 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
+    <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
     <ItemID>2</ItemID>
