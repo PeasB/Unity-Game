@@ -51,83 +51,63 @@ public class AI_Character : MonoBehaviour {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
         SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
-        
-        if (this.gameObject.name == "AI Josh" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Y").InnerText != "")
+
+
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
         {
-            //Set players x and y to what its saved in the save data
-            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Y").InnerText));
-            if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Action").InnerText = "";
-        }
-        else if (this.gameObject.name == "AI Matt" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Y").InnerText != "")
-        {
-            //Set players x and y to what its saved in the save data
-            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Y").InnerText));
-            if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Action").InnerText = "";
-        }
-        else if (this.gameObject.name == "AI Kate" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Y").InnerText != "")
-        {
-            //Set players x and y to what its saved in the save data
-            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Y").InnerText));
-            if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Action").InnerText = "";
-        }
-        else if (this.gameObject.name == "AI April" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Y").InnerText != "")
-        {
-            //Set players x and y to what its saved in the save data
-            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Y").InnerText));
-            if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Action").InnerText = "";
-        }
-        else if (this.gameObject.name == "AI Ethan" & SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Y").InnerText != "")
-        {
-            //Set players x and y to what its saved in the save data
-            this.GetComponent<Transform>().position = new Vector3(float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/X").InnerText), float.Parse(SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Y").InnerText));
-            if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Action").InnerText = "";
+            if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
+            {
+
+                if (this.gameObject.name == "AI Josh" & node.SelectSingleNode("AI/JoshAI/X").InnerText != "" && node.SelectSingleNode("AI/JoshAI/Y").InnerText != "")
+                {
+                    //Set players x and y to what its saved in the save data
+                    this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/JoshAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/JoshAI/Y").InnerText));
+                    if (node.SelectSingleNode("AI/JoshAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
+                    //node.SelectSingleNode("AI/JoshAI/Action").InnerText = "";
+                }
+                else if (this.gameObject.name == "AI Matt" & node.SelectSingleNode("AI/MattAI/X").InnerText != "" && node.SelectSingleNode("AI/MattAI/Y").InnerText != "")
+                {
+                    //Set players x and y to what its saved in the save data
+                    this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/MattAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/MattAI/Y").InnerText));
+                    if (node.SelectSingleNode("AI/MattAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
+                    //node.SelectSingleNode("AI/MattAI/Action").InnerText = "";
+                }
+                else if (this.gameObject.name == "AI Kate" & node.SelectSingleNode("AI/KateAI/X").InnerText != "" && node.SelectSingleNode("AI/KateAI/Y").InnerText != "")
+                {
+                    //Set players x and y to what its saved in the save data
+                    this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/KateAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/KateAI/Y").InnerText));
+                    if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
+                    //node.SelectSingleNode("AI/KateAI/Action").InnerText = "";
+                }
+                else if (this.gameObject.name == "AI April" & node.SelectSingleNode("AI/AprilAI/X").InnerText != "" && node.SelectSingleNode("AI/AprilAI/Y").InnerText != "")
+                {
+                    //Set players x and y to what its saved in the save data
+                    this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/AprilAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/AprilAI/Y").InnerText));
+                    if (node.SelectSingleNode("AI/AprilAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
+                    //node.SelectSingleNode("AI/AprilAI/Action").InnerText = "";
+                }
+                else if (this.gameObject.name == "AI Ethan" & node.SelectSingleNode("AI/EthanAI/X").InnerText != "" && node.SelectSingleNode("AI/EthanAI/Y").InnerText != "")
+                {
+                    //Set players x and y to what its saved in the save data
+                    this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/EthanAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/EthanAI/Y").InnerText));
+                    if (node.SelectSingleNode("AI/EthanAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
+                    //node.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
+                }
+
+                //Save XML
+                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+
+                break;
+            }
         }
 
-        //Save XML
-        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+        
 
         Body = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
         CircleCollition = GetComponent<CircleCollider2D>();
-
-
-        //if (this.gameObject.name != "AI Matt" && GameObject.Find("AI Matt") != null)
-        //{
-        //    if (GameObject.Find("AI Matt").GetComponent<AI_Character>().Action == AI_Action.FollowPlayer)
-        //        OtherAI_Object = GameObject.Find("AI Matt");
-        //}
-        //if (this.gameObject.name != "AI Josh" && GameObject.Find("AI Josh") != null)
-        //{
-        //    if (GameObject.Find("AI Josh").GetComponent<AI_Character>().Action == AI_Action.FollowPlayer)
-        //        OtherAI_Object = GameObject.Find("AI Josh");    
-        //}
-        //if (this.gameObject.name != "AI Kate" && GameObject.Find("AI Kate") != null)
-        //{
-        //    if (GameObject.Find("AI Kate").GetComponent<AI_Character>().Action == AI_Action.FollowPlayer)
-        //        OtherAI_Object = GameObject.Find("AI Kate");
-        //}
-        //if (this.gameObject.name != "AI April" && GameObject.Find("AI April") != null)
-        //{
-        //    if (GameObject.Find("AI April").GetComponent<AI_Character>().Action == AI_Action.FollowPlayer)
-        //        OtherAI_Object = GameObject.Find("AI April");
-        //}
-        //if (this.gameObject.name != "AI Ethan" && GameObject.Find("AI Ethan") != null)
-        //{
-        //    if (GameObject.Find("AI Ethan").GetComponent<AI_Character>().Action == AI_Action.FollowPlayer)
-        //        OtherAI_Object = GameObject.Find("AI Ethan");
-        //}
-
-
-        //if (OtherAI_Object != null)
-        //    Script_OtherAIObject = OtherAI_Object.GetComponent<AI_Character>();
-
-
-
+                
     }
 
     private double FindPath() //Distance from Player to AI
@@ -306,34 +286,45 @@ public class AI_Character : MonoBehaviour {
                 XmlDocument SaveGameDoc = new XmlDocument();
                 SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
 
-                if (this.gameObject.name == "AI Josh")
+
+                foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
                 {
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/X").InnerText = transform.position.x.ToString();
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/JoshAI/Y").InnerText = transform.position.y.ToString();
-                }
-                else if (this.gameObject.name == "AI Matt")
-                {
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/X").InnerText = transform.position.x.ToString();
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/MattAI/Y").InnerText = transform.position.y.ToString();
-                }
-                else if (this.gameObject.name == "AI Kate")
-                {
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/X").InnerText = transform.position.x.ToString();
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/KateAI/Y").InnerText = transform.position.y.ToString();
-                }
-                else if (this.gameObject.name == "AI April")
-                {
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/X").InnerText = transform.position.x.ToString();
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/AprilAI/Y").InnerText = transform.position.y.ToString();
-                }
-                else if (this.gameObject.name == "AI Ethan")
-                {
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/X").InnerText = transform.position.x.ToString();
-                    SaveGameDoc.SelectSingleNode("SaveData/SaveState/EthanAI/Y").InnerText = transform.position.y.ToString();
+                    if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
+                    {
+                        if (this.gameObject.name == "AI Josh")
+                        {
+                            node.SelectSingleNode("AI/JoshAI/X").InnerText = transform.position.x.ToString();
+                            node.SelectSingleNode("AI/JoshAI/Y").InnerText = transform.position.y.ToString();
+                        }
+                        else if (this.gameObject.name == "AI Matt")
+                        {
+                            node.SelectSingleNode("AI/MattAI/X").InnerText = transform.position.x.ToString();
+                            node.SelectSingleNode("AI/MattAI/Y").InnerText = transform.position.y.ToString();
+                        }
+                        else if (this.gameObject.name == "AI Kate")
+                        {
+                            node.SelectSingleNode("AI/KateAI/X").InnerText = transform.position.x.ToString();
+                            node.SelectSingleNode("AI/KateAI/Y").InnerText = transform.position.y.ToString();
+                        }
+                        else if (this.gameObject.name == "AI April")
+                        {
+                            node.SelectSingleNode("AI/AprilAI/X").InnerText = transform.position.x.ToString();
+                            node.SelectSingleNode("AI/AprilAI/Y").InnerText = transform.position.y.ToString();
+                        }
+                        else if (this.gameObject.name == "AI Ethan")
+                        {
+                            node.SelectSingleNode("AI/EthanAI/X").InnerText = transform.position.x.ToString();
+                            node.SelectSingleNode("AI/EthanAI/Y").InnerText = transform.position.y.ToString();
+                        }
+
+                        //Save XML
+                        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                    }
                 }
 
-                //Save XML
-                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+
+                
 
                 CounterPos = 0;
             }
