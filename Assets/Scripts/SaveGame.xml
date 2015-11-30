@@ -10,14 +10,17 @@
   </Settings>
   <SaveState>
     <PlayerPosition>
+<<<<<<< HEAD
       <X>-1.855902</X>
       <Y>-9.266614</Y>
+=======
+      <X>-8.252822</X>
+      <Y>2.653542</Y>
+>>>>>>> origin/master
     </PlayerPosition>
     <JoshAI>
-      <X>
-      </X>
-      <Y>
-      </Y>
+      <X>-7.062231</X>
+      <Y>2.6839</Y>
       <Action>
       </Action>
     </JoshAI>
@@ -38,10 +41,15 @@
       </Action>
     </KateAI>
     <AprilAI>
+<<<<<<< HEAD
       <X>
       </X>
       <Y>
       </Y>
+=======
+      <X>-8.21852</X>
+      <Y>1.549647</Y>
+>>>>>>> origin/master
       <Action>
       </Action>
     </AprilAI>
@@ -127,6 +135,7 @@
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
+      <ObjectName>Item_Book (1)</ObjectName>
     </Scene>
   </DestroyObjects>
   <Inventory>
@@ -143,5 +152,28 @@
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
+<<<<<<< HEAD
+=======
+    <ItemID>5</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+>>>>>>> origin/master
   </Inventory>
 </SaveData>
