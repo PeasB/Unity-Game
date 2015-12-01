@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 using System.Xml;
 
 public class DeleteObjects : MonoBehaviour {

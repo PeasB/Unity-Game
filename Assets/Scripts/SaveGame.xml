@@ -1,5 +1,7 @@
 <SaveData>
   <Settings>
+    <GameVersion>
+    </GameVersion>
     <DateTimeStarted>
     </DateTimeStarted>
     <DateTimeOfSave>
@@ -9,10 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Walking Sounds Test Scene</CurrentScene>
+    <CurrentScene>Ryans Test Scene</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>-8.283943</X>
+      <Y>-3.172239</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -20,9 +22,12 @@
         <ScenePart>1</ScenePart>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -63,12 +68,9 @@
         <ScenePart>0</ScenePart>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X>-7.255993</X>
+            <Y>-1.846785</Y>
+            <Action>FollowPlayer</Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -171,6 +173,7 @@
     <Scene>
       <SceneName>Ryans Test Scene</SceneName>
       <SceneName>Walking Sounds Test Scene</SceneName>
+      <ObjectName>Item_Book (1)</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 1</SceneName>
@@ -197,5 +200,6 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
+    <ItemID>2</ItemID>
   </Inventory>
 </SaveData>

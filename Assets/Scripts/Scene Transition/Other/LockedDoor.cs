@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 using UnityEngine.UI;
-using System.Xml;
 
 public class LockedDoor : MonoBehaviour {
 
@@ -14,7 +14,7 @@ public class LockedDoor : MonoBehaviour {
         {
             if (InventoryScript.CheckItem(7) == false) //ItemID 7 is a key
             {
-                TextMessage.text = "The door seems to be locked. Maybe I need to find the key";
+                TextMessage.text = "The door seems to be locked. I need to find the key";
                 TextMessage.gameObject.SetActive(true);
             }
             else
