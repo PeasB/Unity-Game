@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<RootNamespace></RootNamespace>
+	<ProjectGuid>{F8B35018-E5EB-994C-554D-775E388850FD}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_2_0;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\AES Crypto\AES_Crypto.cs" />
+     <Compile Include="Assets\Scripts\AI\AI_Character.cs" />
+     <Compile Include="Assets\Scripts\AI\AI_Events.cs" />
+     <Compile Include="Assets\Scripts\Conversation Scripts\AreaEvent.cs" />
+     <Compile Include="Assets\Scripts\Conversation Scripts\Conversation.cs" />
+     <Compile Include="Assets\Scripts\DeleteObjects\DeleteObjects.cs" />
+     <Compile Include="Assets\Scripts\Extras\InputTester.cs" />
+     <Compile Include="Assets\Scripts\Extras\PixelPerfect\DemoScenes\DemoAssets\Orbit.cs" />
+     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\PixelPerfect.cs" />
+     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\PixelPerfectHSBColor.cs" />
+     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\PixelPerfectObject.cs" />
+     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\PixelPerfectCamera.cs" />
+     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\PixelPerfectSprite.cs" />
+     <Compile Include="Assets\Scripts\ItemsPlus\InteractionsItem.cs" />
+     <Compile Include="Assets\Scripts\ItemsPlus\InventoryScript.cs" />
+     <Compile Include="Assets\Scripts\ItemsPlus\UI_Inventory.cs" />
+     <Compile Include="Assets\Scripts\Main Menu\MainMenuManger.cs" />
+     <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\WalkingSounds.cs" />
+     <Compile Include="Assets\Scripts\Quick Time Events\ExampleEventCaller.cs" />
+     <Compile Include="Assets\Scripts\Quick Time Events\QTE.cs" />
+     <Compile Include="Assets\Scripts\Save Data\DoSaveGame.cs" />
+     <Compile Include="Assets\Scripts\Save Data\PatchSaveData.cs" />
+     <Compile Include="Assets\Scripts\Scene 1\LeaveScene.cs" />
+     <Compile Include="Assets\Scripts\Scene 1\LowerMusic.cs" />
+     <Compile Include="Assets\Scripts\Scene 1\MoveCar.cs" />
+     <Compile Include="Assets\Scripts\Scene 1\TextScreenManager.cs" />
+     <Compile Include="Assets\Scripts\Scene Transition\Other\BrokenDoor.cs" />
+     <Compile Include="Assets\Scripts\Scene Transition\Other\LockedDoor.cs" />
+     <Compile Include="Assets\Scripts\Scene Transition\SceneTransition.cs" />
+     <Compile Include="Assets\Scripts\Storyline\StorylineScript.cs" />
+     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
+     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
+     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
+     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+     <None Include="Assets\Conversation Files\Scene 1.xml" />
+     <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
+     <None Include="Assets\Conversation Files\Template.xml" />
+     <None Include="Assets\Scripts\SaveGame.xml" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Shaders\Diffuse Shader.shader" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Ryans Test Scene.tiled2unity.xml" />
+     <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
+     <None Include="Assets\Conversation Files\Scene 3.xml" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Prefabs\_ReadMe.txt" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Shaders\shaTiledMap.shader" />
+     <None Include="Assets\Scripts\ItemsPlus\Items.xml" />
+     <None Include="Assets\Scripts\Extras\PixelPerfect\README.txt" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Walking Sounds Test Tilemap.tiled2unity.xml" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Tiled2Unity.export.txt" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Cabin Tilemap.tiled2unity.xml" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Scene 1 Road.tiled2unity.xml" />
+     <None Include="Assets\Xbox Controller Buttons\Xbox 360 Button Pack 3\license.txt" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Materials\_ReadMe.txt" />
+     <None Include="Assets\Conversation Files\Scene 2.xml" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Textures\_ReadMe.txt" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\License.txt" />
+     <None Include="Assets\Quick Time Events\No.1.xml" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\_ReadMe.txt" />
+     <None Include="Assets\Tilemaps\Tiled2Unity\Meshes\_ReadMe.txt" />
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
