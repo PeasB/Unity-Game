@@ -566,6 +566,7 @@ public class InventoryScript : MonoBehaviour {
         XmlDocument SaveGameDoc = new XmlDocument();
         SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
 
+
         ////---For encrypted one---
         ////Read in SaveGame.xml
         //XmlDocument SaveGameDoc = new XmlDocument();
@@ -583,7 +584,7 @@ public class InventoryScript : MonoBehaviour {
 
             ////---For encrypted one---
             ////Save XML
-            //DoSaveGame.UpdateSaveData(SaveGameDoc.OuterXml); 
+            //DoSaveGame.UpdateSaveData(SaveGameDoc); 
         }
         else
         {

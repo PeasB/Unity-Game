@@ -31,7 +31,7 @@ public class InteractionsItem : MonoBehaviour {
                 }
             }
 
-            //---Show "press x to pick up item"---            
+            //---Show "press x to pick up item"--- 
             TextMessage.text = "Press X to pick up " + ItemName; //<- Do Keyboard or xbox controller button
             TextMessage.gameObject.SetActive(true);
             
@@ -68,27 +68,8 @@ public class InteractionsItem : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        //---Check if user already picked up item in save data. If so, destory object right away. 
-        //Read in SaveGame.xml
-        XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
-
-        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/DestroyObjects/Scene"))
-        {
-            if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
-            {
-                foreach (XmlNode node1 in node.ChildNodes)
-                {
-                    if (node1.InnerText == this.gameObject.name)
-                    {
-                        Destroy(this.gameObject);
-                        break;
-                    }
-                }
-                break;
-            }
-        }
-        
+        DeleteObjects.CheckIfDeleted(this.gameObject.name);
+                      
 
         //Get text canvas
         TextMessage = GameObject.Find("Message_Canvas").transform.FindChild("Text").gameObject.GetComponent<Text>();
@@ -117,25 +98,7 @@ public class InteractionsItem : MonoBehaviour {
                 InventoryScript.CreateItem(ItemID);
 
                 //--Put into savedata not to pickup again--
-                //Read in SaveGame.xml
-                XmlDocument SaveGameDoc = new XmlDocument();
-                SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
-
-                //Create new item in the players inventory
-                XmlNode ObjectName = SaveGameDoc.CreateElement("ObjectName");
-                ObjectName.InnerText = this.gameObject.name;
-                                
-                foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/DestroyObjects/Scene"))
-                {
-                    if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
-                    {
-                        node.AppendChild(ObjectName);
-                        break;
-                    }
-                }
-
-                //Save XML
-                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                DeleteObjects.DeleteObject(this.gameObject.name);
 
 
                 //--Stop Showing pickup message--

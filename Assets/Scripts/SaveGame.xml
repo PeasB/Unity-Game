@@ -17,6 +17,7 @@
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
+        <ScenePart>1</ScenePart>
         <AI>
           <JoshAI>
             <X></X>
@@ -59,6 +60,7 @@
       </Scene>
       <Scene>
         <SceneName>Ryans Test Scene</SceneName>
+        <ScenePart>0</ScenePart>
         <AI>
           <JoshAI>
             <X>
@@ -168,6 +170,7 @@
   <DestroyObjects>
     <Scene>
       <SceneName>Ryans Test Scene</SceneName>
+      <SceneName>Walking Sounds Test Scene</SceneName>
     </Scene>
     <Scene>
       <SceneName>Scene 1</SceneName>
@@ -177,9 +180,6 @@
     </Scene>
     <Scene>
       <SceneName>Scene 3</SceneName>
-    </Scene>
-    <Scene>
-      <SceneName>Walking Sounds Test Scene</SceneName>
     </Scene>
   </DestroyObjects>
   <Inventory>
