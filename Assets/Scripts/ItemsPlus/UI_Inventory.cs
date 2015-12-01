@@ -36,7 +36,7 @@ public class UI_Inventory : MonoBehaviour {
         {
 
             //InventorySlots[i] = GameObject.Find("Inventory Canvas/Menu_Crafting/Slot " + Row + "," + Coloum);
-            InventorySlots[i] = Canvas.transform.FindChild("Menu_Crafting").gameObject.transform.FindChild("Slot " + Row + "," + Coloum).gameObject;
+            InventorySlots[i] = GameObject.Find("Inventory Canvas").transform.FindChild("Menu_Crafting").gameObject.transform.FindChild("Slot " + Row + "," + Coloum).gameObject;
             Coloum++;
             if (Coloum == 5)
             {
