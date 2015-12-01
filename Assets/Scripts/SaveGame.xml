@@ -1,5 +1,7 @@
 <SaveData>
   <Settings>
+    <GameVersion>
+    </GameVersion>
     <DateTimeStarted>
     </DateTimeStarted>
     <DateTimeOfSave>
@@ -11,20 +13,17 @@
   <SaveState>
     <CurrentScene>Walking Sounds Test Scene</CurrentScene>
     <PlayerPosition>
-      <X>4.438345</X>
-      <Y>11.19229</Y>
+      <X>-5.620145</X>
+      <Y>-6.064087</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X>-5.322487</X>
+            <Y>-7.857562</Y>
+            <Action>FollowPlayer</Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -170,9 +169,6 @@
   </StoryPaths>
   <DestroyObjects>
     <Scene>
-      <SceneName>Ryans Test Scene</SceneName>
-    </Scene>
-    <Scene>
       <SceneName>Scene 1</SceneName>
     </Scene>
     <Scene>
@@ -183,6 +179,7 @@
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
+      <SceneName>Ryans Test Scene</SceneName>
     </Scene>
   </DestroyObjects>
   <Inventory>
@@ -200,5 +197,27 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>3</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>3</ItemID>
+    <ItemID>4</ItemID>
+    <ItemID>3</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>6</ItemID>
+    <ItemID>3</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>4</ItemID>
+    <ItemID>0</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>3</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
+    <ItemID>2</ItemID>
   </Inventory>
 </SaveData>

@@ -16,6 +16,8 @@ public class UI_Inventory : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        Canvas = GameObject.Find("Inventory Canvas");
+        //Make if statement
         Canvas.gameObject.SetActive(false); 
         //Inventory.gameObject.SetActive(false);
         //Dialogue.gameObject.SetActive(false);
