@@ -10,6 +10,7 @@ public class InventoryScript : MonoBehaviour {
 
     //2D array for items to craft (Find X base on how much craftable items there are. Y value is 5 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
     static string[,] CraftingTable;
+
     
     private static void FillInventoryBox()
     {

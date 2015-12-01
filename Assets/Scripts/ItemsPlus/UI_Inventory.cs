@@ -12,15 +12,46 @@ public class UI_Inventory : MonoBehaviour {
     bool Paused = false;
 
 
+    public GameObject[] InventorySlots = new GameObject[30];
 
+    public GameObject[] InventoryInCraftingSlots = new GameObject[30];
+
+    public GameObject[] CraftingSlots = new GameObject[28];
+
+   
     // Use this for initialization
     void Start ()
     {
         Canvas = GameObject.Find("Inventory Canvas");
         //Make if statement
-        Canvas.gameObject.SetActive(false); 
+        Canvas.gameObject.SetActive(false);
         //Inventory.gameObject.SetActive(false);
         //Dialogue.gameObject.SetActive(false);
+
+        
+        int Row = 1;
+        int Coloum = 1;
+
+        for (int i = 0; i < 30; i++)
+        {
+
+            //InventorySlots[i] = GameObject.Find("Inventory Canvas/Menu_Crafting/Slot " + Row + "," + Coloum);
+            InventorySlots[i] = Canvas.transform.FindChild("Menu_Crafting").gameObject.transform.FindChild("Slot " + Row + "," + Coloum).gameObject;
+            Coloum++;
+            if (Coloum == 5)
+            {
+                Coloum = 1;
+                Row++;
+            }
+        }
+
+              
+        if (InventorySlots[29] == null)
+        {
+            print("WTF");
+        }
+
+
     }
 	
 	// Update is called once per frame

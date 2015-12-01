@@ -113,7 +113,7 @@ public class InteractionsItem : MonoBehaviour {
                 ItemName = "";
 
                 //--Play picked up item sound--             
-                SoundSorce.clip("");
+                //SoundSorce.clip("");
 
             }
             else //Not Enough space
