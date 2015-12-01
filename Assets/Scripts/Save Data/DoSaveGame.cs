@@ -7,6 +7,19 @@ using System.Text;
 public class DoSaveGame : MonoBehaviour {
 
 
+    ////---For encrypted one---
+    ////Read in SaveGame.xml
+    //XmlDocument SaveGameDoc = new XmlDocument();
+    //SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
+
+
+
+    ////---For encrypted one---
+    ////Save XML
+    //DoSaveGame.UpdateSaveData(SaveGameDoc); 
+
+        
+
     public static void NewGame()
     {
 
@@ -25,19 +38,19 @@ public class DoSaveGame : MonoBehaviour {
         return AES_Crypto.DecryptText(StringXML.ToString());
     }
 
-    public static void UpdateSaveData(string XmlDoc)
+    public static void UpdateSaveData(XmlDocument XmlDoc)
     {
+        XmlDoc.SelectSingleNode("SaveData/Settings/DateTimeOfSave").InnerText = System.DateTime.Now.ToString(); //Saves current time
+
         StreamWriter SW = new StreamWriter("Assets/Scripts/Save Data/SaveGameData.txt");        
-        SW.Write(AES_Crypto.EncryptText(XmlDoc));
+        SW.Write(AES_Crypto.EncryptText(XmlDoc.OuterXml));
         SW.Close();       
     }
 
 
 
-
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	

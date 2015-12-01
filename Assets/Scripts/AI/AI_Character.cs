@@ -77,7 +77,14 @@ public class AI_Character : MonoBehaviour {
                     //Set players x and y to what its saved in the save data
                     this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/KateAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/KateAI/Y").InnerText));
                     if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-                    //node.SelectSingleNode("AI/KateAI/Action").InnerText = "";
+                    //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "Stationary") Action = AI_Action.Stationary;
+                    //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "StationaryWithDir") Action = AI_Action.StationaryWithDir;
+                    //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "Event")
+                    //{
+                    //    Action = AI_Action.Event;
+                    //    EventType = int.Parse(node.SelectSingleNode("AI/KateAI/EventType").InnerText);
+                    //}
+                        
                 }
                 else if (this.gameObject.name == "AI April" & node.SelectSingleNode("AI/AprilAI/X").InnerText != "" && node.SelectSingleNode("AI/AprilAI/Y").InnerText != "")
                 {
@@ -94,8 +101,8 @@ public class AI_Character : MonoBehaviour {
                     //node.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
                 }
 
-                //Save XML
-                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                ////Save XML
+                //SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
 
                 break;

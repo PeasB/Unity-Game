@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 using System.Xml;
 
 public class SceneTransition : MonoBehaviour {
@@ -19,137 +20,140 @@ public class SceneTransition : MonoBehaviour {
     {
         if (collisionInfo.gameObject.tag == "Player")
         {
-            
-            //Read in SaveGame.xml
-            XmlDocument SaveGameDoc = new XmlDocument();
-            SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
-
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText = PlayerX.ToString();
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText = PlayerY.ToString();
-
-
-            //Find scene (WhatScene) then update the AI's position in that scene. 
-            foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
-            {
-
-                if (WhatScene == node.SelectSingleNode("SceneName").InnerText)
-                {
-                    #region Setting up Next Scene
-                    if (AI_Josh != null)
-                    {
-                        if (AI_Josh.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/JoshAI/X").InnerText = (PlayerX - 0.001).ToString();
-                            node.SelectSingleNode("AI/JoshAI/Y").InnerText = (PlayerY - 0.001).ToString();
-                            node.SelectSingleNode("AI/JoshAI/Action").InnerText = "FollowPlayer";
-                        }
-                    }
-                    if (AI_Matt != null)
-                    {
-                        if (AI_Matt.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/MattAI/X").InnerText = (PlayerX - 0.002).ToString();
-                            node.SelectSingleNode("AI/MattAI/Y").InnerText = (PlayerY - 0.002).ToString();
-                            node.SelectSingleNode("AI/MattAI/Action").InnerText = "FollowPlayer";
-                        }
-                    }
-                    if (AI_Kate != null)
-                    {
-                        if (AI_Kate.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/KateAI/X").InnerText = (PlayerX - 0.003).ToString();
-                            node.SelectSingleNode("AI/KateAI/Y").InnerText = (PlayerY - 0.003).ToString();
-                            node.SelectSingleNode("AI/KateAI/Action").InnerText = "FollowPlayer";
-                        }
-                    }
-                    if (AI_April != null)
-                    {
-                        if (AI_April.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/AprilAI/X").InnerText = (PlayerX - 0.004).ToString();
-                            node.SelectSingleNode("AI/AprilAI/Y").InnerText = (PlayerY - 0.004).ToString();
-                            node.SelectSingleNode("AI/AprilAI/Action").InnerText = "FollowPlayer";
-                        }
-                    }
-                    if (AI_Ethan != null)
-                    {
-                        if (AI_Ethan.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/EthanAI/X").InnerText = (PlayerX - 0.005).ToString();
-                            node.SelectSingleNode("AI/EthanAI/Y").InnerText = (PlayerY - 0.005).ToString();
-                            node.SelectSingleNode("AI/EthanAI/Action").InnerText = "FollowPlayer";
-                        }
-                    }
-
-                    #endregion
-                }
-                else if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
-                {
-                    #region Cleaning up Current Scene
-
-                    if (AI_Josh != null)
-                    {
-                        if (AI_Josh.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/JoshAI/X").InnerText = "";
-                            node.SelectSingleNode("AI/JoshAI/Y").InnerText = "";
-                            node.SelectSingleNode("AI/JoshAI/Action").InnerText = "";
-                        }
-                    }
-                    if (AI_Matt != null)
-                    {
-                        if (AI_Matt.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/MattAI/X").InnerText = "";
-                            node.SelectSingleNode("AI/MattAI/Y").InnerText = "";
-                            node.SelectSingleNode("AI/MattAI/Action").InnerText = "";
-                        }
-                    }
-                    if (AI_Kate != null)
-                    {
-                        if (AI_Kate.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/KateAI/X").InnerText = "";
-                            node.SelectSingleNode("AI/KateAI/Y").InnerText = "";
-                            node.SelectSingleNode("AI/KateAI/Action").InnerText = "";
-                        }
-                    }
-                    if (AI_April != null)
-                    {
-                        if (AI_April.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/AprilAI/X").InnerText = "";
-                            node.SelectSingleNode("AI/AprilAI/Y").InnerText = "";
-                            node.SelectSingleNode("AI/AprilAI/Action").InnerText = "";
-                        }
-                    }
-                    if (AI_Ethan != null)
-                    {
-                        if (AI_Ethan.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
-                        {
-                            node.SelectSingleNode("AI/EthanAI/X").InnerText = "";
-                            node.SelectSingleNode("AI/EthanAI/Y").InnerText = "";
-                            node.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
-                        }
-                    }
-
-                    #endregion
-                }
-                
-            }
-
-            
-            //Update Current level
-            SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText = WhatScene;
-            
-            //Save XML
-            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
-
-            //Load Level
-            Application.LoadLevel(WhatScene);
-
+            DoSceneTransition(WhatScene, PlayerX, PlayerY);
         }
     }
+
+    
+    public void DoSceneTransition(string SceneName, double XPlayer, double YPlayer)
+    {
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+        SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText = XPlayer.ToString();
+        SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText = YPlayer.ToString();
+
+
+        //Find scene (WhatScene) then update the AI's position in that scene. 
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+        {
+            if (SceneName == node.SelectSingleNode("SceneName").InnerText)
+            {
+                #region Setting up Next Scene
+                if (AI_Josh != null)
+                {
+                    if (AI_Josh.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/JoshAI/X").InnerText = (XPlayer - 0.001).ToString();
+                        node.SelectSingleNode("AI/JoshAI/Y").InnerText = (YPlayer - 0.001).ToString();
+                        node.SelectSingleNode("AI/JoshAI/Action").InnerText = "FollowPlayer";
+                    }
+                }
+                if (AI_Matt != null)
+                {
+                    if (AI_Matt.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/MattAI/X").InnerText = (XPlayer - 0.002).ToString();
+                        node.SelectSingleNode("AI/MattAI/Y").InnerText = (YPlayer - 0.002).ToString();
+                        node.SelectSingleNode("AI/MattAI/Action").InnerText = "FollowPlayer";
+                    }
+                }
+                if (AI_Kate != null)
+                {
+                    if (AI_Kate.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/KateAI/X").InnerText = (XPlayer - 0.003).ToString();
+                        node.SelectSingleNode("AI/KateAI/Y").InnerText = (YPlayer - 0.003).ToString();
+                        node.SelectSingleNode("AI/KateAI/Action").InnerText = "FollowPlayer";
+                    }
+                }
+                if (AI_April != null)
+                {
+                    if (AI_April.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/AprilAI/X").InnerText = (XPlayer - 0.004).ToString();
+                        node.SelectSingleNode("AI/AprilAI/Y").InnerText = (YPlayer - 0.004).ToString();
+                        node.SelectSingleNode("AI/AprilAI/Action").InnerText = "FollowPlayer";
+                    }
+                }
+                if (AI_Ethan != null)
+                {
+                    if (AI_Ethan.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/EthanAI/X").InnerText = (XPlayer - 0.005).ToString();
+                        node.SelectSingleNode("AI/EthanAI/Y").InnerText = (YPlayer - 0.005).ToString();
+                        node.SelectSingleNode("AI/EthanAI/Action").InnerText = "FollowPlayer";
+                    }
+                }
+
+                #endregion
+            }
+            else if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
+            {
+                #region Cleaning up Current Scene
+
+                if (AI_Josh != null)
+                {
+                    if (AI_Josh.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/JoshAI/X").InnerText = "";
+                        node.SelectSingleNode("AI/JoshAI/Y").InnerText = "";
+                        node.SelectSingleNode("AI/JoshAI/Action").InnerText = "";
+                    }
+                }
+                if (AI_Matt != null)
+                {
+                    if (AI_Matt.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/MattAI/X").InnerText = "";
+                        node.SelectSingleNode("AI/MattAI/Y").InnerText = "";
+                        node.SelectSingleNode("AI/MattAI/Action").InnerText = "";
+                    }
+                }
+                if (AI_Kate != null)
+                {
+                    if (AI_Kate.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/KateAI/X").InnerText = "";
+                        node.SelectSingleNode("AI/KateAI/Y").InnerText = "";
+                        node.SelectSingleNode("AI/KateAI/Action").InnerText = "";
+                    }
+                }
+                if (AI_April != null)
+                {
+                    if (AI_April.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/AprilAI/X").InnerText = "";
+                        node.SelectSingleNode("AI/AprilAI/Y").InnerText = "";
+                        node.SelectSingleNode("AI/AprilAI/Action").InnerText = "";
+                    }
+                }
+                if (AI_Ethan != null)
+                {
+                    if (AI_Ethan.GetComponent<AI_Character>().Action == AI_Character.AI_Action.FollowPlayer)
+                    {
+                        node.SelectSingleNode("AI/EthanAI/X").InnerText = "";
+                        node.SelectSingleNode("AI/EthanAI/Y").InnerText = "";
+                        node.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
+                    }
+                }
+
+                #endregion
+            }
+        }
+
+
+        //Update Current level
+        SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText = SceneName;
+
+        //Save XML
+        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+        //Load Level
+        Application.LoadLevel(SceneName);
+    }
+
 
     // Use this for initialization
     void Start () {
