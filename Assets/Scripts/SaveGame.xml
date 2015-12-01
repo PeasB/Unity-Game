@@ -11,17 +11,20 @@
   <SaveState>
     <CurrentScene>Walking Sounds Test Scene</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>4.438345</X>
+      <Y>11.19229</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -121,7 +124,7 @@
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
-      <April>55</April>
+      <April>40</April>
       <Ethan>100</Ethan>
     </Matt>
     <Kate>
