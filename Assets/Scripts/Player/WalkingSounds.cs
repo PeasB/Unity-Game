@@ -11,7 +11,6 @@ public class WalkingSounds : MonoBehaviour {
 
 	private Collider2D CurrentSurface;
 	private AudioSource AudioPlayer;
-	private bool[] OnLayer = new bool[4];
 
 	void Start()
 	{

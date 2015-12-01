@@ -11,6 +11,7 @@ public class InteractionsItem : MonoBehaviour {
     private string ItemName = "";
     private Text TextMessage;
 
+    AudioSource SoundSorce;
 
     void OnTriggerEnter2D(Collider2D collisionInfo)
     {
@@ -68,6 +69,8 @@ public class InteractionsItem : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+        SoundSorce = gameObject.AddComponent<AudioSource>();
+
         DeleteObjects.CheckIfDeleted(this.gameObject.name);
                       
 
@@ -107,10 +110,10 @@ public class InteractionsItem : MonoBehaviour {
 
                 //--Reset item info--
                 ItemID = 0;
-                ItemName = "";                
-                
-                //--Play picked up item sound--             
+                ItemName = "";
 
+                //--Play picked up item sound--             
+                SoundSorce.clip("");
 
             }
             else //Not Enough space
