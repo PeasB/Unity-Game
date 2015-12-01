@@ -22,17 +22,7 @@ public class CameraFollow: MonoBehaviour {
 		_Min = Bound.bounds.min; // bottom left corner of border
 		_Max = Bound.bounds.max; //bottom right corner of border
 		IsFollowing = true; //set to false if you don't want the camera to follow
-        if (GameObject.Find("Player Matt") != null)
-            Player = GameObject.Find("Player Matt").transform;
-        else if (GameObject.Find("Player Josh") != null)
-            Player = GameObject.Find("Player Josh").transform;
-        else if (GameObject.Find("Player Kate") != null)
-            Player = GameObject.Find("Player Kate").transform;
-        else if (GameObject.Find("Player April") != null)
-            Player = GameObject.Find("Player April").transform;
-        else if (GameObject.Find("Player Ethan") != null)
-            Player = GameObject.Find("Player Ethan").transform;
-    }
+	}
 
 	public void Update()
 	{
