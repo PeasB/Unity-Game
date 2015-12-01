@@ -30,17 +30,18 @@ public class UI_Inventory : MonoBehaviour {
 
         
         int Row = 1;
-        int Coloum = 1;
+        int Column = 1;
 
         for (int i = 0; i < 30; i++)
         {
 
             //InventorySlots[i] = GameObject.Find("Inventory Canvas/Menu_Crafting/Slot " + Row + "," + Coloum);
-            InventorySlots[i] = GameObject.Find("Inventory Canvas").transform.FindChild("Menu_Crafting").gameObject.transform.FindChild("Slot " + Row + "," + Coloum).gameObject;
-            Coloum++;
-            if (Coloum == 5)
+			print("Slot " + Row + "," + Column);
+			InventorySlots[i] = Canvas.transform.FindChild("Menu_Crafting").gameObject.transform.FindChild("Slot " + Row + "," + Column).gameObject;
+            Column++; 
+            if (Column == 5)
             {
-                Coloum = 1;
+                Column = 1;
                 Row++;
             }
         }

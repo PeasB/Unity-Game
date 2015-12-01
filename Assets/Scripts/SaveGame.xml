@@ -13,16 +13,16 @@
   <SaveState>
     <CurrentScene>Walking Sounds Test Scene</CurrentScene>
     <PlayerPosition>
-      <X>-2.003736</X>
-      <Y>-7.618689</Y>
+      <X>1.564548</X>
+      <Y>-5.673614</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>-5.322487</X>
-            <Y>-7.857562</Y>
+            <X>-3.722488</X>
+            <Y>-7.657562</Y>
             <Action>FollowPlayer</Action>
           </JoshAI>
           <MattAI>
