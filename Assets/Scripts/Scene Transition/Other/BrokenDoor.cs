@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿//By: Ryan Dailey
+using UnityEngine;
 using UnityEngine.UI;
-using System.Xml;
 
 public class BrokenDoor : MonoBehaviour {
 
@@ -13,7 +13,7 @@ public class BrokenDoor : MonoBehaviour {
         {
             if (InventoryScript.CheckItem(6) == false) //ItemID 6 is a hammer
             {
-                TextMessage.text = "The door seems to be broken. Maybe I need a hammer to break it down";
+                TextMessage.text = "The door seems to be broken. I need a hammer to break it down";
                 TextMessage.gameObject.SetActive(true);
             }
             else
