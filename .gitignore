@@ -7,9 +7,15 @@
 *.unityproj
 *.tmp
 *.user
+*.sln
+*.csproj
 *.userprefs
 *.pidb
 *.booproj
+
+#Allow these files
+!Delirium Loader.sln
+!Delirium Loader.csproj
 
 # Unity3D generated meta files
 *.pidb.meta
