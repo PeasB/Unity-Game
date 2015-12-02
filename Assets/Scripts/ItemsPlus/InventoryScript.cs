@@ -5,13 +5,15 @@ using System.Xml;
 
 public class InventoryScript : MonoBehaviour {
 
+
+    private UI_Inventory Script_UI;
+
     //Y value is 5 (ID, Name, Description, Stacks, picturePath).
     static string[,] InventoryBox;    
 
     //2D array for items to craft (Find X base on how much craftable items there are. Y value is 5 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
     static string[,] CraftingTable;
-
-    
+        
     private static void FillInventoryBox()
     {
         //Read in SaveGame.xml
@@ -309,16 +311,21 @@ public class InventoryScript : MonoBehaviour {
 
         //Loop finnished and array is complete. Now input data from the array into the UI
 
-        //Print until UI is finished
-        for (int i = 0; i < CraftingTable.GetLength(0); i++)
+        ////Print until UI is finished
+        //for (int i = 0; i < CraftingTable.GetLength(0); i++)
+        //{
+        //    print("Item: " + CraftingTable[i, 1] + "         " + "Can you Craft it?: " + CraftingTable[i, 4]);
+        //}
+        
+        if (UI_Inventory.GetCraftingSlots[1] != null)
+            print("yess");
+        else
+            print("No");
+        
+        for (int i = 0; i < UI_Inventory.GetCraftingSlots.Length; i++)
         {
-            print("Item: " + CraftingTable[i, 1] + "         " + "Can you Craft it?: " + CraftingTable[i, 4]);
+            //UI_Inventory.GetCraftingSlots[i].
         }
-        print("----------------------");
-
-
-
-
 
 
 
