@@ -33,7 +33,7 @@
 	      </initialDialogue>
 
 	      <TimeToChoose>None</TimeToChoose>
-	      <AreChoices>Yes</AreChoices>
+	      <HasChoices>Yes</HasChoices>
 
 	      <Choice1>
 	        <Conditions>None</Conditions>
@@ -119,7 +119,7 @@
 		      </initialDialogue>
 
 		      <TimeToChoose>None</TimeToChoose>
-		      <AreChoices>No</AreChoices>
+		      <HasChoices>No</HasChoices>
 
 	    </Level1>
 	 </Conversation>
@@ -154,7 +154,7 @@
 	      </initialDialogue>
 
 	      <TimeToChoose>None</TimeToChoose>
-	      <AreChoices>No</AreChoices>
+	      <HasChoices>No</HasChoices>
 
 	    </Level1>
 	 </Conversation>
@@ -185,7 +185,7 @@
 		      </initialDialogue>
 
 		      <TimeToChoose>None</TimeToChoose>
-		      <AreChoices>No</AreChoices>
+		      <HasChoices>No</HasChoices>
 
 		    </Level1>
 	 </Conversation>
@@ -204,7 +204,7 @@
 		      </initialDialogue>
 
 		      <TimeToChoose>None</TimeToChoose>
-		      <AreChoices>No</AreChoices>
+		      <HasChoices>No</HasChoices>
 
 		    </Level1>
 	 </Conversation>	 

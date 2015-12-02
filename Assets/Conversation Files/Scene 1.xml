@@ -42,7 +42,7 @@
       </initialDialogue>
 
       <TimeToChoose>10</TimeToChoose>
-      <AreChoices>Yes</AreChoices>
+      <HasChoices>Yes</HasChoices>
 
       <Choice1>
 
@@ -99,7 +99,7 @@
           <DialogueCount>5</DialogueCount>
           <Dialogue>
             <Conditions>None</Conditions>
-            <Text>April: Your a jerk Matt.</Text>
+            <Text>April: You're a jerk Matt.</Text>
           </Dialogue>
           <Dialogue>
             <Conditions>None</Conditions>
