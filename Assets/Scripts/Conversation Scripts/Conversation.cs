@@ -21,6 +21,7 @@ public class ConversationManager {
     private GameObject TimerUI;
     private int ConversationLevel;
     private XmlNode Conversation; //The Conversation based on the supplied ID
+	private XmlDocument Save;
 
 
     //Publics: mainly to tell states.
@@ -60,6 +61,10 @@ public class ConversationManager {
         XmlDocument Doc = new XmlDocument();
         Doc.Load("Assets/Conversation Files/Scene " + SceneID + ".xml");
 
+		//Load Current Save
+		Save = new XmlDocument();
+		Save.Load("Assets/Scripts/SaveGame.xml");
+
         //Find Correct Conversation in Scene XML file.
         foreach(XmlNode Node in Doc.SelectNodes("Conversations/Conversation"))
         {
@@ -80,9 +85,6 @@ public class ConversationManager {
 	private bool ValidateConditions(XmlNode ConditionNode)
 	{
 
-        //Load Save and Create Variables
-        XmlDocument Save = new XmlDocument();
-        Save.Load("Assets/Scripts/SaveGame.xml");
 		bool ConditionsValid = true;
 
         #region  All Conditions
@@ -224,7 +226,7 @@ public class ConversationManager {
             else if(DialogueLevel > int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) && DialogueNode.Name == "initialDialogue") //if Dialogue Level is greater then Dialogue Count, (No dialogue after) Then Displayed Dialogue must be the last piece.
             {
                 //If there is no Choices then allow the current text on the screen go uninterupted. Then Increace Dialogue Level, so when next Time method is called Dialogue Disappears.
-                if(Conversation.SelectSingleNode("Level" + ConversationLevel + "/AreChoices").InnerText == "No")
+                if(Conversation.SelectSingleNode("Level" + ConversationLevel + "/HasChoices").InnerText == "No")
                 {
                     if(DialogueLevel >= int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) + 2)
                     {
@@ -285,10 +287,8 @@ public class ConversationManager {
     //ran when the player chooses a choice. Saves the players choice, and moves on.
     public void ChooseChoice(int ChoiceNumber = 2)
     {
-		XmlDocument Save = new XmlDocument();
-		Save.Load("Assets/Scripts/SaveGame.xml");
 
-		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in AreChoices Node)
+		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in HasChoices Node)
 		if (ChoiceNumber != 0) 
 		{
 			//Other Conquences.
@@ -338,7 +338,6 @@ public class ConversationManager {
         TimerUI.SetActive(false);
         TimerIsActive = false;
 
-		Save.Save("Assets/Scripts/SaveGame.xml");//Save Save File.
 
 		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in AreChoices Node)
 		if (ChoiceNumber != 0) 
@@ -373,6 +372,7 @@ public class ConversationManager {
 
 		IsActive = false;
         DialogueUI.enabled = false;
+		Save.Save("Assets/Scripts/SaveGame.xml");//Close Save File.
         return true;
     }
 
