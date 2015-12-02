@@ -88,8 +88,7 @@ public class Player : MonoBehaviour {
 		if(FlashLightToggle)
 			FlashlightRotation();
 
-        //If i is pressed down on keyboard or Y in controller, open inventory
-        if (Input.GetButtonDown("Button 3") == true)
+        
 
         if (Input.GetButtonDown("Button 0") == true) //A on controller, x on keyboard
         {
@@ -124,11 +123,11 @@ public class Player : MonoBehaviour {
         }
         else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
         {
-            InventoryScript.DisplayCrafting();
+           // InventoryScript.DisplayCrafting();
         }
         else if (Input.GetButtonDown("Button 6") == true) //Back on controller, p on keyboard
         {            
-            InventoryScript.PerformCraft(5);
+            //InventoryScript.PerformCraft(5);
         }
 
 
