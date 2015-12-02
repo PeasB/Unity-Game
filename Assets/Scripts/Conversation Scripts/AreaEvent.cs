@@ -10,17 +10,27 @@ public class AreaEvent : MonoBehaviour {
 
     public int ConversationID;
 	public int SceneNum;
-    public Canvas ChoiceCanvas;
 	public bool CanReactivate;
 	public bool ButtonActivated;
     [HideInInspector]
     public ConversationManager ConversationInstance;
+
+	private Canvas ChoiceCanvas;
 	private bool JustActivated = false;
 
     
     void Start()
     {
-        ConversationInstance = new ConversationManager(ChoiceCanvas);
+		//Checks if Area Event has been deleted. This would have happened if the gameobject can't be reactivated and the user has loaded the scene again.
+		//Don't want to trigger again. so Remove it before it can be triggered.
+		DeleteObjects.CheckIfDeleted (this.gameObject.name);
+
+		ChoiceCanvas = GameObject.Find ("Choice Canvas").GetComponent<Canvas>() ; //Find the Choice Canvas in the Scene.
+
+		if (ChoiceCanvas != null) //If the choice Canvas exists then set Conversation Instance.
+			ConversationInstance = new ConversationManager (ChoiceCanvas);
+		else
+			Destroy (this.gameObject);
     }
 
 
@@ -54,8 +64,7 @@ public class AreaEvent : MonoBehaviour {
 
 
 	}
-
-
+	
     void Update()
     {
         if (ConversationInstance.IsActive) //Makes sure ConversationInstance has been initalized.
@@ -96,6 +105,13 @@ public class AreaEvent : MonoBehaviour {
         
 
 		JustActivated = false;
+
+		//If Conversation can't be reactivated and has already run then Destroy the object and will never show up again.
+		if (!ConversationInstance.IsActive && ConversationInstance.HasRun && !CanReactivate) 
+		{
+			DeleteObjects.DeleteObject(this.gameObject.name);
+			Destroy(this.gameObject);
+		}
 
     }
 
