@@ -31,11 +31,21 @@ public class MainMenuManger : MonoBehaviour {
         {
             //Show "Are you sure you would like to erase your current save file? This cannot be undone" with a Yes or No button
 
+
+            //Start new game
+            DoSaveGame.NewGame();
+
+            Application.LoadLevel("Scene 1");
+
         }
         else
         {
-            //Start new game
+            //No game has been created, so just start the game
 
+            //Start new game
+            DoSaveGame.NewGame();
+
+            Application.LoadLevel("Scene 1");
         }
         
 
@@ -59,7 +69,7 @@ public class MainMenuManger : MonoBehaviour {
 	{
         //PatchSaveData.CheckForPatch(); //<--Currently here only for testing purposes since this button isn't being used at the moment
 
-		//Application.Quit ();
+		Application.Quit ();
 
 	}
 

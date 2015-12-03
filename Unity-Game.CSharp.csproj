@@ -119,6 +119,9 @@
     <None Include="Assets\Scripts\ItemsPlus\Items.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
     <None Include="Assets\Scripts\SaveGame.xml">
       <SubType>Designer</SubType>
