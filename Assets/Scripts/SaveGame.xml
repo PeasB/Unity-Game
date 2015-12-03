@@ -11,10 +11,11 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Ryans Test Scene</CurrentScene>
+    <CurrentScene>
+    </CurrentScene>
     <PlayerPosition>
-      <X>-0.4819846</X>
-      <Y>-7.629159</Y>
+      <X>9.811742</X>
+      <Y>-4.464524</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -66,8 +67,8 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>-1.428585</X>
-            <Y>-9.019463</Y>
+            <X>8.411155</X>
+            <Y>-5.462716</Y>
             <Action>FollowPlayer</Action>
           </JoshAI>
           <MattAI>

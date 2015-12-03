@@ -1,5 +1,6 @@
 ﻿//By: Ryan Dailey
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Xml;
 
@@ -317,19 +318,16 @@ public class InventoryScript : MonoBehaviour {
         //    print("Item: " + CraftingTable[i, 1] + "         " + "Can you Craft it?: " + CraftingTable[i, 4]);
         //}
         
-        if (UI_Inventory.GetCraftingSlots[1] != null)
-            print("yess");
-        else
-            print("No");
+        //if (UI_Inventory.GetCraftingSlots[1] != null)
+        //    print("yess");
+        //else
+        //    print("No");
         
         for (int i = 0; i < CraftingTable.GetLength(0); i++) //UI_Inventory.GetCraftingSlots.Length;
         {
-            Sprite ItemPicture = Resources.Load<Sprite>(CraftingTable[i, 3]);
-
+            //Sprite ItemPicture = Resources.Load<Sprite>(CraftingTable[i, 3]);                        
             
-
-
-            UI_Inventory.GetCraftingSlots[i].GetComponent<SpriteRenderer>().sprite = ItemPicture;
+            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]);
             print(CraftingTable[i, 3]);
         }
 

@@ -64,7 +64,7 @@
       <Description>A light source that can be carried around</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath></PicPath>
+      <PicPath>Assets/Sprites/FlashLight Cookie.png</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Torch</ObjectName>
     </Item>
