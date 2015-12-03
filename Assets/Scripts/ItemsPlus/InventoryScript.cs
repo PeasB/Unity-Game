@@ -6,8 +6,13 @@ using System.Xml;
 
 public class InventoryScript : MonoBehaviour {
 
-
+    
     private UI_Inventory Script_UI;
+    
+    Dictionary<Sprite, string> SpriteDictionary = new Dictionary<Sprite, string>();
+    Sprite[] Single_Sprites1 = Resources.LoadAll<Sprite>("SpriteSheet");
+    Sprite[] Single_Sprites2 = Resources.LoadAll<Sprite>("SpriteSheet");
+    Sprite[] Single_Sprites3 = Resources.LoadAll<Sprite>("SpriteSheet");
 
     //Y value is 5 (ID, Name, Description, Stacks, picturePath).
     static string[,] InventoryBox;    
@@ -326,9 +331,11 @@ public class InventoryScript : MonoBehaviour {
         for (int i = 0; i < CraftingTable.GetLength(0); i++) //UI_Inventory.GetCraftingSlots.Length;
         {
             //Sprite ItemPicture = Resources.Load<Sprite>(CraftingTable[i, 3]);                        
+
+            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]); //Assets/Sprites/E-Attendance Capture.PNG
+            print(UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite);
+            //print(CraftingTable[i, 3]);
             
-            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]);
-            print(CraftingTable[i, 3]);
         }
 
 
@@ -667,10 +674,14 @@ public class InventoryScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
 	
+
+
+
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () { //FixedUpdate 
 	
 	}
 }
