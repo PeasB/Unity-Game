@@ -97,7 +97,7 @@ public class UI_Inventory : MonoBehaviour {
         }
         else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
         {
-            InventoryScript.DisplayCrafting();
+            //InventoryScript.DisplayCrafting();
         }
 
 

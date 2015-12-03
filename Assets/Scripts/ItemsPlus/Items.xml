@@ -9,7 +9,7 @@
       <Description>Comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>      
-      <PicPath></PicPath>
+      <PicPath>Assets/Sprites/Items/Items_22</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Wood</ObjectName>
     </Item>
@@ -75,7 +75,7 @@
       <Description>A weak but useful hammer. Looks like it will break after one hit.</Description>
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
-      <PicPath></PicPath>
+      <PicPath>Assets/Sprites/E-Attendance Capture.PNG</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Hammer</ObjectName>
     </Item>

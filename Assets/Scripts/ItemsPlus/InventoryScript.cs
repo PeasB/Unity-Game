@@ -322,9 +322,15 @@ public class InventoryScript : MonoBehaviour {
         else
             print("No");
         
-        for (int i = 0; i < UI_Inventory.GetCraftingSlots.Length; i++)
+        for (int i = 0; i < CraftingTable.GetLength(0); i++) //UI_Inventory.GetCraftingSlots.Length;
         {
-            //UI_Inventory.GetCraftingSlots[i].
+            Sprite ItemPicture = Resources.Load<Sprite>(CraftingTable[i, 3]);
+
+            
+
+
+            UI_Inventory.GetCraftingSlots[i].GetComponent<SpriteRenderer>().sprite = ItemPicture;
+            print(CraftingTable[i, 3]);
         }
 
 
