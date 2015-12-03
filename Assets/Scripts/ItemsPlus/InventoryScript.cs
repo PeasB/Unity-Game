@@ -8,6 +8,7 @@ public class InventoryScript : MonoBehaviour {
 
     
     private UI_Inventory Script_UI;
+    
     Dictionary<Sprite, string> SpriteDictionary = new Dictionary<Sprite, string>();
     Sprite[] Single_Sprites1 = Resources.LoadAll<Sprite>("SpriteSheet");
     Sprite[] Single_Sprites2 = Resources.LoadAll<Sprite>("SpriteSheet");

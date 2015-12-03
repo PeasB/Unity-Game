@@ -1,5 +1,6 @@
 ﻿//By: Ryan Dailey
 using UnityEngine;
+using System.Collections.Generic;
 
 public class UI_Inventory : MonoBehaviour {
 
@@ -10,6 +11,9 @@ public class UI_Inventory : MonoBehaviour {
     public GameObject Map;
     public GameObject Dialogue;
     bool Paused = false;
+
+    //Sprites
+    public List<Sprite> SingleSprites = new List<Sprite>();
 
     //Do a get set
     private static GameObject[] InventorySlots = new GameObject[30];
@@ -55,6 +59,8 @@ public class UI_Inventory : MonoBehaviour {
         //Inventory.gameObject.SetActive(false);
         //Dialogue.gameObject.SetActive(false);
 
+        //Get Sprites
+        
 
         //---Crafting Cells---
         int Row = 1;

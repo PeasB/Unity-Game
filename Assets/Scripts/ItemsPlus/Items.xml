@@ -64,7 +64,7 @@
       <Description>A light source that can be carried around</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath>E-Attendance Capture</PicPath>
+      <PicPath>ItemSprites/E-Attendance Capture</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Torch</ObjectName>
     </Item>
