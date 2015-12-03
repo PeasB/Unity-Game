@@ -4,11 +4,11 @@ using System.Xml;
 
 public class SceneTransition : MonoBehaviour {
 
-    private GameObject AI_Matt;
-    private GameObject AI_Josh;
-    private GameObject AI_Kate;
-    private GameObject AI_April;
-    private GameObject AI_Ethan;
+    private static GameObject AI_Matt;
+    private static GameObject AI_Josh;
+    private static GameObject AI_Kate;
+    private static GameObject AI_April;
+    private static GameObject AI_Ethan;
 
 
     public string WhatScene = "";
@@ -25,7 +25,7 @@ public class SceneTransition : MonoBehaviour {
     }
 
     
-    public void DoSceneTransition(string SceneName, double XPlayer, double YPlayer)
+    public static void DoSceneTransition(string SceneName, double XPlayer, double YPlayer)
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();

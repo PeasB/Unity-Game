@@ -11,23 +11,19 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>
-    </CurrentScene>
+    <CurrentScene></CurrentScene>
     <PlayerPosition>
-      <X>9.811742</X>
-      <Y>-4.464524</Y>
+      <X></X>
+      <Y></Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -67,9 +63,12 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>8.411155</X>
-            <Y>-5.462716</Y>
-            <Action>FollowPlayer</Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -109,12 +108,9 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -154,12 +150,9 @@
         <SceneName>Scene 3</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -199,12 +192,9 @@
         <SceneName>Scene 3 Outside</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -244,12 +234,9 @@
         <SceneName>Cabin Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -304,7 +291,7 @@
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
-      <April>25</April>
+      <April>40</April>
       <Ethan>100</Ethan>
     </Matt>
     <Kate>
@@ -351,7 +338,6 @@
   <DestroyObjects>
     <Scene>
       <SceneName>Scene 1</SceneName>
-      <ObjectName>Area Event Opening Conversation</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 2</SceneName>
@@ -371,19 +357,5 @@
     </Scene>
   </DestroyObjects>
   <Inventory>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>5</ItemID>
-    <ItemID>5</ItemID>
   </Inventory>
 </SaveData>

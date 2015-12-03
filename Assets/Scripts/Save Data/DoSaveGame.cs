@@ -22,7 +22,12 @@ public class DoSaveGame : MonoBehaviour {
 
     public static void NewGame()
     {
+        //Read in DefultSaveGame.xml
+        XmlDocument DefultSaveGameDoc = new XmlDocument();
+        DefultSaveGameDoc.Load("Assets/Scripts/Save Data/Defult Save/DefultSaveGame.xml");
 
+        UpdateSaveData(DefultSaveGameDoc);
+        
     }
 
     public static string FetchSaveData()

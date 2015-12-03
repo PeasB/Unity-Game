@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿//By: Ryan Dailey
+using UnityEngine;
 
 public class UI_Inventory : MonoBehaviour {
 
@@ -11,33 +11,58 @@ public class UI_Inventory : MonoBehaviour {
     public GameObject Dialogue;
     bool Paused = false;
 
+    //Do a get set
+    private static GameObject[] InventorySlots = new GameObject[30];
 
-    public GameObject[] InventorySlots = new GameObject[30];
+    private static GameObject[] InventoryInCraftingSlots = new GameObject[30];
 
-    public GameObject[] InventoryInCraftingSlots = new GameObject[30];
+    private static GameObject[] CraftingSlots = new GameObject[28];
 
-    public GameObject[] CraftingSlots = new GameObject[28];
+    public static GameObject[] GetCraftingSlots
+    {
+        get
+        {
+            return CraftingSlots;
+        }
+    }
 
-   
+    public static GameObject[] GetInventorySlots
+    {
+        get
+        {
+            return InventorySlots;
+        }
+    }
+
+    public static GameObject[] GetInventoryInCraftingSlots
+    {
+        get
+        {
+            return InventoryInCraftingSlots;
+        }
+    }
+
+
+
     // Use this for initialization
     void Start ()
     {
+        
+
         Canvas = GameObject.Find("Inventory Canvas");
         //Make if statement
         Canvas.gameObject.SetActive(false);
         //Inventory.gameObject.SetActive(false);
         //Dialogue.gameObject.SetActive(false);
 
-        
+
+        //---Crafting Cells---
         int Row = 1;
         int Column = 1;
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 28; i++)
         {
-
-            //InventorySlots[i] = GameObject.Find("Inventory Canvas/Menu_Crafting/Slot " + Row + "," + Coloum);
-			print("Slot " + Row + "," + Column);
-			InventorySlots[i] = Canvas.transform.FindChild("Menu_Crafting").gameObject.transform.FindChild("Slot " + Row + "," + Column).gameObject;
+            CraftingSlots[i] = Canvas.transform.Find("Menu_Crafting").gameObject.transform.Find("Slot " + Row + "," + Column).gameObject;
             Column++; 
             if (Column == 5)
             {
@@ -45,13 +70,8 @@ public class UI_Inventory : MonoBehaviour {
                 Row++;
             }
         }
-
-              
-        if (InventorySlots[29] == null)
-        {
-            print("WTF");
-        }
-
+        
+      
 
     }
 	
@@ -69,10 +89,15 @@ public class UI_Inventory : MonoBehaviour {
             }
             else
             {
+                InventoryScript.DisplayCrafting();
                 Time.timeScale = 0.0f;
                 Canvas.gameObject.SetActive(true);
                 Paused = true;
             }
+        }
+        else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
+        {
+            //InventoryScript.DisplayCrafting();
         }
 
 
