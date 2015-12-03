@@ -64,7 +64,7 @@
       <Description>A light source that can be carried around</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath>Assets/Sprites/FlashLight Cookie.png</PicPath>
+      <PicPath>E-Attendance Capture</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Torch</ObjectName>
     </Item>
@@ -75,7 +75,7 @@
       <Description>A weak but useful hammer. Looks like it will break after one hit.</Description>
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
-      <PicPath>Assets/Sprites/E-Attendance Capture.PNG</PicPath>
+      <PicPath>Items[64]</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Hammer</ObjectName>
     </Item>
