@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.prgDownloadBar = new System.Windows.Forms.ProgressBar();
             this.lblActivity = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // prgDownloadBar
             // 
-            this.prgDownloadBar.Location = new System.Drawing.Point(29, 275);
+            this.prgDownloadBar.Location = new System.Drawing.Point(41, 331);
             this.prgDownloadBar.Name = "prgDownloadBar";
             this.prgDownloadBar.Size = new System.Drawing.Size(421, 34);
             this.prgDownloadBar.TabIndex = 0;
             // 
             // lblActivity
             // 
-            this.lblActivity.Location = new System.Drawing.Point(29, 312);
+            this.lblActivity.BackColor = System.Drawing.Color.Transparent;
+            this.lblActivity.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblActivity.Location = new System.Drawing.Point(41, 368);
             this.lblActivity.Name = "lblActivity";
             this.lblActivity.Size = new System.Drawing.Size(421, 13);
             this.lblActivity.TabIndex = 2;
@@ -53,7 +56,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 339);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(507, 400);
             this.Controls.Add(this.lblActivity);
             this.Controls.Add(this.prgDownloadBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
