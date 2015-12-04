@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="250" height="500" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Delirum TileSets" tilewidth="32" tileheight="32" spacing="8" tilecount="1156">
+  <image source="../Sprites/terrain_atlas.png" width="1352" height="1352"/>
+  <terraintypes>
+   <terrain name="Path" tile="-1"/>
+  </terraintypes>
+  <tile id="51" terrain="0,0,0,">
+   <objectgroup draworder="index">
+    <object id="0" x="0.125" y="0.125" width="31.75" height="31.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="52" terrain="0,0,,0">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0.125" width="32.125" height="31.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="85" terrain="0,,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.125" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="86" terrain=",0,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.125" width="31.875" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="118" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="0" x="2.125" y="2.125" width="29.75" height="29.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="119" terrain=",,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.625" y="1.5" width="32.875" height="30.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="120" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="3.25" width="30.125" height="28.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="152" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="0" x="2.25" y="0.125" width="29.5" height="31.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="153" terrain="0,0,0,0">
+   <objectgroup draworder="index">
+    <object id="0" x="0.125" y="0.125" width="32" height="31.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="154" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="0" x="0.125" y="0.125" width="29.875" height="31.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="186" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="0" x="3.125" y="-0.125" width="28.875" height="30.875"/>
+   </objectgroup>
+  </tile>
+  <tile id="187" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.25" y="-0.375" width="32.25" height="31.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="188" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="0" width="27" height="28.875"/>
+   </objectgroup>
+  </tile>
+  <tile id="573">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="606">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="608">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="640">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="642">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="670">
+   <objectgroup draworder="index">
+    <object id="0" x="4.57495" y="6.44651" width="22.8747" height="19.3395">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="674">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="675">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="676">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="707">
+   <objectgroup draworder="index">
+    <object id="0" x="8" y="-0.25" width="16.125" height="29.875"/>
+    <object id="0" x="5.25" y="22.25" width="20.75" height="5.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="710">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="770">
+   <objectgroup draworder="index">
+    <object id="0" x="2" y="2.75" width="28" height="27.25"/>
+   </objectgroup>
+  </tile>
+  <tile id="773">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="0.75" width="31" height="25.375"/>
+   </objectgroup>
+  </tile>
+  <tile id="911">
+   <objectgroup draworder="index">
+    <object id="0" x="1.625" y="2.75" width="28.125" height="27.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="1119">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.25" y="-0.25" width="32.625" height="19"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Grass" width="250" height="500">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbKGJAAE=
+  </data>
+ </layer>
+ <layer name="Path" width="250" height="500">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbKGJAAE=
+  </data>
+ </layer>
+ <layer name="Rocks and shit" width="250" height="500">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbKGJAAE=
+  </data>
+ </layer>
+ <layer name="Tree Trunks" width="250" height="500" opacity="0.99">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbKGJAAE=
+  </data>
+ </layer>
+ <layer name="Tree Tops" width="250" height="500">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwbKGJAAE=
+  </data>
+ </layer>
+</map>
