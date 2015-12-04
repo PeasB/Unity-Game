@@ -3,17 +3,7 @@
   
   <ItemsList>
     
-    <Item>
-      <ID>0</ID>
-      <Name>Wood</Name>
-      <Description>Comes from trees!</Description>
-      <Craftable>1</Craftable>
-      <Stackable>1</Stackable>      
-      <PicPath>Assets/Sprites/Items/Items_22</PicPath>
-      <Payload></Payload>
-      <ObjectName>Item_Wood</ObjectName>
-    </Item>
-    
+       
     <Item>
       <ID>1</ID>
       <Name>Stick</Name>
@@ -102,7 +92,16 @@
       <ObjectName>Item_Key</ObjectName>
     </Item>
 
-    
+    <Item>
+      <ID>9</ID>
+      <Name>Wood</Name>
+      <Description>Comes from trees!</Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath>Assets/Sprites/Items/Items_22</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Wood</ObjectName>
+    </Item>
 
     
   </ItemsList>
@@ -122,6 +121,7 @@
       <ID>3</ID>
       <NewID>6</NewID>
     </Craft>
+       
 
         
   </Crafting>

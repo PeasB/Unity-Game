@@ -11,6 +11,10 @@ public class UI_Inventory : MonoBehaviour {
     public GameObject Map;
     public GameObject Dialogue;
     bool Paused = false;
+    
+    //Selected Item
+    public static int SelectedInventoryItem_ID = 0; //0 = no item selected
+    public static int SelectedCraftingItem_ID = 0; //0 = no item selected
 
     //Sprites
     public List<Sprite> SingleSprites = new List<Sprite>();

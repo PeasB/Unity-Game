@@ -9,16 +9,34 @@ public class InventoryScript : MonoBehaviour {
     
     private UI_Inventory Script_UI;
     
-    Dictionary<Sprite, string> SpriteDictionary = new Dictionary<Sprite, string>();
-    Sprite[] Single_Sprites1 = Resources.LoadAll<Sprite>("SpriteSheet");
-    Sprite[] Single_Sprites2 = Resources.LoadAll<Sprite>("SpriteSheet");
-    Sprite[] Single_Sprites3 = Resources.LoadAll<Sprite>("SpriteSheet");
+    //Dictionary<Sprite, string> SpriteDictionary = new Dictionary<Sprite, string>();
+    //Sprite[] Single_Sprites1 = Resources.LoadAll<Sprite>("SpriteSheet");
+    //Sprite[] Single_Sprites2 = Resources.LoadAll<Sprite>("SpriteSheet");
+    //Sprite[] Single_Sprites3 = Resources.LoadAll<Sprite>("SpriteSheet");
 
     //Y value is 5 (ID, Name, Description, Stacks, picturePath).
     static string[,] InventoryBox;    
 
     //2D array for items to craft (Find X base on how much craftable items there are. Y value is 5 (ID_Main, Name, Description, PicPath, CanCraft)  (ID1, ID2, ID3, ID4, ID5 was removed from array to make array size smaller)
     static string[,] CraftingTable;
+
+    public static string[,] GetCraftingTable
+    {
+        get
+        {
+            return CraftingTable;
+        }
+    }
+
+    public static string[,] GetInventoryBox
+    {
+        get
+        {
+            return InventoryBox;
+        }
+    }
+
+
         
     private static void FillInventoryBox()
     {
