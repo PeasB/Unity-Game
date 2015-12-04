@@ -11,19 +11,23 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Walking Sounds Test Scene</CurrentScene>
+    <CurrentScene>
+    </CurrentScene>
     <PlayerPosition>
-      <X>-5.610015</X>
-      <Y>-9.419911</Y>
+      <X>4.665012</X>
+      <Y>-9.438763</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>-3.722488</X>
-            <Y>-7.657562</Y>
-            <Action>FollowPlayer</Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
           </JoshAI>
           <MattAI>
             <X>
@@ -61,6 +65,183 @@
       </Scene>
       <Scene>
         <SceneName>Ryans Test Scene</SceneName>
+        <AI>
+          <JoshAI>
+            <X>3.111158</X>
+            <Y>-8.862721</Y>
+            <Action>FollowPlayer</Action>
+          </JoshAI>
+          <MattAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </MattAI>
+          <KateAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </KateAI>
+          <AprilAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </AprilAI>
+          <EthanAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </EthanAI>
+        </AI>
+      </Scene>
+      <Scene>
+        <SceneName>Scene 2</SceneName>
+        <AI>
+          <JoshAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </JoshAI>
+          <MattAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </MattAI>
+          <KateAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </KateAI>
+          <AprilAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </AprilAI>
+          <EthanAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </EthanAI>
+        </AI>
+      </Scene>
+      <Scene>
+        <SceneName>Scene 3</SceneName>
+        <AI>
+          <JoshAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </JoshAI>
+          <MattAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </MattAI>
+          <KateAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </KateAI>
+          <AprilAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </AprilAI>
+          <EthanAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </EthanAI>
+        </AI>
+      </Scene>
+      <Scene>
+        <SceneName>Scene 3 Outside</SceneName>
+        <AI>
+          <JoshAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </JoshAI>
+          <MattAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </MattAI>
+          <KateAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </KateAI>
+          <AprilAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </AprilAI>
+          <EthanAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </EthanAI>
+        </AI>
+      </Scene>
+      <Scene>
+        <SceneName>Cabin Scene</SceneName>
         <AI>
           <JoshAI>
             <X>
@@ -123,7 +304,7 @@
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
-      <April>40</April>
+      <April>25</April>
       <Ethan>100</Ethan>
     </Matt>
     <Kate>
@@ -170,12 +351,19 @@
   <DestroyObjects>
     <Scene>
       <SceneName>Scene 1</SceneName>
+      <ObjectName>Area Event Opening Conversation</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 2</SceneName>
     </Scene>
     <Scene>
       <SceneName>Scene 3</SceneName>
+    </Scene>
+    <Scene>
+      <SceneName>Scene 3 Outside</SceneName>
+    </Scene>
+    <Scene>
+      <SceneName>Cabin Scene</SceneName>
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
@@ -197,27 +385,5 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>3</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>3</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>3</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>6</ItemID>
-    <ItemID>3</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>0</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>3</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
-    <ItemID>2</ItemID>
   </Inventory>
 </SaveData>

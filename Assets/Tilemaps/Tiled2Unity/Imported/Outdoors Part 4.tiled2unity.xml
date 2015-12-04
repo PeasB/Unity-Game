@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--Tiled2Unity generated xml data-->
+<!--Do not modify by hand-->
+<!--Last exported: 12/1/2015 11:38:48 PM-->
+<Tiled2Unity version="0.9.13.0">
+  <Prefab name="Outdoors Part 4" numTilesWide="250" numTilesHigh="500" tileWidth="32" tileHeight="32" exportScale="0.032" mapWidthInPixels="8000" mapHeightInPixels="16000">
+    <GameObject name="Grass_00" x="0" y="0" />
+    <GameObject name="Path_01" x="0" y="0" isTrigger="true" />
+    <GameObject name="Rocks_and_shit_02" x="0" y="0" />
+    <GameObject name="Tree_Trunks_03" x="0" y="0" />
+    <GameObject name="Tree_Tops_04" x="0" y="0" />
+  </Prefab>
+  <ImportMesh filename="Outdoors Part 4.obj">IyBXYXZlZnJvbnQgT0JKIGZpbGUgYXV0b21hdGljYWxseSBnZW5lcmF0ZWQgYnkgVGlsZWQyVW5pdHkNCg0KIyBWZXJ0aWNlcyAoQ291bnQgPSAwKQ0KDQojIFRleHR1cmUgQ29vcmluZGF0ZXMgKENvdW50ID0gMCkNCg0KIyBOb3JtYWwNCnZuIDAgMCAtMQ0KDQojIEdyb3VwcyAoQ291bnQgPSAwKQ0K</ImportMesh>
+</Tiled2Unity>
