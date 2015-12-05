@@ -14,8 +14,8 @@
     <CurrentScene>
     </CurrentScene>
     <PlayerPosition>
-      <X>4.665012</X>
-      <Y>-9.438763</Y>
+      <X>-7.110278</X>
+      <Y>-7.401624</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -67,8 +67,8 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>3.111158</X>
-            <Y>-8.862721</Y>
+            <X>-7.288837</X>
+            <Y>-7.362719</Y>
             <Action>FollowPlayer</Action>
           </JoshAI>
           <MattAI>
