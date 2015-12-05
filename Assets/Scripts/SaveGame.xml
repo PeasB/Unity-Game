@@ -14,8 +14,13 @@
     <CurrentScene>
     </CurrentScene>
     <PlayerPosition>
+<<<<<<< HEAD
       <X>-7.110278</X>
       <Y>-7.401624</Y>
+=======
+      <X>363.4435</X>
+      <Y>-896.4557</Y>
+>>>>>>> origin/master
     </PlayerPosition>
     <Scenes>
       <Scene>
