@@ -10,7 +10,9 @@ public class MoveCar : MonoBehaviour {
 	{	
         if (CanDrive)
 		    this.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed.x,MoveSpeed.y); //move up by speed
-	}
+        else
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+    }
 
 
 
