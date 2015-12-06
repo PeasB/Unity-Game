@@ -110,9 +110,14 @@ public class AreaEvent : MonoBehaviour {
 		//If Conversation can't be reactivated and has already run then Destroy the object and will never show up again.
 		if (!ConversationInstance.IsActive && ConversationInstance.HasRun && !CanReactivate) 
 		{
+            
             //if StoryPart is not 0, pass it in to a method to run an event
             if (StoryPart != 0)
             {
+                if (ConversationInstance.CurrentChoice == 2) //If the optional choice is ran. If its 1 or 3, do nothing
+                {
+                    StoryPart++;
+                }
                 StorylineScript.DoActionForScene(StoryPart);
             }
 

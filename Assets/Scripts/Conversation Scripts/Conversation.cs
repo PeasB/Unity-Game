@@ -33,6 +33,7 @@ public class ConversationManager {
 	public bool HasRun; //Read Only. Has been run before.
     public float TimeToChoose; //Used in an update function to remove time from the time Remaining.
     public bool TimerIsActive; //Read Only. Can be used to test if the timer is active.
+    public int CurrentChoice; //The Choice Number the Player has made last.
 
     //Called when the instance of this class is created.
     //Sets up all Canvas Objects for later use.
@@ -290,6 +291,7 @@ public class ConversationManager {
     //ran when the player chooses a choice. Saves the players choice, and moves on.
     public void ChooseChoice(int ChoiceNumber = 2)
     {
+        CurrentChoice = ChoiceNumber; //sets the Current Choice to accessed outside of the class.
 
 		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in HasChoices Node)
 		if (ChoiceNumber != 3) 
