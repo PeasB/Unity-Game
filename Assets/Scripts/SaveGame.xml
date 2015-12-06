@@ -13,8 +13,10 @@
   <SaveState>
     <CurrentScene>Scene 3 Outside Ethan</CurrentScene>
     <PlayerPosition>
-      <X>460.235</X>
-      <Y>-314.5053</Y>
+      <X>
+      </X>
+      <Y>
+      </Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -439,7 +441,7 @@
     </Situation>
     <Situation>
       <ID>2.5.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>3.0.1</ID>
