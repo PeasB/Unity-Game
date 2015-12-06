@@ -99,11 +99,11 @@
     <Compile Include="Assets\Scripts\Scene 1\MoveCar.cs" />
     <Compile Include="Assets\Scripts\Scene 1\TextScreenManager.cs" />
     <Compile Include="Assets\Scripts\Scene 2\PathStopper.cs" />
+    <Compile Include="Assets\Scripts\Scene 2\StopCar.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\Other\BrokenDoor.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\Other\LockedDoor.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Storyline\StorylineScript.cs" />
-    <Compile Include="Assets\StopCar.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
