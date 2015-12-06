@@ -11,12 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Scene 3 Outside Ethan</CurrentScene>
+    <CurrentScene>Scene 3 Outside</CurrentScene>
     <PlayerPosition>
-      <X>
-      </X>
-      <Y>
-      </Y>
+      <X>397.1886</X>
+      <Y>-347.7314</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -284,52 +282,7 @@
         </AI>
       </Scene>
       <Scene>
-        <SceneName>Scene 3 Outside Ethan</SceneName>
-        <AI>
-          <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-          </JoshAI>
-          <MattAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-          </MattAI>
-          <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-          </KateAI>
-          <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-          </AprilAI>
-          <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-          </EthanAI>
-        </AI>
-      </Scene>
-      <Scene>
-        <SceneName>Scene 3 Shed Ethan</SceneName>
+        <SceneName>Cabin Scene</SceneName>
         <AI>
           <JoshAI>
             <X>
@@ -377,8 +330,8 @@
   </SaveState>
   <Status>
     <Josh>1</Josh>
-    <Matt>1</Matt>
-    <Kate>1</Kate>
+    <Matt>0</Matt>
+    <Kate>2</Kate>
     <April>1</April>
     <Ethan>1</Ethan>
   </Status>
@@ -387,12 +340,12 @@
       <Matt>100</Matt>
       <Kate>100</Kate>
       <April>100</April>
-      <Ethan>100</Ethan>
+      <Ethan>70</Ethan>
     </Josh>
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
-      <April>100</April>
+      <April>25</April>
       <Ethan>100</Ethan>
     </Matt>
     <Kate>
@@ -416,71 +369,31 @@
   </Relationships>
   <StoryPaths>
     <Situation>
-      <ID>1.1.1</ID>
+      <ID>1.1</ID>
       <Outcome>2</Outcome>
     </Situation>
     <Situation>
-      <ID>2.0.1</ID>
+      <ID>1.2</ID>
       <Outcome>1</Outcome>
     </Situation>
     <Situation>
-      <ID>2.1.1</ID>
+      <ID>2</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
-      <ID>2.2.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>2.3.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>2.4.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>2.5.1</ID>
-      <Outcome>3</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.0.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.1.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.2.1</ID>
+      <ID>3</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.3.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.4.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>3.5.1</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
-      <ID>3.6.1</ID>
-      <Outcome>3</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.7.1</ID>
-      <Outcome>3</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.8.1</ID>
-      <Outcome>0</Outcome>
-    </Situation>
-    <Situation>
-      <ID>3.9.1</ID>
+      <ID>4</ID>
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
@@ -490,15 +403,18 @@
     </Scene>
     <Scene>
       <SceneName>Scene 2</SceneName>
-      <SceneName>Scene 3 Outside Ethan</SceneName>
-      <SceneName>Scene 3 Outside</SceneName>
     </Scene>
     <Scene>
       <SceneName>Scene 3</SceneName>
     </Scene>
     <Scene>
-      <SceneName>Scene 3 Shed Ethan</SceneName>
-      <SceneName>Scene 3 Shed</SceneName>
+      <SceneName>Scene 3 Outside</SceneName>
+      <ObjectName>Out Back Conversation</ObjectName>
+      <ObjectName>Almost At Breaker Conversation</ObjectName>
+      <ObjectName>Noises Heard Conversation</ObjectName>
+    </Scene>
+    <Scene>
+      <SceneName>Cabin Scene</SceneName>
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
