@@ -11,11 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>
-    </CurrentScene>
+    <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X>0.0159444</X>
-      <Y>-7.08293</Y>
+      <X>350</X>
+      <Y>-983</Y>
       <X>363.4435</X>
       <Y>-896.4557</Y>
     </PlayerPosition>
@@ -353,7 +352,6 @@
   <DestroyObjects>
     <Scene>
       <SceneName>Scene 1</SceneName>
-      <ObjectName>Area Event Opening Conversation</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 2</SceneName>

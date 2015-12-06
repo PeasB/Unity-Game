@@ -30,18 +30,11 @@ public class MainMenuManger : MonoBehaviour {
         if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText != "") //Make it the Date Started instead
         {
             //Show "Are you sure you would like to erase your current save file? This cannot be undone" with a Yes or No button
-
-
-            //Start new game
-            DoSaveGame.NewGame();
-
-            Application.LoadLevel("Scene 1");
-
+			GameObject.Find ("Canvas").transform.Find ("Erase Save").gameObject.SetActive (true);
         }
         else
         {
             //No game has been created, so just start the game
-
             //Start new game
             DoSaveGame.NewGame();
 
@@ -68,11 +61,21 @@ public class MainMenuManger : MonoBehaviour {
 	public void StartNewGameConfirmed()
 	{
 
-		//GameObject.Find("Canvas").transform.Find("Erase Save")
+		GameObject.Find ("Canvas").transform.Find ("Erase Save").gameObject.SetActive (false);
 
+		//Start new game.
+		DoSaveGame.NewGame();
+
+		//Load the Level.
+		Application.LoadLevel("Scene 1");
 	}
 
-
+	public void StartNewGameNotConfirmed()
+	{
+		GameObject.Find ("Canvas").transform.Find ("Erase Save").gameObject.SetActive (false);
+	}
+	
+	
 	//Called when Player Clicks Quit Game.
 	public void QuitGame()
 	{
