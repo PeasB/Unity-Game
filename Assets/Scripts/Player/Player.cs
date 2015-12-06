@@ -69,7 +69,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-		if(Input.GetButtonDown("Button 4"))
+		if(Input.GetButtonDown("Button 4") && InventoryScript.CheckItem(12))
 		{
 			if(!FlashLightToggle)
 			{
