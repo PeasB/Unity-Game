@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="1">
+ <properties>
+  <property name="unity:isTrigger" value="true"/>
+  <property name="unity:tag" value="Ground Hardwood"/>
+ </properties>
  <tileset firstgid="1" name="IndoorTileset" tilewidth="32" tileheight="32" spacing="8" tilecount="18">
   <image source="../Sprites/IndoorTileset.png" width="232" height="112"/>
   <tile id="7">
@@ -23,24 +27,38 @@
    </objectgroup>
   </tile>
  </tileset>
- <layer name="Floor" width="50" height="50">
+ <layer name="Tile Floor" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt1TESgCAMAEFK/f+HbWxVENAAuzPpUuRoSAmgrz1jtnMiW7HjaiLQMW5HZE9vHeXdS+6coaN0/+s+HTp6aHGLjnbedET8z3WM2VEzOtp2lO7/0ZFzW8mujnordkQ2SwcAAABw7wCVBA6b
+   eJztz7EJAAAIwDBX/3/YF1wElQR6QCMAZmWjC3zs4mOXLx8AAAAAAAAA3FYiCgHn
+  </data>
+ </layer>
+ <layer name="Floor" width="50" height="50">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+   <property name="unity:tag" value="Ground Tile"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt0DkOgDAMAMGU8P8P01AhcZgEcs1I7lx4nRJAfcs+vRut42x6oaMtPdx79+tW/h65c4SO6P7ffTp0fKHELTrKedOxHkZHObN15IyOsh3R/RodT26L7OrIN2NHy0bpAAAAAK5tmgoMtQ==
+  </data>
+ </layer>
+ <layer name="Walls 4" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzrENADAIBLGv2X8gRssC6RHCrq68BNiqpgcAAAAAgFGV9K8BAADgqgdtHwGf
   </data>
  </layer>
  <layer name="Walls 3" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt1d0NgCAMRlGemcpRHK2jMIqjiG8NsVojgug9iaHhJ/maEAwBwFvFm+sjyj1J7ww1fKUPwCPf99mxR9fyWJgLdO4tk6eP4rxUjtTFCH3kjGn7eucAWjl7j5zvblK1GHt259/k6tsMaLEY1fys6sU4K4+EaszqD37FfZn0aOw/WpNqwQBA8fzbAAAAAAD4kxViThCL
+   eJzt1dkJwCAQRdF8m6ZSiqVNKSklpUT/BolxBJcs90BwcIE3IGZZADyVK6yvQ1KMFXqW2Rla+EofgEW4796wR9fSLUwFnTtmsvSRnJfGkaZ4Qx8h4x6/2TmAUUrvkfHd3VUtmT2X809S+zYDmktGNe9VfWTOSpdQg+X6g11yXzY9ZvbfrUmzYACgWP5tAAAAAAD8yQmFnhCM
   </data>
  </layer>
  <layer name="Walls 2" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt1tENhCAMgGGecQlHcRRHcxRHcRQhORNsuEPDEQr834tNeKnS1hoDjGe6x1utPFJs+nwO4qNoMngldXeaudzX2jn8Wy/9YRXNK2vidf6t9sO6cvFeIKXXrIhb7tscLby3r/3YbNJSS7nCvURTn0OvJ30r5m5T5HzugbiPo14mY7lmqvyHpGqsl7rDc75GfuyxYbx9nvO1h8h9xPd47KyXvQXIQR+U477tEosBAAAAABjVCS29Eo4=
+   eJzt1sENwyAMQFHOsERGy2gZpaNklIIUJMuiJRFFGPrfJZa4mGCDnQNgla+vbyI+uyaDR2pnZ1nMfR+dw6+t0h9xH8foHDLvynX+qfZlXcX41SGlx7yKZ+7bFjPsO9V+6W6yUkutgogt9TnsutO36t6dir6fV6DO4xyXyX/Jd6p+Q2o1tkrd4b5UI1/mWBkf13fLc4ieR1KPl9ZWmVuAFvRBP0G8dYH/DAAAAACAewMfjRJ6
   </data>
  </layer>
  <layer name="Walls" width="50" height="50">
   <data encoding="base64" compression="zlib">
-   eJztmOsNhCAQhP15kSauFEuxFEqhFEuxlIMoCSK7gC4+LvMl5BQXnBFY8boOAPBE1PrbM8XFfNZij/X1KvNYnaNEzN3U+nDjQYyZbqOwjBIfKhew9GNOizlB7ZyxniaiHyMg5zBvHQ+1PdbxOZWvgpipTxRqnCR1MznUlDzrJyCdM+/KVzU+1DI/hsScGQruY07IzJLzEc4rp6UgfiLuYyqlVZHTFV6nfMQxRD/Jein+xUecr7ic2i/5i10fb1jn/pnGe+AnvAeP+IjbxO9Brm0rJHykYkrrpah8f2g/j5h9iYnXhq+X0Evxhm+gEjgfknsre59ZsLsdqqNzb2of63Ksz7Px3lYFOTi85s9b+ugWzd+CGLP+jkzMnGvfEvjYxcy59i2p8WHn+Zj63vPrg7vW2EaVjyez7v02xdUF37eXPM8WqO1/a9N9SgAAAAAAAAAAvJ0fRYpX3w==
+   eJztmOENhCAMhf1pZIkbxVEchVEYhVEc5TBIglignBDw8r6EqFCgT6GA0wQAGBFxXpdEMjbbbK6zvdcd3Mxi/Nxq2PSmVIf5HjLyzWQbD3lwdIicgW1HPXbmAaVjJjY/3qBjxO8hrvcyfI6Mfd9GL0RqHccE4ZMXQxXnXY9A7ZjZK16V6BB2fKzEmFkZ/agHbmbJ6fDH1eELw15H+lGFrhWR88svj+kIbSLtkPm1+BcdYbxKxdTFxq/k/HjDPHfvNNwDj7AO/qIjrBOug6m6raihg7Lh5teicP2Qbhwl9iUqnBsuv4a/Md5wBuKQ0lFzb2X62Ss2d0NM8dhL7WOPGOvibLi3FV4M9svcc0sdk/X5w7BR53VL2Oy5+i2BjpvNnqvfkhIdx78q6rzn5keqrLGMIh0jc+79Lok43+q+XgIAAAAAAAAAAH35AkSHVuk=
   </data>
  </layer>
 </map>
