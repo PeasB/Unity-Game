@@ -5,11 +5,13 @@ using System.Xml;
 
 public class StorylineScript : MonoBehaviour {
 
-    private GameObject AI_Matt;
-    private GameObject AI_Josh;
-    private GameObject AI_Kate;
-    private GameObject AI_April;
-    private GameObject AI_Ethan;
+    private static GameObject AI_Matt;
+    private static GameObject AI_Josh;
+    private static GameObject AI_Kate;
+    private static GameObject AI_April;
+    private static GameObject AI_Ethan;
+
+    private int PartNumber = 0;
 
     private void SetUpScene(int ScenePart)
     {
@@ -70,6 +72,66 @@ public class StorylineScript : MonoBehaviour {
 
     }
 
+    public static void DoActionForScene(int ScenePart)
+    {
+        if (Application.loadedLevelName == "Scene 2")
+        {
+            #region Scene 2
+
+            if (ScenePart == 1)
+            {
+                #region Part 1
+                //AI Josh and AI Kate runs to the split path, saying they both wanna race you.
+                //AI Josh and AI Kate then takes off
+
+                AI_Josh.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Josh.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
+
+
+                #endregion
+            }
+            else if (ScenePart == 2)
+            {
+
+            }
+            else if (ScenePart == 3)
+            {
+
+            }
+            else if (ScenePart == 4)
+            {
+
+            }
+
+            #endregion
+        }
+        else if (Application.loadedLevelName == "Scene 2")
+        {
+            #region Scene 3
+            if (ScenePart == 1)
+            {
+
+            }
+            else if (ScenePart == 2)
+            {
+
+            }
+            else if (ScenePart == 3)
+            {
+
+            }
+            else if (ScenePart == 4)
+            {
+
+            }
+            #endregion
+        }
+
+
+    }
     
 	// Use this for initialization
 	void Start () {
@@ -99,5 +161,7 @@ public class StorylineScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
+
 	}
 }

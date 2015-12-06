@@ -10,6 +10,7 @@ public class AreaEvent : MonoBehaviour {
 
     public int ConversationID;
 	public int SceneNum;
+    public int StoryPart = 0; //if this var == 0, do nothing. If a number is assigned, preform a task after the conversation is done
 	public bool CanReactivate;
 	public bool ButtonActivated;
     [HideInInspector]
@@ -109,6 +110,13 @@ public class AreaEvent : MonoBehaviour {
 		//If Conversation can't be reactivated and has already run then Destroy the object and will never show up again.
 		if (!ConversationInstance.IsActive && ConversationInstance.HasRun && !CanReactivate) 
 		{
+            //if StoryPart is not 0, pass it in to a method to run an event
+            if (StoryPart != 0)
+            {
+                StorylineScript.DoActionForScene(StoryPart);
+            }
+
+            //Delete object
 			DeleteObjects.DeleteObject(this.gameObject.name);
 			Destroy(this.gameObject);
 		}

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.2.3f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -71,6 +73,7 @@
     <Compile Include="Assets\Scripts\AES Crypto\AES_Crypto.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Character.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Events.cs" />
+    <Compile Include="Assets\Scripts\AI\DefaultDirection.cs" />
     <Compile Include="Assets\Scripts\Conversation Scripts\AreaEvent.cs" />
     <Compile Include="Assets\Scripts\Conversation Scripts\Conversation.cs" />
     <Compile Include="Assets\Scripts\DeleteObjects\DeleteObjects.cs" />
@@ -115,12 +118,19 @@
     <None Include="Assets\Conversation Files\Scene 3.xml" />
     <None Include="Assets\Conversation Files\Template.xml" />
     <None Include="Assets\Quick Time Events\No.1.xml" />
+    <None Include="Assets\Scripts\AI\CutSceneEvents.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Scripts\Extras\PixelPerfect\README.txt" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
-    <None Include="Assets\Scripts\ItemsPlus\Items.xml" />
+    <None Include="Assets\Scripts\ItemsPlus\Items.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml" />
     <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
-    <None Include="Assets\Scripts\SaveGame.xml" />
+    <None Include="Assets\Scripts\SaveGame.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Cabin Tilemap.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 1.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 2.tiled2unity.xml" />

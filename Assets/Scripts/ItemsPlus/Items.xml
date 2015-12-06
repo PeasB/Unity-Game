@@ -103,6 +103,40 @@
       <ObjectName>Item_Wood</ObjectName>
     </Item>
 
+    <Item>
+      <ID>10</ID>
+      <Name>Broken Flashlight</Name>
+      <Description>This will light up your path! Although it needs a battery to start up...</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_BrokenFlashlight</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>11</ID>
+      <Name>Battery</Name>
+      <Description>This powers up a device</Description>
+      <Craftable>0</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Battery</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>12</ID>
+      <Name>Flashlight</Name>
+      <Description>This will light up your path!</Description>
+      <Craftable>1</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Flashlight</ObjectName>
+    </Item>
+
+    
     
   </ItemsList>
 

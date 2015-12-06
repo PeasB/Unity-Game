@@ -140,6 +140,7 @@
     <None Include="Assets\Conversation Files\Scene 3.xml" />
     <None Include="Assets\Conversation Files\Template.xml" />
     <None Include="Assets\Quick Time Events\No.1.xml" />
+    <None Include="Assets\Scripts\AI\CutSceneEvents.xml" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\README.txt" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
     <None Include="Assets\Scripts\ItemsPlus\Items.xml" />

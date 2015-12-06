@@ -1,5 +1,6 @@
 ﻿//By: Ryan Dailey
 using UnityEngine;
+using System.Xml;
 
 public class AI_Events : MonoBehaviour {
 
@@ -13,194 +14,51 @@ public class AI_Events : MonoBehaviour {
         //Var for AI x and y
         float XMove = 0;
         float YMove = 0;
+
+        //Read in SaveGame.xml
+        XmlDocument SaveGameDoc = new XmlDocument();
+        SaveGameDoc.Load("Assets/Scripts/AI/CutSceneEvents.xml");
+
+        //Find current scene then find ScenePart. 
+        foreach (XmlNode node in SaveGameDoc.SelectNodes("CutSceneEvents/Scenes/Scene"))
+        {
+            if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
+            {
+                if (Body.name == "AI Josh")
+                {
+                   XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText));
+                   YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText));
+                }
+                else if (Body.name == "AI Matt")
+                {
+
+                }
+                else if (Body.name == "AI Kate")
+                {
+
+                }
+                else if (Body.name == "AI April")
+                {
+
+                }
+                else if (Body.name == "AI Ethan")
+                {
+
+                }
+
+
+                if (XMove == 0 && YMove == 0)
+                {
+                    CaseStep++;
+                }
+
+
+
+                break;
+            }
+        }
+
         
-        //Think about making this an Enumerator
-        if (EventNumber == 0) //Do nothing and stay still
-        {
-            
-        }
-        else if (EventNumber == 1) //Walking up and down (down, up). Has 2 cases
-        {
-            #region Event 1: Up and Down
-            if (CaseStep == 0) //Case going down
-            {
-                if (Body.position.y > Y_Original - 4) //Down
-                {
-                    YMove = -1;
-                }
-                else
-                    CaseStep = 1; //Switch Cases
-            }
-            else if (CaseStep == 1) //Case going up
-            {
-                if (Body.position.y < Y_Original) // Up
-                {
-                    YMove = 1;
-                }
-                else
-                    CaseStep = 0; //Switch Cases
-            }
-            #endregion
-        }
-        else if (EventNumber == 2) //Walking in a L shape (left, up, down, right). Has 4 cases
-        {
-            #region Event 2: L-Shape
-
-            if (CaseStep == 0) //Case going down
-            {
-                if (Body.position.y > Y_Original - 5) //Down
-                {
-                    YMove = -1;
-                }
-                else
-                    CaseStep = 1; //Swicth Cases
-            }
-            else if (CaseStep == 1) //Case going right
-            {
-                if (Body.position.x < X_Original + 3) //Right
-                {
-                    XMove = 1;
-                }
-                else
-                    CaseStep = 2; //Swicth Cases
-            }
-            else if (CaseStep == 2) //Case going left
-            {
-                if (Body.position.x > X_Original) //Left
-                {
-                    XMove = -1;
-                }
-                else
-                    CaseStep = 3; //Swicth Cases
-            }
-            else if (CaseStep == 3) //Case going up
-            {
-                if (Body.position.y < Y_Original) // Up
-                {
-                    YMove = 1;
-                }
-                else
-                    CaseStep = 0; //Switch Cases
-            }
-
-            #endregion
-        }
-        else if (EventNumber == 3) //Walking in a square Clock wise (right, down, left, up). Has 4 cases
-        {
-            #region Event 3: Square CW
-
-            if (CaseStep == 0) //Case going right
-            {
-                if (Body.position.x < X_Original + 3) //Right
-                {
-                    XMove = 1;
-                }
-                else
-                    CaseStep = 1;
-            }
-            else if (CaseStep == 1) //Case going down
-            {
-                if (Body.position.y > Y_Original - 3) //Down
-                {
-                    YMove = -1;
-                }
-                else
-                    CaseStep = 2;
-            }
-            else if (CaseStep == 2) //Case going left
-            {
-                if (Body.position.x > X_Original) //Left
-                {
-                    XMove = -1;
-                }
-                else
-                    CaseStep = 3;
-            }
-            else if (CaseStep == 3) //Case going up
-            {
-                if (Body.position.y < Y_Original) // Up
-                {
-                    YMove = 1;
-                }
-                else
-                    CaseStep = 0;
-            }
-            
-            #endregion
-        }
-        else if (EventNumber == 4) //Walking in a square Counter Clock wise (down, right, up, left). Has 4 cases
-        {
-            #region Event 4: Sqaure CCW
-
-            if (CaseStep == 0) //Case going Down
-            {
-                if (Body.position.y > Y_Original - 1.5) //Down
-                {
-                    YMove = -1;
-                }
-                else
-                    CaseStep = 1;
-            }
-            else if (CaseStep == 1) //Case going right
-            {                
-                if (Body.position.x < X_Original + 1.5) //Right
-                {
-                    XMove = 1;
-                }
-                else
-                    CaseStep = 2;
-            }
-            else if (CaseStep == 2) //Case going up
-            {
-                if (Body.position.y < Y_Original) // Up
-                {
-                    YMove = 1;
-                }
-                else
-                    CaseStep = 3;
-            }
-            else if (CaseStep == 3) //Case going left
-            {               
-                if (Body.position.x > X_Original) //Left
-                {
-                    XMove = -1;
-                }
-                else
-                    CaseStep = 0;
-            }
-
-            #endregion
-        }
-        else if (EventNumber == 5) 
-        {
-            #region Event 5: 
-
-            
-
-            #endregion
-        }
-        else if (EventNumber == 6)
-        {
-
-        }
-        else if (EventNumber == 7)
-        {
-
-        }
-        else if (EventNumber == 8)
-        {
-
-        }
-        else if (EventNumber == 9)
-        {
-
-        }
-        else if (EventNumber == 10)
-        {
-
-        }
-
-
 
         //Execute Movement
         PlayerMovement.PlayerMove(Body, Speed, Anim, XMove, YMove);
@@ -208,6 +66,50 @@ public class AI_Events : MonoBehaviour {
         return CaseStep;
 
     }
+
+    private static int Find_X_Distance(Rigidbody2D Body, double xPosition)
+    {
+        double X_Distance;
+
+        X_Distance = xPosition - Body.position.x; 
+
+
+        int X_Direction = 0;
+
+        if (X_Distance < -0.05)
+        {
+            X_Direction = -1;
+        }
+        else if (X_Distance > 0.05)
+        {
+            X_Direction = 1;
+        }
+
+        return X_Direction;
+    }
+
+    private static int Find_Y_Distance(Rigidbody2D Body, double yPosition)
+    {
+        double Y_Distance;
+
+        Y_Distance = yPosition - Body.position.y; 
+
+
+        int Y_Direction = 0;
+
+        if (Y_Distance < -0.05)
+        {
+            Y_Direction = -1;
+        }
+        else if (Y_Distance > 0.05)
+        {
+            Y_Direction = 1;
+        }
+
+        return Y_Direction;
+    }
+
+
 
 
     private static void SavePosition(string AI_Name)
