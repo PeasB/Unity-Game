@@ -10,7 +10,7 @@
       <Description>Also comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Stick</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Stick</ObjectName>
     </Item>
@@ -21,7 +21,7 @@
       <Description>The book of life</Description>
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Black Book</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Book</ObjectName>
     </Item>
@@ -54,7 +54,7 @@
       <Description>A light source that can be carried around</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath>ItemSprites/E-Attendance Capture</PicPath>
+      <PicPath></PicPath>
       <Payload></Payload>
       <ObjectName>Item_Torch</ObjectName>
     </Item>
@@ -65,7 +65,7 @@
       <Description>A weak but useful hammer. Looks like it will break after one hit.</Description>
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
-      <PicPath>Items[64]</PicPath>
+      <PicPath>ItemSprites/Axe</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Hammer</ObjectName>
     </Item>
@@ -76,7 +76,7 @@
       <Description>A key that opens a door</Description>
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Key</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Key</ObjectName>
     </Item>
@@ -89,7 +89,7 @@
       <Stackable>0</Stackable>
       <PicPath></PicPath>
       <Payload></Payload>
-      <ObjectName>Item_Key</ObjectName>
+      <ObjectName>Item_CD</ObjectName>
     </Item>
 
     <Item>
@@ -98,7 +98,7 @@
       <Description>Comes from trees!</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
-      <PicPath>Assets/Sprites/Items/Items_22</PicPath>
+      <PicPath>ItemSprites/Logs</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Wood</ObjectName>
     </Item>
@@ -112,8 +112,10 @@
     
     <Craft>
       <ID>1</ID>
-      <ID>4</ID>
-      <NewID>5</NewID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <NewID>9</NewID>
     </Craft>
     
     <Craft>
@@ -121,7 +123,7 @@
       <ID>3</ID>
       <NewID>6</NewID>
     </Craft>
-       
+     
 
         
   </Crafting>
