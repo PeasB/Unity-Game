@@ -76,6 +76,10 @@
      <Compile Include="Assets\Scripts\Scene 1\MoveCar.cs" />
      <Compile Include="Assets\Scripts\Scene 1\TextScreenManager.cs" />
      <Compile Include="Assets\Scripts\Scene 2\PathStopper.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Scene 2\StopCar.cs" />
+=======
+>>>>>>> origin/master
      <Compile Include="Assets\Scripts\Scene Transition\Other\BrokenDoor.cs" />
      <Compile Include="Assets\Scripts\Scene Transition\Other\LockedDoor.cs" />
      <Compile Include="Assets\Scripts\Scene Transition\SceneTransition.cs" />
