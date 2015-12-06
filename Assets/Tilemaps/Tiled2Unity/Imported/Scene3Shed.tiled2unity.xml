@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 12/6/2015 1:20:02 AM-->
+<!--Last exported: 12/6/2015 1:26:15 AM-->
 <Tiled2Unity version="0.9.13.1">
   <AssignMaterial mesh="mesh_[00]_[01]" material="terrain_atlas" sortingLayerName="" sortingOrder="0" />
   <AssignMaterial mesh="mesh_[01]_[00]" material="IndoorTileset" sortingLayerName="" sortingOrder="1" />
   <AssignMaterial mesh="mesh_[02]_[00]" material="IndoorTileset" sortingLayerName="" sortingOrder="2" />
   <AssignMaterial mesh="mesh_[03]_[00]" material="IndoorTileset" sortingLayerName="" sortingOrder="3" />
   <Prefab name="Scene3Shed" numTilesWide="7" numTilesHigh="6" tileWidth="32" tileHeight="32" exportScale="0.032" mapWidthInPixels="224" mapHeightInPixels="192">
-    <GameObject name="Floor_00" x="0" y="0">
+    <GameObject name="Floor_00" x="0" y="0" isTrigger="true">
       <GameObject copy="mesh_[00]_[01]" opacity="1" />
       <GameObject name="Collision">
         <PolygonCollider2D>
