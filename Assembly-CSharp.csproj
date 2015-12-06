@@ -78,6 +78,9 @@
      <Compile Include="Assets\Scripts\Scene 1\TextScreenManager.cs" />
      <Compile Include="Assets\Scripts\Scene 2\PathStopper.cs" />
      <Compile Include="Assets\Scripts\Scene 2\StopCar.cs" />
+     <Compile Include="Assets\Scripts\Scene 3\PowerOn.cs" />
+     <Compile Include="Assets\Scripts\Scene 3\StoryPathChecker.cs" />
+     <Compile Include="Assets\Scripts\Scene 3\WayBack.cs" />
      <Compile Include="Assets\Scripts\Scene Transition\Other\BrokenDoor.cs" />
      <Compile Include="Assets\Scripts\Scene Transition\Other\LockedDoor.cs" />
      <Compile Include="Assets\Scripts\Scene Transition\SceneTransition.cs" />

@@ -11,10 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Scene 2</CurrentScene>
+    <CurrentScene>Scene 3 Outside</CurrentScene>
     <PlayerPosition>
-      <X>346.0565</X>
-      <Y>-944.9672</Y>
+      <X>397.1886</X>
+      <Y>-347.7314</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -214,6 +214,48 @@
             </Action>
           </MattAI>
           <KateAI>
+            <X>395.8111</X>
+            <Y>-348.5776</Y>
+            <Action>FollowPlayer</Action>
+          </KateAI>
+          <AprilAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </AprilAI>
+          <EthanAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </EthanAI>
+        </AI>
+      </Scene>
+      <Scene>
+        <SceneName>Scene 3 Shed</SceneName>
+        <AI>
+          <JoshAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </JoshAI>
+          <MattAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+          </MattAI>
+          <KateAI>
             <X>
             </X>
             <Y>
@@ -343,6 +385,14 @@
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
+      <ID>3.3.1</ID>
+      <Outcome>3</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.5.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
       <ID>4</ID>
       <Outcome>0</Outcome>
     </Situation>
@@ -359,6 +409,9 @@
     </Scene>
     <Scene>
       <SceneName>Scene 3 Outside</SceneName>
+      <ObjectName>Out Back Conversation</ObjectName>
+      <ObjectName>Almost At Breaker Conversation</ObjectName>
+      <ObjectName>Noises Heard Conversation</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Cabin Scene</SceneName>

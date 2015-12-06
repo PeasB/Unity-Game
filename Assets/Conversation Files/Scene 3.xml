@@ -164,7 +164,7 @@
 		    <Level1>
 
 		      <initialDialogue>
-		        <DialogueCount>3</DialogueCount>
+		        <DialogueCount>4</DialogueCount>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
 		          <Text>Kate: Alright I take back what I said, you're the man!</Text>
@@ -176,6 +176,10 @@
 		        <Dialogue>
 		          <Conditions>None</Conditions>
 		          <Text>Kate: Don't ruin it.</Text>
+		        </Dialogue>
+		       	<Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Ethan: Let's head back to the cabin.</Text>
 		        </Dialogue>
 		      </initialDialogue>
 
@@ -284,7 +288,7 @@
 		        </Dialogue>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
-		          <Text>Kate: Ok I'm freaking ou right now let's go back.</Text>
+		          <Text>Kate: Ok I'm freaking out right now let's go back.</Text>
 		        </Dialogue>
 		      </initialDialogue>
 

@@ -22,6 +22,7 @@ public class ConversationManager {
     private int ConversationLevel;
     private XmlNode Conversation; //The Conversation based on the supplied ID
 	private XmlDocument Save;
+	private int SceneID;
 
 
     //Publics: mainly to tell states.
@@ -52,6 +53,7 @@ public class ConversationManager {
     {
 
         ID = ConvoID; //Load ID property
+		this.SceneID = SceneID;
         IsActive = true;
 		ConversationLevel = 1;
 		DialogueLevel = 1;
@@ -230,6 +232,7 @@ public class ConversationManager {
                 {
                     if(DialogueLevel >= int.Parse(DialogueNode.SelectSingleNode("DialogueCount").InnerText) + 2)
                     {
+						ChooseChoice(3);
                         ShouldEndConversation();
                     }
 
@@ -289,7 +292,7 @@ public class ConversationManager {
     {
 
 		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in HasChoices Node)
-		if (ChoiceNumber != 0) 
+		if (ChoiceNumber != 3) 
 		{
 			//Other Conquences.
 			foreach (XmlNode Conquence in Conversation.SelectSingleNode("Level" + ConversationLevel + "/Choice" + ChoiceNumber + "/Conquences")) 
@@ -324,7 +327,7 @@ public class ConversationManager {
         //Path Conquences
         foreach (XmlNode Situation in Save.SelectSingleNode("SaveData/StoryPaths"))
         {
-            if (Situation.SelectSingleNode("ID").InnerText == (ID + "." + ConversationLevel).ToString())
+            if (Situation.SelectSingleNode("ID").InnerText == (SceneID + "."  + ID + "." + ConversationLevel).ToString())
             {
                 Situation.SelectSingleNode("Outcome").InnerText = ChoiceNumber.ToString();
             }
@@ -340,7 +343,7 @@ public class ConversationManager {
 
 
 		//ChoiceNumber will be Zero if there was no choice to begin with. ("No" in AreChoices Node)
-		if (ChoiceNumber != 0) 
+		if (ChoiceNumber != 3) 
 		{
 			//Process Dialogue Afterwards
 			DialogueLevel = 1; //The Dialogue Node to start at in Additional Dialogue.
