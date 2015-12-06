@@ -3,22 +3,22 @@
   <Scenes>
     
     <Scene>
-      <SceneName></SceneName>
+      <SceneName>Scene 2</SceneName>
       
       <Part1>
         
         <Case1>          
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>343.6092</X>
+            <Y>-944.9672</Y>
           </JoshAI>
           <MattAI>
             <X></X>
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>345.4</X>
+            <Y>-982.8</Y>
           </KateAI>
           <AprilAI>
             <X></X>
@@ -32,16 +32,16 @@
 
         <Case2>
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>346.0565</X>
+            <Y>-944.9672</Y>
           </JoshAI>
           <MattAI>
             <X></X>
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>343.89</X>
+            <Y>-982.8</Y>
           </KateAI>
           <AprilAI>
             <X></X>
@@ -55,16 +55,16 @@
 
         <Case3>
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>346.0565</X>
+            <Y>-912</Y>
           </JoshAI>
           <MattAI>
             <X></X>
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>343.6092</X>
+            <Y>-944.9672</Y>
           </KateAI>
           <AprilAI>
             <X></X>
@@ -77,6 +77,75 @@
         </Case3>
 
         <Case4>
+          <JoshAI>
+            <X>363.0623</X>
+            <Y>-895.1077</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>346.0565</X>
+            <Y>-944.9672</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Case4>
+
+        <Case5>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>346.0565</X>
+            <Y>-912</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Case5>
+
+        <Case6>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>365.0854</X>
+            <Y>-897.1664</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Case6>
+
+        <Case7>
           <JoshAI>
             <X></X>
             <Y></Y>
@@ -97,7 +166,7 @@
             <X></X>
             <Y></Y>
           </EthanAI>
-        </Case4>
+        </Case7>
         
       </Part1>
 
