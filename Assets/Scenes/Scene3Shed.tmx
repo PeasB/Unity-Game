@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="7" height="6" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="IndoorTileset" tilewidth="32" tileheight="32" spacing="8" tilecount="18">
+  <image source="../Sprites/IndoorTileset.png" width="232" height="112"/>
+  <tile id="9">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="21.125" width="31.875" height="11"/>
+   </objectgroup>
+  </tile>
+  <tile id="10">
+   <objectgroup draworder="index">
+    <object id="0" x="21.125" y="21" width="11" height="11"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="19" name="terrain_atlas" tilewidth="32" tileheight="32" spacing="8" tilecount="1156">
+  <image source="../Sprites/terrain_atlas.png" width="1352" height="1352"/>
+  <tile id="366">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="0" width="32.25" height="31.75"/>
+   </objectgroup>
+  </tile>
+  <tile id="433">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="0.25" width="32" height="31.625"/>
+   </objectgroup>
+  </tile>
+  <tile id="434">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.125" y="-0.25" width="32" height="32.125"/>
+   </objectgroup>
+  </tile>
+  <tile id="435">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.25" width="32.25" height="32.375"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Floor" width="7" height="6">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAPjjAyMBwD4qNA3Ahlw8AxqBhI7ggUI+trZETQyPpg/GNIegkBAMKEDiU=
+  </data>
+ </layer>
+ <layer name="Walls" width="7" height="6">
+  <data encoding="base64" compression="zlib">
+   eJzjZmBg4MKCuRkYFgDpBAYsgAuPHFSeZH0gOaCdCUD6ADoGih8AAOZnCbc=
+  </data>
+ </layer>
+</map>
