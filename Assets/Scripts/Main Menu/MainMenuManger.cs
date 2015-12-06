@@ -67,8 +67,8 @@ public class MainMenuManger : MonoBehaviour {
 
 	public void StartNewGameConfirmed()
 	{
-		GameObject.Find ("Canvas").transform.FindChild("Erase Save").transform.
 
+		//GameObject.Find("Canvas").transform.Find("Erase Save")
 
 	}
 
