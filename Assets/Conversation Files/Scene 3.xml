@@ -280,7 +280,7 @@
 		        </Dialogue>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
-		          <Text>Kate: Obviously it's a tre! but who cut it down?</Text>
+		          <Text>Kate: Obviously it's a tree! but who cut it down?</Text>
 		        </Dialogue>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
@@ -325,7 +325,7 @@
 		    <Level1>
 
 		      <initialDialogue>
-		        <DialogueCount>2</DialogueCount>
+		        <DialogueCount>3</DialogueCount>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
 		          <Text>Ethan: What the hell? Who did this? Hello?</Text>
@@ -334,6 +334,52 @@
 		          <Conditions>None</Conditions>
 		          <Text>Ethan: Ok guys real funny trying to scare me haha.</Text>
 		        </Dialogue>
+		       	<Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Ethan: Im going to head back to the cabin.</Text>
+		        </Dialogue>
+		      </initialDialogue>
+
+		      <TimeToChoose>None</TimeToChoose>
+		      <HasChoices>No</HasChoices>
+		      
+		    </Level1>
+	     
+	</Conversation>
+	<Conversation>
+
+		  <ID>8</ID>
+
+		    <Level1>
+
+		      <initialDialogue>
+		        <DialogueCount>1</DialogueCount>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Ethan: Better head Back to the Cabin.</Text>
+		        </Dialogue>
+
+		      </initialDialogue>
+
+		      <TimeToChoose>None</TimeToChoose>
+		      <HasChoices>No</HasChoices>
+		      
+		    </Level1>
+	     
+	</Conversation>
+	<Conversation>
+
+		  <ID>9</ID>
+
+		    <Level1>
+
+		      <initialDialogue>
+		        <DialogueCount>1</DialogueCount>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Ethan: Don't think the Shed is that way.</Text>
+		        </Dialogue>
+
 		      </initialDialogue>
 
 		      <TimeToChoose>None</TimeToChoose>

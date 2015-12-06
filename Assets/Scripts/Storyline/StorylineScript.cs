@@ -76,7 +76,7 @@ public class StorylineScript : MonoBehaviour {
     {
         if (Application.loadedLevelName == "Scene 2")
         {
-            #region Scene 2;
+            #region Scene 2
             if (ScenePart == 1)
             {
                 #region Part 1
@@ -89,11 +89,66 @@ public class StorylineScript : MonoBehaviour {
                 AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
                 AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
 
-                //AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                //AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
 
-                //AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                //AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
 
                 #endregion
+            }
+            else if (ScenePart == 2)
+            {
+                
+            }
+            else if (ScenePart == 3)
+            {
+
+            }
+            else if (ScenePart == 4)
+            {
+
+            }
+
+            #endregion
+        }
+        else if (Application.loadedLevelName == "Scene 3")
+        {
+            #region Scene 3
+            if (ScenePart == 1)
+            {
+                #region Part 1
+                //You go to the cabin by yourself
+                //AI kate moves out of the way
+
+                AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
+
+                #endregion
+            }
+            else if (ScenePart == 2)
+            {
+                #region Part 2
+                //Kate follows you to the shed
+                //There is no part 2 in CutSceneEvents since there is no cutscene
+
+                AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
+                #endregion
+            }
+            else if (ScenePart == 3)
+            {
+
+            }
+            else if (ScenePart == 4)
+            {
+
+            }
+            #endregion
+        }
+        else if (Application.loadedLevelName == "Scene 3 Outside")
+        {
+            #region Scene 3 Outside
+            if (ScenePart == 1)
+            {
+
             }
             else if (ScenePart == 2)
             {
@@ -107,12 +162,11 @@ public class StorylineScript : MonoBehaviour {
             {
 
             }
-
             #endregion
         }
-        else if (Application.loadedLevelName == "Scene 2")
+        else if (Application.loadedLevelName == "Scene 3 Shed")
         {
-            #region Scene 3
+            #region Scene 3 Shed
             if (ScenePart == 1)
             {
 
