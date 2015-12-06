@@ -158,6 +158,7 @@
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 8.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Ryans Test Scene.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Scene 1 Road.tiled2unity.xml" />
+    <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Scene3Shed.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Walking Sounds Test Tilemap.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tilemaps\Tiled2Unity\License.txt" />

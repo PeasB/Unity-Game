@@ -123,9 +123,7 @@
     </None>
     <None Include="Assets\Scripts\Extras\PixelPerfect\README.txt" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
-    <None Include="Assets\Scripts\ItemsPlus\Items.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\Scripts\ItemsPlus\Items.xml" />
     <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml" />
     <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
     <None Include="Assets\Scripts\SaveGame.xml">
@@ -142,6 +140,7 @@
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 8.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Ryans Test Scene.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Scene 1 Road.tiled2unity.xml" />
+    <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Scene3Shed.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Walking Sounds Test Tilemap.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tilemaps\Tiled2Unity\License.txt" />

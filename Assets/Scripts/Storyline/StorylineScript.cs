@@ -76,8 +76,7 @@ public class StorylineScript : MonoBehaviour {
     {
         if (Application.loadedLevelName == "Scene 2")
         {
-            #region Scene 2
-
+            #region Scene 2;
             if (ScenePart == 1)
             {
                 #region Part 1
@@ -90,6 +89,9 @@ public class StorylineScript : MonoBehaviour {
                 AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
                 AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
 
+                //AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+
+                //AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
 
                 #endregion
             }
@@ -151,7 +153,7 @@ public class StorylineScript : MonoBehaviour {
         {
             if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
             {
-                SetUpScene(int.Parse(node.SelectSingleNode("ScenePart").InnerText));
+                //SetUpScene(int.Parse(node.SelectSingleNode("ScenePart").InnerText));
                 break;
             }
         }

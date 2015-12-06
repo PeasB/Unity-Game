@@ -9,7 +9,6 @@ public class AI_Events : MonoBehaviour {
     public static int PreformEvent (Rigidbody2D Body, int Speed, Animator Anim, int EventNumber, double X_Original, double Y_Original, int CaseStep)
     {
         //SavePosition(Body.gameObject.name);  //<---- For saving an AI's location
-        
 
         //Var for AI x and y
         float XMove = 0;
@@ -24,35 +23,85 @@ public class AI_Events : MonoBehaviour {
         {
             if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
             {
-                if (Body.name == "AI Josh")
-                {
-                   XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText));
-                   YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText));
-                }
-                else if (Body.name == "AI Matt")
-                {
+               
+                    if (Body.name == "AI Josh")
+                    {
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText != "")
+                        {
+                            XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText));
+                            YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText));
+                        }
+                        else
+                        {
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
+                            print("Done");
+                        }
+                                                                        
+                    }
+                    else if (Body.name == "AI Matt")
+                    {
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/Y").InnerText != "")
+                        {
+                            XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/X").InnerText));
+                            YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/Y").InnerText));
+                        }
+                        else
+                        {
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
+                            print("Done");
+                        }                                                
 
-                }
-                else if (Body.name == "AI Kate")
-                {
+                    }
+                    else if (Body.name == "AI Kate")
+                    {
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/Y").InnerText != "")
+                        {
+                            XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/X").InnerText));
+                            YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/Y").InnerText));
+                        }
+                        else
+                        {
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
+                            print("Done");
+                        }
+                                                
+                    }
+                    else if (Body.name == "AI April")
+                    {
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/Y").InnerText != "")
+                        {
+                            XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/X").InnerText));
+                            YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/Y").InnerText));
+                        }
+                        else
+                        {
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
+                            print("Done");
+                        }
+                        
+                    }
+                    else if (Body.name == "AI Ethan")
+                    {
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/Y").InnerText != "")
+                        {
+                            XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/X").InnerText));
+                            YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/Y").InnerText));
+                        }
+                        else
+                        {
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
+                            print("Done");
+                        }
+                                                
+                    }
 
-                }
-                else if (Body.name == "AI April")
-                {
 
-                }
-                else if (Body.name == "AI Ethan")
-                {
+                    if (XMove == 0 && YMove == 0)
+                    {
+                        CaseStep++;
+                    }
 
-                }
-
-
-                if (XMove == 0 && YMove == 0)
-                {
-                    CaseStep++;
-                }
-
-
+                
 
                 break;
             }

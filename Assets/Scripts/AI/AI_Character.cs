@@ -14,7 +14,7 @@ public class AI_Character : MonoBehaviour {
     int PreviousEventType = 0; //Checks if the EventType has made a change, if so, create new Original X and Y points
     double Original_X = 0;
     double Original_Y = 0;
-    int EventStepCase = 0; //The step case for an event. 
+    int EventStepCase = 1; //The step case for an event. 
 
     int PlayerPositionCounter = 10; //Everytime it hits 10, take a snapshot of the players x and y position
     double[,] PlayerPreviousPosition = new double[120, 2]; //int[,] PlayerPreviousPosition = new int[120, 2];
@@ -505,7 +505,7 @@ public class AI_Character : MonoBehaviour {
             {
                 Original_X = Body.position.x;
                 Original_Y = Body.position.y;
-                EventStepCase = 0;
+                EventStepCase = 1;
 
                 PreviousEventType = EventType;
 

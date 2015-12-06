@@ -10,7 +10,7 @@ public class AreaEvent : MonoBehaviour {
 
     public int ConversationID;
 	public int SceneNum;
-    public int StoryPart = 0; //if this var == 0, do nothing. If a number is assigned, preform a task after the conversation is done
+    public int StoryPart; //if this var == 0, do nothing. If a number is assigned, preform a task after the conversation is done
 	public bool CanReactivate;
 	public bool ButtonActivated;
     [HideInInspector]
@@ -117,7 +117,7 @@ public class AreaEvent : MonoBehaviour {
             }
 
             //Delete object
-			DeleteObjects.DeleteObject(this.gameObject.name);
+			//DeleteObjects.DeleteObject(this.gameObject.name);
 			Destroy(this.gameObject);
 		}
 
