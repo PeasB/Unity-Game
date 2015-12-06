@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\AES Crypto\AES_Crypto.cs" />
      <Compile Include="Assets\Scripts\AI\AI_Character.cs" />
      <Compile Include="Assets\Scripts\AI\AI_Events.cs" />
+     <Compile Include="Assets\Scripts\AI\DefaultDirection.cs" />
      <Compile Include="Assets\Scripts\Conversation Scripts\AreaEvent.cs" />
      <Compile Include="Assets\Scripts\Conversation Scripts\Conversation.cs" />
      <Compile Include="Assets\Scripts\DeleteObjects\DeleteObjects.cs" />
