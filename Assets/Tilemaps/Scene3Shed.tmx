@@ -37,6 +37,9 @@
   </tile>
  </tileset>
  <layer name="Floor" width="7" height="6">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYMAPjjAyMBwD4qNA3Ahlw8AxqBhI7ggUH2VE6GtkRNDHkORg/GNIegkBADUJD7E=
   </data>
