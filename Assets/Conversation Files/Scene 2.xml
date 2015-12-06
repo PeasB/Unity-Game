@@ -207,5 +207,28 @@
 		      <HasChoices>No</HasChoices>
 
 		    </Level1>
-	 </Conversation>	 
+	 </Conversation>	
+	  <Conversation>
+
+		  <ID>5</ID>
+
+		    <Level1>
+
+		      <initialDialogue>
+		        <DialogueCount>2</DialogueCount>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Ethan: The cabin is just up the path.</Text>
+		        </Dialogue>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Josh: Race you there!</Text>
+		        </Dialogue>
+		      </initialDialogue>
+
+		      <TimeToChoose>None</TimeToChoose>
+		      <HasChoices>No</HasChoices>
+
+		    </Level1>
+	 </Conversation> 
 </Conversations>

@@ -64,6 +64,15 @@ public class MainMenuManger : MonoBehaviour {
         Application.LoadLevel(SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText);
     }
 
+
+	public void StartNewGameConfirmed()
+	{
+		GameObject.Find ("Canvas").transform.FindChild("Erase Save").transform.
+
+
+	}
+
+
 	//Called when Player Clicks Quit Game.
 	public void QuitGame()
 	{
