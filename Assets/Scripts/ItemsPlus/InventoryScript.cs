@@ -350,9 +350,9 @@ public class InventoryScript : MonoBehaviour {
         {
             //Sprite ItemPicture = Resources.Load<Sprite>(CraftingTable[i, 3]);                        
 
-            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]); //Assets/Sprites/E-Attendance Capture.PNG
+            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]);
             print(UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite);
-            //print(CraftingTable[i, 3]);
+            print(CraftingTable[i, 3]);
             
         }
 

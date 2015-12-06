@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class UI_Inventory : MonoBehaviour {
 
     //crafting menu
-    public GameObject Canvas;
+    private GameObject Canvas;
     public GameObject Inventory;
     public GameObject Crafting;
     public GameObject Map;
@@ -56,6 +56,7 @@ public class UI_Inventory : MonoBehaviour {
     void Start ()
     {
         
+
 
         Canvas = GameObject.Find("Inventory Canvas");
         //Make if statement

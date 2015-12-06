@@ -111,8 +111,11 @@
   <Crafting>
     
     <Craft>
-      <ID>9</ID>
-      <NewID>1</NewID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <NewID>9</NewID>
     </Craft>
     
     <Craft>
