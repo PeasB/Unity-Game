@@ -12,7 +12,7 @@ public class WayBack : MonoBehaviour {
 			transform.FindChild("Wall").gameObject.SetActive(true);
 			transform.FindChild("Noises Heard Conversation").gameObject.SetActive(true);
 			transform.FindChild("Wall Blocking").gameObject.SetActive(false);
-			this.gameObject.GetComponent<WayBack>().enabled = true;
+			this.gameObject.GetComponent<WayBack>().enabled = false;
 		}
 
 

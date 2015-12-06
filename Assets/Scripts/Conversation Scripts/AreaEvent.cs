@@ -57,6 +57,7 @@ public class AreaEvent : MonoBehaviour {
 			{
 				//Start specified Conversation (ID Number references Conversation file).
 				ConversationInstance.StartConversation(SceneNum,ConversationID);
+				//Other.GetComponent<Rigidbody2D>().
 				JustActivated = true;
 			}
 		
