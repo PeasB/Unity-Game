@@ -126,14 +126,10 @@
     </None>
     <None Include="Assets\Scripts\Extras\PixelPerfect\README.txt" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
-    <None Include="Assets\Scripts\ItemsPlus\Items.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\Scripts\ItemsPlus\Items.xml" />
     <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml" />
     <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
-    <None Include="Assets\Scripts\SaveGame.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\Scripts\SaveGame.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Cabin Tilemap.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 1.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 2.tiled2unity.xml" />

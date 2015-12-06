@@ -33,9 +33,31 @@ public class AI_Events : MonoBehaviour {
                         }
                         else
                         {
-                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
-                            print("Done");
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+
+                        //Read in SaveGame.xml
+                        XmlDocument xSaveGameDoc = new XmlDocument();
+                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                        //Find current scene then find ScenePart. 
+                        foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                        {
+                            if (Application.loadedLevelName == Xnode.SelectSingleNode("SceneName").InnerText)
+                            {
+                                Xnode.SelectSingleNode("AI/JoshAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/JoshAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/JoshAI/Action").InnerText = "";
+                                Xnode.SelectSingleNode("AI/JoshAI/EventType").InnerText = "";
+                                Xnode.SelectSingleNode("AI/JoshAI/CaseStep").InnerText = "";
+
+                                break;
+                            }
                         }
+
+                        //Save XML
+                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+                    }
                                                                         
                     }
                     else if (Body.name == "AI Matt")
@@ -47,9 +69,29 @@ public class AI_Events : MonoBehaviour {
                         }
                         else
                         {
-                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
-                            print("Done");
-                        }                                                
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+
+                        //Read in SaveGame.xml
+                        XmlDocument xSaveGameDoc = new XmlDocument();
+                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                        //Find current scene then find ScenePart. 
+                        foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                        {
+                            if (Application.loadedLevelName == Xnode.SelectSingleNode("SceneName").InnerText)
+                            {
+                                Xnode.SelectSingleNode("AI/MattAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/MattAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/MattAI/Action").InnerText = "";
+                                Xnode.SelectSingleNode("AI/MattAI/EventType").InnerText = "";
+                                Xnode.SelectSingleNode("AI/MattAI/CaseStep").InnerText = "";
+                            }
+                        }
+
+                        //Save XML
+                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+                    }                                                
 
                     }
                     else if (Body.name == "AI Kate")
@@ -61,9 +103,29 @@ public class AI_Events : MonoBehaviour {
                         }
                         else
                         {
-                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
-                            print("Done");
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+
+                        //Read in SaveGame.xml
+                        XmlDocument xSaveGameDoc = new XmlDocument();
+                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                        //Find current scene then find ScenePart. 
+                        foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                        {
+                            if (Application.loadedLevelName == Xnode.SelectSingleNode("SceneName").InnerText)
+                            {
+                                Xnode.SelectSingleNode("AI/KateAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/KateAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/KateAI/Action").InnerText = "";
+                                Xnode.SelectSingleNode("AI/KateAI/EventType").InnerText = "";
+                                Xnode.SelectSingleNode("AI/KateAI/CaseStep").InnerText = "";
+                            }
                         }
+
+                        //Save XML
+                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+                    }
                                                 
                     }
                     else if (Body.name == "AI April")
@@ -75,9 +137,29 @@ public class AI_Events : MonoBehaviour {
                         }
                         else
                         {
-                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
-                            print("Done");
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+
+                        //Read in SaveGame.xml
+                        XmlDocument xSaveGameDoc = new XmlDocument();
+                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                        //Find current scene then find ScenePart. 
+                        foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                        {
+                            if (Application.loadedLevelName == Xnode.SelectSingleNode("SceneName").InnerText)
+                            {
+                                Xnode.SelectSingleNode("AI/AprilAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/AprilAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/AprilAI/Action").InnerText = "";
+                                Xnode.SelectSingleNode("AI/AprilAI/EventType").InnerText = "";
+                                Xnode.SelectSingleNode("AI/AprilAI/CaseStep").InnerText = "";
+                            }
                         }
+
+                        //Save XML
+                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+                    }
                         
                     }
                     else if (Body.name == "AI Ethan")
@@ -89,9 +171,29 @@ public class AI_Events : MonoBehaviour {
                         }
                         else
                         {
-                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Stationary;
-                            print("Done");
+                            Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+
+                        //Read in SaveGame.xml
+                        XmlDocument xSaveGameDoc = new XmlDocument();
+                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                        //Find current scene then find ScenePart. 
+                        foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                        {
+                            if (Application.loadedLevelName == Xnode.SelectSingleNode("SceneName").InnerText)
+                            {
+                                Xnode.SelectSingleNode("AI/EthanAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/EthanAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
+                                Xnode.SelectSingleNode("AI/EthanAI/EventType").InnerText = "";
+                                Xnode.SelectSingleNode("AI/EthanAI/CaseStep").InnerText = "";
+                            }
                         }
+
+                        //Save XML
+                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+                    }
                                                 
                     }
 
@@ -99,7 +201,66 @@ public class AI_Events : MonoBehaviour {
                     if (XMove == 0 && YMove == 0)
                     {
                         CaseStep++;
-                    }
+
+                    //---Set values for save data---
+                    //Read in SaveGame.xml
+                    XmlDocument xSaveGameDoc = new XmlDocument();
+                    xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                    //Find current scene then find ScenePart. 
+                    foreach (XmlNode Xnode in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                    {
+                        if (Application.loadedLevelName == Xnode.SelectSingleNode("SceneName").InnerText)
+                        {
+
+                            //Update xml
+                            if (Body.name == "AI Josh")
+                            {
+                                Xnode.SelectSingleNode("AI/JoshAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/JoshAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/JoshAI/Action").InnerText = "Event";
+                                Xnode.SelectSingleNode("AI/JoshAI/EventType").InnerText = EventNumber.ToString();
+                                Xnode.SelectSingleNode("AI/JoshAI/CaseStep").InnerText = CaseStep.ToString();
+                            }
+                            else if (Body.name == "AI Matt")
+                            {
+                                Xnode.SelectSingleNode("AI/MattAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/MattAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/MattAI/Action").InnerText = "Event";
+                                Xnode.SelectSingleNode("AI/MattAI/EventType").InnerText = EventNumber.ToString();
+                                Xnode.SelectSingleNode("AI/MattAI/CaseStep").InnerText = CaseStep.ToString();
+                            }
+                            else if (Body.name == "AI Kate")
+                            {
+                                Xnode.SelectSingleNode("AI/KateAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/KateAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/KateAI/Action").InnerText = "Event";
+                                Xnode.SelectSingleNode("AI/KateAI/EventType").InnerText = EventNumber.ToString();
+                                Xnode.SelectSingleNode("AI/KateAI/CaseStep").InnerText = CaseStep.ToString();
+                            }
+                            else if (Body.name == "AI April")
+                            {
+                                Xnode.SelectSingleNode("AI/AprilAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/AprilAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/AprilAI/Action").InnerText = "Event";
+                                Xnode.SelectSingleNode("AI/AprilAI/EventType").InnerText = EventNumber.ToString();
+                                Xnode.SelectSingleNode("AI/AprilAI/CaseStep").InnerText = CaseStep.ToString();
+                            }
+                            else if (Body.name == "AI Ethan")
+                            {
+                                Xnode.SelectSingleNode("AI/EthanAI/X").InnerText = Body.position.x.ToString();
+                                Xnode.SelectSingleNode("AI/EthanAI/Y").InnerText = Body.position.y.ToString();
+                                Xnode.SelectSingleNode("AI/EthanAI/Action").InnerText = "Event";
+                                Xnode.SelectSingleNode("AI/EthanAI/EventType").InnerText = EventNumber.ToString();
+                                Xnode.SelectSingleNode("AI/EthanAI/CaseStep").InnerText = CaseStep.ToString();
+                            }
+                        }
+                    }               
+
+                    //Save XML
+                    xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+                 }
 
                 
 

@@ -131,6 +131,8 @@ public class StorylineScript : MonoBehaviour {
                 //There is no part 2 in CutSceneEvents since there is no cutscene
 
                 AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
+                              
+
                 #endregion
             }
             else if (ScenePart == 3)
