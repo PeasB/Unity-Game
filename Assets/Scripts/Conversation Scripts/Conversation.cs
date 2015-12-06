@@ -62,7 +62,7 @@ public class ConversationManager {
 
         //Load Scene Conversation XML
         XmlDocument Doc = new XmlDocument();
-        Doc.Load("Assets/Conversation Files/Scene " + SceneID + ".xml");
+		Doc.LoadXml(Resources.Load("Conversation Files/Scene " + SceneID).ToString());
 
 		//Load Current Save
 		Save = new XmlDocument();

@@ -231,4 +231,42 @@
 
 		    </Level1>
 	 </Conversation> 
+	 <Conversation>
+
+		  <ID>6</ID>
+
+		    <Level1>
+
+		      <initialDialogue>
+		        <DialogueCount>1</DialogueCount>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Matt: Better head towards the cabin.</Text>
+		        </Dialogue>
+		      </initialDialogue>
+
+		      <TimeToChoose>None</TimeToChoose>
+		      <HasChoices>No</HasChoices>
+
+		    </Level1>
+	 </Conversation>
+	 <Conversation>
+
+		  <ID>7</ID>
+
+		    <Level1>
+
+		      <initialDialogue>
+		        <DialogueCount>1</DialogueCount>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Matt: Better head in the cabin.</Text>
+		        </Dialogue>
+		      </initialDialogue>
+
+		      <TimeToChoose>None</TimeToChoose>
+		      <HasChoices>No</HasChoices>
+
+		    </Level1>
+	 </Conversation>
 </Conversations>

@@ -13,7 +13,8 @@ public class AreaEvent : MonoBehaviour {
 		Up = 2,
 		Down = 0,
 		Left = 3,
-		Right = 1
+		Right = 1,
+		Current = 4
 	}
 
 
@@ -60,7 +61,11 @@ public class AreaEvent : MonoBehaviour {
 				//Lock Player Location.
 				Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 				Other.GetComponent<Player>().enabled = false;
-				Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
+
+				if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.
+					Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
+
+				Other.GetComponent<Animator>().SetBool("Moving",false);
 				PlayerObject = Other.gameObject;
 			}
         }
@@ -79,7 +84,11 @@ public class AreaEvent : MonoBehaviour {
 				//Lock Player Location.
 				Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 				Other.GetComponent<Player>().enabled = false;
-				Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
+
+				if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.
+					Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
+
+				Other.GetComponent<Animator>().SetBool("Moving",false);
 				PlayerObject = Other.gameObject;
 
 				JustActivated = true;

@@ -56,15 +56,15 @@
      <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Editor\SortingLayerExposedEditor.cs" />
      <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Editor\Tiled2UnityMenuItems.cs" />
      <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Editor\TiledAssetPostProcessor.cs" />
-     <None Include="Assets\Conversation Files\Scene 1.xml" />
+     <None Include="Assets\Resources\Conversation Files\Scene 1.xml" />
      <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
-     <None Include="Assets\Conversation Files\Template.xml" />
+     <None Include="Assets\Resources\Conversation Files\Template.xml" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 6.tiled2unity.xml" />
      <None Include="Assets\Scripts\SaveGame.xml" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Shaders\Diffuse Shader.shader" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Ryans Test Scene.tiled2unity.xml" />
      <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
-     <None Include="Assets\Conversation Files\Scene 3.xml" />
+     <None Include="Assets\Resources\Conversation Files\Scene 3.xml" />
      <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Shaders\shaTiledMap.shader" />
@@ -81,7 +81,7 @@
      <None Include="Assets\Xbox Controller Buttons\Xbox 360 Button Pack 3\license.txt" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 8.tiled2unity.xml" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Materials\_ReadMe.txt" />
-     <None Include="Assets\Conversation Files\Scene 2.xml" />
+     <None Include="Assets\Resources\Conversation Files\Scene 2.xml" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Scripts\AI\CutSceneEvents.xml" />
      <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 3.tiled2unity.xml" />
