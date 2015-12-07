@@ -151,10 +151,8 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
+            <X></X>
+            <Y></Y>
             <Action>
             </Action>
             <EventType>
@@ -175,10 +173,8 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
+            <X></X>
+            <Y></Y>
             <Action>
             </Action>
             <EventType>
@@ -187,24 +183,18 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -240,9 +230,12 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -551,7 +544,7 @@
       <Josh>100</Josh>
       <Kate>100</Kate>
       <April>100</April>
-      <Ethan>100</Ethan>
+      <Ethan>70</Ethan>
     </Matt>
     <Kate>
       <Josh>100</Josh>
@@ -575,7 +568,7 @@
   <StoryPaths>
     <Situation>
       <ID>1.1.1</ID>
-      <Outcome>2</Outcome>
+      <Outcome>1</Outcome>
     </Situation>
     <Situation>
       <ID>2.0.1</ID>
@@ -583,11 +576,11 @@
     </Situation>
     <Situation>
       <ID>2.1.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>2.2.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>2.3.1</ID>
@@ -599,7 +592,7 @@
     </Situation>
     <Situation>
       <ID>2.5.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>3.0.1</ID>
@@ -650,6 +643,7 @@
       <SceneName>Scene 2</SceneName>
       <SceneName>Scene 3 Outside Ethan</SceneName>
       <SceneName>Scene 3 Outside</SceneName>
+      <ObjectName>Item_Wood</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 3</SceneName>
@@ -679,5 +673,6 @@
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
     <ItemID>4</ItemID>
+    <ItemID>9</ItemID>
   </Inventory>
 </SaveData>

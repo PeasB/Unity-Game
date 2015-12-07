@@ -25,7 +25,7 @@ public class LeaveScene : MonoBehaviour {
         if (Timer <= 0)
         {
             Car.CanDrive = false;
-			SceneTransition.DoSceneTransition("Scene 2", 350, -983);
+			SceneTransition.DoSceneTransition("Scene 2", 348, -983.75);
         }
             
 

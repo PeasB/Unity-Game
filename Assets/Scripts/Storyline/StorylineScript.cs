@@ -89,9 +89,9 @@ public class StorylineScript : MonoBehaviour {
                 AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
                 AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
 
-                //AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
+                AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
 
-                //AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
+                AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.FollowPlayer;
 
                 #endregion
             }
