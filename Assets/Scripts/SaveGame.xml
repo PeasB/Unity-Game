@@ -13,17 +13,20 @@
   <SaveState>
     <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>359.304</X>
+      <Y>-901.251</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -83,11 +86,16 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
-            <EventType></EventType>
-            <CaseStep></CaseStep>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -143,10 +151,8 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
+            <X>363.0912</X>
+            <Y>-895.1212</Y>
             <Action>
             </Action>
             <EventType>
@@ -167,10 +173,8 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
+            <X>365.1012</X>
+            <Y>-897.1207</Y>
             <Action>
             </Action>
             <EventType>
@@ -179,24 +183,18 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X>359.3516</X>
+            <Y>-900.3513</Y>
+            <Action>FollowPlayer</Action>
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X>360.9169</X>
+            <Y>-900.2552</Y>
+            <Action>FollowPlayer</Action>
             <EventType>
             </EventType>
             <CaseStep>
