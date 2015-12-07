@@ -13,13 +13,8 @@
   <SaveState>
     <CurrentScene></CurrentScene>
     <PlayerPosition>
-<<<<<<< HEAD
-      <X>359.7851</X>
-      <Y>-900.2793</Y>
-=======
       <X></X>
       <Y></Y>
->>>>>>> origin/master
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -156,13 +151,8 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-<<<<<<< HEAD
-            <X>363.0912</X>
-            <Y>-895.1212</Y>
-=======
             <X></X>
             <Y></Y>
->>>>>>> origin/master
             <Action>
             </Action>
             <EventType>
@@ -183,13 +173,8 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-<<<<<<< HEAD
-            <X>365.1012</X>
-            <Y>-897.1207</Y>
-=======
             <X></X>
             <Y></Y>
->>>>>>> origin/master
             <Action>
             </Action>
             <EventType>
@@ -198,30 +183,18 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-<<<<<<< HEAD
-            <X>362.7592</X>
-            <Y>-898.7253</Y>
-            <Action>FollowPlayer</Action>
-=======
             <X></X>
             <Y></Y>
             <Action></Action>
->>>>>>> origin/master
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-<<<<<<< HEAD
-            <X>361.4169</X>
-            <Y>-899.7554</Y>
-            <Action>FollowPlayer</Action>
-=======
             <X></X>
             <Y></Y>
             <Action></Action>
->>>>>>> origin/master
             <EventType>
             </EventType>
             <CaseStep>
