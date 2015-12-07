@@ -63,46 +63,60 @@ public class AI_Character : MonoBehaviour {
                     //Set players x and y to what its saved in the save data
                     this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/JoshAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/JoshAI/Y").InnerText));
                     if (node.SelectSingleNode("AI/JoshAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-                    //node.SelectSingleNode("AI/JoshAI/Action").InnerText = "";
+                    else if (node.SelectSingleNode("AI/JoshAI/Action").InnerText == "Event")
+                    {
+                        Action = AI_Action.Event;
+                        EventType = int.Parse(node.SelectSingleNode("AI/JoshAI/EventType").InnerText);
+                    }
                 }
                 else if (this.gameObject.name == "AI Matt" & node.SelectSingleNode("AI/MattAI/X").InnerText != "" && node.SelectSingleNode("AI/MattAI/Y").InnerText != "")
                 {
                     //Set players x and y to what its saved in the save data
                     this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/MattAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/MattAI/Y").InnerText));
                     if (node.SelectSingleNode("AI/MattAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-                    //node.SelectSingleNode("AI/MattAI/Action").InnerText = "";
+                    else if (node.SelectSingleNode("AI/MattAI/Action").InnerText == "Event")
+                    {
+                        Action = AI_Action.Event;
+                        EventType = int.Parse(node.SelectSingleNode("AI/MattAI/EventType").InnerText);
+                    }
                 }
                 else if (this.gameObject.name == "AI Kate" & node.SelectSingleNode("AI/KateAI/X").InnerText != "" && node.SelectSingleNode("AI/KateAI/Y").InnerText != "")
                 {
                     //Set players x and y to what its saved in the save data
                     this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/KateAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/KateAI/Y").InnerText));
                     if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
+                    else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "Event")
+                    {
+                        Action = AI_Action.Event;
+                        EventType = int.Parse(node.SelectSingleNode("AI/KateAI/EventType").InnerText);
+                    }
                     //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "Stationary") Action = AI_Action.Stationary;
-                    //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "StationaryWithDir") Action = AI_Action.StationaryWithDir;
-                    //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "Event")
-                    //{
-                    //    Action = AI_Action.Event;
-                    //    EventType = int.Parse(node.SelectSingleNode("AI/KateAI/EventType").InnerText);
-                    //}
-                        
+                    //else if (node.SelectSingleNode("AI/KateAI/Action").InnerText == "StationaryWithDir") Action = AI_Action.StationaryWithDir;                                           
                 }
                 else if (this.gameObject.name == "AI April" & node.SelectSingleNode("AI/AprilAI/X").InnerText != "" && node.SelectSingleNode("AI/AprilAI/Y").InnerText != "")
                 {
                     //Set players x and y to what its saved in the save data
                     this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/AprilAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/AprilAI/Y").InnerText));
                     if (node.SelectSingleNode("AI/AprilAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-                    //node.SelectSingleNode("AI/AprilAI/Action").InnerText = "";
+                    else if (node.SelectSingleNode("AI/AprilAI/Action").InnerText == "Event")
+                    {
+                        Action = AI_Action.Event;
+                        EventType = int.Parse(node.SelectSingleNode("AI/AprilAI/EventType").InnerText);
+                    }
                 }
                 else if (this.gameObject.name == "AI Ethan" & node.SelectSingleNode("AI/EthanAI/X").InnerText != "" && node.SelectSingleNode("AI/EthanAI/Y").InnerText != "")
                 {
                     //Set players x and y to what its saved in the save data
                     this.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("AI/EthanAI/X").InnerText), float.Parse(node.SelectSingleNode("AI/EthanAI/Y").InnerText));
                     if (node.SelectSingleNode("AI/EthanAI/Action").InnerText == "FollowPlayer") Action = AI_Action.FollowPlayer;
-                    //node.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
+                    else if (node.SelectSingleNode("AI/EthanAI/Action").InnerText == "Event")
+                    {
+                        Action = AI_Action.Event;
+                        EventType = int.Parse(node.SelectSingleNode("AI/EthanAI/EventType").InnerText);
+                    }
                 }
 
-                ////Save XML
-                //SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+               
 
 
                 break;
@@ -302,26 +316,31 @@ public class AI_Character : MonoBehaviour {
                         {
                             node.SelectSingleNode("AI/JoshAI/X").InnerText = transform.position.x.ToString();
                             node.SelectSingleNode("AI/JoshAI/Y").InnerText = transform.position.y.ToString();
+                            node.SelectSingleNode("AI/JoshAI/Action").InnerText = "FollowPlayer";
                         }
                         else if (this.gameObject.name == "AI Matt")
                         {
                             node.SelectSingleNode("AI/MattAI/X").InnerText = transform.position.x.ToString();
                             node.SelectSingleNode("AI/MattAI/Y").InnerText = transform.position.y.ToString();
+                            node.SelectSingleNode("AI/MattAI/Action").InnerText = "FollowPlayer";
                         }
                         else if (this.gameObject.name == "AI Kate")
                         {
                             node.SelectSingleNode("AI/KateAI/X").InnerText = transform.position.x.ToString();
                             node.SelectSingleNode("AI/KateAI/Y").InnerText = transform.position.y.ToString();
+                            node.SelectSingleNode("AI/KateAI/Action").InnerText = "FollowPlayer";
                         }
                         else if (this.gameObject.name == "AI April")
                         {
                             node.SelectSingleNode("AI/AprilAI/X").InnerText = transform.position.x.ToString();
                             node.SelectSingleNode("AI/AprilAI/Y").InnerText = transform.position.y.ToString();
+                            node.SelectSingleNode("AI/AprilAI/Action").InnerText = "FollowPlayer";
                         }
                         else if (this.gameObject.name == "AI Ethan")
                         {
                             node.SelectSingleNode("AI/EthanAI/X").InnerText = transform.position.x.ToString();
                             node.SelectSingleNode("AI/EthanAI/Y").InnerText = transform.position.y.ToString();
+                            node.SelectSingleNode("AI/EthanAI/Action").InnerText = "FollowPlayer";
                         }
 
                         //Save XML
@@ -508,6 +527,67 @@ public class AI_Character : MonoBehaviour {
                 EventStepCase = 1;
 
                 PreviousEventType = EventType;
+
+                //---Set values for save data---
+                //Read in SaveGame.xml
+                XmlDocument SaveGameDoc = new XmlDocument();
+                SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+
+                //Find current scene then find ScenePart. 
+                foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
+                {
+                    if (Application.loadedLevelName == node.SelectSingleNode("SceneName").InnerText)
+                    {
+
+                        if (Body.name == "AI Josh")
+                        {
+                            node.SelectSingleNode("AI/JoshAI/X").InnerText = Body.position.x.ToString();
+                            node.SelectSingleNode("AI/JoshAI/Y").InnerText = Body.position.y.ToString();
+                            node.SelectSingleNode("AI/JoshAI/Action").InnerText = "Event";
+                            node.SelectSingleNode("AI/JoshAI/EventType").InnerText = EventType.ToString();
+                            node.SelectSingleNode("AI/JoshAI/CaseStep").InnerText = EventStepCase.ToString();
+                        }
+                        else if (Body.name == "AI Matt")
+                        {
+                            node.SelectSingleNode("AI/MattAI/X").InnerText = Body.position.x.ToString();
+                            node.SelectSingleNode("AI/MattAI/Y").InnerText = Body.position.y.ToString();
+                            node.SelectSingleNode("AI/MattAI/Action").InnerText = "Event";
+                            node.SelectSingleNode("AI/MattAI/EventType").InnerText = EventType.ToString();
+                            node.SelectSingleNode("AI/MattAI/CaseStep").InnerText = EventStepCase.ToString();
+                        }
+                        else if (Body.name == "AI Kate")
+                        {
+                            node.SelectSingleNode("AI/KateAI/X").InnerText = Body.position.x.ToString();
+                            node.SelectSingleNode("AI/KateAI/Y").InnerText = Body.position.y.ToString();
+                            node.SelectSingleNode("AI/KateAI/Action").InnerText = "Event";
+                            node.SelectSingleNode("AI/KateAI/EventType").InnerText = EventType.ToString();
+                            node.SelectSingleNode("AI/KateAI/CaseStep").InnerText = EventStepCase.ToString();
+                        }
+                        else if (Body.name == "AI April")
+                        {
+                            node.SelectSingleNode("AI/AprilAI/X").InnerText = Body.position.x.ToString();
+                            node.SelectSingleNode("AI/AprilAI/Y").InnerText = Body.position.y.ToString();
+                            node.SelectSingleNode("AI/AprilAI/Action").InnerText = "Event";
+                            node.SelectSingleNode("AI/AprilAI/EventType").InnerText = EventType.ToString();
+                            node.SelectSingleNode("AI/AprilAI/CaseStep").InnerText = EventStepCase.ToString();
+                        }
+                        else if (Body.name == "AI Ethan")
+                        {
+                            node.SelectSingleNode("AI/EthanAI/X").InnerText = Body.position.x.ToString();
+                            node.SelectSingleNode("AI/EthanAI/Y").InnerText = Body.position.y.ToString();
+                            node.SelectSingleNode("AI/EthanAI/Action").InnerText = "Event";
+                            node.SelectSingleNode("AI/EthanAI/EventType").InnerText = EventType.ToString();
+                            node.SelectSingleNode("AI/EthanAI/CaseStep").InnerText = EventStepCase.ToString();
+                        }
+
+                        break;
+                    }
+                }
+
+                //Save XML
+                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+
+
 
                 AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase);
             }

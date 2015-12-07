@@ -23,6 +23,7 @@ public class AreaEvent : MonoBehaviour {
     public int StoryPart; //if this var == 0, do nothing. If a number is assigned, preform a task after the conversation is done
 	public bool CanReactivate;
 	public bool ButtonActivated;
+	public bool IgnorePlayerLocking = false;
 	public Direction PlayerDirection;
     [HideInInspector]
     public ConversationManager ConversationInstance;
@@ -58,14 +59,18 @@ public class AreaEvent : MonoBehaviour {
             	//Start specified Conversation (ID Number references Conversation file).
             	ConversationInstance.StartConversation(SceneNum,ConversationID);
 
-				//Lock Player Location.
-				Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-				Other.GetComponent<Player>().enabled = false;
+				if(!IgnorePlayerLocking) //User can Set Ignore the Player Locking.
+				{
+					//Lock Player Location.
+					Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+					Other.GetComponent<Player>().enabled = false;
 
-				if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.
-					Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
+					if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.
+						Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
 
-				Other.GetComponent<Animator>().SetBool("Moving",false);
+					Other.GetComponent<Animator>().SetBool("Moving",false);	
+				}
+
 				PlayerObject = Other.gameObject;
 			}
         }
@@ -81,17 +86,19 @@ public class AreaEvent : MonoBehaviour {
 				//Start specified Conversation (ID Number references Conversation file).
 				ConversationInstance.StartConversation(SceneNum,ConversationID);
 
-				//Lock Player Location.
-				Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-				Other.GetComponent<Player>().enabled = false;
-
-				if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.
-					Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
-
-				Other.GetComponent<Animator>().SetBool("Moving",false);
+				if(!IgnorePlayerLocking) //User can Set Ignore the Player Locking.
+				{
+					//Lock Player Location.
+					Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+					Other.GetComponent<Player>().enabled = false;
+					
+					if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.
+						Other.GetComponent<Animator>().SetInteger("Direction",(int)PlayerDirection);
+					
+					Other.GetComponent<Animator>().SetBool("Moving",false);	
+				}
+				
 				PlayerObject = Other.gameObject;
-
-				JustActivated = true;
 			}
 		
 		
@@ -144,10 +151,12 @@ public class AreaEvent : MonoBehaviour {
 		//If Conversation can't be reactivated and has already run then Destroy the object and will never show up again.
 		if (!ConversationInstance.IsActive && ConversationInstance.HasRun && !CanReactivate) 
 		{
-            
-			//Lock Player Location.
-			PlayerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-			PlayerObject.GetComponent<Player>().enabled = true;
+            if(!IgnorePlayerLocking)
+			{
+				//Lock Player Location.
+				PlayerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+				PlayerObject.GetComponent<Player>().enabled = true;
+			}
 
 
             //if StoryPart is not 0, pass it in to a method to run an event

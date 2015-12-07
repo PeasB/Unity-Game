@@ -477,8 +477,8 @@
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>-0.69</X>
+            <Y>-23.48</Y>
           </KateAI>
           <AprilAI>
             <X></X>
@@ -500,8 +500,8 @@
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>-1.9</X>
+            <Y>-23.48</Y>
           </KateAI>
           <AprilAI>
             <X></X>
@@ -535,30 +535,7 @@
             <Y></Y>
           </EthanAI>
         </Case3>
-
-        <Case4>
-          <JoshAI>
-            <X></X>
-            <Y></Y>
-          </JoshAI>
-          <MattAI>
-            <X></X>
-            <Y></Y>
-          </MattAI>
-          <KateAI>
-            <X></X>
-            <Y></Y>
-          </KateAI>
-          <AprilAI>
-            <X></X>
-            <Y></Y>
-          </AprilAI>
-          <EthanAI>
-            <X></X>
-            <Y></Y>
-          </EthanAI>
-        </Case4>
-
+        
       </Part1>
 
       <Part3>

@@ -100,6 +100,8 @@ public class SceneTransition : MonoBehaviour {
                         node.SelectSingleNode("AI/JoshAI/X").InnerText = "";
                         node.SelectSingleNode("AI/JoshAI/Y").InnerText = "";
                         node.SelectSingleNode("AI/JoshAI/Action").InnerText = "";
+                        node.SelectSingleNode("AI/JoshAI/EventType").InnerText = "";
+                        node.SelectSingleNode("AI/JoshAI/CaseStep").InnerText = "";
                     }
                 }
                 if (AI_Matt != null)
@@ -109,6 +111,8 @@ public class SceneTransition : MonoBehaviour {
                         node.SelectSingleNode("AI/MattAI/X").InnerText = "";
                         node.SelectSingleNode("AI/MattAI/Y").InnerText = "";
                         node.SelectSingleNode("AI/MattAI/Action").InnerText = "";
+                        node.SelectSingleNode("AI/MattAI/EventType").InnerText = "";
+                        node.SelectSingleNode("AI/MattAI/CaseStep").InnerText = "";
                     }
                 }
                 if (AI_Kate != null)
@@ -118,6 +122,8 @@ public class SceneTransition : MonoBehaviour {
                         node.SelectSingleNode("AI/KateAI/X").InnerText = "";
                         node.SelectSingleNode("AI/KateAI/Y").InnerText = "";
                         node.SelectSingleNode("AI/KateAI/Action").InnerText = "";
+                        node.SelectSingleNode("AI/KateAI/EventType").InnerText = "";
+                        node.SelectSingleNode("AI/KateAI/CaseStep").InnerText = "";
                     }
                 }
                 if (AI_April != null)
@@ -127,6 +133,8 @@ public class SceneTransition : MonoBehaviour {
                         node.SelectSingleNode("AI/AprilAI/X").InnerText = "";
                         node.SelectSingleNode("AI/AprilAI/Y").InnerText = "";
                         node.SelectSingleNode("AI/AprilAI/Action").InnerText = "";
+                        node.SelectSingleNode("AI/AprilAI/EventType").InnerText = "";
+                        node.SelectSingleNode("AI/AprilAI/CaseStep").InnerText = "";
                     }
                 }
                 if (AI_Ethan != null)
@@ -136,6 +144,8 @@ public class SceneTransition : MonoBehaviour {
                         node.SelectSingleNode("AI/EthanAI/X").InnerText = "";
                         node.SelectSingleNode("AI/EthanAI/Y").InnerText = "";
                         node.SelectSingleNode("AI/EthanAI/Action").InnerText = "";
+                        node.SelectSingleNode("AI/EthanAI/EventType").InnerText = "";
+                        node.SelectSingleNode("AI/EthanAI/CaseStep").InnerText = "";
                     }
                 }
 

@@ -11,10 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Scene 3 Outside</CurrentScene>
+    <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X>397.1886</X>
-      <Y>-347.7314</Y>
+      <X></X>
+      <Y></Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -27,6 +27,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -35,6 +39,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
             <X>
@@ -43,6 +51,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -51,6 +63,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -59,6 +75,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
@@ -66,9 +86,16 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>-7.288837</X>
-            <Y>-7.362719</Y>
-            <Action>FollowPlayer</Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -77,6 +104,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
             <X>
@@ -85,6 +116,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -93,6 +128,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -101,6 +140,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
@@ -114,6 +157,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -122,6 +169,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
             <X>
@@ -130,6 +181,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -138,6 +193,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -146,6 +205,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
@@ -159,6 +222,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -167,14 +234,19 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -183,6 +255,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -191,6 +267,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
@@ -204,6 +284,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -212,11 +296,19 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
             <X>395.8111</X>
             <Y>-348.5776</Y>
             <Action>FollowPlayer</Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -225,6 +317,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -233,6 +329,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
@@ -246,6 +346,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -254,6 +358,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
             <X>
@@ -262,6 +370,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -270,6 +382,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -278,11 +394,15 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
       <Scene>
-        <SceneName>Cabin Scene</SceneName>
+        <SceneName>Scene 3 Outside Ethan</SceneName>
         <AI>
           <JoshAI>
             <X>
@@ -291,6 +411,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -299,6 +423,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </MattAI>
           <KateAI>
             <X>
@@ -307,6 +435,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </KateAI>
           <AprilAI>
             <X>
@@ -315,6 +447,10 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </AprilAI>
           <EthanAI>
             <X>
@@ -323,6 +459,75 @@
             </Y>
             <Action>
             </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
+          </EthanAI>
+        </AI>
+      </Scene>
+      <Scene>
+        <SceneName>Scene 3 Shed Ethan</SceneName>
+        <AI>
+          <JoshAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
+          </JoshAI>
+          <MattAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
+          </MattAI>
+          <KateAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
+          </KateAI>
+          <AprilAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
+          </AprilAI>
+          <EthanAI>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </EthanAI>
         </AI>
       </Scene>
@@ -330,8 +535,8 @@
   </SaveState>
   <Status>
     <Josh>1</Josh>
-    <Matt>0</Matt>
-    <Kate>2</Kate>
+    <Matt>1</Matt>
+    <Kate>1</Kate>
     <April>1</April>
     <Ethan>1</Ethan>
   </Status>
@@ -340,12 +545,12 @@
       <Matt>100</Matt>
       <Kate>100</Kate>
       <April>100</April>
-      <Ethan>70</Ethan>
+      <Ethan>100</Ethan>
     </Josh>
     <Matt>
       <Josh>100</Josh>
       <Kate>100</Kate>
-      <April>25</April>
+      <April>100</April>
       <Ethan>100</Ethan>
     </Matt>
     <Kate>
@@ -362,38 +567,78 @@
     </April>
     <Ethan>
       <Josh>100</Josh>
-      <Matt>100</Matt>
-      <Kate>100</Kate>
-      <April>100</April>
+      <Matt>10</Matt>
+      <Kate>40</Kate>
+      <April>70</April>
     </Ethan>
   </Relationships>
   <StoryPaths>
     <Situation>
-      <ID>1.1</ID>
+      <ID>1.1.1</ID>
       <Outcome>2</Outcome>
     </Situation>
     <Situation>
-      <ID>1.2</ID>
+      <ID>2.0.1</ID>
       <Outcome>1</Outcome>
     </Situation>
     <Situation>
-      <ID>2</ID>
+      <ID>2.1.1</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
-      <ID>3</ID>
+      <ID>2.2.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2.3.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2.4.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2.5.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.0.1</ID>
+      <Outcome>2</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.1.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.2.1</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.3.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.4.1</ID>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.5.1</ID>
       <Outcome>0</Outcome>
     </Situation>
     <Situation>
-      <ID>4</ID>
+      <ID>3.6.1</ID>
+      <Outcome>3</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.7.1</ID>
+      <Outcome>3</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.8.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>3.9.1</ID>
       <Outcome>0</Outcome>
     </Situation>
   </StoryPaths>
@@ -403,18 +648,15 @@
     </Scene>
     <Scene>
       <SceneName>Scene 2</SceneName>
+      <SceneName>Scene 3 Outside Ethan</SceneName>
+      <SceneName>Scene 3 Outside</SceneName>
     </Scene>
     <Scene>
       <SceneName>Scene 3</SceneName>
     </Scene>
     <Scene>
-      <SceneName>Scene 3 Outside</SceneName>
-      <ObjectName>Out Back Conversation</ObjectName>
-      <ObjectName>Almost At Breaker Conversation</ObjectName>
-      <ObjectName>Noises Heard Conversation</ObjectName>
-    </Scene>
-    <Scene>
-      <SceneName>Cabin Scene</SceneName>
+      <SceneName>Scene 3 Shed Ethan</SceneName>
+      <SceneName>Scene 3 Shed</SceneName>
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
@@ -436,5 +678,6 @@
     <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
+    <ItemID>4</ItemID>
   </Inventory>
 </SaveData>
