@@ -13,17 +13,20 @@
   <SaveState>
     <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>-4.468198</X>
+      <Y>5.988623</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -83,11 +86,16 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
-            <EventType></EventType>
-            <CaseStep></CaseStep>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
+            <EventType>
+            </EventType>
+            <CaseStep>
+            </CaseStep>
           </JoshAI>
           <MattAI>
             <X>
