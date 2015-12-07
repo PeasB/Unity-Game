@@ -14,7 +14,7 @@ using System.Diagnostics;
 
 namespace Delirium_Laucher
 {
-    public partial class Form1 : Form
+    public partial class Delirium : Form
     {
         //Globals.
         float ClientVersionNum;
@@ -22,7 +22,7 @@ namespace Delirium_Laucher
         int ForceUpdateCount;
 
 
-        public Form1()
+        public Delirium()
         {
             InitializeComponent();
         }

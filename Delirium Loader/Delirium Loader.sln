@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delirium Loader", "Delirium Loader\Delirium Loader.csproj", "{597B888B-B147-4DD8-A1D5-F80A9C3E5C58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delirium", "Delirium Loader\Delirium.csproj", "{597B888B-B147-4DD8-A1D5-F80A9C3E5C58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
