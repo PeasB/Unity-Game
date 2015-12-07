@@ -151,13 +151,6 @@ public class AreaEvent : MonoBehaviour {
 		//If Conversation can't be reactivated and has already run then Destroy the object and will never show up again.
 		if (!ConversationInstance.IsActive && ConversationInstance.HasRun && !CanReactivate) 
 		{
-            if(!IgnorePlayerLocking)
-			{
-				//Lock Player Location.
-				PlayerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-				PlayerObject.GetComponent<Player>().enabled = true;
-			}
-
 
             //if StoryPart is not 0, pass it in to a method to run an event
             if (StoryPart != 0)
@@ -170,8 +163,20 @@ public class AreaEvent : MonoBehaviour {
             }
 
             //Delete object
-			//DeleteObjects.DeleteObject(this.gameObject.name);
-			Destroy(this.gameObject);
+			DeleteObjects.DeleteObject(this.gameObject.name);
+		}
+
+		if (!ConversationInstance.IsActive && ConversationInstance.HasRun) 
+		{
+			if(!IgnorePlayerLocking)
+			{
+				//Lock Player Location.
+				PlayerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+				PlayerObject.GetComponent<Player>().enabled = true;
+			}
+			
+		
+		
 		}
 
     }
