@@ -13,8 +13,10 @@
   <SaveState>
     <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>
+      </X>
+      <Y>
+      </Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -86,16 +88,11 @@
         <SceneName>Ryans Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
+            <X>4.7</X>
+            <Y>-7.16</Y>
+            <Action>Event</Action>
+            <EventType>4</EventType>
+            <CaseStep>1</CaseStep>
           </JoshAI>
           <MattAI>
             <X>
@@ -151,8 +148,10 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>
+            </X>
+            <Y>
+            </Y>
             <Action>
             </Action>
             <EventType>
@@ -173,8 +172,10 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>
+            </X>
+            <Y>
+            </Y>
             <Action>
             </Action>
             <EventType>
@@ -183,18 +184,24 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
