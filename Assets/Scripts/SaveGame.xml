@@ -11,10 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Scene 2</CurrentScene>
+    <CurrentScene></CurrentScene>
     <PlayerPosition>
-      <X>-4.468198</X>
-      <Y>5.988623</Y>
+      <X></X>
+      <Y></Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -151,10 +151,8 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
+            <X></X>
+            <Y></Y>
             <Action>
             </Action>
             <EventType>
@@ -175,10 +173,8 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
+            <X></X>
+            <Y></Y>
             <Action>
             </Action>
             <EventType>
@@ -187,24 +183,18 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -305,9 +295,9 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X>395.8111</X>
-            <Y>-348.5776</Y>
-            <Action>FollowPlayer</Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -554,7 +544,7 @@
       <Josh>100</Josh>
       <Kate>100</Kate>
       <April>100</April>
-      <Ethan>70</Ethan>
+      <Ethan>100</Ethan>
     </Matt>
     <Kate>
       <Josh>100</Josh>
@@ -570,27 +560,27 @@
     </April>
     <Ethan>
       <Josh>100</Josh>
-      <Matt>10</Matt>
-      <Kate>40</Kate>
-      <April>70</April>
+      <Matt>100</Matt>
+      <Kate>100</Kate>
+      <April>100</April>
     </Ethan>
   </Relationships>
   <StoryPaths>
     <Situation>
       <ID>1.1.1</ID>
-      <Outcome>1</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>2.0.1</ID>
-      <Outcome>1</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>2.1.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>2.2.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>2.3.1</ID>
@@ -602,11 +592,11 @@
     </Situation>
     <Situation>
       <ID>2.5.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.0.1</ID>
-      <Outcome>2</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.1.1</ID>
@@ -630,11 +620,11 @@
     </Situation>
     <Situation>
       <ID>3.6.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.7.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.8.1</ID>
@@ -653,7 +643,6 @@
       <SceneName>Scene 2</SceneName>
       <SceneName>Scene 3 Outside Ethan</SceneName>
       <SceneName>Scene 3 Outside</SceneName>
-      <ObjectName>Item_Wood</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Scene 3</SceneName>
