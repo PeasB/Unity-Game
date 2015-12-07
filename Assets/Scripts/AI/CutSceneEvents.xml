@@ -167,6 +167,29 @@
             <Y></Y>
           </EthanAI>
         </Case7>
+
+        <Teleport>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Teleport>
         
       </Part1>
 
@@ -190,7 +213,7 @@
             <Y></Y>
           </AprilAI>
           <EthanAI>
-            <X>366.57</X>
+            <X>364.523</X>
             <Y>-895.79</Y>
           </EthanAI>
         </Case1>
@@ -213,7 +236,7 @@
             <Y></Y>
           </AprilAI>
           <EthanAI>
-            <X>375.36</X>
+            <X>366.57</X>
             <Y>-895.79</Y>
           </EthanAI>
         </Case2>
@@ -236,15 +259,15 @@
             <Y></Y>
           </AprilAI>
           <EthanAI>
-            <X>381.85</X>
-            <Y>-889.21</Y>
+            <X>375.36</X>
+            <Y>-895.79</Y>
           </EthanAI>
         </Case3>
 
         <Case4>
           <JoshAI>
             <X>388.34</X>
-            <Y>-899.21</Y>
+            <Y>-889.21</Y>
           </JoshAI>
           <MattAI>
             <X></X>
@@ -252,7 +275,30 @@
           </MattAI>
           <KateAI>
             <X>388.34</X>
-            <Y>-899.21</Y>
+            <Y>-889.21</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>381.85</X>
+            <Y>-889.21</Y>
+          </EthanAI>
+        </Case4>
+
+        <Case5>
+          <JoshAI>
+            <X>395.94</X>
+            <Y>-881.54</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>395.94</X>
+            <Y>-881.54</Y>
           </KateAI>
           <AprilAI>
             <X></X>
@@ -260,7 +306,287 @@
           </AprilAI>
           <EthanAI>
             <X>388.34</X>
-            <Y>-899.21</Y>
+            <Y>-889.21</Y>
+          </EthanAI>
+        </Case5>
+
+        <Case6>
+          <JoshAI>
+            <X>402.59</X>
+            <Y>-881.54</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>402.59</X>
+            <Y>-881.54</Y>>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>395.94</X>
+            <Y>-881.54</Y>
+          </EthanAI>
+        </Case6>
+
+        <Case7>
+          <JoshAI>
+            <X>409.51</X>
+            <Y>-874.88</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>409.51</X>
+            <Y>-874.88</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>402.59</X>
+            <Y>-881.54</Y>>
+          </EthanAI>
+        </Case7>
+
+        <Case8>
+          <JoshAI>
+            <X>414.87</X>
+            <Y>-874.88</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>414.87</X>
+            <Y>-874.88</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>409.51</X>
+            <Y>-874.88</Y>
+          </EthanAI>
+        </Case8>
+
+        <Case9>
+          <JoshAI>
+            <X>422.77</X>
+            <Y>-866.84</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>422.77</X>
+            <Y>-866.84</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>414.87</X>
+            <Y>-874.88</Y>
+          </EthanAI>
+        </Case9>
+
+        <Case10>
+          <JoshAI>
+            <X>422.77</X>
+            <Y>-861.56</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>422.77</X>
+            <Y>-861.56</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>422.77</X>
+            <Y>-866.84</Y>
+          </EthanAI>
+        </Case10>
+
+        <Case11>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>422.77</X>
+            <Y>-861.56</Y>
+          </EthanAI>
+        </Case11>
+
+        <Case12>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Case12>
+
+        <Teleport>
+          <JoshAI>
+            <X>412.88</X>
+            <Y>-482.08</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>408.25</X>
+            <Y>-482.29</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>410.53</X>
+            <Y>-484.05</Y>
+          </EthanAI>
+        </Teleport>
+
+      </Part2>
+
+      <Part4>
+
+        <Case1>
+          <JoshAI>
+            <X>410.37</X>
+            <Y>-432.90</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>410.37</X>
+            <Y>-482.29</Y>
+          </KateAI>
+          <AprilAI>
+            <X>410.37</X>
+            <Y>-484.05</Y>
+          </AprilAI>
+          <EthanAI>
+            <X>408.25</X>
+            <Y>-484.05</Y>
+          </EthanAI>
+        </Case1>
+
+        <Case2>
+          <JoshAI>
+            <X>411.67</X>
+            <Y>-430.15</Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>410.37</X>
+            <Y>-432.90</Y>
+          </KateAI>
+          <AprilAI>
+            <X>411.67</X>
+            <Y>-431.73</Y>
+          </AprilAI>
+          <EthanAI>
+            <X>408.25</X>
+            <Y>-482.05</Y>
+          </EthanAI>
+        </Case2>
+
+        <Case3>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X>408.87</X>
+            <Y>-430.15</Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>410.37</X>
+            <Y>-432.90</Y>
+          </EthanAI>
+        </Case3>
+
+        <Case4>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X>408.87</X>
+            <Y>-431.73</Y>
           </EthanAI>
         </Case4>
 
@@ -286,12 +612,8 @@
             <Y></Y>
           </EthanAI>
         </Case5>
-
-      </Part2>
-
-      <Part4>
-
-        <Case1>
+        
+        <Teleport>
           <JoshAI>
             <X></X>
             <Y></Y>
@@ -312,76 +634,7 @@
             <X></X>
             <Y></Y>
           </EthanAI>
-        </Case1>
-
-        <Case2>
-          <JoshAI>
-            <X></X>
-            <Y></Y>
-          </JoshAI>
-          <MattAI>
-            <X></X>
-            <Y></Y>
-          </MattAI>
-          <KateAI>
-            <X></X>
-            <Y></Y>
-          </KateAI>
-          <AprilAI>
-            <X></X>
-            <Y></Y>
-          </AprilAI>
-          <EthanAI>
-            <X></X>
-            <Y></Y>
-          </EthanAI>
-        </Case2>
-
-        <Case3>
-          <JoshAI>
-            <X></X>
-            <Y></Y>
-          </JoshAI>
-          <MattAI>
-            <X></X>
-            <Y></Y>
-          </MattAI>
-          <KateAI>
-            <X></X>
-            <Y></Y>
-          </KateAI>
-          <AprilAI>
-            <X></X>
-            <Y></Y>
-          </AprilAI>
-          <EthanAI>
-            <X></X>
-            <Y></Y>
-          </EthanAI>
-        </Case3>
-
-        <Case4>
-          <JoshAI>
-            <X></X>
-            <Y></Y>
-          </JoshAI>
-          <MattAI>
-            <X></X>
-            <Y></Y>
-          </MattAI>
-          <KateAI>
-            <X></X>
-            <Y></Y>
-          </KateAI>
-          <AprilAI>
-            <X></X>
-            <Y></Y>
-          </AprilAI>
-          <EthanAI>
-            <X></X>
-            <Y></Y>
-          </EthanAI>
-        </Case4>
+        </Teleport>
 
       </Part4>
 
@@ -389,20 +642,20 @@
 
         <Case1>
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>411.00</X>
+            <Y>-429.15</Y>
           </JoshAI>
           <MattAI>
             <X></X>
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>409.86</X>
+            <Y>-429.15</Y>
           </KateAI>
           <AprilAI>
-            <X></X>
-            <Y></Y>
+            <X>410.47</X>
+            <Y>-429.15</Y>
           </AprilAI>
           <EthanAI>
             <X></X>
@@ -433,52 +686,29 @@
           </EthanAI>
         </Case2>
 
-        <Case3>
+        <Teleport>
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>0</X>
+            <Y>0</Y>
           </JoshAI>
           <MattAI>
             <X></X>
             <Y></Y>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>0</X>
+            <Y>0</Y>
           </KateAI>
           <AprilAI>
-            <X></X>
-            <Y></Y>
+            <X>0</X>
+            <Y>0</Y>
           </AprilAI>
           <EthanAI>
-            <X></X>
-            <Y></Y>
+            <X>0</X>
+            <Y>0</Y>
           </EthanAI>
-        </Case3>
-
-        <Case4>
-          <JoshAI>
-            <X></X>
-            <Y></Y>
-          </JoshAI>
-          <MattAI>
-            <X></X>
-            <Y></Y>
-          </MattAI>
-          <KateAI>
-            <X></X>
-            <Y></Y>
-          </KateAI>
-          <AprilAI>
-            <X></X>
-            <Y></Y>
-          </AprilAI>
-          <EthanAI>
-            <X></X>
-            <Y></Y>
-          </EthanAI>
-        </Case4>
-
+        </Teleport>
+        
       </Part5>
       
       
@@ -558,6 +788,29 @@
             <Y></Y>
           </EthanAI>
         </Case3>
+
+        <Teleport>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Teleport>
         
       </Part1>
 
@@ -654,6 +907,29 @@
             <Y></Y>
           </EthanAI>
         </Case4>
+
+        <Teleport>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Teleport>
 
       </Part3>
 
@@ -756,6 +1032,29 @@
           </EthanAI>
         </Case4>
 
+        <Teleport>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Teleport>
+
       </Part1>
 
       <Part2>
@@ -851,6 +1150,29 @@
             <Y></Y>
           </EthanAI>
         </Case4>
+
+        <Teleport>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
+            <X></X>
+            <Y></Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Teleport>
 
       </Part2>
 

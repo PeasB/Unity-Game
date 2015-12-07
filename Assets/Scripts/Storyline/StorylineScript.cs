@@ -103,17 +103,18 @@ public class StorylineScript : MonoBehaviour {
                 //Make Ethan not follow you anymore
                 //April continues to follow you
                 
-                AI_Josh.GetComponent<CircleCollider2D>().enabled = false;
+                
                 AI_Josh.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
                 AI_Josh.GetComponent<AI_Character>().EventType = ScenePart;
-
-                AI_Kate.GetComponent<CircleCollider2D>().enabled = false;
+                AI_Josh.GetComponent<CircleCollider2D>().enabled = false;
+                                
                 AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
                 AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
-
-                AI_Ethan.GetComponent<CircleCollider2D>().enabled = false;
+                AI_Kate.GetComponent<CircleCollider2D>().enabled = false;
+                                
                 AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
                 AI_Ethan.GetComponent<AI_Character>().EventType = ScenePart;
+                AI_Ethan.GetComponent<CircleCollider2D>().enabled = false;
 
 
                 #endregion
@@ -128,7 +129,34 @@ public class StorylineScript : MonoBehaviour {
             }
             else if (ScenePart == 4)
             {
+                #region Part 4
+                //All four AI's walk up to the cabin
+                //AI_April gets disabled so that she can walk right through you, since she is behind you
 
+
+                AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_April.GetComponent<AI_Character>().EventType = ScenePart;
+                AI_April.GetComponent<CircleCollider2D>().enabled = false;
+
+                AI_Josh.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Josh.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Ethan.GetComponent<AI_Character>().EventType = ScenePart;
+
+
+                #endregion
+            }
+            else if (ScenePart == 5)
+            {
+                #region Part 5
+
+
+
+                #endregion
             }
 
             #endregion
