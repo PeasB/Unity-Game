@@ -34,6 +34,7 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -70,6 +71,7 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -104,6 +106,7 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -138,6 +141,7 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -172,6 +176,7 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();

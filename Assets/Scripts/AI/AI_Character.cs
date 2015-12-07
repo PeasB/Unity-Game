@@ -596,8 +596,8 @@ public class AI_Character : MonoBehaviour {
         }
 
         
-        
-
-
     }
+
+
+    
 }

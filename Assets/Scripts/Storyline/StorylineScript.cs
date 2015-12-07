@@ -97,11 +97,34 @@ public class StorylineScript : MonoBehaviour {
             }
             else if (ScenePart == 2)
             {
+                #region Part 2
+                //This is the part where they either split up or go together.
+                //Josh, Kate and Ethan always go to the left path
+                //Make Ethan not follow you anymore
+                //April continues to follow you
                 
+                AI_Josh.GetComponent<CircleCollider2D>().enabled = false;
+                AI_Josh.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Josh.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_Kate.GetComponent<CircleCollider2D>().enabled = false;
+                AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_Ethan.GetComponent<CircleCollider2D>().enabled = false;
+                AI_Ethan.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Ethan.GetComponent<AI_Character>().EventType = ScenePart;
+
+
+                #endregion
             }
             else if (ScenePart == 3)
             {
-
+                #region Part 3
+                //Just run ScenePart 2
+                //There will be no part 3 in CutScenesEvents
+                DoActionForScene(ScenePart - 1);
+                #endregion
             }
             else if (ScenePart == 4)
             {

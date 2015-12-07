@@ -13,8 +13,8 @@
   <SaveState>
     <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X>359.304</X>
-      <Y>-901.251</Y>
+      <X>359.7851</X>
+      <Y>-900.2793</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -183,8 +183,8 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X>359.3516</X>
-            <Y>-900.3513</Y>
+            <X>362.7592</X>
+            <Y>-898.7253</Y>
             <Action>FollowPlayer</Action>
             <EventType>
             </EventType>
@@ -192,8 +192,8 @@
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X>360.9169</X>
-            <Y>-900.2552</Y>
+            <X>361.4169</X>
+            <Y>-899.7554</Y>
             <Action>FollowPlayer</Action>
             <EventType>
             </EventType>
