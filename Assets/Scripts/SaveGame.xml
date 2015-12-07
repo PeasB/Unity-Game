@@ -11,15 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene></CurrentScene>
+    <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-<<<<<<< HEAD
-      <X>359.7851</X>
-      <Y>-900.2793</Y>
-=======
-      <X></X>
-      <Y></Y>
->>>>>>> origin/master
+      <X>364.9955</X>
+      <Y>-891.9448</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -156,13 +151,8 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-<<<<<<< HEAD
-            <X>363.0912</X>
-            <Y>-895.1212</Y>
-=======
-            <X></X>
-            <Y></Y>
->>>>>>> origin/master
+            <X>388.2927</X>
+            <Y>-899.2202</Y>
             <Action>
             </Action>
             <EventType>
@@ -183,13 +173,8 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-<<<<<<< HEAD
-            <X>365.1012</X>
-            <Y>-897.1207</Y>
-=======
-            <X></X>
-            <Y></Y>
->>>>>>> origin/master
+            <X>388.3026</X>
+            <Y>-899.2202</Y>
             <Action>
             </Action>
             <EventType>
@@ -198,30 +183,19 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-<<<<<<< HEAD
-            <X>362.7592</X>
-            <Y>-898.7253</Y>
+            <X>365.4604</X>
+            <Y>-893.5256</Y>
             <Action>FollowPlayer</Action>
-=======
-            <X></X>
-            <Y></Y>
-            <Action></Action>
->>>>>>> origin/master
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-<<<<<<< HEAD
-            <X>361.4169</X>
-            <Y>-899.7554</Y>
-            <Action>FollowPlayer</Action>
-=======
-            <X></X>
-            <Y></Y>
-            <Action></Action>
->>>>>>> origin/master
+            <X>388.3846</X>
+            <Y>-899.2372</Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -322,9 +296,12 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -587,9 +564,9 @@
     </April>
     <Ethan>
       <Josh>100</Josh>
-      <Matt>100</Matt>
-      <Kate>100</Kate>
-      <April>100</April>
+      <Matt>10</Matt>
+      <Kate>40</Kate>
+      <April>10</April>
     </Ethan>
   </Relationships>
   <StoryPaths>
@@ -599,7 +576,7 @@
     </Situation>
     <Situation>
       <ID>2.0.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>2</Outcome>
     </Situation>
     <Situation>
       <ID>2.1.1</ID>
@@ -619,11 +596,11 @@
     </Situation>
     <Situation>
       <ID>2.5.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>3.0.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>2</Outcome>
     </Situation>
     <Situation>
       <ID>3.1.1</ID>

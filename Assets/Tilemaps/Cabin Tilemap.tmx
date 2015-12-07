@@ -28,35 +28,51 @@
   </tile>
  </tileset>
  <layer name="Tile Floor" width="50" height="50">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+   <property name="unity:tag" value="Ground Tile"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztz7EJAAAIwDBX/3/YF1wElQR6QCMAZmWjC3zs4mOXLx8AAAAAAAAA3FYiCgHn
   </data>
  </layer>
- <layer name="Floor" width="50" height="50">
+ <layer name="Floor" width="50" height="50" opacity="0.97">
   <properties>
    <property name="unity:isTrigger" value="true"/>
-   <property name="unity:tag" value="Ground Tile"/>
+   <property name="unity:tag" value="Ground Hardwood"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJzt0DkOgDAMAMGU8P8P01AhcZgEcs1I7lx4nRJAfcs+vRut42x6oaMtPdx79+tW/h65c4SO6P7ffTp0fKHELTrKedOxHkZHObN15IyOsh3R/RodT26L7OrIN2NHy0bpAAAAAK5tmgoMtQ==
   </data>
  </layer>
  <layer name="Walls 4" width="50" height="50">
+  <properties>
+   <property name="unity:isTrigger" value="false"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrENADAIBLGv2X8gRssC6RHCrq68BNiqpgcAAAAAgFGV9K8BAADgqgdtHwGf
   </data>
  </layer>
  <layer name="Walls 3" width="50" height="50">
+  <properties>
+   <property name="unity:isTrigger" value="false"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1dkJwCAQRdF8m6ZSiqVNKSklpUT/BolxBJcs90BwcIE3IGZZADyVK6yvQ1KMFXqW2Rla+EofgEW4796wR9fSLUwFnTtmsvSRnJfGkaZ4Qx8h4x6/2TmAUUrvkfHd3VUtmT2X809S+zYDmktGNe9VfWTOSpdQg+X6g11yXzY9ZvbfrUmzYACgWP5tAAAAAAD8yQmFnhCM
   </data>
  </layer>
  <layer name="Walls 2" width="50" height="50">
+  <properties>
+   <property name="unity:isTrigger" value="false"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzt1sENwyAMQFHOsERGy2gZpaNklIIUJMuiJRFFGPrfJZa4mGCDnQNgla+vbyI+uyaDR2pnZ1nMfR+dw6+t0h9xH8foHDLvynX+qfZlXcX41SGlx7yKZ+7bFjPsO9V+6W6yUkutgogt9TnsutO36t6dir6fV6DO4xyXyX/Jd6p+Q2o1tkrd4b5UI1/mWBkf13fLc4ieR1KPl9ZWmVuAFvRBP0G8dYH/DAAAAACAewMfjRJ6
   </data>
  </layer>
  <layer name="Walls" width="50" height="50">
+  <properties>
+   <property name="unity:isTrigger" value="false"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztmOENhCAMhf1pZIkbxVEchVEYhVEc5TBIglignBDw8r6EqFCgT6GA0wQAGBFxXpdEMjbbbK6zvdcd3Mxi/Nxq2PSmVIf5HjLyzWQbD3lwdIicgW1HPXbmAaVjJjY/3qBjxO8hrvcyfI6Mfd9GL0RqHccE4ZMXQxXnXY9A7ZjZK16V6BB2fKzEmFkZ/agHbmbJ6fDH1eELw15H+lGFrhWR88svj+kIbSLtkPm1+BcdYbxKxdTFxq/k/HjDPHfvNNwDj7AO/qIjrBOug6m6raihg7Lh5teicP2Qbhwl9iUqnBsuv4a/Md5wBuKQ0lFzb2X62Ss2d0NM8dhL7WOPGOvibLi3FV4M9svcc0sdk/X5w7BR53VL2Oy5+i2BjpvNnqvfkhIdx78q6rzn5keqrLGMIh0jc+79Lok43+q+XgIAAAAAAAAAAH35AkSHVuk=
   </data>
