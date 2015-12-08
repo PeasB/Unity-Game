@@ -11,10 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene></CurrentScene>
+    <CurrentScene>Scene 3 Outside</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>328.0048</X>
+      <Y>-364.5</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -305,12 +305,9 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X>399.7496</X>
+            <Y>-405.2616</Y>
+            <Action>FollowPlayer</Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -633,7 +630,7 @@
     </Situation>
     <Situation>
       <ID>3.3.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>3.4.1</ID>
@@ -675,6 +672,7 @@
     <Scene>
       <SceneName>Scene 3 Shed Ethan</SceneName>
       <SceneName>Scene 3 Shed</SceneName>
+      <ObjectName>Finished Breaker Conversation</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>

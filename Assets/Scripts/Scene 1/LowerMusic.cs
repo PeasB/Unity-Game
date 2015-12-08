@@ -4,21 +4,20 @@ using System.Collections;
 public class LowerMusic : MonoBehaviour {
 
     public AudioSource MainCameraAudio;
-    private bool CarEntered = false;
+    private bool Triggered = false;
+    public float Min;
     public float AudioLowerSpeed = 0f;
 
     void OnTriggerEnter2D()
     {
-        CarEntered = true;
+        Triggered = true;
                                   
     }
 
     void Update()
     {
-        if (CarEntered && MainCameraAudio.volume > 0.4)
+        if (Triggered && MainCameraAudio.volume > Min)
             MainCameraAudio.volume -= AudioLowerSpeed;
     }
-
-
 
 }
