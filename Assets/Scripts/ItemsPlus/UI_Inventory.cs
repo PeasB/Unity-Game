@@ -8,8 +8,8 @@ public class UI_Inventory : MonoBehaviour {
     private GameObject Canvas;
     public GameObject Inventory;
     public GameObject Crafting;
-    public GameObject Map;
-    public GameObject Dialogue;
+    //public GameObject Map;
+    //public GameObject Dialogue;
     bool Paused = false;
     
     //Selected Item

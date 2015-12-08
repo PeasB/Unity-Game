@@ -329,30 +329,11 @@ public class InventoryScript : MonoBehaviour {
         //========================Display into UI==============================
 
         //Loop finnished and array is complete. Now input data from the array into the UI
-
-        ////Print until UI is finished
-        //for (int i = 0; i < CraftingTable.GetLength(0); i++)
-        //{
-        //    print("Item: " + CraftingTable[i, 1] + "         " + "Can you Craft it?: " + CraftingTable[i, 4]);
-        //}
-        
-        //if (UI_Inventory.GetCraftingSlots[1] != null)
-        //    print("yess");
-        //else
-        //    print("No");
-        
+                
         for (int i = 0; i < CraftingTable.GetLength(0); i++) //UI_Inventory.GetCraftingSlots.Length;
         {
-            //Sprite ItemPicture = Resources.Load<Sprite>(CraftingTable[i, 3]);                        
-
-            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]);
-            print(UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite);
-            print(CraftingTable[i, 3]);
-            
+            UI_Inventory.GetCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(CraftingTable[i, 3]);            
         }
-
-
-
 
     }
         
