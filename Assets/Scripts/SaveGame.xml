@@ -11,10 +11,10 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Scene 2</CurrentScene>
+    <CurrentScene></CurrentScene>
     <PlayerPosition>
-      <X>0.7562203</X>
-      <Y>2.002998</Y>
+      <X></X>
+      <Y></Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -574,8 +574,8 @@
     <Ethan>
       <Josh>100</Josh>
       <Matt>10</Matt>
-      <Kate>40</Kate>
-      <April>10</April>
+      <Kate>100</Kate>
+      <April>100</April>
     </Ethan>
   </Relationships>
   <StoryPaths>
@@ -605,11 +605,23 @@
     </Situation>
     <Situation>
       <ID>2.5.1</ID>
-      <Outcome>3</Outcome>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2.6.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2.7.1</ID>
+      <Outcome>0</Outcome>
+    </Situation>
+    <Situation>
+      <ID>2.8.1</ID>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.0.1</ID>
-      <Outcome>2</Outcome>
+      <Outcome>0</Outcome>
     </Situation>
     <Situation>
       <ID>3.1.1</ID>
