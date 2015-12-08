@@ -11,7 +11,8 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene></CurrentScene>
+    <CurrentScene>
+    </CurrentScene>
     <PlayerPosition>
       <X></X>
       <Y></Y>
@@ -187,24 +188,18 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -605,7 +600,7 @@
     </Situation>
     <Situation>
       <ID>2.5.1</ID>
-      <Outcome>0</Outcome>
+      <Outcome>3</Outcome>
     </Situation>
     <Situation>
       <ID>2.6.1</ID>
