@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Conversations>
+
+	<Conversation>
+
+	  <ID>1</ID>
+
+    <Level1>
+
+      <initialDialogue>
+        <DialogueCount>7</DialogueCount>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Josh: Oh we are going to get smashed this week! Right Ethan?</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Ethan: Hell Ya!</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Kate: Please Ethan at least i'm not an alcoholic.</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Josh: Ooooooh.</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Kate: You son of a B....</Text>
+        </Dialogue>
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>April: Ok! Enough you two! I feel like a parent.</Text>
+        </Dialogue>
+        
+        <Dialogue>
+          <Conditions>None</Conditions>
+          <Text>Ethan: Oh Who's the father, Matt?</Text>
+        </Dialogue>
+      </initialDialogue>
+
+      <TimeToChoose>10</TimeToChoose>
+      <HasChoices>Yes</HasChoices>
+
+      <Choice1>
+
+        <Conditions>None</Conditions>
+        <Text>Protective - Come on guys cut it out!</Text>
+        <Conquences>
+          <Relationship>
+            <April>15</April>
+            <Ethan>-15</Ethan>
+          </Relationship>
+        </Conquences>
+       
+        <AdditionalDialogue>
+          <DialogueCount>6</DialogueCount>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Matt: Come on guys cut it out! You know there is nothing between us.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>April: Thanks Matt.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Ethan: Man it was just a joke.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Kate: Enough Jokes! How far is this cabin Ethan?</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Ethan: Well my uncle said that it should be right up ahead, we should be there soon.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Josh: Good, cuz I gotta peee...</Text>
+          </Dialogue>
+        </AdditionalDialogue>
+
+      </Choice1>
+      <Choice2>
+
+        <Conditions>None</Conditions>
+        <Text>Encourage - You know it!</Text>
+        <Conquences>
+          <Relationship>
+            <April>-15</April>
+            <Ethan>15</Ethan>
+          </Relationship>
+        </Conquences>
+        
+        <AdditionalDialogue>
+          <DialogueCount>5</DialogueCount>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>April: You're a jerk Matt.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Matt: It was just a joke April. Chill...</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Kate: Enough Jokes! How far is this cabin Ethan?</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Ethan: Well my uncle said that it should be right up ahead, we should be there soon.</Text>
+          </Dialogue>
+          <Dialogue>
+            <Conditions>None</Conditions>
+            <Text>Josh: Good, cuz I gotta pee...</Text>
+          </Dialogue>
+        </AdditionalDialogue>
+
+      </Choice2>
+
+
+
+    </Level1>
+
+
+	 </Conversation>
+  
+</Conversations>
