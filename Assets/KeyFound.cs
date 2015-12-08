@@ -9,6 +9,7 @@ public class KeyFound : MonoBehaviour {
 
         if(this.GetComponent<StoryPathChecker>().ValueCheck())
         {
+            if(GameObject.Find("Area Event find key") != null)
             GameObject.Find("Area Event find key").GetComponent<AreaEvent>().CanReactivate = false;
         }
 
