@@ -54,15 +54,15 @@
       <Description>A light source that can be carried around</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Torch</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Torch</ObjectName>
     </Item>
 
     <Item>
       <ID>6</ID>
-      <Name>Hammer</Name>
-      <Description>A weak but useful hammer. Looks like it will break after one hit.</Description>
+      <Name>Axe</Name>
+      <Description>A weak but useful axe. Looks like it will break after one hit.</Description>
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
       <PicPath>ItemSprites/Axe</PicPath>
@@ -109,7 +109,7 @@
       <Description>This will light up your path! Although it needs a battery to start up...</Description>
       <Craftable>0</Craftable>
       <Stackable>0</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/FlashlightOff</PicPath>
       <Payload></Payload>
       <ObjectName>Item_BrokenFlashlight</ObjectName>
     </Item>
@@ -120,7 +120,7 @@
       <Description>This powers up a device</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Battery</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Battery</ObjectName>
     </Item>
@@ -131,7 +131,7 @@
       <Description>This will light up your path!</Description>
       <Craftable>1</Craftable>
       <Stackable>0</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/FlashlightOn</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Flashlight</ObjectName>
     </Item>
@@ -151,14 +151,23 @@
       <ID>1</ID>
       <NewID>9</NewID>
     </Craft>
+
+    <Craft>
+      <ID>9</ID>
+      <NewID>1</NewID>
+    </Craft>
     
     <Craft>
       <ID>1</ID>
       <ID>3</ID>
       <NewID>6</NewID>
     </Craft>
-     
 
+    <Craft>
+      <ID>10</ID>
+      <ID>11</ID>
+      <NewID>12</NewID>
+    </Craft>
         
   </Crafting>
 

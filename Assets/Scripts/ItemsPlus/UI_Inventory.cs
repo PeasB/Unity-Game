@@ -1,6 +1,6 @@
 ﻿//By: Ryan Dailey
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class UI_Inventory : MonoBehaviour {
 
@@ -15,6 +15,7 @@ public class UI_Inventory : MonoBehaviour {
     //Selected Item
     public static int SelectedInventoryItem_ID = 0; //0 = no item selected
     public static int SelectedCraftingItem_ID = 0; //0 = no item selected
+    public static bool CanCraft = false;
 
     //Do a get set
     private static GameObject[] InventorySlots = new GameObject[30];
@@ -22,6 +23,8 @@ public class UI_Inventory : MonoBehaviour {
     private static GameObject[] InventoryInCraftingSlots = new GameObject[30];
 
     private static GameObject[] CraftingSlots = new GameObject[28];
+
+    private static GameObject[] FormluaSlots = new GameObject[5];
 
     public static GameObject[] GetCraftingSlots
     {
@@ -46,6 +49,11 @@ public class UI_Inventory : MonoBehaviour {
             return InventoryInCraftingSlots;
         }
     }
+
+    public static GameObject[] GetFormulaSlots
+    {
+        get { return FormluaSlots; }
+    }
         
 
     // Use this for initialization
@@ -60,10 +68,9 @@ public class UI_Inventory : MonoBehaviour {
         //Inventory.gameObject.SetActive(false);
         //Dialogue.gameObject.SetActive(false);
 
-        //Get Sprites
         
-
         //---Crafting Cells---
+        #region Crafting cells
         int Row = 1;
         int Column = 1;
 
@@ -77,8 +84,52 @@ public class UI_Inventory : MonoBehaviour {
                 Row++;
             }
         }
+        #endregion
+
+        //---Inventory in crafting cells---
+        #region Inventory in crafting cells
+        Row = 1;
+        Column = 1;
+
+        for (int i = 0; i < 30; i++)
+        {
+            InventoryInCraftingSlots[i] = Canvas.transform.Find("Menu_Crafting").gameObject.transform.Find("ItemSlot " + Row + "," + Column).gameObject;
+            Column++;
+            if (Column == 7)
+            {
+                Column = 1;
+                Row++;
+            }
+        }
+        #endregion
+
+        //---Inventory cells---
+        #region Inventory Cells
+        Row = 1;
+        Column = 1;
+
+        for (int i = 0; i < 30; i++)
+        {
+            InventorySlots[i] = Canvas.transform.Find("Menu_Inventory").gameObject.transform.Find("iSlot " + Row + "," + Column).gameObject;
+            Column++;
+            if (Column == 6)
+            {
+                Column = 1;
+                Row++;
+            }
+        }
+        #endregion
+
+        //---Formula cells---
+        #region Formula cells
         
-      
+        for (int i = 0; i < 5; i++)
+        {
+            FormluaSlots[i] = Canvas.transform.Find("Menu_Crafting").gameObject.transform.Find("Formula" + (i+1)).gameObject;
+        }
+
+        #endregion
+
 
     }
 	
@@ -96,7 +147,10 @@ public class UI_Inventory : MonoBehaviour {
             }
             else
             {
+                InventoryScript.DisplayInventory();
                 InventoryScript.DisplayCrafting();
+                InventoryScript.DisplayInventoryInCraft();
+                InventoryScript.DisplayItemFormula(9);
                 Time.timeScale = 0.0f;
                 Canvas.gameObject.SetActive(true);
                 Paused = true;
@@ -106,6 +160,7 @@ public class UI_Inventory : MonoBehaviour {
         {
             //InventoryScript.DisplayCrafting();
         }
+        
 
 
 

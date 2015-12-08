@@ -11,22 +11,19 @@
     <ControllerSupport>0</ControllerSupport>
   </Settings>
   <SaveState>
-    <CurrentScene>Scene 3 Outside</CurrentScene>
+    <CurrentScene></CurrentScene>
     <PlayerPosition>
-      <X>328.0048</X>
-      <Y>-364.5</Y>
+      <X></X>
+      <Y></Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
         <SceneName>Walking Sounds Test Scene</SceneName>
         <AI>
           <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -305,9 +302,9 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X>399.7496</X>
-            <Y>-405.2616</Y>
-            <Action>FollowPlayer</Action>
+            <X></X>
+            <Y></Y>
+            <Action></Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -672,7 +669,6 @@
     <Scene>
       <SceneName>Scene 3 Shed Ethan</SceneName>
       <SceneName>Scene 3 Shed</SceneName>
-      <ObjectName>Finished Breaker Conversation</ObjectName>
     </Scene>
     <Scene>
       <SceneName>Walking Sounds Test Scene</SceneName>
@@ -684,18 +680,12 @@
     <ItemID>4</ItemID>
     <ItemID>1</ItemID>
     <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
-    <ItemID>1</ItemID>
-    <ItemID>4</ItemID>
     <ItemID>5</ItemID>
     <ItemID>5</ItemID>
-    <ItemID>4</ItemID>
     <ItemID>9</ItemID>
     <ItemID>7</ItemID>
+    <ItemID>10</ItemID>
+    <ItemID>11</ItemID>
+    <ItemID>12</ItemID>
   </Inventory>
 </SaveData>

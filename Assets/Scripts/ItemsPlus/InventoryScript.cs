@@ -136,20 +136,12 @@ public class InventoryScript : MonoBehaviour {
         //------------------------Display into UI---------------------------
         //Display array info into the UI (Display the items in the players inventory)
 
-        
-
-
-
-        //Print it out until Andrew finishes inventory UI
-        for (int i = 0; i < InventoryBox.GetLength(0); i++)
+        for (int i = 0; i < InventoryBox.GetLength(0); i++) //UI_Inventory.GetCraftingSlots.Length;
         {
-            if (InventoryBox[i, 1] != null) //Makes it only print the items that are in the players inventory
-            {
-                print(InventoryBox[i, 1] + " " + InventoryBox[i, 3]);
-            }
+            if (InventoryBox[i, 4] != null)
+                UI_Inventory.GetInventorySlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(InventoryBox[i, 4]);
         }
-        print("----------------------");
-
+                
 
     }
 
@@ -161,7 +153,11 @@ public class InventoryScript : MonoBehaviour {
         //------------------------Display into UI---------------------------
         //Display array info into the UI (Display the items in the players inventory)
 
-
+        for (int i = 0; i < InventoryBox.GetLength(0); i++) //UI_Inventory.GetCraftingSlots.Length;
+        {
+            if (InventoryBox[i, 4] != null)
+                UI_Inventory.GetInventoryInCraftingSlots[i].GetComponent<Image>().sprite = Resources.Load<Sprite>(InventoryBox[i, 4]);
+        }
 
     }
 
@@ -414,16 +410,15 @@ public class InventoryScript : MonoBehaviour {
                 break;
             }
         }
-
-
+        
         //--------------------------------------------------------------------------
 
         //If SC_CanCraft == false, Check what items are missing so you darken the missing item on the ui.
         //If SC_CanCraft == true, skip all since no item pics need to be darken since you have all the required items.
         //Also Find the rest of the info of ingredients (like name, description, picpath, ect)
 
-        
-            for (int i = 0; i < NumOfIngredients; i++) //Find what ingredient is missing
+
+        for (int i = 0; i < NumOfIngredients; i++) //Find what ingredient is missing
             {
 
                 //Find other info
@@ -458,15 +453,42 @@ public class InventoryScript : MonoBehaviour {
                 }
            }
 
-       //--------------------------------------------------------------------------
+        //--------------------------------------------------------------------------
 
-       //========================Display into UI==============================
-       print("Babatunde");
+        //========================Display into UI==============================
 
-       //Given: SelectedCraft_ID, SC_CanCraft, SC_Description, SC_PicPath, and all that for each ingredient in the IngredientID array
-
-
-
+        //Given: SelectedCraft_ID, SC_CanCraft, SC_Description, SC_PicPath, and all that for each ingredient in the IngredientID array
+                       
+        if (IngredientIDs[4,0] != null) //=====
+        {
+            UI_Inventory.GetFormulaSlots[0].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[0, 3]);
+            UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[1, 3]);
+            UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[2, 3]);
+            UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[3, 3]);
+            UI_Inventory.GetFormulaSlots[4].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[4, 3]);
+        }
+        else if (IngredientIDs[3, 0] != null) //====-
+        {
+            UI_Inventory.GetFormulaSlots[0].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[0, 3]);
+            UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[1, 3]);
+            UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[2, 3]);
+            UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[3, 3]);
+        }
+        else if (IngredientIDs[2, 0] != null) //-===-
+        {
+            UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[0, 3]);
+            UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[1, 3]);
+            UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[2, 3]);
+        }
+        else if (IngredientIDs[1, 0] != null) //-=-=-
+        {
+            UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[0, 3]);
+            UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[1, 3]);
+        }
+        else if (IngredientIDs[0, 0] != null) //--=--
+        {
+            UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[0, 3]);
+        }
 
     }
 
