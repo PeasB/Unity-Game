@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CallCanvas.cs" />
     <Compile Include="Assets\Scripts\AES Crypto\AES_Crypto.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Character.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Events.cs" />
@@ -84,6 +83,7 @@
     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\PixelPerfectObject.cs" />
     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\PixelPerfectCamera.cs" />
     <Compile Include="Assets\Scripts\Extras\PixelPerfect\Scripts\PixelPerfectSprite.cs" />
+    <Compile Include="Assets\Scripts\Extras\StoryPathChecker.cs" />
     <Compile Include="Assets\Scripts\ItemsPlus\InteractionsItem.cs" />
     <Compile Include="Assets\Scripts\ItemsPlus\InventoryScript.cs" />
     <Compile Include="Assets\Scripts\ItemsPlus\SlotsInteraction.cs" />
@@ -105,14 +105,14 @@
     <Compile Include="Assets\Scripts\Scene 2\PathStopper.cs" />
     <Compile Include="Assets\Scripts\Scene 2\StopCar.cs" />
     <Compile Include="Assets\Scripts\Scene 3\PowerOn.cs" />
-    <Compile Include="Assets\Scripts\Scene 3\StoryPathChecker.cs" />
+    <Compile Include="Assets\Scripts\Scene 3\Scene3EndGame.cs" />
+    <Compile Include="Assets\Scripts\Scene 3\ShowLumberjack.cs" />
     <Compile Include="Assets\Scripts\Scene 3\WayBack.cs" />
     <Compile Include="Assets\Scripts\Scene 3\WhichOutdoors.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\Other\BrokenDoor.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\Other\LockedDoor.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Storyline\StorylineScript.cs" />
-    <Compile Include="Assets\ShowLumberjack.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
