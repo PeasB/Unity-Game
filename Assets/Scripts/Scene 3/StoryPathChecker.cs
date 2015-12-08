@@ -11,15 +11,12 @@ public class StoryPathChecker : MonoBehaviour {
 
 	 private XmlDocument Save;
 
-	void Start()
-	{
-		Save = new XmlDocument();
-		Save.Load("Assets/Scripts/SaveGame.xml");
-	}
-
 	public bool ValueCheck()
 	{
-		foreach(XmlNode Child in Save.SelectSingleNode("SaveData/StoryPaths"))
+        Save = new XmlDocument();
+        Save.Load("Assets/Scripts/SaveGame.xml");
+
+        foreach (XmlNode Child in Save.SelectSingleNode("SaveData/StoryPaths"))
 		{
 			if(Child.SelectSingleNode("ID").InnerText == SceneID + "." + ConversationID + "." + Level && Child.SelectSingleNode("Outcome").InnerText == Value.ToString())
 			{
