@@ -215,7 +215,7 @@ public class AI_Character : MonoBehaviour {
         // Update is called once per frame
     void Update ()
     {
-
+        
         #region Check for AI Follow Link
         if (OtherAI_Object == null)
         {
@@ -513,12 +513,12 @@ public class AI_Character : MonoBehaviour {
         else if (Action == AI_Action.Event) //Do an event
         {
             #region Preform Event
-
+            
             Body.isKinematic = true;
 
             if (EventType == PreviousEventType) //Continue on with event
             {
-                EventStepCase = AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase); //Execute Event while retrieving the CaseStep
+                EventStepCase = Body.GetComponent<AI_Events>().PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase); //Execute Event while retrieving the CaseStep
             }
             else //Start a new event
             {
@@ -527,6 +527,8 @@ public class AI_Character : MonoBehaviour {
                 EventStepCase = 1;
 
                 PreviousEventType = EventType;
+
+                Body.GetComponent<AI_Events>().GetLocation(Body, EventType, EventStepCase);
 
                 //---Set values for save data---
                 //Read in SaveGame.xml
@@ -589,7 +591,7 @@ public class AI_Character : MonoBehaviour {
 
 
 
-                AI_Events.PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase);
+                Body.GetComponent<AI_Events>().PreformEvent(Body, WalkSpeed, Anim, EventType, Original_X, Original_Y, EventStepCase);
             }
 
             #endregion
