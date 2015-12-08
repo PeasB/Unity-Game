@@ -155,7 +155,7 @@ public class AreaEvent : MonoBehaviour {
                 PlayerObject.GetComponent<Player>().enabled = true;
         }
 
-
+                
 
         //If Conversation can't be reactivated and has already run then Destroy the object and will never show up again.
         if (!ConversationInstance.IsActive && ConversationInstance.HasRun && !CanReactivate) 

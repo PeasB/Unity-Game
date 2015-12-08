@@ -114,6 +114,7 @@
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+    <Compile Include="Assets\WhichOutdoors.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Quick Time Events\No.1.xml" />

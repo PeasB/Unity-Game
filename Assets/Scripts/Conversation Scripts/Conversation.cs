@@ -167,8 +167,22 @@ public class ConversationManager {
 					}
 				
 				break;
-				#endregion
-			}
+                #endregion
+                #region Inventory
+                case "Inventory": //Goes through required items and check if player has them.
+
+                    foreach(XmlNode Item in ConditionSet.ChildNodes)//Item Node.
+                    {
+                        if(!InventoryScript.CheckItem(int.Parse(Item.InnerText)))//Item is not in Inventory.
+                        {
+                            ConditionsValid = false;
+                            break;
+                        }
+                    }
+                    break;
+               #endregion
+
+            }
         }
 
         #endregion
