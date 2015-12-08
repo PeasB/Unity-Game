@@ -26,7 +26,8 @@ public class AI_Events : MonoBehaviour {
                
                     if (Body.name == "AI Josh")
                     {
-                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText != "")
+                    #region AI Josh
+                    if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText != "")
                         {
                             XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/X").InnerText));
                             YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/JoshAI/Y").InnerText));
@@ -34,6 +35,13 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
+
+                        //Check for teleport
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Teleport/JoshAI/X").InnerText != "" && node.SelectSingleNode("Part" + EventNumber + "/Teleport/JoshAI/Y").InnerText != "")
+                        {
+                            Body.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/JoshAI/X").InnerText), float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/JoshAI/Y").InnerText));
+                        }
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -58,11 +66,12 @@ public class AI_Events : MonoBehaviour {
                         xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
                     }
-                                                                        
-                    }
-                    else if (Body.name == "AI Matt")
+                    #endregion
+                }
+                else if (Body.name == "AI Matt")
                     {
-                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/Y").InnerText != "")
+                    #region AI Matt
+                    if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/Y").InnerText != "")
                         {
                             XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/X").InnerText));
                             YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/MattAI/Y").InnerText));
@@ -70,6 +79,13 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
+
+                        //Check for teleport
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Teleport/MattAI/X").InnerText != "" && node.SelectSingleNode("Part" + EventNumber + "/Teleport/MattAI/Y").InnerText != "")
+                        {
+                            Body.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/MattAI/X").InnerText), float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/MattAI/Y").InnerText));
+                        }
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -91,12 +107,13 @@ public class AI_Events : MonoBehaviour {
                         //Save XML
                         xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
-                    }                                                
-
                     }
+                    #endregion
+                }
                     else if (Body.name == "AI Kate")
                     {
-                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/Y").InnerText != "")
+                    #region AI Kate
+                    if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/Y").InnerText != "")
                         {
                             XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/X").InnerText));
                             YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/KateAI/Y").InnerText));
@@ -104,6 +121,13 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
+
+                        //Check for teleport
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Teleport/KateAI/X").InnerText != "" && node.SelectSingleNode("Part" + EventNumber + "/Teleport/KateAI/Y").InnerText != "")
+                        {
+                            Body.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/KateAI/X").InnerText), float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/KateAI/Y").InnerText));
+                        }
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -126,11 +150,12 @@ public class AI_Events : MonoBehaviour {
                         xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
                     }
-                                                
-                    }
+                    #endregion
+                }
                     else if (Body.name == "AI April")
                     {
-                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/Y").InnerText != "")
+                    #region AI April
+                    if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/Y").InnerText != "")
                         {
                             XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/X").InnerText));
                             YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/AprilAI/Y").InnerText));
@@ -138,6 +163,13 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
+
+                        //Check for teleport
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Teleport/AprilAI/X").InnerText != "" && node.SelectSingleNode("Part" + EventNumber + "/Teleport/AprilAI/Y").InnerText != "")
+                        {
+                            Body.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/AprilAI/X").InnerText), float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/AprilAI/Y").InnerText));
+                        }
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -160,11 +192,12 @@ public class AI_Events : MonoBehaviour {
                         xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
                     }
-                        
-                    }
-                    else if (Body.name == "AI Ethan")
+                    #endregion
+                }
+                else if (Body.name == "AI Ethan")
                     {
-                        if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/Y").InnerText != "")
+                    #region AI Ethan
+                    if (node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/X").InnerText != "" || node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/Y").InnerText != "")
                         {
                             XMove = Find_X_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/X").InnerText));
                             YMove = Find_Y_Distance(Body, double.Parse(node.SelectSingleNode("Part" + EventNumber + "/Case" + CaseStep + "/EthanAI/Y").InnerText));
@@ -172,6 +205,13 @@ public class AI_Events : MonoBehaviour {
                         else
                         {
                             Body.GetComponent<AI_Character>().Action = AI_Character.AI_Action.StationaryWithDir;
+                        Body.GetComponent<CircleCollider2D>().enabled = true;
+
+                        //Check for teleport
+                        if (node.SelectSingleNode("Part" + EventNumber + "/Teleport/EthanAI/X").InnerText != "" && node.SelectSingleNode("Part" + EventNumber + "/Teleport/EthanAI/Y").InnerText != "")
+                        {
+                            Body.GetComponent<Transform>().position = new Vector3(float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/EthanAI/X").InnerText), float.Parse(node.SelectSingleNode("Part" + EventNumber + "/Teleport/EthanAI/Y").InnerText));
+                        }
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
@@ -194,11 +234,11 @@ public class AI_Events : MonoBehaviour {
                         xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
                     }
-                                                
-                    }
+                    #endregion
+                }
 
 
-                    if (XMove == 0 && YMove == 0)
+                if (XMove == 0 && YMove == 0)
                     {
                         CaseStep++;
 
@@ -254,13 +294,17 @@ public class AI_Events : MonoBehaviour {
                                 Xnode.SelectSingleNode("AI/EthanAI/EventType").InnerText = EventNumber.ToString();
                                 Xnode.SelectSingleNode("AI/EthanAI/CaseStep").InnerText = CaseStep.ToString();
                             }
+                            break;
                         }
-                    }               
+                    }
 
                     //Save XML
                     xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
 
-                 }
+                    
+
+                }
+
 
                 
 
