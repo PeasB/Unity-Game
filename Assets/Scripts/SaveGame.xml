@@ -13,8 +13,8 @@
   <SaveState>
     <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X></X>
-      <Y></Y>
+      <X>-2.454036</X>
+      <Y>-2.962562</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -151,8 +151,10 @@
         <SceneName>Scene 2</SceneName>
         <AI>
           <JoshAI>
-            <X></X>
-            <Y></Y>
+            <X>
+            </X>
+            <Y>
+            </Y>
             <Action>
             </Action>
             <EventType>
@@ -173,8 +175,10 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
+            <X>
+            </X>
+            <Y>
+            </Y>
             <Action>
             </Action>
             <EventType>
@@ -183,17 +187,22 @@
             </CaseStep>
           </KateAI>
           <AprilAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
             </CaseStep>
           </AprilAI>
           <EthanAI>
-            <X></X>
-            <Y></Y>
+            <X>
+            </X>
+            <Y>
+            </Y>
             <Action>
             </Action>
             <EventType>

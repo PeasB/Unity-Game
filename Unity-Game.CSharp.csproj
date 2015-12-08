@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.2.2f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -70,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CallCanvas.cs" />
     <Compile Include="Assets\Scripts\AES Crypto\AES_Crypto.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Character.cs" />
     <Compile Include="Assets\Scripts\AI\AI_Events.cs" />
@@ -108,15 +107,16 @@
     <Compile Include="Assets\Scripts\Scene 3\PowerOn.cs" />
     <Compile Include="Assets\Scripts\Scene 3\StoryPathChecker.cs" />
     <Compile Include="Assets\Scripts\Scene 3\WayBack.cs" />
+    <Compile Include="Assets\Scripts\Scene 3\WhichOutdoors.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\Other\BrokenDoor.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\Other\LockedDoor.cs" />
     <Compile Include="Assets\Scripts\Scene Transition\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Storyline\StorylineScript.cs" />
+    <Compile Include="Assets\ShowLumberjack.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
     <Compile Include="Assets\Tilemaps\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
-    <Compile Include="Assets\WhichOutdoors.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Quick Time Events\No.1.xml" />
@@ -130,9 +130,7 @@
     <None Include="Assets\Scripts\ItemsPlus\Items.xml" />
     <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml" />
     <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
-    <None Include="Assets\Scripts\SaveGame.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\Scripts\SaveGame.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Cabin Tilemap.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 1.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 2.tiled2unity.xml" />
