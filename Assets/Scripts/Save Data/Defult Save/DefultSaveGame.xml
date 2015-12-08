@@ -16,134 +16,7 @@
       <X></X>
       <Y></Y>
     </PlayerPosition>
-    <Scenes>
-      <Scene>
-        <SceneName>Walking Sounds Test Scene</SceneName>
-        <AI>
-          <JoshAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </JoshAI>
-          <MattAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </MattAI>
-          <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </KateAI>
-          <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </AprilAI>
-          <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </EthanAI>
-        </AI>
-      </Scene>
-      <Scene>
-        <SceneName>Ryans Test Scene</SceneName>
-        <AI>
-          <JoshAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </JoshAI>
-          <MattAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </MattAI>
-          <KateAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </KateAI>
-          <AprilAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </AprilAI>
-          <EthanAI>
-            <X>
-            </X>
-            <Y>
-            </Y>
-            <Action>
-            </Action>
-            <EventType>
-            </EventType>
-            <CaseStep>
-            </CaseStep>
-          </EthanAI>
-        </AI>
-      </Scene>
+    <Scenes>      
       <Scene>
         <SceneName>Scene 2</SceneName>
         <AI>
@@ -669,10 +542,6 @@
     <Scene>
       <SceneName>Scene 3 Shed Ethan</SceneName>
       <SceneName>Scene 3 Shed</SceneName>
-    </Scene>
-    <Scene>
-      <SceneName>Walking Sounds Test Scene</SceneName>
-      <SceneName>Ryans Test Scene</SceneName>
     </Scene>
   </DestroyObjects>
   <Inventory>

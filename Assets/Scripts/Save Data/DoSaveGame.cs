@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Xml;
 using System.IO;
 using System.Text;
+using System;
 
 public class DoSaveGame : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class DoSaveGame : MonoBehaviour {
     ////---For encrypted one---
     ////Read in SaveGame.xml
     //XmlDocument SaveGameDoc = new XmlDocument();
-    //SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
+    //SaveGameDoc.Load(DoSaveGame.FetchSaveData());
 
 
 
@@ -25,6 +26,7 @@ public class DoSaveGame : MonoBehaviour {
         //Read in DefultSaveGame.xml
         XmlDocument DefultSaveGameDoc = new XmlDocument();
         DefultSaveGameDoc.Load("Assets/Scripts/Save Data/Defult Save/DefultSaveGame.xml");
+        DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/Version.txt";
 
         UpdateSaveData(DefultSaveGameDoc);
         
