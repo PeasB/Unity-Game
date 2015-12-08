@@ -50,7 +50,7 @@ public class AI_Character : MonoBehaviour {
         //Check for players position and action
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
 
         foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -305,7 +305,7 @@ public class AI_Character : MonoBehaviour {
             {
                 //Read in SaveGame.xml
                 XmlDocument SaveGameDoc = new XmlDocument();
-                SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
 
                 foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -344,7 +344,7 @@ public class AI_Character : MonoBehaviour {
                         }
 
                         //Save XML
-                        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                        DoSaveGame.UpdateSaveData(SaveGameDoc);
                     }
                 }
 
@@ -533,7 +533,7 @@ public class AI_Character : MonoBehaviour {
                 //---Set values for save data---
                 //Read in SaveGame.xml
                 XmlDocument SaveGameDoc = new XmlDocument();
-                SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
                 //Find current scene then find ScenePart. 
                 foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -587,7 +587,7 @@ public class AI_Character : MonoBehaviour {
                 }
 
                 //Save XML
-                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                DoSaveGame.UpdateSaveData(SaveGameDoc);
 
 
 

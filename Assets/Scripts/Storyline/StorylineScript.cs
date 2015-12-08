@@ -263,7 +263,7 @@ public class StorylineScript : MonoBehaviour {
 
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         AI_Matt = GameObject.Find("AI Matt");
         AI_Josh = GameObject.Find("AI Josh");

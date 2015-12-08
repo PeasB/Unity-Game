@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 		//--Check for players position--
 		//Read in SaveGame.xml
 		XmlDocument SaveGameDoc = new XmlDocument();
-		SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+		SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
 		if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText != "" && SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText != "")
 		{
@@ -137,13 +137,13 @@ public class Player : MonoBehaviour {
         {
             //Read in SaveGame.xml
             XmlDocument SaveGameDoc = new XmlDocument();
-            SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+            SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
             SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText = transform.position.x.ToString();
             SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText = transform.position.y.ToString();
 
             //Save XML
-            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+            DoSaveGame.UpdateSaveData(SaveGameDoc);
 
             CounterPos = 0;
         }

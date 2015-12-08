@@ -29,7 +29,7 @@ public class SceneTransition : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/X").InnerText = XPlayer.ToString();
         SaveGameDoc.SelectSingleNode("SaveData/SaveState/PlayerPosition/Y").InnerText = YPlayer.ToString();
@@ -158,7 +158,7 @@ public class SceneTransition : MonoBehaviour {
         SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText = SceneName;
 
         //Save XML
-        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+        DoSaveGame.UpdateSaveData(SaveGameDoc);
 
         //Load Level
         Application.LoadLevel(SceneName);

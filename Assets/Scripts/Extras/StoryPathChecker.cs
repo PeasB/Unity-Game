@@ -14,7 +14,7 @@ public class StoryPathChecker : MonoBehaviour {
 	public bool ValueCheck()
 	{
         Save = new XmlDocument();
-        Save.Load("Assets/Scripts/SaveGame.xml");
+        Save.LoadXml(DoSaveGame.FetchSaveData());
 
         foreach (XmlNode Child in Save.SelectSingleNode("SaveData/StoryPaths"))
 		{

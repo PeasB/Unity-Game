@@ -8,7 +8,7 @@ public class PatchSaveData : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //If savedata gameversion does not match the current game version, run patch
         if (SaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText != Application.version)
@@ -23,7 +23,7 @@ public class PatchSaveData : MonoBehaviour {
 
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //if (SaveGameDoc.SelectSingleNode("SaveData/Settings") == null)
         //    print("I dont exist");        
@@ -41,7 +41,7 @@ public class PatchSaveData : MonoBehaviour {
         SaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText = Application.version;
 
         //Save XML
-        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+        DoSaveGame.UpdateSaveData(SaveGameDoc);
     }
 
 

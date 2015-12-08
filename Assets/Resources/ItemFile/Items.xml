@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  
+  <ItemsList>
+    
+       
+    <Item>
+      <ID>1</ID>
+      <Name>Stick</Name>
+      <Description>Also comes from trees!</Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath>ItemSprites/Stick</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Stick</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>2</ID>
+      <Name>Book</Name>
+      <Description>The book of life</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath>ItemSprites/Black Book</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Book</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>3</ID>
+      <Name>Rock</Name>
+      <Description>A small light rock</Description>
+      <Craftable>0</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Rock</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>4</ID>
+      <Name>Match</Name>
+      <Description>A device that creates a flame</Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Match</ObjectName>
+    </Item>
+    
+    <Item>
+      <ID>5</ID>
+      <Name>Torch</Name>
+      <Description>A light source that can be carried around</Description>
+      <Craftable>0</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath>ItemSprites/Torch</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Torch</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>6</ID>
+      <Name>Axe</Name>
+      <Description>A weak but useful axe. Looks like it will break after one hit.</Description>
+      <Craftable>1</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath>ItemSprites/Axe</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Hammer</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>7</ID>
+      <Name>Key</Name>
+      <Description>A key that opens a door</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath>ItemSprites/Key</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Key</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>8</ID>
+      <Name>CD</Name>
+      <Description>A CD that has a song on it</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath></PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_CD</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>9</ID>
+      <Name>Wood</Name>
+      <Description>Comes from trees!</Description>
+      <Craftable>1</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath>ItemSprites/Logs</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Wood</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>10</ID>
+      <Name>Broken Flashlight</Name>
+      <Description>This will light up your path! Although it needs a battery to start up...</Description>
+      <Craftable>0</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath>ItemSprites/FlashlightOff</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_BrokenFlashlight</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>11</ID>
+      <Name>Battery</Name>
+      <Description>This powers up a device</Description>
+      <Craftable>0</Craftable>
+      <Stackable>1</Stackable>
+      <PicPath>ItemSprites/Battery</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Battery</ObjectName>
+    </Item>
+
+    <Item>
+      <ID>12</ID>
+      <Name>Flashlight</Name>
+      <Description>This will light up your path!</Description>
+      <Craftable>1</Craftable>
+      <Stackable>0</Stackable>
+      <PicPath>ItemSprites/FlashlightOn</PicPath>
+      <Payload></Payload>
+      <ObjectName>Item_Flashlight</ObjectName>
+    </Item>
+
+    
+    
+  </ItemsList>
+
+      
+  
+  <Crafting>
+    
+    <Craft>
+      <ID>1</ID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <ID>1</ID>
+      <NewID>9</NewID>
+    </Craft>
+
+    <Craft>
+      <ID>9</ID>
+      <NewID>1</NewID>
+    </Craft>
+    
+    <Craft>
+      <ID>1</ID>
+      <ID>3</ID>
+      <NewID>6</NewID>
+    </Craft>
+
+    <Craft>
+      <ID>10</ID>
+      <ID>11</ID>
+      <NewID>12</NewID>
+    </Craft>
+        
+  </Crafting>
+
+</Items>

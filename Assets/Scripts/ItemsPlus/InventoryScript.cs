@@ -37,11 +37,11 @@ public class InventoryScript : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Read in Items.xml
         XmlDocument ItemsDoc = new XmlDocument();
-        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+        ItemsDoc.LoadXml(Resources.Load("ItemFile/Items").ToString());
 
         //Fetch current items ID in SaveGame.xml (SaveGameDoc) and store in a list. (Which is a dynamic array)
         List<int> InventoryItemsID = new List<int>();
@@ -165,11 +165,11 @@ public class InventoryScript : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Read in Items.xml
         XmlDocument ItemsDoc = new XmlDocument();
-        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+        ItemsDoc.LoadXml(Resources.Load("ItemFile/Items").ToString());
 
         //Fetch current items ID in SaveGame.xml (SaveGameDoc) and store in a list. (Which is a dynamic array)
         List<int> InventoryItemsID = new List<int>();
@@ -369,11 +369,11 @@ public class InventoryScript : MonoBehaviour {
                
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Read in Items.xml
         XmlDocument ItemsDoc = new XmlDocument();
-        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+        ItemsDoc.LoadXml(Resources.Load("ItemFile/Items").ToString());
 
         foreach (XmlNode node in ItemsDoc.SelectNodes("Items/Crafting/Craft"))
         {
@@ -497,11 +497,11 @@ public class InventoryScript : MonoBehaviour {
 
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Read in Items.xml
         XmlDocument ItemsDoc = new XmlDocument();
-        ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+        ItemsDoc.LoadXml(Resources.Load("ItemFile/Items").ToString());
 
         //Var
         int[] IngredientIDs = new int[5];
@@ -599,7 +599,7 @@ public class InventoryScript : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
 
         ////---For encrypted one---
@@ -615,7 +615,7 @@ public class InventoryScript : MonoBehaviour {
             Item.InnerText = SelectedItemID.ToString();
             SaveGameDoc.DocumentElement.SelectSingleNode("Inventory").AppendChild(Item);
             //Save XML
-            SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+            DoSaveGame.UpdateSaveData(SaveGameDoc);
 
             ////---For encrypted one---
             ////Save XML
@@ -634,7 +634,7 @@ public class InventoryScript : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Check if Item exists / find item
         foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))
@@ -644,7 +644,7 @@ public class InventoryScript : MonoBehaviour {
                 //Item found. Now delete item. Goodbye :)
                 node.ParentNode.RemoveChild(node);
                 //Save XML
-                SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                DoSaveGame.UpdateSaveData(SaveGameDoc);
                 break;
             }
         }
@@ -671,7 +671,7 @@ public class InventoryScript : MonoBehaviour {
 
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Check if Item exists / find item
         foreach (XmlNode node in SaveGameDoc.SelectNodes("SaveData/Inventory/ItemID"))

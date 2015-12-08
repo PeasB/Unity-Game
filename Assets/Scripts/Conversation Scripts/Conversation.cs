@@ -66,7 +66,7 @@ public class ConversationManager {
 
 		//Load Current Save
 		Save = new XmlDocument();
-		Save.Load("Assets/Scripts/SaveGame.xml");
+		Save.LoadXml(DoSaveGame.FetchSaveData());
 
         //Find Correct Conversation in Scene XML file.
         foreach(XmlNode Node in Doc.SelectNodes("Conversations/Conversation"))
@@ -403,7 +403,7 @@ public class ConversationManager {
 
 		IsActive = false;
         DialogueUI.enabled = false;
-		Save.Save("Assets/Scripts/SaveGame.xml");//Close Save File.
+        DoSaveGame.UpdateSaveData(Save);
         return true;
     }
 

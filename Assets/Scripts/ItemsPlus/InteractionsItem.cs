@@ -20,7 +20,7 @@ public class InteractionsItem : MonoBehaviour {
             //---Get Item info---
             //Read in Items.xml
             XmlDocument ItemsDoc = new XmlDocument();
-            ItemsDoc.Load("Assets/Scripts/ItemsPlus/Items.xml");
+            ItemsDoc.LoadXml(Resources.Load("ItemFile/Items").ToString());
 
             foreach (XmlNode node in ItemsDoc.SelectNodes("Items/ItemsList/Item")) //Get info of ItemID
             {

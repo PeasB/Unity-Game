@@ -8,10 +8,10 @@ public class MainMenuManger : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Check if user has not started a game yet
-        if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText == "") //Make it the Date Started instead
+        if (SaveGameDoc == null || SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText == "") //Make it the Date Started instead
         {
             GameObject.Find("Start Game").SetActive(false);
         }
@@ -24,13 +24,13 @@ public class MainMenuManger : MonoBehaviour {
 	{
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Check if user has already started a game, and warn them
         if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText != "") //Make it the Date Started instead
         {
             //Show "Are you sure you would like to erase your current save file? This cannot be undone" with a Yes or No button
-			GameObject.Find ("Canvas").transform.Find ("Erase Save").gameObject.SetActive (true);
+            GameObject.Find("Canvas").transform.Find("Erase Save").gameObject.SetActive(true);
         }
         else
         {
@@ -40,19 +40,19 @@ public class MainMenuManger : MonoBehaviour {
 
             Application.LoadLevel("Scene 1");
         }
-        
+
 
     }
 
-	//Called When Player Clicks Continue game.
-	public void ResumeGame()
+    //Called When Player Clicks Continue game.
+    public void ResumeGame()
 	{
         ////Check if Save File needs to be patched
         //PatchSaveData.CheckForPatch(); 
 
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         Application.LoadLevel(SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText);
     }
@@ -78,11 +78,16 @@ public class MainMenuManger : MonoBehaviour {
 	
 	//Called when Player Clicks Quit Game.
 	public void QuitGame()
-	{
+	{       
         //PatchSaveData.CheckForPatch(); //<--Currently here only for testing purposes since this button isn't being used at the moment
+        Application.Quit ();
 
-		Application.Quit ();
+        //===Test stuff===
+        //XmlDocument DefultSaveGameDoc = new XmlDocument();
+        //DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
+        //print(AES_Crypto.EncryptText(DefultSaveGameDoc.OuterXml));
 
-	}
+
+    }
 
 }

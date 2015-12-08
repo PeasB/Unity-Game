@@ -9,7 +9,7 @@ public class DeleteObjects : MonoBehaviour {
         //--Destory in the future, so save this in savedata--
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         XmlNode ObjectName = SaveGameDoc.CreateElement("ObjectName");
         ObjectName.InnerText = NameOfObject;
@@ -41,7 +41,7 @@ public class DeleteObjects : MonoBehaviour {
 
 
         //Save XML
-        SaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+        DoSaveGame.UpdateSaveData(SaveGameDoc);
     }
 
 
@@ -53,7 +53,7 @@ public class DeleteObjects : MonoBehaviour {
         //---Check if user already picked up item in save data. If so, destory object right away. 
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         bool DoBreak = false;
 

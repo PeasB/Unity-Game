@@ -5,13 +5,15 @@ using System.IO;
 using System.Text;
 using System;
 
-public class DoSaveGame : MonoBehaviour {
+public class DoSaveGame : MonoBehaviour
+{
 
+    //.Load("Assets/Scripts/SaveGame.xml")
 
     ////---For encrypted one---
     ////Read in SaveGame.xml
     //XmlDocument SaveGameDoc = new XmlDocument();
-    //SaveGameDoc.Load(DoSaveGame.FetchSaveData());
+    //SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
 
 
@@ -19,13 +21,17 @@ public class DoSaveGame : MonoBehaviour {
     ////Save XML
     //DoSaveGame.UpdateSaveData(SaveGameDoc); 
 
-        
+    //.LoadXml(Resources.Load("Defult Save/DefultSaveGame.xml").ToString()
+
+    //.LoadXml(Resources.Load("CutScenes/CutSceneEvents.xml").ToString()
+
+    //.LoadXml(Resources.Load("ItemFile/Items.xml").ToString()
 
     public static void NewGame()
     {
         //Read in DefultSaveGame.xml
         XmlDocument DefultSaveGameDoc = new XmlDocument();
-        DefultSaveGameDoc.Load("Assets/Scripts/Save Data/Defult Save/DefultSaveGame.xml");
+        DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
         DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/Version.txt";
 
         UpdateSaveData(DefultSaveGameDoc);
@@ -34,24 +40,40 @@ public class DoSaveGame : MonoBehaviour {
 
     public static string FetchSaveData()
     {
-        //Get encrypted SaveGameData
-        StringBuilder StringXML = new StringBuilder();
-        StreamReader SR = new StreamReader("Assets/Scripts/Save Data/SaveGameData.txt");
-        
-        StringXML.Append(SR.ReadLine());       
-        SR.Dispose();
-        
-        //return decrypted StringXml   
-        return AES_Crypto.DecryptText(StringXML.ToString());
+        ////Get encrypted SaveGameData
+        //StringBuilder StringXML = new StringBuilder();
+        //StreamReader SR = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.txt");
+
+        //StringXML.Append(SR.ReadLine());       
+        //SR.Dispose();
+
+        ////return decrypted StringXml   
+        //return AES_Crypto.DecryptText(StringXML.ToString());
+
+        //==Unencrypted version==
+        XmlDocument XmlDoc = new XmlDocument();
+        XmlDoc.Load(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml");
+
+
+        return XmlDoc.OuterXml;
+
+
     }
 
     public static void UpdateSaveData(XmlDocument XmlDoc)
     {
-        XmlDoc.SelectSingleNode("SaveData/Settings/DateTimeOfSave").InnerText = System.DateTime.Now.ToString(); //Saves current time
+        //XmlDoc.SelectSingleNode("SaveData/Settings/DateTimeOfSave").InnerText = System.DateTime.Now.ToString(); //Saves current time
 
-        StreamWriter SW = new StreamWriter("Assets/Scripts/Save Data/SaveGameData.txt");        
-        SW.Write(AES_Crypto.EncryptText(XmlDoc.OuterXml));
-        SW.Close();       
+        //StreamWriter SW = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.txt");        
+        //SW.Write(AES_Crypto.EncryptText(XmlDoc.OuterXml));
+        //SW.Close();       
+
+        //==Unencrypted version==
+        XmlDoc.SelectSingleNode("SaveData/Settings/DateTimeOfSave").InnerText = System.DateTime.Now.ToString(); //Saves current time
+        XmlDoc.Save(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml");
+
+        
+
     }
 
 

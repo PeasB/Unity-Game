@@ -27,7 +27,7 @@ public class AI_Events : MonoBehaviour {
     {
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.Load("Assets/Scripts/AI/CutSceneEvents.xml");
+        SaveGameDoc.LoadXml(Resources.Load("CutScenes/CutSceneEvents").ToString());
         //Find current scene then find ScenePart. 
         foreach (XmlNode node in SaveGameDoc.SelectNodes("CutSceneEvents/Scenes/Scene"))
         {
@@ -109,7 +109,7 @@ public class AI_Events : MonoBehaviour {
         //---Set values for save data---
         //Read in SaveGame.xml
         XmlDocument xSaveGameDoc = new XmlDocument();
-        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+        xSaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Find current scene then find ScenePart. 
         foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -157,10 +157,10 @@ public class AI_Events : MonoBehaviour {
                     Xnode.SelectSingleNode("AI/EthanAI/Action").InnerText = "Event";
                     Xnode.SelectSingleNode("AI/EthanAI/EventType").InnerText = EventNumber.ToString();
                     Xnode.SelectSingleNode("AI/EthanAI/CaseStep").InnerText = CaseStep.ToString();
-                }              
+                }
 
                 //Save XML
-                xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                DoSaveGame.UpdateSaveData(xSaveGameDoc);
 
                 break;
 
@@ -199,7 +199,7 @@ public class AI_Events : MonoBehaviour {
             //---Check for teleport---
             //Read in SaveGame.xml
             XmlDocument SaveGameDoc = new XmlDocument();
-            SaveGameDoc.Load("Assets/Scripts/AI/CutSceneEvents.xml");
+            SaveGameDoc.LoadXml(Resources.Load("CutScenes/CutSceneEvents").ToString());
 
             foreach (XmlNode node in SaveGameDoc.SelectNodes("CutSceneEvents/Scenes/Scene"))
             {
@@ -234,7 +234,7 @@ public class AI_Events : MonoBehaviour {
                         }
 
                         //Save XML
-                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                        DoSaveGame.UpdateSaveData(xSaveGameDoc);
 
                         #endregion
                     }
@@ -266,7 +266,7 @@ public class AI_Events : MonoBehaviour {
                         }
 
                         //Save XML
-                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                        DoSaveGame.UpdateSaveData(xSaveGameDoc);
 
                         #endregion
                     }
@@ -298,7 +298,7 @@ public class AI_Events : MonoBehaviour {
                         }
 
                         //Save XML
-                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                        DoSaveGame.UpdateSaveData(xSaveGameDoc);
 
                         #endregion
                     }
@@ -330,7 +330,7 @@ public class AI_Events : MonoBehaviour {
                         }
 
                         //Save XML
-                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                        DoSaveGame.UpdateSaveData(xSaveGameDoc);
 
                         #endregion
                     }
@@ -362,7 +362,7 @@ public class AI_Events : MonoBehaviour {
                         }
 
                         //Save XML
-                        xSaveGameDoc.Save("Assets/Scripts/SaveGame.xml");
+                        DoSaveGame.UpdateSaveData(xSaveGameDoc);
 
                         #endregion
                     }
