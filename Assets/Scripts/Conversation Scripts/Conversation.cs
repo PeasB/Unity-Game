@@ -171,16 +171,28 @@ public class ConversationManager {
                 #region Inventory
                 case "Inventory": //Goes through required items and check if player has them.
 
-                    foreach(XmlNode Item in ConditionSet.ChildNodes)//Item Node.
+                    foreach (XmlNode Item in ConditionSet.ChildNodes)//Item Node.
                     {
-                        if(!InventoryScript.CheckItem(int.Parse(Item.InnerText)))//Item is not in Inventory.
+                        if (Item.SelectSingleNode("Holding").InnerText == "Yes")
                         {
-                            ConditionsValid = false;
-                            break;
+                            if (!InventoryScript.CheckItem(int.Parse(Item.SelectSingleNode("ID").InnerText)))//Item is not in Inventory.
+                            {
+                                ConditionsValid = false;
+                                break;
+                            }
                         }
+                        else
+                        {
+                            if (InventoryScript.CheckItem(int.Parse(Item.SelectSingleNode("ID").InnerText)))//Item is not in Inventory.
+                            {
+                                ConditionsValid = false;
+                                break;
+                            }
+                        }
+
                     }
                     break;
-               #endregion
+                    #endregion
 
             }
         }

@@ -9,6 +9,7 @@ public class ShowLumberjack : MonoBehaviour {
 	    if(this.GetComponent<StoryPathChecker>().ValueCheck())
         {
             this.transform.FindChild("Ai Lumberjack").gameObject.SetActive(true);
+            this.transform.FindChild("EndTrigger").gameObject.SetActive(true);
         }
 
 

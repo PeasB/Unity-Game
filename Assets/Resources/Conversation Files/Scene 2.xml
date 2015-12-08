@@ -269,4 +269,71 @@
 
 		    </Level1>
 	 </Conversation>
+    <Conversation>
+
+		  <ID>8</ID>
+
+		    <Level1>
+
+		      <initialDialogue>
+		        <DialogueCount>2</DialogueCount>
+		        <Dialogue>
+		          <Conditions>None</Conditions>
+		          <Text>Ethan: We need to find the key! Do you have it?</Text>
+		        </Dialogue>
+            <Dialogue>
+              <Conditions>None</Conditions>
+              <Text>Ethan: Do you have it?</Text>
+            </Dialogue>
+		      </initialDialogue>
+
+		      <TimeToChoose>None</TimeToChoose>
+		      <HasChoices>Yes</HasChoices>
+          
+          
+          <Choice1>
+            <Conditions>
+              <Inventory>
+                <Item>
+                  <Holding>Yes</Holding>
+                  <ID>7</ID>
+                </Item>
+              </Inventory>
+            </Conditions>
+            <Text>Yes I have it!</Text>
+            <Conquences>None</Conquences>
+            <AdditionalDialogue>
+              <DialogueCount>2</DialogueCount>
+              <Dialogue>
+                <Conditions>None</Conditions>
+                <Text>Matt: Yes I do!</Text>
+              </Dialogue>
+              <Dialogue>
+                <Conditions>None</Conditions>
+                <Text>Ethan: Nice one! Let's go inside.</Text>
+              </Dialogue>
+            </AdditionalDialogue>
+
+          </Choice1>
+          <Choice2>
+
+            <Conditions>None</Conditions>
+            <Text>No I don't...</Text>
+            <Conquences>None</Conquences>
+            <AdditionalDialogue>
+              <DialogueCount>2</DialogueCount>
+              <Dialogue>
+                <Conditions>None</Conditions>
+                <Text>Matt: No I don't...</Text>
+              </Dialogue>
+              <Dialogue>
+                <Conditions>None</Conditions>
+                <Text>Ethan: Then go find it!</Text>
+              </Dialogue>
+            </AdditionalDialogue>
+
+          </Choice2>
+
+		    </Level1>
+	 </Conversation>
 </Conversations>

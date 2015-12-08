@@ -13,8 +13,8 @@
   <SaveState>
     <CurrentScene>Scene 2</CurrentScene>
     <PlayerPosition>
-      <X>-2.454036</X>
-      <Y>-2.962562</Y>
+      <X>0.7562203</X>
+      <Y>2.002998</Y>
     </PlayerPosition>
     <Scenes>
       <Scene>
@@ -686,5 +686,6 @@
     <ItemID>5</ItemID>
     <ItemID>4</ItemID>
     <ItemID>9</ItemID>
+    <ItemID>7</ItemID>
   </Inventory>
 </SaveData>
