@@ -16,9 +16,6 @@ public class UI_Inventory : MonoBehaviour {
     public static int SelectedInventoryItem_ID = 0; //0 = no item selected
     public static int SelectedCraftingItem_ID = 0; //0 = no item selected
 
-    //Sprites
-    public List<Sprite> SingleSprites = new List<Sprite>();
-
     //Do a get set
     private static GameObject[] InventorySlots = new GameObject[30];
 
@@ -49,8 +46,7 @@ public class UI_Inventory : MonoBehaviour {
             return InventoryInCraftingSlots;
         }
     }
-
-
+        
 
     // Use this for initialization
     void Start ()

@@ -654,8 +654,8 @@
             <Y>-429.15</Y>
           </KateAI>
           <AprilAI>
-            <X>410.47</X>
-            <Y>-429.15</Y>
+            <X>411.67</X>
+            <Y>-430.15</Y>
           </AprilAI>
           <EthanAI>
             <X></X>
@@ -677,6 +677,29 @@
             <Y></Y>
           </KateAI>
           <AprilAI>
+            <X>410.47</X>
+            <Y>-429.15</Y>
+          </AprilAI>
+          <EthanAI>
+            <X></X>
+            <Y></Y>
+          </EthanAI>
+        </Case2>
+
+        <Case3>
+          <JoshAI>
+            <X></X>
+            <Y></Y>
+          </JoshAI>
+          <MattAI>
+            <X></X>
+            <Y></Y>
+          </MattAI>
+          <KateAI>
+            <X></X>
+            <Y></Y>
+          </KateAI>
+          <AprilAI>
             <X></X>
             <Y></Y>
           </AprilAI>
@@ -684,7 +707,7 @@
             <X></X>
             <Y></Y>
           </EthanAI>
-        </Case2>
+        </Case3>
 
         <Teleport>
           <JoshAI>
@@ -704,8 +727,8 @@
             <Y>0</Y>
           </AprilAI>
           <EthanAI>
-            <X>0</X>
-            <Y>0</Y>
+            <X></X>
+            <Y></Y>
           </EthanAI>
         </Teleport>
         

@@ -152,12 +152,28 @@ public class StorylineScript : MonoBehaviour {
             }
             else if (ScenePart == 5)
             {
+                print("part 5");
                 #region Part 5
+                //April, Kate and Josh walk inside the Cabin
+                //Player Matt and Ethan stay outside
 
+                AI_Josh.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Josh.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_Kate.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_Kate.GetComponent<AI_Character>().EventType = ScenePart;
+
+                AI_April.GetComponent<AI_Character>().Action = AI_Character.AI_Action.Event;
+                AI_April.GetComponent<AI_Character>().EventType = ScenePart;
 
 
                 #endregion
             }
+            else if (ScenePart == 6)
+            {
+                print("PART 6!!!");
+            }
+
 
             #endregion
         }
