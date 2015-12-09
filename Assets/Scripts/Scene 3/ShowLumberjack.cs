@@ -14,6 +14,7 @@ public class ShowLumberjack : MonoBehaviour {
         {
             this.transform.FindChild("AI Lumberjack").gameObject.SetActive(true);
             this.transform.FindChild("EndTrigger").gameObject.SetActive(true);
+
             if(GameObject.Find("Main Camera").GetComponent<AudioSource>().clip != SuspenseAudio)
             {
                 GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = SuspenseAudio;

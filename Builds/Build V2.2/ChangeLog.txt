@@ -1,0 +1,2 @@
+Fixed Ethan alone Cutscene not activating.
+Fixed Item Interactions stop working.
