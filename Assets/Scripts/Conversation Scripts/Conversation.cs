@@ -287,8 +287,8 @@ public class ConversationManager {
 				ChoicesIsActive = true;
 				Choice1UI.SetActive (true);
 				Choice2UI.SetActive (true);
-				Choice1UI.GetComponentInChildren<Text> ().text = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Text").InnerText;
-				Choice2UI.GetComponentInChildren<Text> ().text = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Text").InnerText;
+				Choice1UI.transform.FindChild("Text").GetComponent<Text> ().text = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Text").InnerText;
+				Choice2UI.transform.FindChild("Text").GetComponent<Text>().text = Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Text").InnerText;
 
 				if (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/TimeToChoose").InnerText != "None") 
 				{

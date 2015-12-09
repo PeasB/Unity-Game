@@ -4,8 +4,7 @@
     </GameVersion>
     <DateTimeStarted>
     </DateTimeStarted>
-    <DateTimeOfSave>
-    </DateTimeOfSave>
+    <DateTimeOfSave>12/8/2015 5:35:33 PM</DateTimeOfSave>
     <SoundEffects>1</SoundEffects>
     <Music>1</Music>
     <ControllerSupport>0</ControllerSupport>
@@ -16,7 +15,7 @@
       <X></X>
       <Y></Y>
     </PlayerPosition>
-    <Scenes>      
+    <Scenes>
       <Scene>
         <SceneName>Scene 2</SceneName>
         <AI>
@@ -175,9 +174,12 @@
             </CaseStep>
           </MattAI>
           <KateAI>
-            <X></X>
-            <Y></Y>
-            <Action></Action>
+            <X>
+            </X>
+            <Y>
+            </Y>
+            <Action>
+            </Action>
             <EventType>
             </EventType>
             <CaseStep>
@@ -440,7 +442,7 @@
     </April>
     <Ethan>
       <Josh>100</Josh>
-      <Matt>10</Matt>
+      <Matt>100</Matt>
       <Kate>100</Kate>
       <April>100</April>
     </Ethan>

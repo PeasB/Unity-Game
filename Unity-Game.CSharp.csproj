@@ -57,6 +57,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -126,12 +132,13 @@
     <None Include="Assets\Resources\Conversation Files\Scene 2.xml" />
     <None Include="Assets\Resources\Conversation Files\Scene 3.xml" />
     <None Include="Assets\Resources\Conversation Files\Template.xml" />
+    <None Include="Assets\Resources\CutScenes\CutSceneEvents.xml" />
+    <None Include="Assets\Resources\Defult Save\DefultSaveGame.xml" />
+    <None Include="Assets\Resources\ItemFile\Items.xml" />
     <None Include="Assets\Scripts\AI\CutSceneEvents.xml" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\README.txt" />
     <None Include="Assets\Scripts\Extras\PixelPerfect\Scripts\Internal\Resources\PixelPerfectShader.shader" />
     <None Include="Assets\Scripts\ItemsPlus\Items.xml" />
-    <None Include="Assets\Scripts\Save Data\Defult Save\DefultSaveGame.xml" />
-    <None Include="Assets\Scripts\Save Data\SaveGameData.txt" />
     <None Include="Assets\Scripts\SaveGame.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Cabin Tilemap.tiled2unity.xml" />
     <None Include="Assets\Tilemaps\Tiled2Unity\Imported\Outdoors Part 1.tiled2unity.xml" />

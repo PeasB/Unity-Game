@@ -61,7 +61,8 @@ public class AreaEvent : MonoBehaviour {
 
 				if(!IgnorePlayerLocking) //User can Set Ignore the Player Locking.
 				{
-					//Lock Player Location.
+                    //Lock Player Location.
+                    Other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 					Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 					Other.GetComponent<Player>().enabled = false;
 
@@ -88,8 +89,9 @@ public class AreaEvent : MonoBehaviour {
 
 				if(!IgnorePlayerLocking) //User can Set Ignore the Player Locking.
 				{
-					//Lock Player Location.
-					Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    //Lock Player Location.
+                    Other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                    Other.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 					Other.GetComponent<Player>().enabled = false;
 					
 					if(PlayerDirection != Direction.Current) //If the User wants to use a different location then the one the player is at.

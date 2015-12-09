@@ -216,7 +216,7 @@ public class AI_Events : MonoBehaviour {
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
-                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                        xSaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
                         //Find current scene then find ScenePart. 
                         foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -250,7 +250,7 @@ public class AI_Events : MonoBehaviour {
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
-                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                        xSaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
                         //Find current scene then find ScenePart. 
                         foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -282,7 +282,7 @@ public class AI_Events : MonoBehaviour {
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
-                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                        xSaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
                         //Find current scene then find ScenePart. 
                         foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -314,7 +314,7 @@ public class AI_Events : MonoBehaviour {
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
-                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                        xSaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
                         //Find current scene then find ScenePart. 
                         foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
@@ -346,7 +346,7 @@ public class AI_Events : MonoBehaviour {
 
                         //Read in SaveGame.xml
                         XmlDocument xSaveGameDoc = new XmlDocument();
-                        xSaveGameDoc.Load("Assets/Scripts/SaveGame.xml");
+                        xSaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
                         //Find current scene then find ScenePart. 
                         foreach (XmlNode Xnode in xSaveGameDoc.SelectNodes("SaveData/SaveState/Scenes/Scene"))
