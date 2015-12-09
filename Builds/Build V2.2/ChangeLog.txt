@@ -1,2 +1,14 @@
 Fixed Ethan alone Cutscene not activating.
-Fixed Item Interactions stop working.
+Fixed Item Interactions that stop working.
+Fixed Player unable to walk path family room table.
+Added missing tree collision.
+Potentially Fixed Credits Speed.
+Fixed Green Line showing up in Opening Credits.
+Added Game icon during runtime.
+Changed name of game during runtime.
+Potentially improved car movement.
+Enlarged Camera bounds in Cabin Scene.
+Added 'Press X' Indicator to Dialogue.
+
+
+ 

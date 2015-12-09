@@ -8,7 +8,7 @@ public class Credits : MonoBehaviour {
 	public float scrollSpeed = 0.2f; // The scrolling speed
 	public float Timer = 90.0f;
 
-	void Update () {
+	void FixedUpdate () {
 
 			foreach (GUIText text in textElements) // go through each element
 			{

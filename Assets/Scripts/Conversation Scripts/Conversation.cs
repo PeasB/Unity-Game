@@ -17,6 +17,7 @@ public class ConversationManager {
 	private GameObject Choice1UI;
 	private GameObject Choice2UI;
     private Text DialogueUI;
+    private Text DialogueUIIndicator;
     private int DialogueLevel; //Only used In Dialogue Process.
     private GameObject TimerUI;
     private int ConversationLevel;
@@ -43,7 +44,9 @@ public class ConversationManager {
         Choice2UI = CanvasUI.transform.FindChild("ChoiceUI 2").gameObject;
         TimerUI = CanvasUI.transform.FindChild("Timer").gameObject;
         DialogueUI = CanvasUI.transform.FindChild("DialogueUI").gameObject.GetComponent<Text>();
-		DialogueUI.enabled = false;
+        DialogueUIIndicator = CanvasUI.transform.FindChild("DialogueUI").gameObject.transform.FindChild("Press X").GetComponent<Text>();
+        DialogueUI.enabled = false;
+        DialogueUIIndicator.enabled = false;
 		Choice1UI.SetActive(false);
 		Choice2UI.SetActive(false);
         TimerUI.SetActive(false);
@@ -207,8 +210,10 @@ public class ConversationManager {
     {
         if (!ChoicesIsActive)
         {
-
-           //Setting DialogueFound to false.
+            //Enabling Press X indicator.
+            DialogueUIIndicator.enabled = true;
+           
+            //Setting DialogueFound to false.
             bool DialogueFound = false;
 
             //Checking for Vaild Dialogue at Dialogue Level. Increaces with every loop.
@@ -278,10 +283,13 @@ public class ConversationManager {
     {
         
 			//Vaildating Choice 1 and Choice 2.
-			bool Choice1Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Conditions"));
-			bool Choice2Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Conditions"));
+		bool Choice1Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice1/Conditions"));
+		bool Choice2Valid = ValidateConditions (Conversation.SelectSingleNode ("Level" + ConversationLevel + "/Choice2/Conditions"));
 
-			if (Choice1Valid && Choice2Valid) 
+        //Disabling Press X indicator.
+        DialogueUIIndicator.enabled = false;
+
+        if (Choice1Valid && Choice2Valid) 
 			{
 				//Choice Setup.
 				ChoicesIsActive = true;
@@ -403,6 +411,8 @@ public class ConversationManager {
 
 		IsActive = false;
         DialogueUI.enabled = false;
+        DialogueUIIndicator.enabled = false;
+
         DoSaveGame.UpdateSaveData(Save);
         return true;
     }

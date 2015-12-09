@@ -6,7 +6,7 @@ public class MoveCar : MonoBehaviour {
     public bool CanDrive = false;
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{	
         if (CanDrive)
 		    this.GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed.x,MoveSpeed.y); //move up by speed
@@ -20,9 +20,5 @@ public class MoveCar : MonoBehaviour {
     {
         if(Other.tag == "Respawn")
             this.GetComponent<Transform>().position = new Vector3(-5, -135);
-
-
-
-
     }
 }
