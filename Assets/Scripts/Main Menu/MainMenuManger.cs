@@ -1,22 +1,42 @@
 ﻿using UnityEngine;
 using System.Xml;
+using System.IO;
+using System;
 
 public class MainMenuManger : MonoBehaviour {
     
 
     void Start ()
     {
-        //Read in SaveGame.xml
-        XmlDocument SaveGameDoc = new XmlDocument();
-        SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
-
-        //Check if user has not started a game yet
-        if (SaveGameDoc == null || SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText == "") //Make it the Date Started instead
+        try
         {
-            GameObject.Find("Start Game").SetActive(false);
+
+            //Read in SaveGame.xml
+            XmlDocument SaveGameDoc = new XmlDocument();
+            SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
+
+            //Check if user has not started a game yet
+            if (SaveGameDoc == null || SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText == "") //Make it the Date Started instead
+            {
+                GameObject.Find("Start Game").SetActive(false);
+            }
+
         }
+        catch (FileNotFoundException)
+        {
+            ////Error 404: File not found
+            ////Generate a new xml file           
+            string FilePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml";
+            
+            //Original new game
+            XmlDocument DefultSaveGameDoc = new XmlDocument();
+            DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
 
+            DefultSaveGameDoc.Save(FilePath);
 
+            GameObject.Find("Start Game").SetActive(false);
+
+        }
     }
 
 	//Called when Player Clicks Start New Game.
