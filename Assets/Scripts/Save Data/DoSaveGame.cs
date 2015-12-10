@@ -32,12 +32,18 @@ public class DoSaveGame : MonoBehaviour
         //Read in DefultSaveGame.xml
         XmlDocument DefultSaveGameDoc = new XmlDocument();
         DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
-        DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/Version.txt";
 
+        //Getting GameVersion and inputting it into SaveGameData
+        StreamReader SR = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/Version.txt");        
+        DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText = SR.ReadLine();
+        DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/DateTimeStarted").InnerText = System.DateTime.Now.ToString();
+        SR.Close();
+
+        //Update/Save Data
         UpdateSaveData(DefultSaveGameDoc);
         
     }
-
+      
     public static string FetchSaveData()
     {
         ////Get encrypted SaveGameData
@@ -51,13 +57,20 @@ public class DoSaveGame : MonoBehaviour
         //return AES_Crypto.DecryptText(StringXML.ToString());
 
         //==Unencrypted version==
-        XmlDocument XmlDoc = new XmlDocument();
-        XmlDoc.Load(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml");
-
-
-        return XmlDoc.OuterXml;
-
-
+        try
+        {
+            XmlDocument XmlDoc = new XmlDocument();
+            XmlDoc.Load(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml");
+            return XmlDoc.OuterXml;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+        
+        
+        
+        
     }
 
     public static void UpdateSaveData(XmlDocument XmlDoc)

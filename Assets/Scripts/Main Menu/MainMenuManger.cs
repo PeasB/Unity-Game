@@ -8,26 +8,25 @@ public class MainMenuManger : MonoBehaviour {
 
     void Start ()
     {
-        try
+        if (DoSaveGame.FetchSaveData() != null)
         {
-
             //Read in SaveGame.xml
             XmlDocument SaveGameDoc = new XmlDocument();
             SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
             //Check if user has not started a game yet
-            if (SaveGameDoc == null || SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText == "") //Make it the Date Started instead
+            if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText == "" || SaveGameDoc.SelectSingleNode("SaveData/Settings/DateTimeStarted").InnerText == "") 
             {
                 GameObject.Find("Start Game").SetActive(false);
             }
-
         }
-        catch (FileNotFoundException)
+        else
         {
             ////Error 404: File not found
-            ////Generate a new xml file           
+            ////Generate a new xml file          
+            //The Reason new Game isn't called is so the datetime doesn't get saved into the new SaveGameData 
             string FilePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml";
-            
+
             //Original new game
             XmlDocument DefultSaveGameDoc = new XmlDocument();
             DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
@@ -35,19 +34,22 @@ public class MainMenuManger : MonoBehaviour {
             DefultSaveGameDoc.Save(FilePath);
 
             GameObject.Find("Start Game").SetActive(false);
-
         }
+           
+
+        
     }
 
 	//Called when Player Clicks Start New Game.
 	public void StartNewGame()
 	{
+        
         //Read in SaveGame.xml
         XmlDocument SaveGameDoc = new XmlDocument();
         SaveGameDoc.LoadXml(DoSaveGame.FetchSaveData());
 
         //Check if user has already started a game, and warn them
-        if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText != "") //Make it the Date Started instead
+        if (SaveGameDoc.SelectSingleNode("SaveData/SaveState/CurrentScene").InnerText != "" || SaveGameDoc.SelectSingleNode("SaveData/Settings/DateTimeStarted").InnerText != "") 
         {
             //Show "Are you sure you would like to erase your current save file? This cannot be undone" with a Yes or No button
             GameObject.Find("Canvas").transform.Find("Erase Save").gameObject.SetActive(true);
