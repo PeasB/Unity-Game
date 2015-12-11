@@ -1,0 +1,3 @@
+Fixed New Players being unable to play do to exception error.
+Added a few more items in Scene 2
+Fixed Dialogue layer when showing up when it shouldnt.
