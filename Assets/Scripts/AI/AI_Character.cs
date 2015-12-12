@@ -8,7 +8,7 @@ public class AI_Character : MonoBehaviour {
 	Rigidbody2D Body;
 	Animator Anim;
 	public int WalkSpeed;
-    CircleCollider2D CircleCollition;
+    CircleCollider2D CircleCollision;
     public AI_Action Action;
     public int EventType = 0;
     int PreviousEventType = 0; //Checks if the EventType has made a change, if so, create new Original X and Y points
@@ -127,7 +127,7 @@ public class AI_Character : MonoBehaviour {
 
         Body = GetComponent<Rigidbody2D>();
 		Anim = GetComponent<Animator>();
-        CircleCollition = GetComponent<CircleCollider2D>();
+        CircleCollision = GetComponent<CircleCollider2D>();
                 
     }
 
@@ -252,7 +252,7 @@ public class AI_Character : MonoBehaviour {
         #endregion
 
         //var
-        CircleCollition.enabled = true;
+        CircleCollision.enabled = true;
 
         if (Action == AI_Action.Stationary) //Stay at complete rest
         {
@@ -483,7 +483,7 @@ public class AI_Character : MonoBehaviour {
             {
                 //Let Player go through AI, temporarily disable circle collider
                 //(gameObject.GetComponent(typeof(Collider)) as Collider).isTrigger = true;
-                CircleCollition.enabled = false;
+                CircleCollision.enabled = false;
 
 
                 if (FollowOtherAI == true && Script_OtherAIObject.FindPath() > 1.75)

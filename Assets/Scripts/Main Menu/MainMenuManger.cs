@@ -108,8 +108,12 @@ public class MainMenuManger : MonoBehaviour {
         //XmlDocument DefultSaveGameDoc = new XmlDocument();
         //DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
         //print(AES_Crypto.EncryptText(DefultSaveGameDoc.OuterXml));
-
-
     }
+
+	//Goes to credits.
+	public void GotoCredits()
+	{
+		Application.LoadLevel ("Credits");
+	}
 
 }

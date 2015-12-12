@@ -1,1 +1,3 @@
 Fixed Inputs not having a descriptive name.
+Added Main Menu Controller support.
+Added Credits button Main Menu.
