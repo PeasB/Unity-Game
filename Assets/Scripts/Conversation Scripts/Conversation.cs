@@ -356,7 +356,6 @@ public class ConversationManager {
 				}
 				#endregion
 		
-		
 			}
 		}
 
