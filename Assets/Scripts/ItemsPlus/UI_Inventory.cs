@@ -137,30 +137,29 @@ public class UI_Inventory : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //===
-        //if (Input.GetButtonDown("Button 3") == true) //If i is pressed down on keyboard or Y in controller, open inventory
-        //{
-        //    if (Paused == true)
-        //    {
-        //        Time.timeScale = 1.0f;
-        //        Canvas.gameObject.SetActive(false);
-        //        Paused = false;
-        //    }
-        //    else
-        //    {
-        //        InventoryScript.DisplayInventory();
-        //        InventoryScript.DisplayCrafting();
-        //        InventoryScript.DisplayInventoryInCraft();
-        //        InventoryScript.DisplayItemFormula(9);
-        //        Time.timeScale = 0.0f;
-        //        Canvas.gameObject.SetActive(true);
-        //        Paused = true;
-        //    }
-        //}
-        //else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
-        //{
-        //    //InventoryScript.DisplayCrafting();
-        //}
+        if (Input.GetButtonDown("Button 3") == true) //If i is pressed down on keyboard or Y in controller, open inventory
+        {
+            if (Paused == true)
+            {
+                Time.timeScale = 1.0f;
+                Canvas.gameObject.SetActive(false);
+                Paused = false;
+            }
+            else
+            {
+                InventoryScript.DisplayInventory();
+                InventoryScript.DisplayCrafting();
+                InventoryScript.DisplayInventoryInCraft();
+                InventoryScript.DisplayItemFormula(9);
+                Time.timeScale = 0.0f;
+                Canvas.gameObject.SetActive(true);
+                Paused = true;
+            }
+        }
+        else if (Input.GetButtonDown("Button 2") == true) //X on controller, q on keyboard
+        {
+            //InventoryScript.DisplayCrafting();
+        }
 
 
 
