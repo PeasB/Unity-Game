@@ -3,10 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class SlotsInteraction : MonoBehaviour {
-
        
     
-    public void InventorySlot()
+    public void InventorySlot(GameObject WhatSlot)
     {
        
         #region Inventory Slot
@@ -14,7 +13,7 @@ public class SlotsInteraction : MonoBehaviour {
         //Get Item Info
         for (int i = 0; i < UI_Inventory.GetInventorySlots.Length; i++)
         {
-            if (UI_Inventory.GetInventorySlots[i] == this.gameObject)
+            if (UI_Inventory.GetInventorySlots[i] == WhatSlot) //this.gameObject
             {
                 int Item_ID = int.Parse(InventoryScript.GetInventoryBox[i, 0]);
                 string Item_Name = InventoryScript.GetInventoryBox[i, 1];
@@ -43,7 +42,7 @@ public class SlotsInteraction : MonoBehaviour {
 
     }
     
-    public void CraftingSlot()
+    public void CraftingSlot(GameObject WhatSlot)
     {
        
         #region Crafting Slot
@@ -51,16 +50,14 @@ public class SlotsInteraction : MonoBehaviour {
         //Get Item Info
         for (int i = 0; i < UI_Inventory.GetCraftingSlots.Length; i++)
         {
-            if (UI_Inventory.GetCraftingSlots[i] == this.gameObject)
+            if (UI_Inventory.GetCraftingSlots[i] == WhatSlot) //this.gameObject
             {
                 int Item_ID = int.Parse(InventoryScript.GetCraftingTable[i, 0]);
                 string Item_Name = InventoryScript.GetCraftingTable[i, 1];
                 string Item_Description = InventoryScript.GetCraftingTable[i, 2];
                 int Item_CanCraft = int.Parse(InventoryScript.GetCraftingTable[i, 4]);
-
-                print("j");
-                print(Item_ID);
-
+                
+                
                 //Selected Item
                 UI_Inventory.SelectedCraftingItem_ID = Item_ID;
 

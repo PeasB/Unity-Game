@@ -298,13 +298,14 @@ public class InventoryScript : MonoBehaviour {
             {
                 CanCraft = false;
             }
-            
+
 
 
             //------------------------Input Data into Array---------------------------------------
 
 
             //Input var into array
+            CraftingTable[iCounter, 0] = Main_ID.ToString();
             CraftingTable[iCounter, 1] = Main_Name;
             CraftingTable[iCounter, 2] = Main_Description;
             CraftingTable[iCounter, 3] = Main_PicturePath;
@@ -457,8 +458,19 @@ public class InventoryScript : MonoBehaviour {
 
         //========================Display into UI==============================
 
+        //First: Reset Images
+        UI_Inventory.GetFormulaSlots[0].GetComponent<Image>().sprite = null;
+        UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = null;
+        UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = null;
+        UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = null;
+        UI_Inventory.GetFormulaSlots[4].GetComponent<Image>().sprite = null;
+
+
+
+        //Second: Display
+
         //Given: SelectedCraft_ID, SC_CanCraft, SC_Description, SC_PicPath, and all that for each ingredient in the IngredientID array
-                       
+
         if (IngredientIDs[4,0] != null) //=====
         {
             UI_Inventory.GetFormulaSlots[0].GetComponent<Image>().sprite = Resources.Load<Sprite>(IngredientIDs[0, 3]);
