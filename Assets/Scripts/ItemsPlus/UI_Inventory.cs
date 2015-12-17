@@ -150,7 +150,7 @@ public class UI_Inventory : MonoBehaviour {
                 InventoryScript.DisplayInventory();
                 InventoryScript.DisplayCrafting();
                 InventoryScript.DisplayInventoryInCraft();
-                InventoryScript.DisplayItemFormula(9);
+                
                 Time.timeScale = 0.0f;
                 Canvas.gameObject.SetActive(true);
                 Paused = true;
