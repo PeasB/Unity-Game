@@ -32,7 +32,7 @@
       <Description>A small light rock</Description>
       <Craftable>0</Craftable>
       <Stackable>1</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Rock</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Rock</ObjectName>
     </Item>
@@ -43,7 +43,7 @@
       <Description>A device that creates a flame</Description>
       <Craftable>1</Craftable>
       <Stackable>1</Stackable>
-      <PicPath></PicPath>
+      <PicPath>ItemSprites/Match</PicPath>
       <Payload></Payload>
       <ObjectName>Item_Match</ObjectName>
     </Item>

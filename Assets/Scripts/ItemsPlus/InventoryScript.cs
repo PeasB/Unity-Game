@@ -459,11 +459,11 @@ public class InventoryScript : MonoBehaviour {
         //========================Display into UI==============================
 
         //First: Reset Images
-        UI_Inventory.GetFormulaSlots[0].GetComponent<Image>().sprite = null;
-        UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = null;
-        UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = null;
-        UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = null;
-        UI_Inventory.GetFormulaSlots[4].GetComponent<Image>().sprite = null;
+		UI_Inventory.GetFormulaSlots[0].GetComponent<Image>().sprite = Resources.Load<Sprite>("Slot");
+		UI_Inventory.GetFormulaSlots[1].GetComponent<Image>().sprite = Resources.Load<Sprite>("Slot");
+		UI_Inventory.GetFormulaSlots[2].GetComponent<Image>().sprite = Resources.Load<Sprite>("Slot");
+		UI_Inventory.GetFormulaSlots[3].GetComponent<Image>().sprite = Resources.Load<Sprite>("Slot");
+		UI_Inventory.GetFormulaSlots[4].GetComponent<Image>().sprite = Resources.Load<Sprite>("Slot");
 
 
 
