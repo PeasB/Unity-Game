@@ -24,7 +24,7 @@
 	        </Dialogue>
 	        <Dialogue>
 	          <Conditions>None</Conditions>
-	          <Text>April: Well it's not going to be me, I'm not going outside, it will be dark soon.</Text>
+	          <Text>April: Well it's not going to be me, i'm not going outside, it will be dark soon.</Text>
 	        </Dialogue>
 	      </initialDialogue>
 
@@ -44,7 +44,7 @@
 	          <DialogueCount>3</DialogueCount>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
-	            <Text>Ethan: I'm the man here, so I'll go. Plus I'm the one who knows where it is.</Text>
+	            <Text>Ethan: I'm the man here, so i'll go. Plus i'm the one who knows where it is.</Text>
 	          </Dialogue>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
@@ -52,7 +52,7 @@
 	          </Dialogue>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
-	            <Text>Ethan: Alright My Lady.</Text>
+	            <Text>Ethan: Alright my lady.</Text>
 	          </Dialogue>
 	        </AdditionalDialogue>
 
@@ -72,7 +72,7 @@
 	          <DialogueCount>5</DialogueCount>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
-	            <Text>Ethan: Hell No! I'm not going out there in the dark.</Text>
+	            <Text>Ethan: Hell No! i'm not going out there in the dark.</Text>
 	          </Dialogue>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
@@ -84,7 +84,7 @@
 	          </Dialogue>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
-	            <Text>Kate: Sure your not. Let me hold your hand and we can go turn off the power togethor.</Text>
+	            <Text>Kate: Sure your not. Let me hold your hand and we can go turn off the power together.</Text>
 	          </Dialogue>
 	          <Dialogue>
 	            <Conditions>None</Conditions>
@@ -143,7 +143,7 @@
 		        </Dialogue>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
-		          <Text>Ethan: Oh whos scared now?</Text>
+		          <Text>Ethan: Oh who's scared now?</Text>
 		        </Dialogue>
 		        <Dialogue>
 		          <Conditions>None</Conditions>
@@ -207,7 +207,7 @@
 			        </Dialogue>
 			        <Dialogue>
 			          <Conditions>None</Conditions>
-			          <Text>Kate: A chainsaw? I thought you said noboby was going to be up here?</Text>
+			          <Text>Kate: A chainsaw? I thought you said nobody was going to be up here?</Text>
 			        </Dialogue>
 			        <Dialogue>
 			          <Conditions>None</Conditions>
@@ -257,7 +257,7 @@
 			          </Dialogue>
 			          <Dialogue>
 			            <Conditions>None</Conditions>
-			            <Text>Kate: I know what I said; I was just messing with you. Come onlet's go see.</Text>
+			            <Text>Kate: I know what I said; I was just messing with you. Come on let's go see.</Text>
 			          </Dialogue>
 			        </AdditionalDialogue>
 
