@@ -34,7 +34,7 @@ public class DoSaveGame : MonoBehaviour
         DefultSaveGameDoc.LoadXml(Resources.Load("Defult Save/DefultSaveGame").ToString());
 
         //Getting GameVersion and inputting it into SaveGameData
-        StreamReader SR = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/Version.txt");        
+        StreamReader SR = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Delirium/Version.txt");        
         DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/GameVersion").InnerText = SR.ReadLine();
         DefultSaveGameDoc.SelectSingleNode("SaveData/Settings/DateTimeStarted").InnerText = System.DateTime.Now.ToString();
         SR.Close();
@@ -60,7 +60,7 @@ public class DoSaveGame : MonoBehaviour
         try
         {
             XmlDocument XmlDoc = new XmlDocument();
-            XmlDoc.Load(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml");
+            XmlDoc.Load(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Delirium/SaveGameData.xml");
             return XmlDoc.OuterXml;
         }
         catch (Exception)
@@ -83,7 +83,7 @@ public class DoSaveGame : MonoBehaviour
 
         //==Unencrypted version==
         XmlDoc.SelectSingleNode("SaveData/Settings/DateTimeOfSave").InnerText = System.DateTime.Now.ToString(); //Saves current time
-        XmlDoc.Save(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Delirium/SaveGameData.xml");
+        XmlDoc.Save(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Delirium/SaveGameData.xml");
 
         
 
